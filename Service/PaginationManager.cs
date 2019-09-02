@@ -105,8 +105,8 @@ namespace BootstrapViewComponents
         /// <returns>Корректное значение размера страницы</returns>
         public int CheckPageSize(int page_size)
         {
-            int min_pagesize = ListSizes[0].Value;
-            int max_pagesize = ListSizes[ListSizes.Count - 1].Value;
+            int min_pagesize = ListSizes.Max(x=>x.Value);
+            int max_pagesize = ListSizes.Min(x => x.Value);
 
             if (min_pagesize > page_size)
                 return min_pagesize;

@@ -23,6 +23,7 @@
 ## ![Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
+В данном контексте этот список необходим для определения максимального и минимального размера страницы
 
 ```c#
 public List<PageSizeItem> ListSizes
