@@ -145,10 +145,6 @@ namespace BootstrapViewComponents
         /// Перезагрузить состояние пагинатора
         /// </summary>
         /// <param name="data_list_count">количество всего элементов в выводимой коллекции/таблицы</param>
-        /// <param name="url_tmpl"></param>
-        /// <param name="_PageNum"></param>
-        /// <param name="_PageSize"></param>
-        /// <returns></returns>
         public PaginationManager Init(int data_list_count, string url_tmpl, int _PageNum, int _PageSize)
         {
             CountAllElements = data_list_count;
