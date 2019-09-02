@@ -71,6 +71,18 @@ public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _Pa
 Его можно использовать если заранее у вас есть полный список элементов/строк.
 ***Эта перегрузка модифицирует передаваемый `List<T>`. Он будет усечён до "актуального состояния" в зависимости от сосотояния пагинатора!*** 
 
+```c#
+public IActionResult Index(int PageSize = 10, int PageNum = 1)
+{
+	DirectoryInfo d = new DirectoryInfo("Uploads");
+	List<FileInfo> Files = d.GetFiles().OrderBy(c => c.Name).ToList();
+	
+	PaginationManager pagination = new PaginationManager().Init(ref Files, this.HttpContext.Request.Path.Value + "?", PageNum, PageSize);
+	ViewBag.Pagination = pagination;
+	return View(Files);
+}
+```
+
 > шаг 3 - Теперь в .cshtml 
 
 ```cshtml
