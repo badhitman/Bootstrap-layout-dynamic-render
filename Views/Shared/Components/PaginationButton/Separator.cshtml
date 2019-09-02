@@ -1,0 +1,9 @@
+﻿@using BootstrapViewComponents
+
+@model PaginationButtonModel
+
+<li class="page-item disabled">
+    <span class="page-link">
+        @(string.IsNullOrEmpty(Model.Title) ? "⁞" : Model.Title)
+    </span>
+</li>
