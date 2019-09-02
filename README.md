@@ -84,5 +84,6 @@ public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _Pa
 }
 ```
 
-![Bootstrap - pagination demo](./demo/Pagination.png)
-
+![Bootstrap - pagination demo 1](./demo/Pagination.png)
+![Bootstrap - pagination demo 2](./demo/Pagination2.png)
+![Bootstrap - pagination demo 3](./demo/Pagination3.png)
