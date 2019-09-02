@@ -1,5 +1,5 @@
-# Bootstrap ViewComponent`s Razor Library
-Вьюеры семейства Bootstrap 4.3
+# Bootstrap ViewComponent`s Razor Library C# Standart
+Вьюеры семейства Bootstrap 4.3 - with ASP.Net Core 2.2
 
 
 ## [Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
