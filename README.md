@@ -43,9 +43,8 @@ public List<PageSizeItem> ListSizes
 }
 ```
 
-> 2 - в методе контроллера потребуются два параметра для определения состояния пагинатора
+> 2 - в методе контроллера потребуются зарезервировать два параметра для определения состояния пагинатора: `int PageSize = 10, int PageNum = 1`
 
-`public IActionResult Index(int PageSize = 10, int PageNum = 1)`
 
 Установка состояние пагинатора
 ```c#
@@ -62,7 +61,10 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 }
 ```
 
-Существует перегруженый метод `public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _PageNum, int _PageSize)`.
+Существует ещё перегруженый метод 
+```c#
+public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _PageNum, int _PageSize)
+```
 Его можно использовать если заранее у вас есть полный список элементов/строк.
 **ВНИМАНИЕ!** *Переданый 'List' будет усечён до "актуального состояния" в зависимости от запрошеного номера страницы и настроек размера страницы*
 
