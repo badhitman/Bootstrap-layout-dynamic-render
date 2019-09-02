@@ -43,7 +43,8 @@ public List<PageSizeItem> ListSizes
 }
 ```
 
-> 2 - в методе контроллера потребуются два параметра для определения состояния пагинатора `public IActionResult Index(int PageSize = 10, int PageNum = 1)`
+> 2 - в методе контроллера потребуются два параметра для определения состояния пагинатора
+`public IActionResult Index(int PageSize = 10, int PageNum = 1)`
 
 Установка состояние пагинатора
 ```c#
