@@ -1,4 +1,4 @@
-# BootstrapViewComponentsRazorLibrary
+# Bootstrap ViewComponent`s Razor Library
 Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 
 Вьюеры семейства Bootstrap 4.3
@@ -23,6 +23,7 @@ Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 ![Bootstrap - breadcrumb demo](./demo/Breadcrumb.png)
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
- ...
+ 
 
 ![Bootstrap - pagination demo](./demo/Pagination.png)
+
