@@ -82,7 +82,7 @@ public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _Pa
 }
 ```
 
-######### Результат:
+###### Результат:
 
 ![Bootstrap - pagination demo 1](./demo/Pagination.png)
 
