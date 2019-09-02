@@ -22,6 +22,7 @@ Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 
 ![Bootstrap - breadcrumb demo](./demo/Breadcrumb.png)
 
-## Pagination
-> ...
+## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
+ ...
+
 ![Bootstrap - pagination demo](./demo/Pagination.png)
