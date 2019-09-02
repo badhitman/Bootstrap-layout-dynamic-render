@@ -1,7 +1,7 @@
 # Bootstrap ViewComponent`s Razor Library
 Вьюеры семейства Bootstrap 4.3
 
-## ![Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
+## [Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
 Пример использования в .cshtml
 ```cshtml
 @using BootstrapViewComponents
@@ -20,7 +20,7 @@
 
 ![Bootstrap - breadcrumb demo](./demo/Breadcrumb.png)
 
-## ![Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
+## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
 В данном контексте этот список необходим для определения максимального и минимального размера страницы
@@ -93,4 +93,4 @@ public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _Pa
 ![Bootstrap - pagination demo 3](./demo/Pagination3.png)
 
 
-## ![Navs](https://getbootstrap.com/docs/4.3/components/navs/)
+## [Navs](https://getbootstrap.com/docs/4.3/components/navs/)
