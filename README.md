@@ -1,4 +1,4 @@
-﻿# BootstrapViewComponentsRazorLibrary
+# BootstrapViewComponentsRazorLibrary
 Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 
 Вьюеры семейства Bootstrap 4.3
