@@ -3,7 +3,7 @@ Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 
 Вьюеры семейства Bootstrap 4.3
 
-## [Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
+## ![Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
 Пример использования в *.cshtml
 ```cshtml
 @using BootstrapViewComponents
@@ -22,7 +22,7 @@ Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 
 ![Bootstrap - breadcrumb demo](./demo/Breadcrumb.png)
 
-## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
+## ![Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
  
 
 ![Bootstrap - pagination demo](./demo/Pagination.png)
