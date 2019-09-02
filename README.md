@@ -20,7 +20,8 @@ Bootstrap reusable ViewComponent`s ASP.NET Core 2.2
 </p>
 ```
 
-![Bootstrap - breadcrumb demo](./demo/Breadcrumb-demo.png)
+![Bootstrap - breadcrumb demo](./demo/Breadcrumb.png)
 
 ## Pagination
-> скоро
+> ...
+![Bootstrap - pagination demo](./demo/Pagination.png)
