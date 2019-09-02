@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov 
+////////////////////////////////////////////////
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace BootstrapViewComponents

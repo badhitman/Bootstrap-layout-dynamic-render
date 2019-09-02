@@ -1,4 +1,7 @@
-﻿namespace BootstrapViewComponents
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov 
+////////////////////////////////////////////////
+namespace BootstrapViewComponents
 {
     /// <summary>
     /// Выравнивание DOM элемента

@@ -1,4 +1,7 @@
-﻿namespace BootstrapViewComponents
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov 
+////////////////////////////////////////////////
+namespace BootstrapViewComponents
 {
     /// <summary>
     /// Модель для передачи параметров для формирования кнопки
