@@ -22,7 +22,7 @@
 
 ## ![Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
-> 1 - в ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
+> шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
 
 ```c#
 public List<PageSizeItem> ListSizes
@@ -41,7 +41,7 @@ public List<PageSizeItem> ListSizes
 }
 ```
 
-> 2 - в методе контроллера потребуются зарезервировать два параметра для определения состояния пагинатора: `int PageSize = 10, int PageNum = 1`
+> шаг 2 - в методе контроллера потребуются зарезервировать два параметра для определения состояния пагинатора: `int PageSize = 10, int PageNum = 1`
 
 
 Установка состояние пагинатора
@@ -66,7 +66,7 @@ public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _Pa
 Его можно использовать если заранее у вас есть полный список элементов/строк.
 **ВНИМАНИЕ!** *Переданый 'List' будет усечён до "актуального состояния" в зависимости от запрошеного номера страницы и настроек размера страницы*
 
-> 3 - Теперь в .cshtml 
+> шаг 3 - Теперь в .cshtml 
 
 ```cshtml
 @{
@@ -81,6 +81,8 @@ public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _Pa
     </p>
 }
 ```
+
+######### Результат:
 
 ![Bootstrap - pagination demo 1](./demo/Pagination.png)
 
