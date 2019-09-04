@@ -110,3 +110,7 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 
 ## [Navs](https://getbootstrap.com/docs/4.3/components/navs/)
+> дополняется ...
+
+## [Tables](https://getbootstrap.com/docs/4.3/content/tables/)
+> дополняется ...
