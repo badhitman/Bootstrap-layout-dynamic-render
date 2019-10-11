@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BootstrapViewComponents
 {
-    public class Pagination : ViewComponent
+    public class PaginationViewComponent : ViewComponent
     {
         public IViewComponentResult Invoke(PaginationManager pagination)
         {

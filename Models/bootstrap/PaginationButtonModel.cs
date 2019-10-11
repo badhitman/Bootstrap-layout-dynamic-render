@@ -1,7 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov 
 ////////////////////////////////////////////////
-namespace BootstrapViewComponents
+namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
 {
     /// <summary>
     /// Модель для передачи параметров для формирования кнопки

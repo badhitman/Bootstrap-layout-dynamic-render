@@ -1,0 +1,209 @@
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace BootstrapViewComponentsRazorLibrary.Service
+{
+    public abstract class AbstractToolsManager
+    {
+        #region Поля
+        /// <summary>
+        /// HTML Комментирование блока/элемента. Оборачивает текущий блок в два коментария (непосредственно до и после DOM блока).
+        /// Если указать только начальный/верхний коментарий, то он же будет использоваться и в нижнем.
+        /// </summary>
+        public string Before_coment_block { get; set; } = null;
+        public string After_coment_block { get; set; } = null;
+
+        /// <summary>
+        /// Идентификатор/ID элемента в DOM
+        /// </summary>
+        public string Id_DOM { get; set; } = null;
+
+        /// <summary>
+        /// Имя/Name элемента в DOM
+        /// </summary>
+        public string Name_DOM { get; set; } = null;
+
+        /// <summary>
+        /// Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. Браузеры при этом используют различные комбинации клавиш.
+        /// </summary>
+        public string Accesskey { get; set; } = null;
+
+        /// <summary>
+        /// Сообщает, что элемент доступен для редактирования пользователем — можно удалять текст и вводить новый.
+        /// Также работают стандартные команды вроде отмены, вставки текста из буфера и др.
+        /// </summary>
+        public bool Contenteditable { get; set; } = false;
+
+        /// <summary>
+        /// Скрывает содержимое элемента от просмотра. Такой элемент не отображается на странице, но доступен через скрипты
+        /// </summary>
+        public bool Hidden { get; set; } = false;
+
+        /// <summary>
+        /// Устанавливает порядок получения фокуса при переходе между элементами с помощью клавиши Tab.
+        /// В случае значения по умолчанию 0 - атрибут не выводится вовсе
+        /// </summary>
+        public int Tabindex { get; set; } = 0;
+
+        /// <summary>
+        /// Текст HTML подсказки/tooltip
+        /// </summary>
+        public string Tooltip { get; set; } = default;
+        #endregion
+
+        #region Управление атрибутами (и событиями) объекта
+        /// <summary>
+        /// Пользовательские атрибуты текущего HTML элемента
+        /// </summary>
+        public Dictionary<string, string> CustomAttributes { get; private set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Установить или добавить атрибут.
+        /// </summary>
+        /// <param name="attr_name">Имя атрибута dom объекта</param>
+        /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута у объекта, но не будет указывать значение этого атрибута (т.е. будет пропущен знак = и его значение)</param>
+        public void SetAttribute(string attr_name, string attr_value)
+        {
+            if (!CustomAttributes.ContainsKey(attr_name))
+                CustomAttributes.Add(attr_name, attr_value);
+            else
+                CustomAttributes[attr_name] = attr_value;
+        }
+        public void SetAttribute(string attr_name, int attr_value) => SetAttribute(attr_name, attr_value.ToString());
+        public void SetAttribute(string attr_name, double attr_value) => SetAttribute(attr_name, attr_value.ToString());
+
+        /// <summary>
+        /// Установить DOM объекту составное значение атрибута
+        /// </summary>
+        /// <param name="attr_name">Имя атрибута</param>
+        /// <param name="attributes">Список значений атрибутов, которые нужно объеденить в одно составное значение</param>
+        /// <param name="separator">Символ-разделитель значений в составном значении атрибута</param>
+        /// <param name="check_duplicates_attributes">если true - то дубли значений будут исключены из конечного составного значения</param>
+        public void SetAttribute<T>(string attr_name, List<T> attributes, string separator, bool check_duplicates_attributes = true)
+        {
+            string attr_as_string = "";
+            if (check_duplicates_attributes)
+                (from attr in attributes group attr by attr.ToString()).ToList().ForEach(e => attr_as_string += " " + e.Key);
+            else
+                attributes.ForEach(e => attr_as_string += " " + e.ToString());
+
+            attr_as_string = attr_as_string.Trim().Replace(" ", separator);
+            if (!string.IsNullOrEmpty(attr_as_string))
+                SetAttribute(attr_name, attr_as_string);
+        }
+
+        /// <summary>
+        /// Пакетная установка атрибутов
+        /// </summary>
+        public void SetAttribute(Dictionary<string, string> in_custom_atributes)
+        {
+            foreach (KeyValuePair<string, string> kvp in in_custom_atributes)
+                SetAttribute(kvp.Key, kvp.Value);
+        }
+
+        /// <summary>
+        /// Получить значение атрибута
+        /// </summary>
+        public string GetAttribute(string attr_name)
+        {
+            if (CustomAttributes.ContainsKey(attr_name))
+                return CustomAttributes[attr_name];
+
+            return null;
+        }
+
+        /// <summary>
+        /// Удалить атрибу (если существует)
+        /// </summary>
+        public void RemoveAttribute(string attr_name)
+        {
+            if (CustomAttributes.ContainsKey(attr_name))
+                CustomAttributes.Remove(attr_name);
+        }
+
+        /// <summary>
+        /// Установить DOM элементу обработчик события.
+        /// Если "event_src" IsNullOrEmpty, то событие удаляется
+        /// </summary>
+        public void SetEvent(UniversalEventsEnum my_event, string event_src)
+        {
+            if (string.IsNullOrEmpty(event_src))
+            {
+                if (CustomAttributes.ContainsKey(my_event.ToString("g")))
+                    CustomAttributes.Remove(my_event.ToString("g"));
+            }
+            else
+                SetAttribute(my_event.ToString("g"), event_src);
+        }
+        #endregion
+
+        #region CSS классы стилей
+        /// <summary>
+        /// Для поиска пробелов в передаваемых CSS классах
+        /// </summary>
+        private Regex regex_spice = new Regex(@"\s+", RegexOptions.Compiled);
+
+        /// <summary>
+        /// CSS стили для элемента
+        /// </summary>
+        private List<string> CSS = new List<string>();
+
+        /// <summary>
+        /// Добавить CSS класс (если его нет у объекта)
+        /// </summary>
+        public void AddCSS(string css_class, bool CheckSpices = false, bool low_and_trim_name_class = true)
+        {
+            if (low_and_trim_name_class)
+                css_class = css_class?.Trim().ToLower();
+
+            if (CheckSpices && regex_spice.IsMatch(css_class))
+                foreach (string s in regex_spice.Split(css_class))
+                    AddCSS(s, false, false);
+            else if (!string.IsNullOrEmpty(css_class) && !CSS.Contains(css_class))
+                CSS.Add(css_class);
+        }
+
+        /// <summary>
+        /// Удалить класс CSS
+        /// </summary>
+        public void RemoveCSS(string css_class, bool CheckSpices = false)
+        {
+            if (CheckSpices && regex_spice.IsMatch(css_class))
+            {
+                foreach (string s in regex_spice.Split(css_class))
+                    RemoveCSS(s, false);
+            }
+            else if (!string.IsNullOrEmpty(css_class))
+                CSS.Remove(css_class);
+        }
+
+        /// <summary>
+        /// Если класса нет, то будет добавлен. Если класс есть, то будет удалён
+        /// </summary>
+        public void TogleCSS(string css_class)
+        {
+            if (!string.IsNullOrEmpty(css_class))
+            {
+                if (!CSS.Contains(css_class))
+                    CSS.Add(css_class);
+                else
+                    CSS.Remove(css_class);
+            }
+        }
+
+        /// <summary>
+        /// Получить CSS классы одной строкой (разделитель пробел)
+        /// </summary>
+        public string StringCSS()
+        {
+            string css_as_string = "";
+            CSS.ForEach(x => css_as_string += " " + x);
+            return css_as_string.Trim();
+        }
+        #endregion    
+    }
+}

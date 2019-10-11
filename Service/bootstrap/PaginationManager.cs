@@ -1,13 +1,14 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov 
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BootstrapViewComponents
 {
-    public class PaginationManager
+    public class PaginationManager : AbstractToolsManager
     {
         public class PageSizeItem
         {
@@ -108,7 +109,7 @@ namespace BootstrapViewComponents
         /// <returns>Корректное значение размера страницы</returns>
         public int CheckPageSize(int page_size)
         {
-            int min_pagesize = ListSizes.Min(x=>x.Value);
+            int min_pagesize = ListSizes.Min(x => x.Value);
             int max_pagesize = ListSizes.Max(x => x.Value);
 
             if (min_pagesize > page_size)

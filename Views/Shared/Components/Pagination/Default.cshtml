@@ -1,6 +1,7 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 
 @using BootstrapViewComponents
+@using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 
 @model PaginationManager
 
@@ -28,7 +29,7 @@
         }
     }
     <ul class="pagination @ul_css">
-        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Back, Title = "Назад", Href = (Model.PageNum <= 1 ? string.Empty : Model.UrlTmpl + (Model.PageNum - 1)) } })
+        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Back, Title = "Назад", Href = (Model.PageNum <= 1 ? string.Empty : Model.UrlTmpl + (Model.PageNum - 1)) } })
         @for (int i = 1; Model.CountPages >= i; i++)
         {
             if (Model.CountPages > 7)
@@ -37,11 +38,11 @@
                 {
                     if (i == Model.CountPages - 1)
                     {
-                        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Separator, Title = "⁞" } });
+                        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Separator, Title = "⁞" } });
                     }
                     else if (i <= 5 || i == Model.CountPages)
                     {
-                        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
                     }
                     else
                     {
@@ -52,11 +53,11 @@
                 {
                     if (i == 2)
                     {
-                        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Separator, Title = "⁞" } });
+                        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Separator, Title = "⁞" } });
                     }
                     else if (i == 1 || i >= (Model.CountPages - 4))
                     {
-                        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
                     }
                     else
                     {
@@ -67,11 +68,11 @@
                 {
                     if (i == 2 || i == Model.CountPages - 1)
                     {
-                        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Separator, Title = "⁞" } });
+                        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Separator, Title = "⁞" } });
                     }
                     else if ((i == 1 || i == Model.CountPages) || (i == Model.PageNum - 1 || i == Model.PageNum || i == Model.PageNum + 1))
                     {
-                        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
                     }
                     else
                     {
@@ -81,9 +82,9 @@
             }
             else
             {
-                @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
             }
         }
-        @await Component.InvokeAsync(nameof(PaginationButton), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Next, Title = "Вперёд", Href = (Model.PageNum >= Model.CountPages ? string.Empty : Model.UrlTmpl + (Model.PageNum + 1).ToString()) } })
+        @await Component.InvokeAsync(nameof(PaginationButtonViewComponent), new { buttonSet = new PaginationButtonModel() { TypeButton = PaginationButtonModel.TypesButton.Next, Title = "Вперёд", Href = (Model.PageNum >= Model.CountPages ? string.Empty : Model.UrlTmpl + (Model.PageNum + 1).ToString()) } })
     </ul>
 </nav>
