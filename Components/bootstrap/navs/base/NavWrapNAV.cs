@@ -4,11 +4,11 @@
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
+namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 {
-    public class NavBaseViewComponent : ViewComponent
+    public class NavWrapNAV : ViewComponent
     {
-        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
+        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme)
         {
             ViewBag.IsPillsTheme = SetPillsTheme;
             return View(navManager);

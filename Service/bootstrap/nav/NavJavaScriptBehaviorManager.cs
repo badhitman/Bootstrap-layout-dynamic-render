@@ -1,16 +1,21 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class NavJavaScriptBehaviorManager : AbstractNavManager
     {
-        protected override short AvailableNestingDepth => 1;
         protected Dictionary<string, string> CacheContents { get; private set; } = new Dictionary<string, string>();
 
-        public void UpdateTab(string SetNavHeader, string SetNavContetnt)
+        public NavJavaScriptBehaviorManager(NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
+        {
+
+        }
+
+        public void UpdateNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
         {
 
         }

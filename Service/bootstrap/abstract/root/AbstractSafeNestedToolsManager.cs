@@ -15,7 +15,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// ЗАПРЕЩЕНО!
         /// В данном объекте нельзя {напрямую/вручную} манипулировать вложеными [dom] элементами.
         /// </summary>
-        public override void AddDomNode(AbstractToolsManager child)
+        public override void AddDomNode(AbstractDomManager child)
         {
             throw new NotImplementedException();
             //base.Add(child);
@@ -25,7 +25,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// ЗАПРЕЩЕНО!
         /// В данном объекте нельзя {напрямую/вручную} манипулировать вложеными [dom] элементами.
         /// </summary>
-        public override void AddRangeDomNode(List<AbstractToolsManager> childs)
+        public override void AddRangeDomNode(List<AbstractDomManager> childs)
         {
             throw new NotImplementedException();
             //base.AddRange(childs);

@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
-    public abstract class AbstractToolsManager
+    public abstract class AbstractDomManager
     {
         #region Поля
         /// <summary>
@@ -198,11 +198,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить CSS классы одной строкой (разделитель пробел)
         /// </summary>
-        public string StringCSS()
+        public string StringCSS
         {
-            string css_as_string = "";
-            CSS.ForEach(x => css_as_string += " " + x);
-            return css_as_string.Trim();
+            get
+            {
+                string css_as_string = "";
+                CSS.ForEach(x => css_as_string += " " + x);
+                return css_as_string.Trim();
+            }
         }
         #endregion    
     }

@@ -5,23 +5,23 @@ using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
-    public class AbstractNestedToolsManager: AbstractToolsManager
+    public class AbstractNestedToolsManager: AbstractDomManager
     {
         #region Вложеные/Дочерние элементы
         /// <summary>
         /// Дочерние/вложеные элементы
         /// </summary>
-        protected internal List<AbstractToolsManager> Childs = new List<AbstractToolsManager>();
+        protected internal List<AbstractDomManager> Childs = new List<AbstractDomManager>();
 
         /// <summary>
         /// Прямое добавление дочернего/вложеного элемента.
         /// </summary>
-        public virtual void AddDomNode(AbstractToolsManager child) => Childs.Add(child);
+        public virtual void AddDomNode(AbstractDomManager child) => Childs.Add(child);
 
         /// <summary>
         /// Пакетное добавление дочерних/вложеных элементов.
         /// </summary>
-        public virtual void AddRangeDomNode(List<AbstractToolsManager> childs) => Childs.AddRange(childs);
+        public virtual void AddRangeDomNode(List<AbstractDomManager> childs) => Childs.AddRange(childs);
 
         /// <summary>
         /// Удалить все ложеные DOM элементы

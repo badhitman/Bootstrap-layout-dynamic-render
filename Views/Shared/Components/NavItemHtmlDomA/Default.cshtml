@@ -1,0 +1,13 @@
+﻿@*© https://github.com/badhitman - @fakegov*@
+@model BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavItemModel
+@{
+    string set_css_class = (Model.StringCSS + " nav-link" + (Model.IsActive ? " active" : "")).Trim();
+}
+@if (Model.IsDisabled)
+{
+    <a class="@set_css_class disabled" href="@Model.Href" tabindex="-1" aria-disabled="true">@Model.Header</a>
+}
+else
+{
+    <a class="@set_css_class" href="@Model.Href">@Model.Header</a>
+}

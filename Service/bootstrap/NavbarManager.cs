@@ -18,7 +18,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
     ///     .navbar-text для добавления вертикально центрированных строк текста.
     ///     .collapse.navbar-collapse для группировки и скрытия содержимого навигационной панели.
     /// </summary>
-    public class NavbarManager : AbstractToolsManager
+    public class NavbarManager : AbstractDomManager
     {
         /// <summary>
         /// Color schemes
@@ -46,7 +46,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size.
         /// Here are some examples to demonstrate.
         /// </summary>
-        public DataUrlModel ImageNavbarBrand { get; set; } = null;
+        public string ImageNavbarBrand { get; set; } = null;
 
         /// <summary>
         /// The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.

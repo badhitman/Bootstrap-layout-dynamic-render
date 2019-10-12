@@ -8,18 +8,18 @@ using System.Text;
 namespace BootstrapViewComponentsRazorLibrary.Models
 {
     /// <summary>
-    /// Формат навигационной панели
+    /// Типы внешних DOM для оборачивания "Bootstrap Navs"
     /// </summary>
-    public enum NavFormatsEnum
+    public enum NavWrapperTypesEnum
     {
         /// <summary>
         /// Формат ul->li->a списка
         /// </summary>
-        ListUL,
+        ul,
 
         /// <summary>
         /// Формат nav->a
         /// </summary>
-        NavRols
+        nav
     }
 }

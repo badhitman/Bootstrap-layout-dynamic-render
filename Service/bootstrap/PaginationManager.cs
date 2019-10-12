@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace BootstrapViewComponents
 {
-    public class PaginationManager : AbstractToolsManager
+    public class PaginationManager : AbstractDomManager
     {
         public class PageSizeItem
         {

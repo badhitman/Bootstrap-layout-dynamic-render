@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman 
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service;
 using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
@@ -8,12 +9,12 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
     /// <summary>
     /// Пункт меню nav-item
     /// </summary>
-    public class NavItemModel
+    public class NavItemModel : AbstractSafeNestedToolsManager
     {
         public string Header { get; set; }
 
         public string Href { get; set; }
-        
+
         public bool IsActive { get; set; }
 
         public bool IsDisabled { get; set; }

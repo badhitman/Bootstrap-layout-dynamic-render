@@ -1,6 +1,29 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
+@using BootstrapViewComponentsRazorLibrary.Components.html
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 
 @model AbstractNavManager
 
-<!--@Model-->
+@if (!string.IsNullOrEmpty(Model.Before_coment_block))
+{
+    await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.Before_coment_block });
+}
+
+@{
+    string ViewComponentName = Model.NavWrapperType == BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul ? typeof(NavWrapUL).Name : typeof(NavWrapNAV).Name;
+    await Component.InvokeAsync(ViewComponentName, new { navManager = Model, SetPillsTheme = ViewBag.IsPillsTheme });
+}
+
+@if(Model is NavJavaScriptBehaviorManager){
+    @*<div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    </div>*@
+}
+
+@if (!string.IsNullOrEmpty(Model.After_coment_block))
+{
+    await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.After_coment_block });
+}
