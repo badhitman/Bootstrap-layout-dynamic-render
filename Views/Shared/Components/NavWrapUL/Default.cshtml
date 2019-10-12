@@ -5,7 +5,7 @@
 
 @model AbstractNavManager
 
-<ul class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")" @(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
+<ul class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")"@(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
     @foreach (NavItemModel navItem in Model.NavItems)
     {
         <li class="nav-item">
