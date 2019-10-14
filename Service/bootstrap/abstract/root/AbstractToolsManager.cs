@@ -10,6 +10,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
     public abstract class AbstractDomManager
     {
         #region Поля
+        ///////////////////////////////////////////////
+        //
         /// <summary>
         /// HTML Комментирование блока/элемента. Оборачивает текущий блок в два коментария (непосредственно до и после DOM блока).
         /// Если указать только начальный/верхний коментарий, то он же будет использоваться и в нижнем.
@@ -53,9 +55,13 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Текст HTML подсказки/tooltip
         /// </summary>
         public string Tooltip { get; set; } = default;
+        //
+        ///////////////////////////////////////////////
         #endregion
 
         #region Управление атрибутами (и событиями) объекта
+        ///////////////////////////////////////////////
+        //
         /// <summary>
         /// Пользовательские атрибуты текущего HTML элемента
         /// </summary>
@@ -139,9 +145,28 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             else
                 SetAttribute(my_event.ToString("g"), event_src);
         }
+
+        /// <summary>
+        /// Получить атрибуты (в том числе события) одной строкой
+        /// </summary>
+        public string StringAttributes
+        {
+            get
+            {
+                string attributes_as_string = "";
+                foreach (KeyValuePair<string, string> kvp in CustomAttributes)
+                    attributes_as_string += kvp.Key + "=\"" + kvp.Value + "\" ";
+                                
+                return attributes_as_string.Trim();
+            }
+        }
+        //
+        ///////////////////////////////////////////////
         #endregion
 
         #region CSS классы стилей
+        ///////////////////////////////////////////////
+        //
         /// <summary>
         /// Для поиска пробелов в передаваемых CSS классах
         /// </summary>
@@ -207,6 +232,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 return css_as_string.Trim();
             }
         }
+        //
+        ///////////////////////////////////////////////
         #endregion    
     }
 }

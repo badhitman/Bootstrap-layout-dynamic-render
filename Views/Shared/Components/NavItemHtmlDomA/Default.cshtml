@@ -1,13 +1,44 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Models.bootstrap
+
 @model BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavItemModel
+
 @{
     string set_css_class = (Model.StringCSS + " nav-link" + (Model.IsActive ? " active" : "")).Trim();
+    set_css_class += Model.IsActive ? " active" : "";
 }
+
+@if (Model.Childs.Count > 0)
+{
+    set_css_class += " dropdown-toggle";
+    Model.SetAttribute("data-toggle", "dropdown");
+    Model.SetAttribute("role", "button");
+    Model.SetAttribute("aria-haspopup", "true");
+    Model.SetAttribute("aria-expanded", "false");
+    Model.SetAttribute("", "");
+}
+
 @if (Model.IsDisabled)
 {
-    <a class="@set_css_class disabled" href="@Model.Href" tabindex="-1" aria-disabled="true">@Model.Header</a>
+    set_css_class += " disabled";
+    Model.SetAttribute("tabindex", "-1");
+    Model.SetAttribute("aria-disabled", "true");
 }
-else
+
+<a class="@set_css_class" href="@Model.Href" @Model.StringAttributes>@Model.Header</a>
+@if (Model.Childs.Count > 0)
 {
-    <a class="@set_css_class" href="@Model.Href">@Model.Header</a>
+    <div class="dropdown-menu">
+        @foreach (NavItemModel navItem in Model.Childs)
+        {
+            if (navItem is null)
+            {
+                <div class="dropdown-divider"></div>
+            }
+            else
+            {
+                <a class="dropdown-item" href="@navItem.Href">@navItem.Header</a>
+            }
+        }
+    </div>
 }
