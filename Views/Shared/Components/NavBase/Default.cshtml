@@ -15,12 +15,18 @@
     await Component.InvokeAsync(ViewComponentName, new { navManager = Model, SetPillsTheme = ViewBag.IsPillsTheme });
 }
 
-@if(Model is NavJavaScriptBehaviorManager){
-    @*<div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-    </div>*@
+@if (Model is NavJavaScriptBehaviorManager)
+{
+    NavJavaScriptBehaviorManager NavJavaScriptBehavior = Model as NavJavaScriptBehaviorManager;
+    string fade_style = NavJavaScriptBehavior.IsFadeStyle ? " fade" : string.Empty;
+    @:<div class="tab-content" id="@Model.Id_DOM-TabContent">
+        string set_first_tab_as_active = " show active";
+        foreach (KeyValuePair<string, string> kvp in NavJavaScriptBehavior.CacheContents)
+        {
+            <div class="tab-pane @fade_style@set_first_tab_as_active" id="@kvp.Key" role="tabpanel" aria-labelledby="@kvp.Key-tab">@kvp.Value</div>
+            set_first_tab_as_active = string.Empty;
+        }
+    @:</div>
 }
 
 @if (!string.IsNullOrEmpty(Model.After_coment_block))

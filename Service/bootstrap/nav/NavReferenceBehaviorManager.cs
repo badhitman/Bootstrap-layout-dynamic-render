@@ -12,9 +12,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         }
 
-        public void UpdateNav(string SetNavHeader, string SetNavHref)
+        public void AddNav(string SetNavHeader, string SetNavId, string SetNavHref)
         {
-
+            NavItems.Add(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
         }
     }
 }
