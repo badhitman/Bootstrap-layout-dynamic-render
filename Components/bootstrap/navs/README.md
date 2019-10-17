@@ -16,7 +16,7 @@ result:
 ```html
 <ul id="top-menu" class="nav">
   <li class="nav-item" >
-    <a id="nav-home" class="nav-link active active" href="#">Active</a>
+    <a id="nav-home" class="nav-link active" href="#">Active</a>
   </li>
   <li class="nav-item" >
     <a id="nav-link" class="nav-link" href="#">Link</a>

@@ -2,7 +2,7 @@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @model BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavItemModel
 @{
-    string set_css_class = (Model.StringCSS + " nav-link" + (Model.IsActive ? " active" : "")).Trim();
+    string set_css_class = (Model.StringCSS + " nav-link").Trim();
     set_css_class += Model.IsActive ? " active" : "";
 }
 @if (Model.ChildsCount > 0)
@@ -12,7 +12,6 @@
     Model.SetAttribute("role", "button");
     Model.SetAttribute("aria-haspopup", "true");
     Model.SetAttribute("aria-expanded", "false");
-    Model.SetAttribute("", "");
 }
 @if (Model.IsDisabled)
 {
