@@ -24,9 +24,21 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <returns></returns>
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme)
         {
+            if (navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyFill && navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
+            {
+                logger.LogInformation("When using a <nav>-based navigation, be sure to include .nav-item on the anchors.");
+                navManager.Childs.ForEach(x => x.AddCSS("nav-item"));
+            }
+
+            if (navManager.IsTabsStyle && navManager.NavWrapperType != Models.NavWrapperTypesEnum.ul)
+            {
+                logger.LogError("Для Tabs допустим только UL формат обёртки. Автоматически установлен в NavWrapperTypesEnum.ul");
+                navManager.NavWrapperType = Models.NavWrapperTypesEnum.ul;
+            }
+
             if (navManager.IsTabsStyle && SetPillsTheme)
             {
-                logger.LogError("Нельзя совмещать Pills и Tabs. Pils будет отключён");
+                logger.LogError("Нельзя совмещать Pills и Tabs. Pils автоматически отключён");
                 SetPillsTheme = false;
             }
 

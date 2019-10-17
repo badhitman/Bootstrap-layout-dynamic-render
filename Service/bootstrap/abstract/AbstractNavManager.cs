@@ -83,6 +83,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         {
             IsTabsStyle = SetTabsStyle;
             NavigationOrientation = SetNavigationOrientation;
+            
             AddCSS("nav");
             switch (NavigationOrientation)
             {
@@ -94,6 +95,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                     break;
                 case NavOrientationsEnum.Vertically:
                     AddCSS("flex-column");
+                    IsTabsStyle = false;
                     break;
                 case NavOrientationsEnum.HorizontallyFill:
                     AddCSS("nav-fill");
