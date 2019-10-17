@@ -1,5 +1,7 @@
 ## [Base nav](https://getbootstrap.com/docs/4.3/components/navs/#base-nav)
 ```cshtml
+@using BootstrapViewComponentsRazorLibrary.Service.bootstrap
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned);
   nav.AddNav("Active", "nav-home", "#").IsActive = true;
