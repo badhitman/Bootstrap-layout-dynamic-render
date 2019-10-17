@@ -1,6 +1,3 @@
-# [Navs](https://getbootstrap.com/docs/4.3/components/navs/)
-> дополняется ...
-
 ## [Base nav](https://getbootstrap.com/docs/4.3/components/navs/#base-nav)
 > дополняется ...
 
