@@ -10,7 +10,7 @@
   nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
   nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+@await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav })
 ```
 result:
 ```html
