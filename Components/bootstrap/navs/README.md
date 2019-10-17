@@ -1,4 +1,5 @@
 ## [Base nav](https://getbootstrap.com/docs/4.3/components/navs/#base-nav)
+Базовая навигация
 ```cshtml
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
@@ -31,7 +32,7 @@ result:
 ```
 
 ## [Horizontal alignment](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
-> дополняется ...
+> Измените горизонтальное выравнивание навигатора с помощью утилит flexbox. По умолчанию навигаторы выровнены по левому краю, но вы можете легко изменить их на выравнивание по центру или по правому краю.
 
 ## [Vertical](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > дополняется ...

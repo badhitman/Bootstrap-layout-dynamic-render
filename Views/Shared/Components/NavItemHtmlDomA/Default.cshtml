@@ -16,7 +16,7 @@
 @if (Model.IsDisabled)
 {
     set_css_class += " disabled";
-    Model.SetAttribute("tabindex", "-1");
+    Model.Tabindex = -1;
     Model.SetAttribute("aria-disabled", "true");
 }
 <a @Html.Raw(Model.StringAttributes) class="@set_css_class" href="@Html.Raw(Model.Href)">@Model.Header</a>
