@@ -24,7 +24,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         /// </summary>
         public bool IsFadeStyle { get; set; } = true;
 
-        internal Dictionary<string, string> CacheContents { get; private set; } = new Dictionary<string, string>();
+        public Dictionary<string, string> CacheContents { get; private set; } = new Dictionary<string, string>();
 
         public NavJavaScriptBehaviorManager(NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
         {
@@ -33,7 +33,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public void AddNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
         {
-            NavItems.Add(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId });
+            AddDomNode(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId });
             CacheContents.Add(SetNavId, SetNavCachedContent);
         }
     }

@@ -2,15 +2,13 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
-
 @model AbstractNavManager
-
 <ul class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")" @(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
-    @foreach (NavItemModel navItem in Model.NavItems)
+    @foreach (NavItemModel navItem in Model.GetChilds())
     {
-        string dropdown_style = navItem.Childs.Count > 0 ? " dropdown" : "";
+        string dropdown_style = navItem.ChildsCount > 0 ? " dropdown" : "";
         <li class="nav-item" @dropdown_style>
-            @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem });
+            @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem })
         </li>
     }
 </ul>

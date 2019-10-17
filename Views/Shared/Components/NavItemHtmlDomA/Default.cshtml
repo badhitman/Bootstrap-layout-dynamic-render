@@ -1,14 +1,11 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
-
 @model BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavItemModel
-
 @{
     string set_css_class = (Model.StringCSS + " nav-link" + (Model.IsActive ? " active" : "")).Trim();
     set_css_class += Model.IsActive ? " active" : "";
 }
-
-@if (Model.Childs.Count > 0)
+@if (Model.ChildsCount > 0)
 {
     set_css_class += " dropdown-toggle";
     Model.SetAttribute("data-toggle", "dropdown");
@@ -17,19 +14,17 @@
     Model.SetAttribute("aria-expanded", "false");
     Model.SetAttribute("", "");
 }
-
 @if (Model.IsDisabled)
 {
     set_css_class += " disabled";
     Model.SetAttribute("tabindex", "-1");
     Model.SetAttribute("aria-disabled", "true");
 }
-
-<a class="@set_css_class" href="@Model.Href" @Model.StringAttributes>@Model.Header</a>
-@if (Model.Childs.Count > 0)
+<a class="@set_css_class" href="@Html.Raw(Model.Href)" @Html.Raw(Model.StringAttributes)>@Model.Header</a>
+@if (Model.ChildsCount > 0)
 {
     <div class="dropdown-menu">
-        @foreach (NavItemModel navItem in Model.Childs)
+        @foreach (NavItemModel navItem in Model.GetChilds())
         {
             if (navItem is null)
             {

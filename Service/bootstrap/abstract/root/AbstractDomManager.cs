@@ -65,22 +65,24 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Пользовательские атрибуты текущего HTML элемента
         /// </summary>
-        public Dictionary<string, string> CustomAttributes { get; private set; } = new Dictionary<string, string>();
+        protected Dictionary<string, string> CustomAttributes { get; private set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// Установить или добавить атрибут.
         /// </summary>
         /// <param name="attr_name">Имя атрибута dom объекта</param>
         /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута у объекта, но не будет указывать значение этого атрибута (т.е. будет пропущен знак = и его значение)</param>
-        public void SetAttribute(string attr_name, string attr_value)
+        public AbstractDomManager SetAttribute(string attr_name, string attr_value)
         {
             if (!CustomAttributes.ContainsKey(attr_name))
                 CustomAttributes.Add(attr_name, attr_value);
             else
                 CustomAttributes[attr_name] = attr_value;
+
+            return this;
         }
-        public void SetAttribute(string attr_name, int attr_value) => SetAttribute(attr_name, attr_value.ToString());
-        public void SetAttribute(string attr_name, double attr_value) => SetAttribute(attr_name, attr_value.ToString());
+        public AbstractDomManager SetAttribute(string attr_name, int attr_value) => SetAttribute(attr_name, attr_value.ToString());
+        public AbstractDomManager SetAttribute(string attr_name, double attr_value) => SetAttribute(attr_name, attr_value.ToString());
 
         /// <summary>
         /// Установить DOM объекту составное значение атрибута
@@ -89,7 +91,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <param name="attributes">Список значений атрибутов, которые нужно объеденить в одно составное значение</param>
         /// <param name="separator">Символ-разделитель значений в составном значении атрибута</param>
         /// <param name="check_duplicates_attributes">если true - то дубли значений будут исключены из конечного составного значения</param>
-        public void SetAttribute<T>(string attr_name, List<T> attributes, string separator, bool check_duplicates_attributes = true)
+        public AbstractDomManager SetAttribute<T>(string attr_name, List<T> attributes, string separator, bool check_duplicates_attributes = true)
         {
             string attr_as_string = "";
             if (check_duplicates_attributes)
@@ -100,15 +102,19 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             attr_as_string = attr_as_string.Trim().Replace(" ", separator);
             if (!string.IsNullOrEmpty(attr_as_string))
                 SetAttribute(attr_name, attr_as_string);
+
+            return this;
         }
 
         /// <summary>
         /// Пакетная установка атрибутов
         /// </summary>
-        public void SetAttribute(Dictionary<string, string> in_custom_atributes)
+        public AbstractDomManager SetAttribute(Dictionary<string, string> in_custom_atributes)
         {
             foreach (KeyValuePair<string, string> kvp in in_custom_atributes)
                 SetAttribute(kvp.Key, kvp.Value);
+
+            return this;
         }
 
         /// <summary>
@@ -125,17 +131,19 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Удалить атрибу (если существует)
         /// </summary>
-        public void RemoveAttribute(string attr_name)
+        public AbstractDomManager RemoveAttribute(string attr_name)
         {
             if (CustomAttributes.ContainsKey(attr_name))
                 CustomAttributes.Remove(attr_name);
+
+            return this;
         }
 
         /// <summary>
         /// Установить DOM элементу обработчик события.
         /// Если "event_src" IsNullOrEmpty, то событие удаляется
         /// </summary>
-        public void SetEvent(UniversalEventsEnum my_event, string event_src)
+        public AbstractDomManager SetEvent(UniversalEventsEnum my_event, string event_src)
         {
             if (string.IsNullOrEmpty(event_src))
             {
@@ -144,6 +152,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             }
             else
                 SetAttribute(my_event.ToString("g"), event_src);
+
+            return this;
         }
 
         /// <summary>
@@ -156,7 +166,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 string attributes_as_string = "";
                 foreach (KeyValuePair<string, string> kvp in CustomAttributes)
                     attributes_as_string += kvp.Key + "=\"" + kvp.Value + "\" ";
-                                
+
                 return attributes_as_string.Trim();
             }
         }
@@ -170,54 +180,59 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Для поиска пробелов в передаваемых CSS классах
         /// </summary>
-        private Regex regex_spice = new Regex(@"\s+", RegexOptions.Compiled);
+        private readonly Regex regex_spice = new Regex(@"\s+", RegexOptions.Compiled);
 
         /// <summary>
         /// CSS стили для элемента
         /// </summary>
-        private List<string> CSS = new List<string>();
+        private readonly List<string> css = new List<string>();
 
         /// <summary>
-        /// Добавить CSS класс (если его нет у объекта)
+        /// Добавить CSS класс текущему объекту (если такой класс ещё не назначен объекту)
         /// </summary>
-        public void AddCSS(string css_class, bool CheckSpices = false, bool low_and_trim_name_class = true)
+        public AbstractDomManager AddCSS(string css_class, bool check_spices = false, bool low_and_trim_name_class = true)
         {
             if (low_and_trim_name_class)
                 css_class = css_class?.Trim().ToLower();
 
-            if (CheckSpices && regex_spice.IsMatch(css_class))
+            if (check_spices && regex_spice.IsMatch(css_class))
                 foreach (string s in regex_spice.Split(css_class))
                     AddCSS(s, false, false);
-            else if (!string.IsNullOrEmpty(css_class) && !CSS.Contains(css_class))
-                CSS.Add(css_class);
+            else if (!string.IsNullOrEmpty(css_class) && !css.Contains(css_class))
+                css.Add(css_class);
+            return this;
         }
 
         /// <summary>
         /// Удалить класс CSS
         /// </summary>
-        public void RemoveCSS(string css_class, bool CheckSpices = false)
+        public AbstractDomManager RemoveCSS(string css_class, bool check_spices = false)
         {
-            if (CheckSpices && regex_spice.IsMatch(css_class))
+            if (check_spices && regex_spice.IsMatch(css_class))
             {
                 foreach (string s in regex_spice.Split(css_class))
                     RemoveCSS(s, false);
             }
             else if (!string.IsNullOrEmpty(css_class))
-                CSS.Remove(css_class);
+                css.Remove(css_class);
+
+            return this;
         }
 
         /// <summary>
         /// Если класса нет, то будет добавлен. Если класс есть, то будет удалён
         /// </summary>
-        public void TogleCSS(string css_class)
+        public AbstractDomManager TogleCSS(string css_class)
         {
             if (!string.IsNullOrEmpty(css_class))
             {
-                if (!CSS.Contains(css_class))
-                    CSS.Add(css_class);
+                if (!css.Contains(css_class))
+                    css.Add(css_class);
                 else
-                    CSS.Remove(css_class);
+                    css.Remove(css_class);
             }
+
+            return this;
         }
 
         /// <summary>
@@ -228,7 +243,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             get
             {
                 string css_as_string = "";
-                CSS.ForEach(x => css_as_string += " " + x);
+                css.ForEach(x => css_as_string += " " + x);
                 return css_as_string.Trim();
             }
         }

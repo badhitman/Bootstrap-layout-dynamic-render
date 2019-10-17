@@ -7,11 +7,11 @@ using Microsoft.Extensions.Logging;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 {
-    public class NavBaseViewComponent : ViewComponent
+    public class NavBase : ViewComponent
     {
         protected ILogger logger;
 
-        public NavBaseViewComponent(ILoggerFactory _loggerFactory)
+        public NavBase(ILoggerFactory _loggerFactory)
         {
             logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
         }
@@ -22,7 +22,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <param name="navManager"></param>
         /// <param name="SetPillsTheme"></param>
         /// <returns></returns>
-        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
+        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme)
         {
             if (navManager.IsTabsStyle && SetPillsTheme)
             {

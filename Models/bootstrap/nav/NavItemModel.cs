@@ -4,6 +4,7 @@
 using BootstrapViewComponentsRazorLibrary.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
 {
@@ -20,17 +21,23 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
 
         public bool IsDisabled { get; set; }
 
-        /// <summary>
-        /// Вложеные под-пункты меню nav-item (максимальнео вложение 1)
-        /// </summary>
-        public List<NavItemModel> SubItems { get; set; }
-
         public NavItemModel(string html_dom_id)
         {
             if (string.IsNullOrWhiteSpace(html_dom_id))
                 Id_DOM = Guid.NewGuid().ToString();
             else
                 Id_DOM = html_dom_id;
+        }
+
+        /// <summary>
+        /// Сброс состояния (IsActive||IsDisable)
+        /// </summary>
+        public void ResetNavItems()
+        {
+            IsActive = false;
+            IsDisabled = false;
+            foreach (NavItemModel nav_sub_item in GetChilds().Where(x => !(x is null)))
+                nav_sub_item.ResetNavItems();
         }
     }
 }

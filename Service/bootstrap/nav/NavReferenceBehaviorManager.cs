@@ -7,14 +7,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class NavReferenceBehaviorManager : AbstractNavManager
     {
-        public NavReferenceBehaviorManager(NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
+        public NavReferenceBehaviorManager(string DomId, NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
         {
-
+            Id_DOM = DomId;
         }
 
-        public void AddNav(string SetNavHeader, string SetNavId, string SetNavHref)
+        public NavItemModel AddNav(string SetNavHeader, string SetNavId, string SetNavHref)
         {
-            NavItems.Add(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
+            AddDomNode(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
+            return (NavItemModel)Childs[Childs.Count - 1];
         }
     }
 }

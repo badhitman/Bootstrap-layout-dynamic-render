@@ -2,19 +2,15 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
-
 @model AbstractNavManager
-
 @if (!string.IsNullOrEmpty(Model.Before_coment_block))
 {
     await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.Before_coment_block });
 }
-
 @{
     string ViewComponentName = Model.NavWrapperType == BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul ? typeof(NavWrapUL).Name : typeof(NavWrapNAV).Name;
-    await Component.InvokeAsync(ViewComponentName, new { navManager = Model, SetPillsTheme = ViewBag.IsPillsTheme });
 }
-
+@await Component.InvokeAsync(ViewComponentName, new { navManager = Model, SetPillsTheme = ViewBag.IsPillsTheme })
 @if (Model is NavJavaScriptBehaviorManager)
 {
     NavJavaScriptBehaviorManager NavJavaScriptBehavior = Model as NavJavaScriptBehaviorManager;
@@ -28,7 +24,6 @@
         }
     @:</div>
 }
-
 @if (!string.IsNullOrEmpty(Model.After_coment_block))
 {
     await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.After_coment_block });
