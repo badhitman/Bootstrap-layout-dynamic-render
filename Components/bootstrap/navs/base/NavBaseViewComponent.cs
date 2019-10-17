@@ -22,7 +22,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <param name="navManager"></param>
         /// <param name="SetPillsTheme"></param>
         /// <returns></returns>
-        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme)
+        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
         {
             if ((navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyFill || navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyJustified) && navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
             {

@@ -10,11 +10,11 @@
   nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
   nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav })
+@await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
 ```
 result:
 ```html
-<ul id="top-menu" class="nav nav-pills">
+<ul id="top-menu" class="nav">
   <li class="nav-item" >
     <a id="nav-home" class="nav-link active active" href="#">Active</a>
   </li>
