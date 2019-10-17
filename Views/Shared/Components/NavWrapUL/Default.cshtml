@@ -3,7 +3,7 @@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractNavManager
-<ul class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")" @(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
+<ul @Html.Raw(Model.StringAttributes) class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")"@(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
     @foreach (NavItemModel navItem in Model.GetChilds())
     {
         string dropdown_style = navItem.ChildsCount > 0 ? " dropdown" : "";

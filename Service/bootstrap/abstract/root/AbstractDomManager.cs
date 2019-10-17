@@ -52,9 +52,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         public int Tabindex { get; set; } = 0;
 
         /// <summary>
-        /// Текст HTML подсказки/tooltip
+        /// Текст HTML подсказки/title
         /// </summary>
-        public string Tooltip { get; set; } = default;
+        public string Title { get; set; } = default;
         //
         ///////////////////////////////////////////////
         #endregion
@@ -163,7 +163,29 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         {
             get
             {
-                string attributes_as_string = "";
+                string attributes_as_string = " ";
+
+                if (!string.IsNullOrWhiteSpace(Id_DOM) && !CustomAttributes.Any(x => x.Key.ToLower() == "id"))
+                    attributes_as_string += "id=\"" + Id_DOM.Trim() + "\" ";
+
+                if (!string.IsNullOrWhiteSpace(Name_DOM) && !CustomAttributes.Any(x => x.Key.ToLower() == "name"))
+                    attributes_as_string += "name=\"" + Name_DOM.Trim() + "\" ";
+
+                if (!string.IsNullOrWhiteSpace(Accesskey) && !CustomAttributes.Any(x => x.Key.ToLower() == "accesskey"))
+                    attributes_as_string += "accesskey=\"" + Accesskey.Trim() + "\" ";
+
+                if (Contenteditable && !CustomAttributes.Any(x => x.Key.ToLower() == "contenteditable"))
+                    attributes_as_string += "contenteditable=\"true\" ";
+
+                if (Hidden && !CustomAttributes.Any(x => x.Key.ToLower() == "hidden"))
+                    attributes_as_string += "hidden ";
+
+                if (Tabindex != default && !CustomAttributes.Any(x => x.Key.ToLower() == "tabindex"))
+                    attributes_as_string += "tabindex=\"" + Tabindex.ToString() + "\" ";
+
+                if (!string.IsNullOrWhiteSpace(Title) && !CustomAttributes.Any(x => x.Key.ToLower() == "title"))
+                    attributes_as_string += "title=\"" + Title.Trim() + "\" ";
+                
                 foreach (KeyValuePair<string, string> kvp in CustomAttributes)
                     attributes_as_string += kvp.Key + "=\"" + kvp.Value + "\" ";
 

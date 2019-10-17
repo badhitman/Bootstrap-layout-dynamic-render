@@ -20,7 +20,7 @@
     Model.SetAttribute("tabindex", "-1");
     Model.SetAttribute("aria-disabled", "true");
 }
-<a class="@set_css_class" href="@Html.Raw(Model.Href)" @Html.Raw(Model.StringAttributes)>@Model.Header</a>
+<a @Html.Raw(Model.StringAttributes) class="@set_css_class" href="@Html.Raw(Model.Href)">@Model.Header</a>
 @if (Model.ChildsCount > 0)
 {
     <div class="dropdown-menu">

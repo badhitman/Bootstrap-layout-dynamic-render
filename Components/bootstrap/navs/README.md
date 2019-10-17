@@ -12,18 +12,18 @@
 ```
 result:
 ```html
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
+<ul id="top-menu" class="nav nav-pills">
+  <li class="nav-item" >
+    <a id="nav-home" class="nav-link active active" href="#">Active</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+  <li class="nav-item" >
+    <a id="nav-link" class="nav-link" href="#">Link</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+  <li class="nav-item" >
+    <a id="nav-linc-second" class="nav-link" href="#">Link</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  <li class="nav-item" >
+    <a id="nav-disabled" tabindex="-1" aria-disabled="true" class="nav-link disabled" href="#">Disabled</a>
   </li>
 </ul>
 ```
