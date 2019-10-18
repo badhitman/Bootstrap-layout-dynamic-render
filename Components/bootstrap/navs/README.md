@@ -27,8 +27,8 @@
 Для того что бы компонент навигации ипользовал теги ссылок `<a>` внутри `<nav>` - достаточно указать другой тип обёртки:
 ```cshtml
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
-***result:***
 ```
+***result:***
 ![Bootstrap - Navs demo 2](../../../demo/Nav-base-2.jpg)
 
 ## [Horizontal alignment](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
