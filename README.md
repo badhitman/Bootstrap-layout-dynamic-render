@@ -21,7 +21,7 @@
 
 ###### Результат:
 
-![Bootstrap - breadcrumb demo](./demo/Breadcrumb.png)
+![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)
 
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
@@ -103,11 +103,11 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ###### Результат:
 
-![Bootstrap - pagination demo 1](./demo/Pagination.png)
+![Bootstrap - pagination demo 1](./demo/pagination.png)
 
-![Bootstrap - pagination demo 2](./demo/Pagination2.png)
+![Bootstrap - pagination demo 2](./demo/pagination2.png)
 
-![Bootstrap - pagination demo 3](./demo/Pagination3.png)
+![Bootstrap - pagination demo 3](./demo/pagination3.png)
 
 ## [Navs](https://getbootstrap.com/docs/4.3/components/navs/)
 > [дополняется ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
