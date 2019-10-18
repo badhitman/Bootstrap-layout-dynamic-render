@@ -14,22 +14,11 @@
 @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
 ```
 result:
-```html
-<ul id="top-menu" class="nav">
-  <li class="nav-item" >
-    <a id="nav-home" class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item" >
-    <a id="nav-link" class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item" >
-    <a id="nav-linc-second" class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item" >
-    <a id="nav-disabled" tabindex="-1" aria-disabled="true" class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
-```
+![Bootstrap - Navs demo 1](../../../demo/Nav-base.jpg)
+
+Классы в **Bootstrap** используются повсюду, поэтому ваша разметка может быть очень гибкой.
+Используйте `<ul>`s, как продемонстрировано выше, либо воспользуйтесь элементом <nav>.
+Так-как .nav использует `display: flex`, теги ссылок `<a>` внутри `<nav>` ведут себя так же, как и стандартные элементы `nav`, но без дополнительной разметки
 
 ## [Horizontal alignment](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
 > Измените горизонтальное выравнивание навигатора с помощью утилит flexbox. По умолчанию навигаторы выровнены по левому краю, но вы можете легко изменить их на выравнивание по центру или по правому краю.
