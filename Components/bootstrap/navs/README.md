@@ -4,6 +4,7 @@
 
 > Базовый компонент `nav` не включает в себя никакого рендеринга .active состояния пунктов меню.
 Следующие примеры включают класс `active`, главным образом, чтобы продемонстрировать, что этот конкретный класс не вызывает никакого специального стиля.
+
 ```cshtml
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
@@ -25,6 +26,7 @@
 Так-как **.nav** использует `display: flex`, теги ссылок `<a>` внутри `<nav>` ведут себя так же, как и стандартные элементы навигации.
 
 Для того что бы компонент навигации ипользовал теги ссылок `<a>` внутри `<nav>` - достаточно указать другой тип обёртки:
+
 ```cshtml
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
@@ -36,6 +38,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
 Выравнивание назначается через контсруктор.
 В следующем примере навигация центруется по горизонтали (применяется: `.justify-content-center`):
+
 ```cshtml
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyCenterAligned);
 ```
