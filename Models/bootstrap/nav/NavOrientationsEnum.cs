@@ -48,9 +48,13 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
 
         /// <summary>
         /// Stack your navigation by changing the flex item direction with the .flex-column utility.
-        /// Need to stack them on some viewports but not others? Use the responsive versions (e.g., .flex-sm-column).
         /// </summary>
         Vertically,
+
+        /// <summary> 
+        /// Need to stack them on some viewports but not others? Use the responsive versions (e.g., .flex-sm-column).
+        /// </summary>
+        VerticallySm,
 
         /// <summary>
         /// Вертикальное меню слева от тела страницы

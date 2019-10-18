@@ -54,15 +54,25 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 
 ## [Vertical](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > Сделать навигацию в виде стэка можно изменив направление элемента flex с помощью утилиты .flex-column.
-Нужно складывать их на некоторых видовых экранах, но не на других?
-Используйте адаптивные версии (например, `.flex-sm-column`).
 
 Горизонтальное расположение в виде стэка определяется через ориентацию. Так же как и при обычном базовом подходе:
 ```cshtml
-NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyRightAligned);
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
 ```
 ***result:***
-![Bootstrap - Vertical alignment (demo vertical-alignment)](../../../demo/nav-vertical-alignment.jpg)
+![Bootstrap - Vertical alignment (demo vertical-alignment ul->li->a)](../../../demo/nav-vertical-alignment-ul-li-a.jpg)
+
+> Нужно складывать их на некоторых видовых экранах, но не на других? Используйте адаптивные версии (например, `.flex-sm-column`).
+```cshtml
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.VerticallySm);
+```
+> Как всегда, вертикальная навигация возможна и без `<ul>`s.
+```cshtml
+nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+```
+***result:***
+![Bootstrap - Vertical alignment (base demo vertical nav->a)](../../../demo/nav-vertical-alignment-nav-a.jpg)
+
 
 ## [Tabs](https://getbootstrap.com/docs/4.3/components/navs/#tabs)
 > дополняется ...

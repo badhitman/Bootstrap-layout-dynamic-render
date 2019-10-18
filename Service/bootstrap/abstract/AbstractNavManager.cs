@@ -97,6 +97,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                     AddCSS("flex-column");
                     IsTabsStyle = false;
                     break;
+                case NavOrientationsEnum.VerticallySm:
+                    AddCSS("flex-sm-column");
+                    IsTabsStyle = false;
+                    break;
                 case NavOrientationsEnum.HorizontallyFill:
                     AddCSS("nav-fill");
                     break;
