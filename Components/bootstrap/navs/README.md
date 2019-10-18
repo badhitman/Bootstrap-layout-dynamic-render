@@ -17,7 +17,7 @@
 }
 @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
 ```
-result:
+***result:***
 ![Bootstrap - Navs demo 1](../../../demo/Nav-base.jpg)
 
 > Классы в **Bootstrap** используются повсюду, поэтому ваша разметка может быть очень гибкой.
@@ -27,6 +27,7 @@ result:
 Для того что бы компонент навигации ипользовал теги ссылок `<a>` внутри `<nav>` - достаточно указать другой тип обёртки:
 ```cshtml
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+***result:***
 ```
 ![Bootstrap - Navs demo 2](../../../demo/Nav-base-2.jpg)
 
