@@ -51,10 +51,23 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
         /// </summary>
         Vertically,
 
+        // flex-column-reverse
+        VerticallyReverse,
+
         /// <summary> 
         /// Need to stack them on some viewports but not others? Use the responsive versions (e.g., .flex-sm-column).
         /// </summary>
         VerticallySm,
+
+        // flex-sm-column-reverse
+        VerticallySmReverse,
+
+        VerticallyMd,
+        VerticallyMdReverse,
+        VerticallyLg,
+        VerticallyLgReverse,
+        VerticallyXl,
+        VerticallyXlReverse,
 
         /// <summary>
         /// Вертикальное меню слева от тела страницы
