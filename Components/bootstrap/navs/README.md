@@ -66,6 +66,14 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 ```cshtml
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.VerticallySm);
 ```
+***result:***
+![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)
+
+
+
+
+
+
 > Как всегда, вертикальная навигация возможна и без `<ul>`s.
 ```cshtml
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
