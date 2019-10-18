@@ -40,7 +40,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyCenterAligned);
 ```
 ***result:***
-![Bootstrap - Horizontal alignment demo 1](../../../demo/Nav-base-2.jpg)
+![Bootstrap - Horizontal alignment demo 1](../../../demo/nav-horizontal-alignment.jpg)
 
 ## [Vertical](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > дополняется ...
