@@ -18,7 +18,7 @@
 @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
 ```
 ***result:***
-![Bootstrap - Navs demo 1](../../../demo/Nav-base.jpg)
+![Bootstrap - Navs (base demo ul->li->a)](../../../demo/nav-base-ul-li-a.jpg)
 
 > Классы в **Bootstrap** используются повсюду, поэтому ваша разметка может быть очень гибкой.
 Используйте `<ul>`s, как продемонстрировано выше, либо воспользуйтесь элементом `<nav>`.
@@ -29,7 +29,7 @@
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
 ***result:***
-![Bootstrap - Navs demo 2](../../../demo/Nav-base-2.jpg)
+![Bootstrap - Navs (base demo nav->a)](../../../demo/nav-base-nav-a.jpg)
 
 ## [Horizontal alignment](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
 > Измените горизонтальное выравнивание навигатора с помощью утилит flexbox. По умолчанию навигаторы выровнены по левому краю, но вы можете легко изменить их на выравнивание по центру или по правому краю.
@@ -40,7 +40,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyCenterAligned);
 ```
 ***result:***
-![Bootstrap - Horizontal alignment demo 1](../../../demo/nav-horizontal-alignment.jpg)
+![Bootstrap - Horizontal alignment (demo center-alignment)](../../../demo/nav-horizontal-center-alignment.jpg)
 
 ## [Vertical](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > дополняется ...
