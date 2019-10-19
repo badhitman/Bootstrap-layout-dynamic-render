@@ -132,7 +132,7 @@ nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 ```
 ![Bootstrap - Fill (base demo pills justified ul->li->a)](../../../demo/nav-pills-justified-ul-li-a.jpg)
-> Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от своих `.nav-fill` выше, каждый элемент навигации будет одинаковой ширины.
+> Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от предыдущего `.nav-fill`, каждый элемент навигации будет одинаковой ширины.
 
 ## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
 > дополняется ...
