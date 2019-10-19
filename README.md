@@ -101,7 +101,7 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 }
 ```
 
-###### Результат:
+###### Результаты:
 
 ![Bootstrap - pagination demo 1](./demo/pagination.png)
 
