@@ -24,14 +24,15 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <returns></returns>
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
         {
-            if (navManager.IsTabsStyle && navManager.NavWrapperType != Models.NavWrapperTypesEnum.ul)
-            {
-                logger.LogError("Для Tabs стиля допустим только UL формат обёртки. Автоматически установлен в NavWrapperTypesEnum.ul");
-                navManager.NavWrapperType = Models.NavWrapperTypesEnum.ul;
-            }
+            //if (navManager.IsTabsStyle && navManager.NavWrapperType != Models.NavWrapperTypesEnum.ul)
+            //{
+            //    logger.LogError("Для Tabs стиля допустим только UL формат обёртки. Автоматически установлен в NavWrapperTypesEnum.ul");
+            //    navManager.NavWrapperType = Models.NavWrapperTypesEnum.ul;
+            //}
 
             if ((navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyFill ||
-                navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyJustified) &&
+                navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyJustified ||
+                navManager.IsTabsStyle) &&
                 navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
             {
                 logger.LogInformation("When using a <nav>-based navigation, be sure to include .nav-item on the anchors.");
