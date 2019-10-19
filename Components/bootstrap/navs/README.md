@@ -110,7 +110,17 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 Не следует совмещать стили **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно для одного **Nav**
 
 ## [Fill and justify](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
-> дополняется ...
+> Для принудительного расширения `.nav`s по всей доступной ширине применяется один из двух классов-модификаторов.
+```cshtml
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyFill);
+```
+***result:***
+![Bootstrap - Fill (base demo pills fill ul->li->a)](../../../demo/nav-pills-fill.jpg)
+
+> Чтобы пропорционально заполнить все доступное пространство телом `.nav-items`, используется `.nav-fill`.
+Обратите внимание, что все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину.
+
+> При использовании навигации на основе `<nav>`, пункты меню будут промаркированы классом `.nav-item`.
 
 ## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
 > дополняется ...
