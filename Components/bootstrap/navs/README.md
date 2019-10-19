@@ -87,6 +87,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 ```
 ***result:***
 ![Bootstrap - Tabs style (base demo tabs ul->li->a)](../../../demo/nav-tabs-ul-li-a.jpg)
+Не следует совмещать стили **Tabs** и **Pills** одновременно для одного **Nav**
 
 > Как всегда, навигация возможна и без `<ul>`s.
 
@@ -97,7 +98,16 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ![Bootstrap - Tabs style (base demo tabs nav->a)](../../../demo/nav-tabs-nav-a.jpg)
 
 ## [Pills](https://getbootstrap.com/docs/4.3/components/navs/#pills)
-> дополняется ...
+> Возьмите базовую навигацию, но примените к нему `.nav-pills`
+
+Включение **nav-pills** производиться через соостветвующее поле параметра вызова базового компонента навигации `SetPillsTheme = true`.
+
+```cshtml
+@await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+```
+***result:***
+![Bootstrap - Pills style (base demo Pills ul->li->a)](../../../demo/nav-pills-ul-li-a.jpg)
+Не следует совмещать стили **Tabs** и **Pills** одновременно для одного **Nav**
 
 ## [Fill and justify](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
 > дополняется ...

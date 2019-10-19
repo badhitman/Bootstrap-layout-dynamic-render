@@ -24,12 +24,6 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <returns></returns>
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
         {
-            //if (navManager.IsTabsStyle && navManager.NavWrapperType != Models.NavWrapperTypesEnum.ul)
-            //{
-            //    logger.LogError("Для Tabs стиля допустим только UL формат обёртки. Автоматически установлен в NavWrapperTypesEnum.ul");
-            //    navManager.NavWrapperType = Models.NavWrapperTypesEnum.ul;
-            //}
-
             if ((navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyFill ||
                 navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyJustified ||
                 navManager.IsTabsStyle) &&
@@ -40,10 +34,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
             }
 
             if (navManager.IsTabsStyle && SetPillsTheme)
-            {
-                logger.LogError("Нельзя совмещать Pills и Tabs. Pils автоматически отключён");
-                SetPillsTheme = false;
-            }
+                logger.LogError("Нет смысла совмещать Pills и Tabs. Устраните ошибку");
 
             if (navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyFlexUtilities)
             {
