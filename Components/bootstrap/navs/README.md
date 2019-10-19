@@ -131,7 +131,6 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ***result:***
 ![Bootstrap - Fill (base demo pills fill nav->a)](../../../demo/nav-pills-fill-nav-a.jpg)
 
-###### NavOrientationsEnum.HorizontallyJustified
 Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует: `.nav-justified`):
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyJustified);
