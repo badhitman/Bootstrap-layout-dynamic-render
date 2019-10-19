@@ -27,7 +27,7 @@
 
 Для того что бы компонент навигации ипользовал теги ссылок `<a>` внутри `<nav>` - достаточно указать другой тип обёртки:
 
-```cshtml
+```c#
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
 ***result:***
@@ -39,14 +39,14 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 Выравнивание назначается через контсруктор.
 В следующем примере навигация центруется по горизонтали (применяется: `.justify-content-center`):
 
-```cshtml
+```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyCenterAligned);
 ```
 ***result:***
 ![Bootstrap - Horizontal alignment (demo center-alignment)](../../../demo/nav-horizontal-center-alignment.jpg)
 
 В следующем примере навигация распологается справа по горизонтали (применяется: `.justify-content-end`):
-```cshtml
+```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyRightAligned);
 ```
 ***result:***
@@ -56,21 +56,21 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 > Сделать навигацию в виде стэка можно изменив направление элемента flex с помощью утилиты .flex-column.
 
 Горизонтальное расположение в виде стэка определяется через ориентацию. Так же как и при обычном базовом подходе:
-```cshtml
+```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
 ```
 ***result:***
 ![Bootstrap - Vertical alignment (demo vertical-alignment ul->li->a)](../../../demo/nav-vertical-alignment-ul-li-a.jpg)
 
 > Нужно складывать их на некоторых видовых экранах, но не на других? Используйте адаптивные версии (например, `.flex-sm-column`).
-```cshtml
+```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.VerticallySm);
 ```
 ***result:***
 ![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)
 
 > Как всегда, вертикальная навигация возможна и без `<ul>`s.
-```cshtml
+```c#
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
 ***result:***
@@ -82,7 +82,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 Используйте их для создания вкладочных областей с помощью `JavaScript tab` плагина.
 
 **Tabs** стиль определяется через конструктор менеджера навигации (третий парамтр:`bool SetTabsStyle`)
-```cshtml
+```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
 ```
 ***result:***
@@ -91,7 +91,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 
 > Как всегда, навигация возможна и без `<ul>`s.
 
-```cshtml
+```c#
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
 ***result:***
@@ -111,16 +111,20 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
 ## [Fill and justify](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
 > Для принудительного расширения `.nav`s по всей доступной ширине применяется один из двух классов-модификаторов.
-```cshtml
+```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyFill);
 ```
 ***result:***
-![Bootstrap - Fill (base demo pills fill ul->li->a)](../../../demo/nav-pills-fill.jpg)
-
+![Bootstrap - Fill (base demo pills fill ul->li->a)](../../../demo/nav-pills-fill-ul-li-a.jpg)
 > Чтобы пропорционально заполнить все доступное пространство телом `.nav-items`, используется `.nav-fill`.
 Обратите внимание, что все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину.
 
 > При использовании навигации на основе `<nav>`, пункты меню будут промаркированы классом `.nav-item`.
+![Bootstrap - Fill (base demo pills fill nav->a)](../../../demo/nav-pills-fill-nav-a.jpg)
+
+> Для задания элементов равной ширины используйте `.nav-justified`.
+![Bootstrap - Fill (base demo pills justified ul->li->a)](../../../demo/nav-pills-justified-ul-li-a.jpg)
+Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от своих `.nav-fill` выше, каждый элемент навигации будет одинаковой ширины.
 
 ## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
 > дополняется ...
