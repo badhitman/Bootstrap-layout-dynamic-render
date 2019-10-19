@@ -120,12 +120,18 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 Обратите внимание, что все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину.
 
 > При использовании навигации на основе `<nav>`, пункты меню будут промаркированы классом `.nav-item`.
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyFill);
+nav.AddNav("Active", "nav-home", "#").IsActive = true;
+nav.AddNav("Link navigation item element", "nav-link", "#");
+nav.AddNav("Link", "nav-link-second", "#");
+nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
+nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ***result:***
 ![Bootstrap - Fill (base demo pills fill nav->a)](../../../demo/nav-pills-fill-nav-a.jpg)
 
 Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует: `.nav-justified`):
 ```c#
-NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyJustified);
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", **BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyJustified**);
 nav.AddNav("Active navigation item element", "nav-home", "#").IsActive = true;
 nav.AddNav("Link", "nav-link", "#");
 nav.AddNav("Link", "nav-link-second", "#");
