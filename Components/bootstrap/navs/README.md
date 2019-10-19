@@ -38,7 +38,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ## [Horizontal alignment](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
 > Измените горизонтальное выравнивание навигатора с помощью утилит flexbox. По умолчанию навигаторы выровнены по левому краю, но вы можете легко изменить их на выравнивание по центру или по правому краю.
 
-Выравнивание назначается через контсруктор.
+Выравнивание назначается через позиционирование (параметр контсруктора менеджера навигации).
 В следующем примере навигация центруется по горизонтали (применяется: `.justify-content-center`):
 
 ```c#
