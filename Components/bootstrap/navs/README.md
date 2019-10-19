@@ -120,6 +120,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 Обратите внимание, что все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину.
 
 > При использовании навигации на основе `<nav>`, пункты меню будут промаркированы классом `.nav-item`.
+***result:***
 ![Bootstrap - Fill (base demo pills fill nav->a)](../../../demo/nav-pills-fill-nav-a.jpg)
 
 Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует: `.nav-justified`):
@@ -131,8 +132,9 @@ nav.AddNav("Link", "nav-link-second", "#");
 nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 ```
+***result:***
 ![Bootstrap - Fill (base demo pills justified ul->li->a)](../../../demo/nav-pills-justified-ul-li-a.jpg)
-> Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от предыдущего `.nav-fill`, каждый элемент навигации будет одинаковой ширины.
+> Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от предыдущего примера (`.nav-fill`), каждый элемент навигации будет одинаковой ширины.
 
 ## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
 > дополняется ...
