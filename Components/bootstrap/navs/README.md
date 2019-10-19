@@ -87,7 +87,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 ```
 ***result:***
 ![Bootstrap - Tabs style (base demo tabs ul->li->a)](../../../demo/nav-tabs-ul-li-a.jpg)
-Не следует совмещать стили **Tabs** и **Pills** одновременно для одного **Nav**
+Не следует совмещать стили **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно для одного **Nav**
 
 > Как всегда, навигация возможна и без `<ul>`s.
 
@@ -107,7 +107,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ```
 ***result:***
 ![Bootstrap - Pills style (base demo Pills ul->li->a)](../../../demo/nav-pills-ul-li-a.jpg)
-Не следует совмещать стили **Tabs** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно для одного **Nav**
+Не следует совмещать стили **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно для одного **Nav**
 
 ## [Fill and justify](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
 > дополняется ...
