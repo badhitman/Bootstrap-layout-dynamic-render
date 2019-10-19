@@ -78,7 +78,15 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
 
 ## [Tabs](https://getbootstrap.com/docs/4.3/components/navs/#tabs)
-> дополняется ...
+> За основу берется базовая навигация и добавляется `.nav-tabs` класс для создания интерфейса с вкладками.
+Используйте их для создания вкладочных областей с помощью `JavaScript tab` плагина.
+
+**Tabs** стиль определяется через конструктор менеджера навигации (третий парамтр:`bool SetTabsStyle`)
+```cshtml
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
+```
+***result:***
+![Bootstrap - Tabs style (base demo tabs ul->li->a)](../../../demo/nav-tabs.jpg)
 
 ## [Pills](https://getbootstrap.com/docs/4.3/components/navs/#pills)
 > дополняется ...
