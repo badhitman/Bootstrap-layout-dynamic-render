@@ -125,6 +125,11 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует: `.nav-justified`):
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyJustified);
+nav.AddNav("Active navigation item element", "nav-home", "#").IsActive = true;
+nav.AddNav("Link", "nav-link", "#");
+nav.AddNav("Link", "nav-link-second", "#");
+nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
+nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 ```
 ![Bootstrap - Fill (base demo pills justified ul->li->a)](../../../demo/nav-pills-justified-ul-li-a.jpg)
 Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от своих `.nav-fill` выше, каждый элемент навигации будет одинаковой ширины.
