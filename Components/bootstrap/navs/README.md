@@ -119,13 +119,10 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 > Чтобы пропорционально заполнить все доступное пространство телом `.nav-items`, используется `.nav-fill`.
 Обратите внимание, что все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину.
 
-> При использовании навигации на основе `<nav>`, пункты меню будут промаркированы классом `.nav-item`.
+> При использовании навигации на основе `<nav>` в режиме `fill`, пункты меню будут промаркированы классом `.nav-item`.
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyFill);
-nav.AddNav("Active", "nav-home", "#").IsActive = true;
-nav.AddNav("Link navigation item element", "nav-link", "#");
-nav.AddNav("Link", "nav-link-second", "#");
-nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
+...
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
 ***result:***
