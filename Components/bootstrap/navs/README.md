@@ -122,7 +122,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 > При использовании навигации на основе `<nav>`, пункты меню будут промаркированы классом `.nav-item`.
 ![Bootstrap - Fill (base demo pills fill nav->a)](../../../demo/nav-pills-fill-nav-a.jpg)
 
-> Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует: `.nav-justified`):
+Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует: `.nav-justified`):
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyJustified);
 ```
