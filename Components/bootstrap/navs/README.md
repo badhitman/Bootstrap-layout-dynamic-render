@@ -90,6 +90,10 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 
 > Как всегда, навигация возможна и без `<ul>`s.
 
+```cshtml
+nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+```
+***result:***
 ![Bootstrap - Tabs style (base demo tabs nav->a)](../../../demo/nav-tabs-nav-a.jpg)
 
 ## [Pills](https://getbootstrap.com/docs/4.3/components/navs/#pills)
