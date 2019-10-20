@@ -183,11 +183,30 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
 ![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-flex-utilities-nav-a.jpg)
 
-## [Regarding accessibility](https://getbootstrap.com/docs/4.3/components/navs/#regarding-accessibility)
-> дополняется ...
-
 ## [Tabs with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#tabs-with-dropdowns)
-> дополняется ...
+```cshtml
+<header>
+  @{
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
+    nav.AddNav("Active", "nav-home", "#").IsActive = true;
+
+    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "dropdown-nav", "#");
+    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-1") { Header = "Action", Href = "#" });
+    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-2") { Header = "Another action", Href = "#" });
+    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-3") { Header = "Something else here", Href = "#" });
+    dropdown_nav.AddDomNode(null);//<div class="dropdown-divider"></div>
+    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-4") { Header = "Separated link", Href = "#" });
+                    
+    nav.AddNav("Link", "nav-link-second", "#");
+    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
+
+    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
+  }
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+</header>
+```
+***result:***
+![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../../demo/nav-dropdowns-tabs-ul-li-a.jpg)
 
 ## [Pills with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
 > дополняется ...
