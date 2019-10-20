@@ -3,11 +3,12 @@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractNavManager
-<ul @Html.Raw(Model.StringAttributes) class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")"@(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
+<ul @Html.Raw(Model.StringAttributes) class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")" @(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
     @foreach (NavItemModel navItem in Model.GetChilds())
     {
-        string dropdown_style = navItem.ChildsCount > 0 ? " dropdown" : "";
-        <li class="nav-item" @dropdown_style>
+        string li_class_style = "nav-item";
+        li_class_style += navItem.ChildsCount > 0 ? " dropdown" : "";
+        <li class="@li_class_style">
             @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem })
         </li>
     }
