@@ -151,7 +151,32 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 > Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от предыдущего примера (`.nav-fill`), каждый элемент навигации будет одинаковой ширины.
 
 ## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
-> дополняется ...
+> Если вам нужны адаптивные варианты навигации, рассмотрите возможность использования ряда flexbox-утилит
+
+Через механизм установки CSS стилей можно более детально и гибко манипулировать адаптированой вёрсткой:
+```cshtml
+<header>
+  @{
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
+    // добавления пользователського класса стилей блоку навигации
+    nav.AddCSS("flex-sm-row");
+
+    nav.AddNav("Active", "nav-home", "#").IsActive = true;
+    nav.AddNav("Link", "nav-link", "#");
+    nav.AddNav("Link", "nav-link-second", "#");
+    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true; 
+
+    // метод добавления пользовательских классов в дочерние елементы (пункты меню на уровне тега <a></a>)
+    nav.ChildsAddCSS("flex-sm-fill text-sm-center");
+                   
+    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+  }
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+</header>
+```
+> В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
+***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
+![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-flex-utilities-nav-a.jpg)
 
 ## [Regarding accessibility](https://getbootstrap.com/docs/4.3/components/navs/#regarding-accessibility)
 > дополняется ...
