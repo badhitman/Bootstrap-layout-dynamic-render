@@ -160,7 +160,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
     NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
     
     // добавление пользователського класса стилей блоку навигации
-    // по умолчанию там уже будут классы nav, flex-column (в случае вертикальной ориентации) и nav-pills в случае применения стиля Pills
+    // по умолчанию там уже будут классы "nav", "flex-column" (в случае вертикальной ориентации) и "nav-pills" (в случае применения стиля Pills)
     nav.AddCSS("flex-sm-row");
 
     nav.AddNav("Active", "nav-home", "#").IsActive = true;
