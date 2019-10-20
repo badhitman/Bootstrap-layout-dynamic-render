@@ -187,7 +187,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ```cshtml
 <header>
   @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, false);
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
     nav.AddNav("Active", "nav-home", "#").IsActive = true;
 
     NavItemModel dropdown_nav = nav.AddNav("Dropdown", "dropdown-nav", "#");
