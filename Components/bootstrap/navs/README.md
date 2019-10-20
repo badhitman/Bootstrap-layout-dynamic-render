@@ -191,12 +191,12 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
     nav.AddNav("Active", "nav-home", "#").IsActive = true;
 
     NavItemModel dropdown_nav = nav.AddNav("Dropdown", "dropdown-nav", "#");
-    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-1") { Header = "Action", Href = "#" });
-    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-2") { Header = "Another action", Href = "#" });
-    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-3") { Header = "Something else here", Href = "#" });
-    dropdown_nav.AddDomNode(null);//<div class="dropdown-divider"></div>
-    dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-4") { Header = "Separated link", Href = "#" });
-                    
+    dropdown_nav.AddSubNav("Action", "dropdown-item-1", "#");
+    dropdown_nav.AddSubNav("Another action", "dropdown-item-2", "#");
+    dropdown_nav.AddSubNav("Something else here", "dropdown-item-3", "#");
+    dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
+    dropdown_nav.AddSubNav("Separated link", "dropdown-item-4", "#");
+
     nav.AddNav("Link", "nav-link-second", "#");
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
 
