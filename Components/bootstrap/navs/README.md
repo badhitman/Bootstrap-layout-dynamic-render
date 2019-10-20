@@ -187,7 +187,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ```cshtml
 <header>
   @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, false);
     nav.AddNav("Active", "nav-home", "#").IsActive = true;
 
     NavItemModel dropdown_nav = nav.AddNav("Dropdown", "dropdown-nav", "#");
@@ -202,14 +202,24 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
 ![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../../demo/nav-dropdowns-tabs-ul-li-a.jpg)
 
 ## [Pills with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
-> дополняется ...
+```cshtml
+<header>
+  @{
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, false);
+    ...
+  }
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+</header>
+```
+***result:***
+![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../../demo/nav-dropdowns-pills-ul-li-a.jpg)
 
 ## [JavaScript behavior](https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior)
 > дополняется ...
