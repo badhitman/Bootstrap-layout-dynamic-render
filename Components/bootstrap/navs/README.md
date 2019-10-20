@@ -170,6 +170,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
     // метод добавления пользовательских классов в дочерние елементы (пункты меню на уровне тега <a></a>)
     // по умолчанию <a></a> якоря уже будут иметь обязательные классы стилей. мы к ним добавляем дополнительные
+    // классы стилей будут добавлены толкьо в существующие(уже добавленые) пункты меню
     nav.ChildsAddCSS("flex-sm-fill text-sm-center");
                    
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
