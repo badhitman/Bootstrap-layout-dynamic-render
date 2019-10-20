@@ -78,7 +78,7 @@ nav.AddNav("Link", "nav-link-second", "#");
 nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;                    
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 ```
-***result:*** сравнение отображения на разных устройствах. В левой части Монитор/ПК, а в правой дисплей iPhone 6/7/8
+***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
 ![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)
 
 > Как всегда, вертикальная навигация возможна и без `<ul>`s.
