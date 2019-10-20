@@ -153,7 +153,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
 > Если вам нужны адаптивные варианты навигации, рассмотрите возможность использования ряда flexbox-утилит
 
-Через механизм установки CSS стилей можно более детально и гибко манипулировать адаптированой вёрсткой:
+Через механизм установки CSS стилей можно гибче манипулировать адаптивной вёрсткой:
 ```cshtml
 <header>
   @{
