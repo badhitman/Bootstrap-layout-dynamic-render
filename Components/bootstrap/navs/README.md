@@ -159,6 +159,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
   @{
     NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
     // добавления пользователського класса стилей блоку навигации
+	// по умолчанию там уже будут классы nav, flex-column (в случае вертикальной ориентации) и nav-pills в случае применения стиля Pills
     nav.AddCSS("flex-sm-row");
 
     nav.AddNav("Active", "nav-home", "#").IsActive = true;
@@ -167,6 +168,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true; 
 
     // метод добавления пользовательских классов в дочерние елементы (пункты меню на уровне тега <a></a>)
+	// по умолчанию <a></a> якоря уже будут иметь обязательные классы стилей. мы к ним добавляем дополнительные
     nav.ChildsAddCSS("flex-sm-fill text-sm-center");
                    
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
