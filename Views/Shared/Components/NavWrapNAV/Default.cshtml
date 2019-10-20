@@ -6,16 +6,6 @@
 <nav @Html.Raw(Model.StringAttributes) class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")" @(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
     @foreach (NavItemModel navItem in Model.GetChilds())
     {
-        if (Model is NavJavaScriptBehaviorManager)
-        {
-            navItem.AddCSS("flex-sm-fill text-sm-center", true);
-        }
-
-        if (Model.NavigationOrientation == NavOrientationsEnum.HorizontallyFlexUtilities)
-        {
-            navItem.AddCSS("flex-sm-fill text-sm-center", true);
-        }
-
         @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem });
     }
 </nav>

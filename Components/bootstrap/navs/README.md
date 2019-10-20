@@ -66,7 +66,15 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 
 > Нужно складывать их на некоторых видовых экранах, но не на других? Используйте адаптивные версии (например, `.flex-sm-column`).
 ```c#
-NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.VerticallySm);
+NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
+nav.ClearCSS();
+nav.AddCSS("flex-md-column");
+
+nav.AddNav("Active", "nav-home", "#").IsActive = true;
+nav.AddNav("Link", "nav-link", "#");
+nav.AddNav("Link", "nav-link-second", "#");
+nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;                    
+nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
 ```
 ***result:***
 ![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)

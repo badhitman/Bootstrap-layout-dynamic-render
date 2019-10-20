@@ -41,33 +41,9 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
         HorizontallyJustified,
 
         /// <summary>
-        /// If you need responsive nav variations, consider using a series of flexbox utilities.
-        /// While more verbose, these utilities offer greater customization across responsive breakpoints.
-        /// </summary>
-        HorizontallyFlexUtilities,
-
-        /// <summary>
         /// Stack your navigation by changing the flex item direction with the .flex-column utility.
         /// </summary>
         Vertically,
-
-        // flex-column-reverse
-        VerticallyReverse,
-
-        /// <summary> 
-        /// Need to stack them on some viewports but not others? Use the responsive versions (e.g., .flex-sm-column).
-        /// </summary>
-        VerticallySm,
-
-        // flex-sm-column-reverse
-        VerticallySmReverse,
-
-        VerticallyMd,
-        VerticallyMdReverse,
-        VerticallyLg,
-        VerticallyLgReverse,
-        VerticallyXl,
-        VerticallyXlReverse,
 
         /// <summary>
         /// Вертикальное меню слева от тела страницы

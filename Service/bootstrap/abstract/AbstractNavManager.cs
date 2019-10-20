@@ -83,7 +83,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         {
             IsTabsStyle = SetTabsStyle;
             NavigationOrientation = SetNavigationOrientation;
-            
+
             AddCSS("nav");
             switch (NavigationOrientation)
             {
@@ -97,48 +97,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                     AddCSS("flex-column");
                     IsTabsStyle = false;
                     break;
-                case NavOrientationsEnum.VerticallyReverse:
-                    AddCSS("flex-column-reverse");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallySm:
-                    AddCSS("flex-sm-column");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallySmReverse:
-                    AddCSS("flex-sm-column-reverse");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallyMd:
-                    AddCSS("flex-md-column");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallyMdReverse:
-                    AddCSS("flex-md-column-reverse");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallyLg:
-                    AddCSS("flex-lg-column");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallyLgReverse:
-                    AddCSS("flex-lg-column-reverse");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallyXl:
-                    AddCSS("flex-xl-column");
-                    IsTabsStyle = false;
-                    break;
-                case NavOrientationsEnum.VerticallyXlReverse:
-                    AddCSS("flex-xl-column-reverse");
-                    IsTabsStyle = false;
-                    break;
                 case NavOrientationsEnum.HorizontallyFill:
                     AddCSS("nav-fill");
-                    break;
-                case NavOrientationsEnum.HorizontallyFlexUtilities:
-                    AddCSS("flex-column flex-sm-row", true);
-                    NavWrapperType = NavWrapperTypesEnum.nav;
                     break;
                 case NavOrientationsEnum.HorizontallyJustified:
                     AddCSS("nav-justified");

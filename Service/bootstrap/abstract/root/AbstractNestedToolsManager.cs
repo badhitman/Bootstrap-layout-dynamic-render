@@ -37,6 +37,16 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         //
         ///////////////////////////////////////////////////////////
         #endregion
+        
+        public void ChildsAddCSS(string css_class)
+        {
+            foreach(AbstractDomManager child in Childs)
+            {
+                child.AddCSS(css_class, true);
+                if (child is AbstractNestedToolsManager || child.GetType().IsSubclassOf(typeof(AbstractNestedToolsManager)))
+                    ((AbstractNestedToolsManager)child).ChildsAddCSS(css_class);
+            }
+        }
 
         /// <summary>
         /// Установить класс объекту по его Id_DOM

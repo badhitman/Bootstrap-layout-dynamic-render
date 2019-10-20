@@ -257,6 +257,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             return this;
         }
 
+        public AbstractDomManager ClearCSS()
+        {
+            css.Clear();
+            return this;
+        }
+
         /// <summary>
         /// Получить CSS классы одной строкой (разделитель пробел)
         /// </summary>
