@@ -202,7 +202,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:*** _примеры обозначены с свёрнутым (слева синим) и развёрнутым (справа красным) блоком вложенного под-меню_
@@ -219,7 +219,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 </header>
 ```
 ***result:*** _примеры обозначены с свёрнутым (слева синим) и развёрнутым (справа красным) блоком вложенного под-меню_
-![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../../demo/nav-dropdowns-pills-ul-li-a.jpg)
+![Bootstrap - Tabs with dropdowns (base demo pills dropdowns ul->li->a)](../../../demo/nav-dropdowns-pills-ul-li-a.jpg)
 
 ## [JavaScript behavior](https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior)
 > дополняется ...
