@@ -241,3 +241,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ```
 ***result:***
 ![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior ul->li->a)](../../../demo/nav-tabs-js-behavior-ul-li-a.jpg)
+
+> Как всегда, вертикальная навигация возможна и без `<ul>`s.
+***result:***
+![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior nav->div->a)](../../../demo/nav-tabs-js-behavior-nav-div-a.jpg)

@@ -11,7 +11,11 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme)
         {
             ViewBag.IsPillsTheme = SetPillsTheme;
-            return View(navManager);
+            if (navManager is NavJavaScriptBehaviorManager)
+                return View("Wrap", navManager);
+            else
+                return View(navManager);
+
         }
     }
 }
