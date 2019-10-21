@@ -55,7 +55,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 ## [Vertical](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > Сделать навигацию в виде стэка можно изменив направление элемента flex с помощью утилиты .flex-column.
 
-Горизонтальное расположение в виде стэка определяется через ориентацию. Так же как и при обычном базовом подходе:
+Горизонтальное расположение в виде стэка определяется через ориентацию (параметр конструктора менеджера навигации):
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
 ```
@@ -65,9 +65,9 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 > Нужно складывать их на некоторых видовых экранах, но не на других? Используйте адаптивные версии (например, `.flex-sm-column`).
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
-// удаляем стандартный для вертикального позиционирования CSS стилей
+// удаляем стандартный для вертикального позиционирования CSS стиль
 nav.RemoveCSS("flex-column");
-// добавляем другой CSS стилей
+// добавляем (селективный) CSS стиль
 nav.AddCSS("flex-md-column");
 
 nav.AddNav("Active", "nav-home", "#").IsActive = true;
