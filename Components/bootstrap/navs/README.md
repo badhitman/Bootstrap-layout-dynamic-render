@@ -257,7 +257,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ***result:***
 ![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior nav->div->a)](../../../demo/nav-tabs-js-behavior-nav-div-a.jpg)
 
-> Плагин **tabs** также работает с **pills**.
+> Плагин **JavaScript behavior** также работает с **pills**.
 
 ***result:***
 ![Bootstrap - Tabs (as Pills) JavaScript behavior (base demo JavaScript behavior ul->li->a)](../../../demo/nav-pills-js-behavior-ul-li-a.jpg)
