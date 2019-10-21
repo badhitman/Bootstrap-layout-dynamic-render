@@ -70,6 +70,25 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
             }
         }
 
+        //public void ActivateNavItem(int IndexActivate)
+        //{
+        //    if (IndexActivate < 0 || IndexActivate + 1 > Childs.Count)
+        //        throw new ArgumentOutOfRangeException(nameof(IndexActivate));
+
+        //    for (int i = 0; i < Childs.Count; i++)
+        //        ((NavItemModel)Childs[i]).IsActive = i == IndexActivate;
+
+        //}
+
+        //public void ActivateNavItem(string IdActivate)
+        //{
+        //    if (string.IsNullOrWhiteSpace(IdActivate))
+        //        throw new ArgumentNullException(nameof(IdActivate));
+
+        //    for (int i = 0; i < Childs.Count; i++)
+        //        ((NavItemModel)Childs[i]).IsActive = IdActivate.ToLower() == Childs[i].Id_DOM.ToLower();
+        //}
+
         /// <summary>
         /// Сброс состояния (IsActive||IsDisable) всех пунктов меню
         /// </summary>
@@ -107,6 +126,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
                     break;
             }
+
+            if(this is NavJavaScriptBehaviorManager)
+                SetAttribute("role", "tablist");
+
         }
     }
 }

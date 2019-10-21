@@ -4,6 +4,7 @@
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 {
@@ -37,7 +38,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
                 logger.LogError("Нет смысла совмещать Pills и Tabs. Устраните ошибку");
 
             ViewBag.IsPillsTheme = SetPillsTheme;
-
+            
             return View(navManager);
         }
     }

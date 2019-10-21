@@ -2,6 +2,7 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
+using System;
 using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
@@ -26,15 +27,19 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public Dictionary<string, string> CacheContents { get; private set; } = new Dictionary<string, string>();
 
-        public NavJavaScriptBehaviorManager(NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
+        public NavJavaScriptBehaviorManager(string DomId, NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
         {
-
+            Id_DOM = DomId;
         }
 
-        public void AddNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
+        public NavItemModel AddNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
         {
-            AddDomNode(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId });
+            NavItemModel navItem = new NavItemModel(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId, Id_DOM = SetNavId + "-tab" };
+            navItem.SetAttribute(new Dictionary<string, string>() { { "data-toggle", "tab" }, { "role", "tab" }, { "aria-controls", SetNavId } });
+            
+            AddDomNode(navItem);
             CacheContents.Add(SetNavId, SetNavCachedContent);
-        }
+            return (NavItemModel)Childs[Childs.Count - 1];
+        }        
     }
 }

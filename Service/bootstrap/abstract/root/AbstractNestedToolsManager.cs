@@ -18,7 +18,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         protected internal List<AbstractDomManager> Childs = new List<AbstractDomManager>();
 
-        public AbstractDomManager[] GetChilds() => Childs.ToArray();
+        public virtual AbstractDomManager[] GetChilds() => Childs.ToArray();
 
         /// <summary>
         /// Прямое добавление дочернего/вложеного элемента.
