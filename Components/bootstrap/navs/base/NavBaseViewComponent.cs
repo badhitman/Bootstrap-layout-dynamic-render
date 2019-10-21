@@ -4,6 +4,7 @@
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
@@ -35,10 +36,13 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
             }
 
             if (navManager.IsTabsStyle && SetPillsTheme)
-                logger.LogError("Нет смысла совмещать Pills и Tabs. Устраните ошибку");
-
+            {
+                string msg = "Нельзя совмещать Pills и Tabs.";
+                logger.LogError(msg + " Устраните ошибку");
+                throw new ArgumentException(msg, nameof(SetPillsTheme));
+            }
             ViewBag.IsPillsTheme = SetPillsTheme;
-            
+
             return View(navManager);
         }
     }

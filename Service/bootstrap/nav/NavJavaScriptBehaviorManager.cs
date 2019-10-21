@@ -35,7 +35,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         public NavItemModel AddNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
         {
             NavItemModel navItem = new NavItemModel(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId, Id_DOM = SetNavId + "-tab" };
-            navItem.SetAttribute(new Dictionary<string, string>() { { "data-toggle", "tab" }, { "role", "tab" }, { "aria-controls", SetNavId } });
+            navItem.SetAttribute(new Dictionary<string, string>() { { "data-toggle", this.IsTabsStyle ? "tab" : "pill" }, { "role", "tab" }, { "aria-controls", SetNavId } });
             
             AddDomNode(navItem);
             CacheContents.Add(SetNavId, SetNavCachedContent);
