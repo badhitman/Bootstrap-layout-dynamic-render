@@ -91,13 +91,15 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 > За основу берется базовая навигация и добавляется `.nav-tabs` класс для создания интерфейса с вкладками.
 Используйте их для создания вкладочных областей с помощью `JavaScript tab` плагина.
 
+1. Нельзя совмещать стили **Tabs** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно
+2. Для стиля **Tabs** не предусмотрено вертикальное позиционирование
+
 **Tabs** стиль определяется через конструктор менеджера навигации (третий парамтр:`bool SetTabsStyle`)
 ```c#
 NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
 ```
 ***result:***
 ![Bootstrap - Tabs style (base demo tabs ul->li->a)](../../../demo/nav-tabs-ul-li-a.jpg)
-Не следует совмещать стили **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно
 
 > Традиционно, навигация возможна и без `<ul>`s.
 
