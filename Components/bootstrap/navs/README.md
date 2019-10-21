@@ -264,7 +264,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
 > И с вертикальными Pills.
 
-Для `JavaScript behavior` в вертикальном положении используется шаблон адаптивной разметки, взятой с официального сайта:
+Для `JavaScript behavior` в вертикальном положении используется шаблон адаптивной разметки, взятой из примера с официального сайта:
 ```html
 <div class="row">
   <div class="col-3">
