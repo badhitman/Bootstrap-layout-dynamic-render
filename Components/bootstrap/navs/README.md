@@ -112,6 +112,8 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ## [Pills](https://getbootstrap.com/docs/4.3/components/navs/#pills)
 > Возьмите базовую навигацию, но примените к нему `.nav-pills`
 
+Нельзя совмещать стили **Pills** и **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** одновременно
+
 Включение **nav-pills** производиться через соостветвующее поле параметра вызова базового компонента навигации `SetPillsTheme = true`.
 
 ```cshtml
@@ -119,7 +121,6 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ```
 ***result:***
 ![Bootstrap - Pills style (base demo Pills ul->li->a)](../../../demo/nav-pills-ul-li-a.jpg)
-Не следует совмещать стили **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно
 
 ## [Fill and justify](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
 > Для принудительного расширения `.nav`s по всей доступной ширине применяется один из двух классов-модификаторов.
