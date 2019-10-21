@@ -246,5 +246,10 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 Обратите внимание, что если вы используете `<nav>`, вы не должны добавлять `role="tablist"` непосредственно к нему, так как это переопределит собственную роль элемента в качестве ориентира навигации.
 Вместо этого происходит переключение на альтернативный элемент (в примере ниже, простой `<div>`), а он в свою очередь оберачивается тегом `<nav>`.
 
+Для того что бы компонент навигации ипользовал теги ссылок `<a>` внутри `<nav>` - достаточно указать другой тип обёртки:
+
+```c#
+nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+```
 ***result:***
 ![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior nav->div->a)](../../../demo/nav-tabs-js-behavior-nav-div-a.jpg)
