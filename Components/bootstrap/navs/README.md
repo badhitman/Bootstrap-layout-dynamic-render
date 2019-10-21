@@ -232,6 +232,8 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
     nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
     nav.AddNav("Profile", "nav-profile", contetnt_profile);
     nav.AddNav("Contact", "nav-contact", contetnt_contact);
+
+	nav.IsFadeStyle = true;
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
   @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
