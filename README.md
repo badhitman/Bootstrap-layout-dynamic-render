@@ -112,4 +112,4 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 ![Bootstrap - pagination demo 3](./demo/pagination3.png)
 
 ## [Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
-> [дополняется ...]((https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar))
+> [дополняется ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
