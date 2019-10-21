@@ -2,7 +2,7 @@
 
 @using BootstrapViewComponents
 
-@model List<BreadcrumbsViewComponent.BreadcrumbItem>
+@model List<Breadcrumbs.BreadcrumbItem>
 
 @if (Model.Count > 0)
 {
@@ -10,7 +10,7 @@
 }
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        @foreach (BreadcrumbsViewComponent.BreadcrumbItem item in Model)
+        @foreach (Breadcrumbs.BreadcrumbItem item in Model)
         {
             bool this_is_current_page = string.IsNullOrEmpty(item.href);
             if (this_is_current_page)

@@ -2,7 +2,6 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
-using BootstrapViewComponentsRazorLibrary.Models;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 

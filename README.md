@@ -98,7 +98,7 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 @if (!(pagination is null) && pagination is PaginationManager)
 {
     <p>
-        @await Component.InvokeAsync(typeof(PaginationViewComponent).Name, new { pagination = pagination })
+        @await Component.InvokeAsync(typeof(Pagination).Name, new { pagination = pagination })
     </p>
 }
 ```

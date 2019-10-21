@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace BootstrapViewComponents
 {
-    public class BreadcrumbsViewComponent : ViewComponent
+    public class Breadcrumbs : ViewComponent
     {
         public class BreadcrumbItem
         {
