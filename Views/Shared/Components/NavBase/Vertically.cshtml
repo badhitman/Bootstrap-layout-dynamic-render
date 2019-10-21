@@ -1,0 +1,40 @@
+﻿@*© https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Service.bootstrap
+@using BootstrapViewComponentsRazorLibrary.Components.html
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
+@using BootstrapViewComponentsRazorLibrary.Models.bootstrap
+@model AbstractNavManager
+@if (!string.IsNullOrEmpty(Model.Before_coment_block))
+{
+    await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.Before_coment_block });
+}
+@{
+    string ViewComponentName = Model.NavWrapperType == BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul ? typeof(NavWrapUL).Name : typeof(NavWrapNAV).Name;
+}
+@await Component.InvokeAsync(ViewComponentName, new { navManager = Model, SetPillsTheme = ViewBag.IsPillsTheme })
+@if (Model is NavJavaScriptBehaviorManager)
+{
+    NavJavaScriptBehaviorManager NavJavaScriptBehavior = Model as NavJavaScriptBehaviorManager;
+    string id_active_nav = "";
+    foreach (NavItemModel navItem in NavJavaScriptBehavior.GetChilds())
+    {
+        if (navItem.IsActive)
+        {
+            id_active_nav = navItem.Href.Substring(1);
+            break;
+        }
+    }
+
+    string fade_style = NavJavaScriptBehavior.IsFadeStyle ? " fade" : string.Empty;
+    @:<div class="tab-content" id="@(Model.Id_DOM)Content">
+        //string set_first_tab_as_active = " show active";
+        foreach (KeyValuePair<string, string> kvp in NavJavaScriptBehavior.CacheContents)
+        {
+            <div class="tab-pane @fade_style@(id_active_nav.ToLower()==kvp.Key.ToLower()?" show active":"")" id="@kvp.Key" role="tabpanel" aria-labelledby="@kvp.Key-tab">@kvp.Value</div>
+        }
+    @:</div>
+}
+@if (!string.IsNullOrEmpty(Model.After_coment_block))
+{
+    await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.After_coment_block });
+}

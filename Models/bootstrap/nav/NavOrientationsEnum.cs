@@ -43,11 +43,6 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
         /// <summary>
         /// Stack your navigation by changing the flex item direction with the .flex-column utility.
         /// </summary>
-        Vertically,
-
-        /// <summary>
-        /// Вертикальное меню слева от тела страницы
-        /// </summary>
-        VerticalNavMmenuOnTheLeft
+        Vertically
     }
 }

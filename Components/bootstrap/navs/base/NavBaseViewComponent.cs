@@ -41,6 +41,14 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
                 logger.LogError(msg + " Устраните ошибку");
                 throw new ArgumentException(msg, nameof(SetPillsTheme));
             }
+
+            if (navManager.IsTabsStyle && navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.Vertically)
+            {
+                string msg = "Для Tabs не предусмотрено вертикальное позиционирование.";
+                logger.LogError(msg + " Устраните ошибку");
+                throw new ArgumentException(msg, nameof(navManager.NavigationOrientation));
+            }
+
             ViewBag.IsPillsTheme = SetPillsTheme;
 
             return View(navManager);
