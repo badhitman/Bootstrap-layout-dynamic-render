@@ -51,6 +51,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 
             ViewBag.IsPillsTheme = SetPillsTheme;
 
+            if(navManager is NavJavaScriptBehaviorManager && navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.Vertically)
+                return View("VerticallyNavJavaScriptBehavior", navManager);
+
             return View(navManager);
         }
     }

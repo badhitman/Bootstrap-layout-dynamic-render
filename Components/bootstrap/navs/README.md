@@ -260,4 +260,9 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 > Плагин **JavaScript behavior** также работает с **pills**.
 
 ***result:***
-![Bootstrap - Tabs (as Pills) JavaScript behavior (base demo JavaScript behavior ul->li->a)](../../../demo/nav-pills-js-behavior-ul-li-a.jpg)
+![Bootstrap - JavaScript behavior (as Pills) (base demo JavaScript behavior ul->li->a)](../../../demo/nav-pills-js-behavior-ul-li-a.jpg)
+
+> И с вертикальными Pills.
+
+***result:***
+![Bootstrap - JavaScript behavior (as Vertical Pills) (base demo JavaScript behavior ul->li->a)](../../../demo/nav-vertical-pills-js-behavior-ul-li-a.jpg)
