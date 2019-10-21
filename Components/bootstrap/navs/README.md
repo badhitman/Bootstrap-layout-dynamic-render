@@ -79,7 +79,7 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
 ![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)
 
-> Как всегда, вертикальная навигация возможна и без `<ul>`s.
+> Традиционно, вертикальная навигация возможна и без `<ul>`s.
 ```c#
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
 ```
@@ -99,7 +99,7 @@ NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", Bo
 ![Bootstrap - Tabs style (base demo tabs ul->li->a)](../../../demo/nav-tabs-ul-li-a.jpg)
 Не следует совмещать стили **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** и **[Pills](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#pills)** одновременно
 
-> Как всегда, навигация возможна и без `<ul>`s.
+> Традиционно, навигация возможна и без `<ul>`s.
 
 ```c#
 nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
@@ -242,6 +242,6 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 ***result:***
 ![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior ul->li->a)](../../../demo/nav-tabs-js-behavior-ul-li-a.jpg)
 
-> Как всегда, вертикальная навигация возможна и без `<ul>`s.
+> Традиционно, навигация возможна и без `<ul>`s.
 ***result:***
 ![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior nav->div->a)](../../../demo/nav-tabs-js-behavior-nav-div-a.jpg)
