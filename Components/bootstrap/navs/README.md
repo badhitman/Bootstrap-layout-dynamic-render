@@ -229,7 +229,6 @@ nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesE
 
     NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.HorizontallyLeftAligned, true);
     nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
-
     nav.AddNav("Profile", "nav-profile", contetnt_profile);
     nav.AddNav("Contact", "nav-contact", contetnt_contact);
 
