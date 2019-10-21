@@ -68,7 +68,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public AbstractNavManager NavRight { get; set; }
 
-        public NavbarManager(string AddingNavClassCSS = "", BackgroundColorThemesEnum SetBackgroundColorTheme = BackgroundColorThemesEnum.light, NavbarColorSchemesEnum SetNavbarColorScheme = NavbarColorSchemesEnum.light, BootstrapSizingEnum SetNavbarExpandSize = BootstrapSizingEnum.Lg)
+        public NavbarManager(BackgroundColorThemesEnum SetBackgroundColorTheme = BackgroundColorThemesEnum.light, NavbarColorSchemesEnum SetNavbarColorScheme = NavbarColorSchemesEnum.light, BootstrapSizingEnum SetNavbarExpandSize = BootstrapSizingEnum.Lg)
         {
             AddCSS("navbar");
 
@@ -83,8 +83,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             if (SetNavbarColorScheme != NavbarColorSchemesEnum.NULL)
                 AddCSS("navbar-" + SetNavbarColorScheme.ToString());
 
-            if (!string.IsNullOrWhiteSpace(AddingNavClassCSS))
-                AddCSS(AddingNavClassCSS, true);
+
 
         }
     }
