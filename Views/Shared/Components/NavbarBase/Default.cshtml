@@ -1,0 +1,12 @@
+﻿@*© https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Service
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
+@model NavbarManager
+@{
+    //string SetBrandHeader, string SetBrandHref, string SetBrandImgSrc
+}
+    <nav class="@Model.StringCSS">
+        @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetBrandHeader = Model.NavbarBrand?.Header, SetBrandHref = Model.NavbarBrand?.Href, SetBrandImgSrc = Model.ImageNavbarBrandSrc })
+        
+        
+    </nav>

@@ -8,7 +8,7 @@ namespace BootstrapViewComponents
     /// </summary>
     public enum BootstrapSizingEnum
     {
-        NULL,
+        NULL,//{-sm|-md|-lg|-xl}
 
         /// <summary>
         /// Fancy smaller

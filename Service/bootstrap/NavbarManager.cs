@@ -20,6 +20,11 @@ namespace BootstrapViewComponentsRazorLibrary.Service
     public class NavbarManager : AbstractDomManager
     {
         /// <summary>
+        /// Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl} for responsive collapsing and color scheme classes.
+        /// </summary>
+        public BootstrapSizingEnum NavbarExpandSize { get; set; } = BootstrapSizingEnum.NULL;
+
+        /// <summary>
         /// Color schemes
         /// 
         /// Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities.
@@ -37,20 +42,23 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         public NavbarColorSchemesEnum NavbarColorScheme { get; private set; } = NavbarColorSchemesEnum.NULL;
 
         /// <summary>
-        /// Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl} for responsive collapsing and color scheme classes.
+        /// Позиционирование для размещения навигационных панелей в нестатических положениях
         /// </summary>
-        public BootstrapSizingEnum NavbarExpandSize { get; private set; } = BootstrapSizingEnum.NULL;
+        public NavbarPlacementsEnum NavbarPlacement { get; set; } = NavbarPlacementsEnum.Default;
 
-        /// <summary>
-        /// Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size.
-        /// Here are some examples to demonstrate.
-        /// </summary>
-        public string ImageNavbarBrand { get; set; } = null;
 
         /// <summary>
         /// The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
         /// </summary>
         public NavItemModel NavbarBrand { get; set; } = null;
+
+        /// <summary>
+        /// Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size.
+        /// Here are some examples to demonstrate.
+        /// </summary>
+        public string ImageNavbarBrandSrc { get; set; } = null;
+
+
 
         public AbstractNavManager NavLeft { get; set; }
 
@@ -67,23 +75,13 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public AbstractNavManager NavRight { get; set; }
 
-        public NavbarManager(BackgroundColorThemesEnum SetBackgroundColorTheme = BackgroundColorThemesEnum.light, NavbarColorSchemesEnum SetNavbarColorScheme = NavbarColorSchemesEnum.light, BootstrapSizingEnum SetNavbarExpandSize = BootstrapSizingEnum.Lg)
+
+
+        public NavbarManager(BootstrapSizingEnum SetNavbarExpandSize = BootstrapSizingEnum.Lg, BackgroundColorThemesEnum SetBackgroundColorTheme = BackgroundColorThemesEnum.light, NavbarColorSchemesEnum SetNavbarColorScheme = NavbarColorSchemesEnum.light)
         {
-            AddCSS("navbar");
-
             NavbarExpandSize = SetNavbarExpandSize;
-            if (NavbarExpandSize != BootstrapSizingEnum.NULL)
-                AddCSS("navbar-expand-" + NavbarExpandSize.ToString().ToLower());
-
             BackgroundColorTheme = SetBackgroundColorTheme;
-            if (BackgroundColorTheme != BackgroundColorThemesEnum.NULL)
-                AddCSS("bg-" + BackgroundColorTheme.ToString());
-
-            if (SetNavbarColorScheme != NavbarColorSchemesEnum.NULL)
-                AddCSS("navbar-" + SetNavbarColorScheme.ToString());
-
-
-
+            NavbarColorScheme = SetNavbarColorScheme;
         }
     }
 }

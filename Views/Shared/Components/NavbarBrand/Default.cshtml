@@ -1,0 +1,29 @@
+﻿@*© https://github.com/badhitman - @fakegov*@
+@{
+    string BrandHeader = ViewBag.BrandHeader;
+    string BrandHref = ViewBag.BrandHref;
+    string BrandImgSrc = ViewBag.BrandImgSrc;
+}
+@if (string.IsNullOrWhiteSpace(BrandHeader) && string.IsNullOrWhiteSpace(BrandHref) && string.IsNullOrWhiteSpace(BrandImgSrc))
+{
+    @: <!--Navbar brand not established-->
+}
+else
+{
+
+    @if (!string.IsNullOrWhiteSpace(BrandHref) || !string.IsNullOrWhiteSpace(BrandImgSrc))
+    {
+        if (string.IsNullOrWhiteSpace(BrandImgSrc))
+        {
+            @: <a class="navbar-brand" href="@(string.IsNullOrWhiteSpace(BrandHref) ? "#" : BrandHref)">@BrandHeader</a>
+        }
+        else
+        {
+            @: <a href="@(string.IsNullOrWhiteSpace(BrandHref) ? "#" : BrandHref)"><img src="@Html.Raw(BrandImgSrc)" width="30" height="30" class="d-inline-block align-top" alt="Brand img @BrandHeader">@BrandHeader</a>
+        }
+    }
+    else
+    {
+        @: <span class="navbar-brand mb-0 h1">@BrandHeader</span>
+    }
+}

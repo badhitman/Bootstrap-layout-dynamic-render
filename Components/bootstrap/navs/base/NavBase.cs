@@ -5,7 +5,6 @@ using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 {
