@@ -13,6 +13,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 
         public void AddSubNode(FormManager navbarform)
         {
+            navbarform.AddCSS("form-inline");
             Childs.Add(navbarform);
         }
 

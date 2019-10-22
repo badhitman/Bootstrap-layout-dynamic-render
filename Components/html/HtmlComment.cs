@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.html
 {
-    public class HtmlCommentViewComponent : ViewComponent
+    public class HtmlComment : ViewComponent
     {
         public IViewComponentResult Invoke(string MessageComment)
         {

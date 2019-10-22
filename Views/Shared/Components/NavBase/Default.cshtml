@@ -6,7 +6,7 @@
 @model AbstractNavManager
 @if (!string.IsNullOrEmpty(Model.Before_coment_block))
 {
-    await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.Before_coment_block });
+    await Component.InvokeAsync(typeof(HtmlComment).Name, new { MessageComment = Model.Before_coment_block });
 }
 @{
     string ViewComponentName = Model.NavWrapperType == BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul ? typeof(NavWrapUL).Name : typeof(NavWrapNAV).Name;
@@ -36,5 +36,5 @@
 }
 @if (!string.IsNullOrEmpty(Model.After_coment_block))
 {
-    await Component.InvokeAsync(typeof(HtmlCommentViewComponent).Name, new { MessageComment = Model.After_coment_block });
+    await Component.InvokeAsync(typeof(HtmlComment).Name, new { MessageComment = Model.After_coment_block });
 }
