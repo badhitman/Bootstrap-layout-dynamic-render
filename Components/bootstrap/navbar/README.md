@@ -10,7 +10,7 @@
 
 > Navbars поставляются со встроенной поддержкой [нескольких субкомпонентов](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
 
-- **.navbar-brand** для названия вашей компании, продукта или проекта. В том числе с аватаркой/картинкой.
+- [**.navbar-brand**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#brand) для названия вашей компании, продукта или проекта. В том числе с аватаркой/картинкой.
 - **.navbar-nav** для `full-height` и `lightweight` навигации (включая поддержку выпадающих меню).
 - **.navbar-toggler** для использования с нашим плагином _collapse_ и другими способами переключения навигации.
 - **.form-inline** для любых элементов управления и действий формы.
