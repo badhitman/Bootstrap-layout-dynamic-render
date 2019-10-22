@@ -1,6 +1,7 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Service
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
+@using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarManager
 @{
     //string SetBrandHeader, string SetBrandHref, string SetBrandImgSrc
@@ -12,9 +13,7 @@
     }
     @if (Model.NavbarBody != null)
     {
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        @await Component.InvokeAsync(typeof(NavbarToggler).Name, new { navbarToggler = new NavbarTogglerManager() { TargetName = "navbarNav" } })
     }
     @if (Model.NavbarBrand.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Right)
     {
@@ -22,12 +21,19 @@
     }
     @if (Model.NavbarBody != null)
     {
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            @if (Model.NavbarBrand.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Hides)
-            {
-                @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetBrandHeader = Model.NavbarBrand.NavbarBrandDom?.Header, SetBrandHref = Model.NavbarBrand.NavbarBrandDom?.Href, SetBrandImgSrc = Model.NavbarBrand.ImageNavbarBrandSrc })
-            }
-
-        </div>
+        @if (Model.NavbarBody.IsHidesCollapse)
+        {
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                @if (Model.NavbarBrand.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Hides)
+                {
+                    @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetBrandHeader = Model.NavbarBrand.NavbarBrandDom?.Header, SetBrandHref = Model.NavbarBrand.NavbarBrandDom?.Href, SetBrandImgSrc = Model.NavbarBrand.ImageNavbarBrandSrc })
+                }
+                @await Component.InvokeAsync(typeof(NavbarBody).Name, new { navbarBody = Model.NavbarBody })
+            </div>
+        }
+        else
+        {
+            @await Component.InvokeAsync(typeof(NavbarBody).Name, new { navbarBody = Model.NavbarBody })
+        }
     }
 </nav>

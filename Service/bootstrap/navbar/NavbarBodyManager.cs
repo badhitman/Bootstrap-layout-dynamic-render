@@ -10,5 +10,20 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
     public class NavbarBodyManager : AbstractSafeNestedToolsManager
     {
         public bool IsHidesCollapse { get; set; } = true;
+
+        public void AddSubNode(FormManager navbarform)
+        {
+            Childs.Add(navbarform);
+        }
+
+        public void AddSubNode(NavbarTextManager navbarText)
+        {
+            Childs.Add(navbarText);
+        }
+
+        public void AddSubNode(NavbarNavManager navbarNav)
+        {
+            Childs.Add(navbarNav);
+        }
     }
 }
