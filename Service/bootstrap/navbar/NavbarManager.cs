@@ -3,7 +3,9 @@
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
+using BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
+using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
@@ -19,10 +21,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
     /// </summary>
     public class NavbarManager : AbstractDomManager
     {
+        #region Navbar настройки/стили
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //
+
         /// <summary>
         /// Navbars require a wrapping .navbar with .navbar-expand{-sm|-md|-lg|-xl} for responsive collapsing and color scheme classes.
         /// </summary>
-        public BootstrapSizingEnum NavbarExpandSize { get; set; } = BootstrapSizingEnum.NULL;
+        public BootstrapSizingEnum NavbarExpandSize { get; set; } = BootstrapSizingEnum.Lg;
 
         /// <summary>
         /// Color schemes
@@ -31,7 +37,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Choose from.navbar-light for use with light background colors, or.navbar-dark for dark background colors.
         /// Then, customize with .bg-* utilities.
         /// </summary>
-        public BackgroundColorThemesEnum BackgroundColorTheme { get; private set; } = BackgroundColorThemesEnum.NULL;
+        public BackgroundColorThemesEnum BackgroundColorTheme { get; private set; } = BackgroundColorThemesEnum.light;
 
         /// <summary>
         /// Color schemes
@@ -39,49 +45,47 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities.
         /// Choose from.navbar-light for use with light background colors, or.navbar-dark for dark background colors.Then, customize with .bg-* utilities.
         /// </summary>
-        public NavbarColorSchemesEnum NavbarColorScheme { get; private set; } = NavbarColorSchemesEnum.NULL;
+        public NavbarColorSchemesEnum NavbarColorScheme { get; private set; } = NavbarColorSchemesEnum.light;
 
         /// <summary>
         /// Позиционирование для размещения навигационных панелей в нестатических положениях
         /// </summary>
         public NavbarPlacementsEnum NavbarPlacement { get; set; } = NavbarPlacementsEnum.Default;
 
+        //
+        //////////////////////////////////////////////////////////////////////////////////////////
+        #endregion
 
-        /// <summary>
-        /// The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
-        /// </summary>
-        public NavItemModel NavbarBrand { get; set; } = null;
+        public NavbarBrandManager NavbarBrand { get; set; } = null;
 
-        /// <summary>
-        /// Adding images to the .navbar-brand will likely always require custom styles or utilities to properly size.
-        /// Here are some examples to demonstrate.
-        /// </summary>
-        public string ImageNavbarBrandSrc { get; set; } = null;
+        public NavbarBodyManager NavbarBody { get; set; } = null;
 
+        #region body
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //
 
-
-        public AbstractNavManager NavLeft { get; set; }
+        //public AbstractNavManager NavLeft { get; set; }
 
         /// <summary>
         /// Navbars may contain bits of text with the help of .navbar-text.
         /// This class adjusts vertical alignment and horizontal spacing for strings of text.
         /// </summary>
-        public string NavbarInlineText { get; set; }
+        //public string NavbarInlineText { get; set; }
 
         /// <summary>
         /// Place various form controls and components within a navbar with .form-inline.
         /// </summary>
-        public FormManager FormInline { get; set; } = null;
+        //public FormManager FormInline { get; set; } = null;
 
-        public AbstractNavManager NavRight { get; set; }
+        //public AbstractNavManager NavRight { get; set; }
 
+        //
+        //////////////////////////////////////////////////////////////////////////////////////////
+        #endregion
 
-
-        public NavbarManager(BootstrapSizingEnum SetNavbarExpandSize = BootstrapSizingEnum.Lg, BackgroundColorThemesEnum SetBackgroundColorTheme = BackgroundColorThemesEnum.light, NavbarColorSchemesEnum SetNavbarColorScheme = NavbarColorSchemesEnum.light)
+        public NavbarManager()
         {
-            NavbarExpandSize = SetNavbarExpandSize;
-            BackgroundColorTheme = SetBackgroundColorTheme;
-            NavbarColorScheme = SetNavbarColorScheme;
+            
         }
     }
 }

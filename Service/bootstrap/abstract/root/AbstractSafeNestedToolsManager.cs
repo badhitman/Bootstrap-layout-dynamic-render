@@ -1,44 +1,58 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
-using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
     /// <summary>
-    /// Заблокированы методы управления вложеными объектами
+    /// Извне недоступны методы управления вложеными объектами
     /// </summary>
-    public class AbstractSafeNestedToolsManager : AbstractNestedToolsManager
+    public class AbstractSafeNestedToolsManager : AbstractDomManager
     {
+        public int ChildsCount => Childs.Count;
+
         /// <summary>
-        /// ЗАПРЕЩЕНО!
-        /// В данном объекте нельзя {напрямую/вручную} манипулировать вложеными [dom] элементами.
+        /// Дочерние/вложеные элементы
         /// </summary>
-        public override void AddDomNode(AbstractDomManager child)
+        protected internal List<AbstractDomManager> Childs = new List<AbstractDomManager>();
+
+        public virtual AbstractDomManager[] GetChilds() => Childs.ToArray();
+
+        public void ChildsAddCSS(string css_class)
         {
-            throw new NotImplementedException();
-            //base.Add(child);
+            foreach (AbstractDomManager child in Childs)
+            {
+                child.AddCSS(css_class, true);
+                if (child is AbstractNestedToolsManager || child.GetType().IsSubclassOf(typeof(AbstractNestedToolsManager)))
+                    ((AbstractNestedToolsManager)child).ChildsAddCSS(css_class);
+            }
         }
 
         /// <summary>
-        /// ЗАПРЕЩЕНО!
-        /// В данном объекте нельзя {напрямую/вручную} манипулировать вложеными [dom] элементами.
+        /// Установить класс объекту по его Id_DOM
         /// </summary>
-        public override void AddRangeDomNode(List<AbstractDomManager> childs)
+        public AbstractSafeNestedToolsManager AddByIdCSS(string id_dom, string css_class)
         {
-            throw new NotImplementedException();
-            //base.AddRange(childs);
+            if (Id_DOM.ToLower().Equals(id_dom.ToLower()))
+                AddCSS(css_class);
+
+            foreach (AbstractDomManager adm in Childs.Where(x => !(x is null) && x is AbstractNestedToolsManager))
+                ((AbstractNestedToolsManager)adm).AddByIdCSS(id_dom, css_class);
+
+            return this;
         }
 
-        /// <summary>
-        /// ЗАПРЕЩЕНО!
-        /// В данном объекте нельзя {напрямую/вручную} манипулировать вложеными [dom] элементами.
-        /// </summary>
-        public override void ClearNestedDom()
+        public AbstractSafeNestedToolsManager SetAttributeById(string id_dom, string attr_name, string attr_value)
         {
-            throw new NotImplementedException();
-            //base.ClearNestedDom();
+            if (Id_DOM.ToLower().Equals(id_dom.ToLower()))
+                SetAttribute(attr_name, attr_value);
+
+            foreach (AbstractDomManager adm in Childs.Where(x => !(x is null) && x is AbstractNestedToolsManager))
+                ((AbstractNestedToolsManager)adm).SetAttributeById(id_dom, attr_name, attr_value);
+
+            return this;
         }
     }
 }

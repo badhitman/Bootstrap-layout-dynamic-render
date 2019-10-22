@@ -24,6 +24,22 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
                 logger.LogError("Для Navbar размер Block не предусмотрен. Будет сброшено на Lg");
             }
 
+            switch (navbarManager.NavbarPlacement)
+            {
+                case Models.bootstrap.NavbarPlacementsEnum.FixedTop:
+                    navbarManager.AddCSS("fixed-top");
+                    break;
+                case Models.bootstrap.NavbarPlacementsEnum.FixedBottom:
+                    navbarManager.AddCSS("fixed-bottom");
+                    break;
+                case Models.bootstrap.NavbarPlacementsEnum.StickyTop:
+                    navbarManager.AddCSS("sticky-top");
+                    break;
+                default:
+
+                    break;
+            }
+
             navbarManager.AddCSS("navbar");
             if (navbarManager.NavbarExpandSize != BootstrapViewComponents.BootstrapSizingEnum.NULL)
             {

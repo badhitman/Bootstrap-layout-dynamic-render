@@ -5,8 +5,29 @@
 @{
     //string SetBrandHeader, string SetBrandHref, string SetBrandImgSrc
 }
-    <nav class="@Model.StringCSS">
+<nav class="@Model.StringCSS">
+    @if (Model.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Left)
+    {
         @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetBrandHeader = Model.NavbarBrand?.Header, SetBrandHref = Model.NavbarBrand?.Href, SetBrandImgSrc = Model.ImageNavbarBrandSrc })
-        
-        
-    </nav>
+    }
+    @if (Model.NavbarCollapse != null)
+    {
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    }
+    @if (Model.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Right)
+    {
+        @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetBrandHeader = Model.NavbarBrand?.Header, SetBrandHref = Model.NavbarBrand?.Href, SetBrandImgSrc = Model.ImageNavbarBrandSrc })
+    }
+    @if (Model.NavbarCollapse != null)
+    {
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @if (Model.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Hides)
+            {
+                @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetBrandHeader = Model.NavbarBrand?.Header, SetBrandHref = Model.NavbarBrand?.Href, SetBrandImgSrc = Model.ImageNavbarBrandSrc })
+            }
+
+        </div>
+    }
+</nav>
