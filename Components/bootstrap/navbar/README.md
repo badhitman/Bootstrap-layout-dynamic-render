@@ -11,11 +11,11 @@
 > Navbars поставляются со встроенной поддержкой [нескольких субкомпонентов](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
 
 - [**.navbar-brand**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#brand) для названия вашей компании, продукта или проекта. В том числе с аватаркой/картинкой.
-- **.navbar-nav** для `full-height` и `lightweight` навигации (включая поддержку выпадающих меню).
-- **.navbar-toggler** для использования с нашим плагином _collapse_ и другими способами переключения навигации.
-- **.form-inline** для любых элементов управления и действий формы.
-- **.navbar-text** для добавления вертикально центрированных строк текста.
-- **.collapse.navbar-collapse** для группировки и скрытия содержимого навигационной панели.
+- [**.navbar-nav**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#nav) для `full-height` и `lightweight` навигации (включая поддержку выпадающих меню).
+- [**.navbar-toggler**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#toggler) для использования с нашим плагином _collapse_ и другими способами переключения навигации.
+- [**.form-inline**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#forms) для любых элементов управления и действий формы.
+- [**.navbar-text**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#text) для добавления вертикально центрированных строк текста.
+- [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#external-content) для группировки и скрытия содержимого навигационной панели.
 
 ## [Brand](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
 >  дополняется
