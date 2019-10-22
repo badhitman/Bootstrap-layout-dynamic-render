@@ -16,7 +16,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
         /// <summary>
         /// The .navbar-brand can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
         /// </summary>
-        public NavItemModel NavbarBrand { get; set; } = null;
+        public NavItemModel NavbarBrandDom { get; set; } = null;
 
         /// <summary>
         /// Adding images 30x30 px to the .navbar-brand will likely always require custom styles or utilities to properly size.
