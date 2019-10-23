@@ -13,7 +13,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
 
         public NavbarBase(ILoggerFactory _loggerFactory)
         {
-            logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
+            logger = _loggerFactory.CreateLogger(GetType().Name + "Class");
         }
 
         public IViewComponentResult Invoke(NavbarManager navbarManager)
@@ -24,6 +24,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
                 logger.LogError("Для Navbar размер Block не предусмотрен. Будет сброшено на Lg");
             }
 
+            navbarManager.AddCSS("navbar");
             switch (navbarManager.NavbarPlacement)
             {
                 case Models.bootstrap.NavbarPlacementsEnum.FixedTop:
@@ -40,7 +41,6 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
                     break;
             }
 
-            navbarManager.AddCSS("navbar");
             if (navbarManager.NavbarExpandSize != BootstrapViewComponents.BootstrapSizingEnum.NULL)
             {
                 navbarManager.AddCSS("navbar-expand-" + navbarManager.NavbarExpandSize.ToString().ToLower());

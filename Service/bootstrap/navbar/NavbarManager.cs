@@ -56,32 +56,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         //////////////////////////////////////////////////////////////////////////////////////////
         #endregion
 
-        public NavbarBrandManager NavbarBrand { get; set; } = null;
+        public NavbarBrandManager NavbarBrand { get; set; }
 
-        public NavbarBodyManager NavbarBody { get; set; } = null;
-
-        #region body
-        //////////////////////////////////////////////////////////////////////////////////////////
-        //
-
-        //public AbstractNavManager NavLeft { get; set; }
-
-        /// <summary>
-        /// Navbars may contain bits of text with the help of .navbar-text.
-        /// This class adjusts vertical alignment and horizontal spacing for strings of text.
-        /// </summary>
-        //public string NavbarInlineText { get; set; }
-
-        /// <summary>
-        /// Place various form controls and components within a navbar with .form-inline.
-        /// </summary>
-        //public FormManager FormInline { get; set; } = null;
-
-        //public AbstractNavManager NavRight { get; set; }
-
-        //
-        //////////////////////////////////////////////////////////////////////////////////////////
-        #endregion
+        public string CollapseTarget  => Id_DOM + "NavbarCollapsedContent";
+        public NavbarBodyManager NavbarBody { get; set; } = new NavbarBodyManager();
 
         public NavbarManager()
         {

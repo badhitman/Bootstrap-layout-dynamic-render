@@ -187,8 +187,8 @@
   @{
     NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
     nav.IsTabsStyle = true;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Link", "nav-link", "#");
+    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Link", "nav-link-second", "#");
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
