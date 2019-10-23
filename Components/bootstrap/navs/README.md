@@ -228,7 +228,7 @@
 <header>
   @{
     NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-	nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
+    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
     nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Much longer nav link", "nav-link", "#");
     nav.AddNav("Link", "nav-link-second", "#");
@@ -249,7 +249,7 @@
 <header>
   @{
     NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-	nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
+    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
     nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Much longer nav link", "nav-link", "#");
     nav.AddNav("Link", "nav-link-second", "#");
@@ -267,7 +267,7 @@
 <header>
   @{
     NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-	nav.NavigationOrientation = NavOrientationsEnum.HorizontallyJustified;
+    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyJustified;
     nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Much longer nav link", "nav-link", "#");
     nav.AddNav("Link", "nav-link-second", "#");
