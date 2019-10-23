@@ -2,9 +2,8 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
-using BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar;
-using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
@@ -60,6 +59,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public string CollapseTarget  => Id_DOM + "NavbarCollapsedContent";
         public NavbarBodyManager NavbarBody { get; set; } = new NavbarBodyManager();
+
+        public override string ViewComponentName => nameof(NavbarBase);
 
         public NavbarManager()
         {

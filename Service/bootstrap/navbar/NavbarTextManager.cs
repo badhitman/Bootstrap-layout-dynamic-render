@@ -1,14 +1,12 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
-using System;
-using System.Collections.Generic;
-using System.Text;
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 {
     public class NavbarTextManager : AbstractDomManager
     {
-
+        public override string ViewComponentName => nameof(NavbarText);
     }
 }

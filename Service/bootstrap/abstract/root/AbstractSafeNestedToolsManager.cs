@@ -9,7 +9,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
     /// <summary>
     /// Извне недоступны методы управления вложеными объектами
     /// </summary>
-    public class AbstractSafeNestedToolsManager : AbstractDomManager
+    public abstract class AbstractSafeNestedToolsManager : AbstractDomManager
     {
         public int ChildsCount => Childs.Count;
 

@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
 using BootstrapViewComponentsRazorLibrary.Models;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
@@ -9,6 +10,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
     {
         public NavbarNavWrappersEnum NavWrapper { get; set; } = NavbarNavWrappersEnum.ul;
 
-        
+        public override string ViewComponentName => nameof(NavbarNav);
     }
 }

@@ -12,6 +12,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         #region Поля
         ///////////////////////////////////////////////
         //
+
+        public abstract string ViewComponentName { get; }
+
         /// <summary>
         /// HTML Комментирование блока/элемента. Оборачивает текущий блок в два коментария (непосредственно до и после DOM блока).
         /// Если указать только начальный/верхний коментарий, то он же будет использоваться и в нижнем.
@@ -55,6 +58,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Текст HTML подсказки/title
         /// </summary>
         public string Title { get; set; } = default;
+        
         //
         ///////////////////////////////////////////////
         #endregion

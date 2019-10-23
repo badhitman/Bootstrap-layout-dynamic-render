@@ -18,7 +18,7 @@ else
         }
         else
         {
-            @: <a href="@(string.IsNullOrWhiteSpace(BrandHref) ? "#" : BrandHref)"><img src="@Html.Raw(BrandImgSrc)" width="30" height="30" class="d-inline-block align-top" alt="Brand img @BrandHeader">@BrandHeader</a>
+            @: <a class="navbar-brand" href="@(string.IsNullOrWhiteSpace(BrandHref) ? "#" : BrandHref)"><img src="@Html.Raw(BrandImgSrc)" width="30" height="30" class="d-inline-block align-top" alt="Brand img @BrandHeader">@BrandHeader</a>
         }
     }
     else

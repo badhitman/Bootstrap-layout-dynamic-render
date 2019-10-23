@@ -86,6 +86,8 @@ namespace BootstrapViewComponents
             }
         }
 
+        public override string ViewComponentName => nameof(Pagination);
+
         /// <summary>
         /// Проверка корректности номера страницы
         /// </summary>

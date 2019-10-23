@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar;
 
@@ -23,5 +24,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
         /// Here are some examples to demonstrate.
         /// </summary>
         public string ImageNavbarBrandSrc { get; set; }
+
+        public override string ViewComponentName => nameof(NavbarBrand);
     }
 }

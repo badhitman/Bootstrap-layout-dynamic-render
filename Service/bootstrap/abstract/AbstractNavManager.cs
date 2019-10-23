@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav;
 using BootstrapViewComponentsRazorLibrary.Models;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 
@@ -8,6 +9,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public abstract class AbstractNavManager : AbstractCoreNavManager
     {
+        public override string ViewComponentName => nameof(NavBase);
+
         /// <summary>
         /// доступная глубина вложенности пунктов навигации
         /// </summary>

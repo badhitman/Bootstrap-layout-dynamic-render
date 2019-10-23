@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman 
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs;
 using BootstrapViewComponentsRazorLibrary.Service;
 using System;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
         public bool IsActive { get; set; }
 
         public bool IsDisabled { get; set; }
+
+        public override string ViewComponentName => nameof(NavItemHtmlDomA);
 
         public NavItemModel(string html_dom_id)
         {

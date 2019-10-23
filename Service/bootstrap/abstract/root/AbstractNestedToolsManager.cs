@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
-    public class AbstractNestedToolsManager : AbstractSafeNestedToolsManager
+    public abstract class AbstractNestedToolsManager : AbstractSafeNestedToolsManager
     {
         /// <summary>
         /// Прямое добавление дочернего/вложеного элемента.
