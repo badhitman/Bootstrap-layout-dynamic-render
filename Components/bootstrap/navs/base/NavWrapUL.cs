@@ -10,7 +10,14 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
     {
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme)
         {
-            ViewBag.IsPillsTheme = SetPillsTheme;
+            if (SetPillsTheme)
+                navManager.AddCSS("nav-pills");
+            else if(navManager.IsTabsStyle)
+                navManager.AddCSS("nav-tabs");
+            
+            if (navManager is NavJavaScriptBehaviorManager)
+                navManager.SetAttribute("role", "tablist");
+
             return View(navManager);
         }
     }

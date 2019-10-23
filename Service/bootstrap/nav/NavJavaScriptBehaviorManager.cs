@@ -27,7 +27,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public Dictionary<string, string> CacheContents { get; private set; } = new Dictionary<string, string>();
 
-        public NavJavaScriptBehaviorManager(string DomId, NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
+        public NavJavaScriptBehaviorManager(string DomId)
         {
             Id_DOM = DomId;
         }

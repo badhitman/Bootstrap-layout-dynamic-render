@@ -1,10 +1,13 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 {
@@ -14,7 +17,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 
         public NavBase(ILoggerFactory _loggerFactory)
         {
-            logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
+            logger = _loggerFactory.CreateLogger(GetType().Name + "Class");
         }
 
         /// <summary>
@@ -25,8 +28,8 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <returns></returns>
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
         {
-            if ((navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyFill ||
-                navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.HorizontallyJustified ||
+            if ((navManager.NavigationOrientation == NavOrientationsEnum.HorizontallyFill ||
+                navManager.NavigationOrientation == NavOrientationsEnum.HorizontallyJustified ||
                 navManager.IsTabsStyle) &&
                 navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
             {
@@ -41,7 +44,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
                 throw new ArgumentException(msg, nameof(SetPillsTheme));
             }
 
-            if (navManager.IsTabsStyle && navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.Vertically)
+            if (navManager.IsTabsStyle && navManager.NavigationOrientation == NavOrientationsEnum.Vertically)
             {
                 string msg = "Для Tabs не предусмотрено вертикальное позиционирование.";
                 logger.LogError(msg + " Устраните ошибку");
@@ -50,10 +53,35 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 
             ViewBag.IsPillsTheme = SetPillsTheme;
 
-            if(navManager is NavJavaScriptBehaviorManager && navManager.NavigationOrientation == Models.bootstrap.NavOrientationsEnum.Vertically)
-                return View("VerticallyNavJavaScriptBehavior", navManager);
+            switch (navManager.NavigationOrientation)
+            {
+                case NavOrientationsEnum.HorizontallyCenterAligned:
+                    navManager.AddCSS("justify-content-center");
+                    break;
+                case NavOrientationsEnum.HorizontallyRightAligned:
+                    navManager.AddCSS("justify-content-end");
+                    break;
+                case NavOrientationsEnum.Vertically:
+                    if (!navManager.ReadCSS().Any(x => x.StartsWith("flex-") && x.EndsWith("-column")))
+                        navManager.AddCSS("flex-column");
 
-            return View(navManager);
+                    navManager.IsTabsStyle = false;
+                    break;
+                case NavOrientationsEnum.HorizontallyFill:
+                    navManager.AddCSS("nav-fill");
+                    break;
+                case NavOrientationsEnum.HorizontallyJustified:
+                    navManager.AddCSS("nav-justified");
+                    break;
+                default:
+
+                    break;
+            }
+
+            if (navManager is NavJavaScriptBehaviorManager && navManager.NavigationOrientation == NavOrientationsEnum.Vertically)
+                return View("VerticallyNavJavaScriptBehavior", navManager);
+            else
+                return View(navManager);
         }
     }
 }

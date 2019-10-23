@@ -209,6 +209,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         private readonly List<string> css = new List<string>();
 
+        public string[] ReadCSS() => css.ToArray();
+
         /// <summary>
         /// Добавить CSS класс текущему объекту (если такой класс ещё не назначен объекту)
         /// </summary>

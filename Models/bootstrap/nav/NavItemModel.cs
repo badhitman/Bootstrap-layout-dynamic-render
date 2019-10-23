@@ -3,7 +3,6 @@
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Service;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
@@ -49,14 +48,6 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
             }
 
             Childs.Add(new NavItemModel(id_dom) { Header = header_nav, Href = href_nav });
-
-            /*
-             dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-1") { Header = "Action", Href = "#" });
-             dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-2") { Header = "Another action", Href = "#" });
-             dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-3") { Header = "Something else here", Href = "#" });
-             dropdown_nav.AddDomNode(null);//<div class="dropdown-divider"></div>
-             dropdown_nav.AddDomNode(new NavItemModel("dropdown-item-4") { Header = "Separated link", Href = "#" });
-             */
         }
     }
 }

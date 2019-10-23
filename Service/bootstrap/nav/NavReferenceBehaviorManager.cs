@@ -8,7 +8,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class NavReferenceBehaviorManager : AbstractNavManager
     {
-        public NavReferenceBehaviorManager(string DomId, NavOrientationsEnum SetNavigationOrientation, bool SetTabsStyle = false) : base(SetNavigationOrientation, SetTabsStyle)
+        public NavReferenceBehaviorManager(string DomId)
         {
             Id_DOM = DomId;
         }

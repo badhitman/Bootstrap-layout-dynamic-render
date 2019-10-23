@@ -4,7 +4,7 @@
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractNavManager
 <nav>
-    <div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS@(ViewBag.IsPillsTheme == true ? " nav-pills" : "")@(Model.IsTabsStyle ? " nav-tabs" : "")" @(Model is NavJavaScriptBehaviorManager ? " role='tablist'" : "")>
+    <div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
         @foreach (NavItemModel navItem in Model.GetChilds())
         {
             @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem });
