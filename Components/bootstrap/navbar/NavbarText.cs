@@ -8,9 +8,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
 {
     public class NavbarText: ViewComponent
     {
-        public IViewComponentResult Invoke(NavbarTextManager navbarText)
+        public IViewComponentResult Invoke(NavbarTextManager SetObjectManager)
         {
-            return View(navbarText);
+            return View(SetObjectManager);
         }
     }
 }

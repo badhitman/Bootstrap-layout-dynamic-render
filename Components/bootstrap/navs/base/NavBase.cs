@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 {
@@ -28,10 +27,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <returns></returns>
         public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
         {
-            if ((navManager.NavigationOrientation == NavOrientationsEnum.HorizontallyFill ||
-                navManager.NavigationOrientation == NavOrientationsEnum.HorizontallyJustified ||
-                navManager.IsTabsStyle) &&
-                navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
+            if (navManager.IsTabsStyle && navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
             {
                 logger.LogInformation("When using a <nav>-based navigation, be sure to include .nav-item on the anchors.");
                 navManager.Childs.ForEach(x => x.AddCSS("nav-item"));
@@ -39,9 +35,8 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
 
             if (navManager.IsTabsStyle && SetPillsTheme)
             {
-                string msg = "Нельзя совмещать Pills и Tabs.";
-                logger.LogError(msg + " Устраните ошибку");
-                throw new ArgumentException(msg, nameof(SetPillsTheme));
+                logger.LogError(" Нельзя совмещать Pills и Tabs. По умолчанию Pills в таких случаях отключается");
+                SetPillsTheme = false;
             }
 
             if (navManager.IsTabsStyle && navManager.NavigationOrientation == NavOrientationsEnum.Vertically)
@@ -51,7 +46,14 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
                 throw new ArgumentException(msg, nameof(navManager.NavigationOrientation));
             }
 
-            ViewBag.IsPillsTheme = SetPillsTheme;
+             if (SetPillsTheme)
+                navManager.AddCSS("nav-pills");
+            else if(navManager.IsTabsStyle)
+                navManager.AddCSS("nav-tabs");
+            
+            if (navManager is NavJavaScriptBehaviorManager)
+                navManager.SetAttribute("role", "tablist");
+
 
             switch (navManager.NavigationOrientation)
             {

@@ -8,10 +8,10 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
 {
     public class NavbarNav : ViewComponent
     {
-        public IViewComponentResult Invoke(NavbarNavManager navbarNavManager)
+        public IViewComponentResult Invoke(NavbarNavManager SetObjectManager)
         {
-            navbarNavManager.AddCSS("navbar-nav");
-            return View(navbarNavManager);
+            SetObjectManager.AddCSS("navbar-nav");
+            return View(SetObjectManager);
         }
     }
 }

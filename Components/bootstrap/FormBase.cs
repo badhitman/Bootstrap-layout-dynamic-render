@@ -16,9 +16,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap
             logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
         }
 
-        public IViewComponentResult Invoke(FormManager form)
+        public IViewComponentResult Invoke(FormManager SetObjectManager)
         {
-            return View(form);
+            return View(SetObjectManager);
         }
     }
 }
