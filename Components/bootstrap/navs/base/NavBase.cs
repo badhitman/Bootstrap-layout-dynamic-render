@@ -27,7 +27,10 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <returns></returns>
         public IViewComponentResult Invoke(AbstractNavManager SetObjectManager, bool SetPillsTheme = false)
         {
-            if (SetObjectManager.IsTabsStyle && SetObjectManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
+            if ((SetObjectManager.NavigationOrientation == NavOrientationsEnum.HorizontallyFill ||
+                SetObjectManager.NavigationOrientation == NavOrientationsEnum.HorizontallyJustified ||
+                SetObjectManager.IsTabsStyle) && 
+                SetObjectManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
             {
                 logger.LogInformation("When using a <nav>-based navigation, be sure to include .nav-item on the anchors.");
                 SetObjectManager.Childs.ForEach(x => x.AddCSS("nav-item"));

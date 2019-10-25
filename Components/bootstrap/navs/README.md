@@ -288,7 +288,8 @@
 ```cshtml
 <header>
   @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu", BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavOrientationsEnum.Vertically);
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
+    nav.NavigationOrientation = NavOrientationsEnum.Vertically;
     
     // добавление пользователського класса стилей блоку навигации
     // по умолчанию там уже будут классы "nav", "flex-column" (в случае вертикальной ориентации) и "nav-pills" (в случае применения стиля Pills)
