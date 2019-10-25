@@ -2,24 +2,57 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
-    public abstract class AbstractNestedToolsManager : AbstractSafeNestedToolsManager
+    /// <summary>
+    /// Извне недоступны методы управления вложеными объектами
+    /// </summary>
+    public abstract class AbstractNestedToolsManager : AbstractDomManager
     {
-        /// <summary>
-        /// Прямое добавление дочернего/вложеного элемента.
-        /// </summary>
-        public virtual void AddDomNode(AbstractDomManager child) => Childs.Add(child);
+        public int ChildsCount => Childs.Count;
 
         /// <summary>
-        /// Пакетное добавление дочерних/вложеных элементов.
+        /// Дочерние/вложеные элементы
         /// </summary>
-        public virtual void AddRangeDomNode(List<AbstractDomManager> childs) => Childs.AddRange(childs);
+        protected internal List<AbstractDomManager> Childs = new List<AbstractDomManager>();
+
+        public virtual AbstractDomManager[] GetChilds() => Childs.ToArray();
+
+        public void ChildsAddCSS(string css_class)
+        {
+            foreach (AbstractDomManager child in Childs)
+            {
+                child.AddCSS(css_class, true);
+                if (child is AbstractNestedToolsManager || child.GetType().IsSubclassOf(typeof(AbstractNestedToolsManager)))
+                    ((AbstractNestedToolsManager)child).ChildsAddCSS(css_class);
+            }
+        }
 
         /// <summary>
-        /// Удалить все ложеные DOM элементы
+        /// Установить класс объекту по его Id_DOM
         /// </summary>
-        public virtual void ClearNestedDom() => Childs.Clear();
+        public AbstractNestedToolsManager AddByIdCSS(string id_dom, string css_class)
+        {
+            if (Id_DOM.ToLower().Equals(id_dom.ToLower()))
+                AddCSS(css_class);
+
+            foreach (AbstractDomManager adm in Childs.Where(x => !(x is null) && x is AbstractNestedToolsManager))
+                ((AbstractNestedToolsManager)adm).AddByIdCSS(id_dom, css_class);
+
+            return this;
+        }
+
+        public AbstractNestedToolsManager SetAttributeById(string id_dom, string attr_name, string attr_value)
+        {
+            if (Id_DOM.ToLower().Equals(id_dom.ToLower()))
+                SetAttribute(attr_name, attr_value);
+
+            foreach (AbstractDomManager adm in Childs.Where(x => !(x is null) && x is AbstractNestedToolsManager))
+                ((AbstractNestedToolsManager)adm).SetAttributeById(id_dom, attr_name, attr_value);
+
+            return this;
+        }
     }
 }

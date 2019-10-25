@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 {
-    public class NavbarBodyManager : AbstractSafeNestedToolsManager
+    public class NavbarBodyManager : AbstractNestedToolsManager
     {
         public bool IsHidesCollapse { get; set; } = true;
 

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
-    public class FormManager : AbstractSafeNestedToolsManager
+    public class FormManager : AbstractNestedToolsManager
     {
         public override string ViewComponentName => nameof(FormBase);
     }

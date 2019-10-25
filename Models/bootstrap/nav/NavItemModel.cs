@@ -11,7 +11,7 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
     /// <summary>
     /// Пункт меню nav-item
     /// </summary>
-    public class NavItemModel : AbstractSafeNestedToolsManager
+    public class NavItemModel : AbstractNestedToolsManager
     {
         public string Header { get; set; }
 
