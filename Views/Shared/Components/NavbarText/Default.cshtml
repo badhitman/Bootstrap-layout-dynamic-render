@@ -1,3 +1,6 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
-@Model  NavbarTextManager
+@model NavbarTextManager
+<span @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+    @Model.Header
+</span>

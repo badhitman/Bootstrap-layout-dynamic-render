@@ -9,9 +9,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 {
     public class NavWrapUL : ViewComponent
     {
-        public IViewComponentResult Invoke(AbstractCoreNavManager navManager)
+        public IViewComponentResult Invoke(AbstractCoreNavManager SetObjectManager)
         {
-            return View(navManager);
+            return View(SetObjectManager);
         }
     }
 }

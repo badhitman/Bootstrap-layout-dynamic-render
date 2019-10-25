@@ -16,45 +16,45 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
             logger = _loggerFactory.CreateLogger(GetType().Name + "Class");
         }
 
-        public IViewComponentResult Invoke(NavbarManager navbarManager)
+        public IViewComponentResult Invoke(NavbarManager SetObjectManager)
         {
-            if(navbarManager.NavbarExpandSize == BootstrapViewComponents.BootstrapSizingEnum.Block)
+            if(SetObjectManager.NavbarExpandSize == BootstrapViewComponents.BootstrapSizingEnum.Block)
             {
-                navbarManager.NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.Lg;
+                SetObjectManager.NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.Lg;
                 logger.LogError("Для Navbar размер Block не предусмотрен. Будет сброшено на Lg");
             }
 
-            navbarManager.AddCSS("navbar");
-            switch (navbarManager.NavbarPlacement)
+            SetObjectManager.AddCSS("navbar");
+            switch (SetObjectManager.NavbarPlacement)
             {
                 case Models.bootstrap.NavbarPlacementsEnum.FixedTop:
-                    navbarManager.AddCSS("fixed-top");
+                    SetObjectManager.AddCSS("fixed-top");
                     break;
                 case Models.bootstrap.NavbarPlacementsEnum.FixedBottom:
-                    navbarManager.AddCSS("fixed-bottom");
+                    SetObjectManager.AddCSS("fixed-bottom");
                     break;
                 case Models.bootstrap.NavbarPlacementsEnum.StickyTop:
-                    navbarManager.AddCSS("sticky-top");
+                    SetObjectManager.AddCSS("sticky-top");
                     break;
                 default:
 
                     break;
             }
 
-            if (navbarManager.NavbarExpandSize != BootstrapViewComponents.BootstrapSizingEnum.NULL)
+            if (SetObjectManager.NavbarExpandSize != BootstrapViewComponents.BootstrapSizingEnum.NULL)
             {
-                navbarManager.AddCSS("navbar-expand-" + navbarManager.NavbarExpandSize.ToString().ToLower());
+                SetObjectManager.AddCSS("navbar-expand-" + SetObjectManager.NavbarExpandSize.ToString().ToLower());
             }
-            if (navbarManager.BackgroundColorTheme != Models.bootstrap.BackgroundColorThemesEnum.NULL)
+            if (SetObjectManager.BackgroundColorTheme != Models.bootstrap.BackgroundColorThemesEnum.NULL)
             {
-                navbarManager.AddCSS("bg-" + navbarManager.BackgroundColorTheme.ToString().ToLower());
+                SetObjectManager.AddCSS("bg-" + SetObjectManager.BackgroundColorTheme.ToString().ToLower());
             }
-            if (navbarManager.NavbarColorScheme != Models.bootstrap.NavbarColorSchemesEnum.NULL)
+            if (SetObjectManager.NavbarColorScheme != Models.bootstrap.NavbarColorSchemesEnum.NULL)
             {
-                navbarManager.AddCSS("navbar-" + navbarManager.NavbarColorScheme.ToString().ToLower());
+                SetObjectManager.AddCSS("navbar-" + SetObjectManager.NavbarColorScheme.ToString().ToLower());
             }
 
-            return View(navbarManager);
+            return View(SetObjectManager);
         }
     }
 }

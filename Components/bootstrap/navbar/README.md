@@ -8,6 +8,43 @@
 - Навигационные панели по умолчанию скрыты при печати. Заставьте их быть напечатаны путем добавления `.d-print` на `.navbar`. Обратите внимание на классы утилиты **display**.
 - Обеспечьте доступность с помощью элемента `<nav>` или, если используется более общий элемент, такой как `<div>`, добавьте `role="navigation"` к каждой навигационной панели, чтобы явно определить ее как ориентир для пользователей вспомогательных технологий.
 
+```cshtml
+<header>
+  @{
+    NavbarManager nav = new NavbarManager() { Id_DOM = "TopMenu" };
+    nav.NavbarBrand = new NavbarBrandManager()
+    {
+      NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+      Id_DOM = "navbar-brand",
+      NavbarBrandDom = new NavItemModel("brand") { Href = "/brand", Header = " Brand", Title = "Описание бренда" },
+      ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
+    };
+
+    NavbarNavManager navbarNav = new NavbarNavManager();
+    navbarNav.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
+    navbarNav.AddNavItem("link-nav-id", "Link", "#");
+
+    NavItemModel navItem = navbarNav.AddNavItem("dropdown-nav-id", "Dropdown", "#");
+    navItem.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "action-nav-id");
+    navItem.AddSubNav("Another action", "#", "another-action-nav-id");
+    navItem.AddSubNav(null);
+    navItem.AddSubNav("Something else here", "#", "something-else-here-nav-id");
+
+    navbarNav.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
+
+    nav.NavbarBody.AddSubNode(navbarNav);
+
+
+    nav.NavbarBody.AddSubNode(new NavbarTextManager() { Id_DOM = "navbar-text-id", Header = "Navbar text with an inline element" });
+    nav.NavbarBody.AddSubNode(new FormManager());
+    //nav.NavbarBody.AddSubNode(new NavbarNavManager());
+    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = nav });
+  }
+</header>
+```
+
+
+
 > Navbars поставляются со встроенной поддержкой [нескольких субкомпонентов](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
 
 - [**.navbar-brand**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar#brand) для названия вашей компании, продукта или проекта. В том числе с аватаркой/картинкой.

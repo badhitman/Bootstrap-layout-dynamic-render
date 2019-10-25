@@ -15,9 +15,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
             logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
         }
 
-        public IViewComponentResult Invoke(NavbarBodyManager navbarBody)
+        public IViewComponentResult Invoke(NavbarBodyManager SetObjectManager)
         {
-            return View(navbarBody);
+            return View(SetObjectManager);
         }
     }
 }

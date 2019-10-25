@@ -7,7 +7,7 @@
     <div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
         @foreach (NavItemModel navItem in Model.GetChilds())
         {
-            @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem });
+            @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem });
         }
     </div>
 </nav>

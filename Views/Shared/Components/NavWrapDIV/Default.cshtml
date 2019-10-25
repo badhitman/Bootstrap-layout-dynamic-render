@@ -2,10 +2,10 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
-@model AbstractNavManager
-<nav @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+@model AbstractCoreNavManager
+<div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
     @foreach (NavItemModel navItem in Model.GetChilds())
     {
-        @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem });
+        @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem })
     }
-</nav>
+</div>

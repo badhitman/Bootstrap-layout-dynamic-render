@@ -8,27 +8,27 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 {
     public class NavItemHtmlDomA : ViewComponent
     {
-        public IViewComponentResult Invoke(NavItemModel SetNavItem)
+        public IViewComponentResult Invoke(NavItemModel SetObjectManager)
         {
-            SetNavItem.AddCSS("nav-link");
-            if (SetNavItem.IsActive)
-                SetNavItem.AddCSS("active");
+            SetObjectManager.AddCSS("nav-link");
+            if (SetObjectManager.IsActive)
+                SetObjectManager.AddCSS("active");
 
-            if (SetNavItem.ChildsCount > 0)
+            if (SetObjectManager.ChildsCount > 0)
             {
-                SetNavItem.AddCSS("dropdown-toggle");
-                SetNavItem.SetAttribute("data-toggle", "dropdown");
-                SetNavItem.SetAttribute("role", "button");
-                SetNavItem.SetAttribute("aria-haspopup", "true");
-                SetNavItem.SetAttribute("aria-expanded", "false");
+                SetObjectManager.AddCSS("dropdown-toggle");
+                SetObjectManager.SetAttribute("data-toggle", "dropdown");
+                SetObjectManager.SetAttribute("role", "button");
+                SetObjectManager.SetAttribute("aria-haspopup", "true");
+                SetObjectManager.SetAttribute("aria-expanded", "false");
             }
-            if (SetNavItem.IsDisabled)
+            if (SetObjectManager.IsDisabled)
             {
-                SetNavItem.AddCSS(" disabled");
-                SetNavItem.Tabindex = -1;
-                SetNavItem.SetAttribute("aria-disabled", "true");
+                SetObjectManager.AddCSS(" disabled");
+                SetObjectManager.Tabindex = -1;
+                SetObjectManager.SetAttribute("aria-disabled", "true");
             }
-            return View(SetNavItem);
+            return View(SetObjectManager);
         }
     }
 }

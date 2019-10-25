@@ -10,6 +10,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
     {
         public IViewComponentResult Invoke(NavbarTextManager SetObjectManager)
         {
+            SetObjectManager.AddCSS("navbar-text");
             return View(SetObjectManager);
         }
     }

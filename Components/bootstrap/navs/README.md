@@ -16,7 +16,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -39,7 +39,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -62,7 +62,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -80,7 +80,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -101,7 +101,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -125,7 +125,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;                    
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
@@ -148,7 +148,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;                    
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -174,7 +174,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -193,7 +193,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -216,7 +216,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -235,7 +235,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -256,7 +256,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -274,7 +274,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -306,7 +306,7 @@
                    
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 > В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
@@ -334,7 +334,7 @@
 
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
@@ -359,7 +359,7 @@
     nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
@@ -383,7 +383,7 @@
     nav.IsFadeStyle = true;
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -412,7 +412,7 @@
     nav.IsFadeStyle = true;
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -440,7 +440,7 @@
     nav.IsFadeStyle = true;
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { navManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 

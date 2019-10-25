@@ -22,68 +22,67 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.nav
         /// <summary>
         /// Базовый Bootstrap Nav (компонент навигации)
         /// </summary>
-        /// <param name="navManager"></param>
+        /// <param name="SetObjectManager"></param>
         /// <param name="SetPillsTheme"></param>
         /// <returns></returns>
-        public IViewComponentResult Invoke(AbstractNavManager navManager, bool SetPillsTheme = false)
+        public IViewComponentResult Invoke(AbstractNavManager SetObjectManager, bool SetPillsTheme = false)
         {
-            if (navManager.IsTabsStyle && navManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
+            if (SetObjectManager.IsTabsStyle && SetObjectManager.NavWrapperType == Models.NavWrapperTypesEnum.nav)
             {
                 logger.LogInformation("When using a <nav>-based navigation, be sure to include .nav-item on the anchors.");
-                navManager.Childs.ForEach(x => x.AddCSS("nav-item"));
+                SetObjectManager.Childs.ForEach(x => x.AddCSS("nav-item"));
             }
 
-            if (navManager.IsTabsStyle && SetPillsTheme)
+            if (SetObjectManager.IsTabsStyle && SetPillsTheme)
             {
                 logger.LogError(" Нельзя совмещать Pills и Tabs. По умолчанию Pills в таких случаях отключается");
                 SetPillsTheme = false;
             }
 
-            if (navManager.IsTabsStyle && navManager.NavigationOrientation == NavOrientationsEnum.Vertically)
+            if (SetObjectManager.IsTabsStyle && SetObjectManager.NavigationOrientation == NavOrientationsEnum.Vertically)
             {
                 string msg = "Для Tabs не предусмотрено вертикальное позиционирование.";
                 logger.LogError(msg + " Устраните ошибку");
-                throw new ArgumentException(msg, nameof(navManager.NavigationOrientation));
+                throw new ArgumentException(msg, nameof(SetObjectManager.NavigationOrientation));
             }
 
              if (SetPillsTheme)
-                navManager.AddCSS("nav-pills");
-            else if(navManager.IsTabsStyle)
-                navManager.AddCSS("nav-tabs");
+                SetObjectManager.AddCSS("nav-pills");
+            else if(SetObjectManager.IsTabsStyle)
+                SetObjectManager.AddCSS("nav-tabs");
             
-            if (navManager is NavJavaScriptBehaviorManager)
-                navManager.SetAttribute("role", "tablist");
+            if (SetObjectManager is NavJavaScriptBehaviorManager)
+                SetObjectManager.SetAttribute("role", "tablist");
 
-
-            switch (navManager.NavigationOrientation)
+            switch (SetObjectManager.NavigationOrientation)
             {
                 case NavOrientationsEnum.HorizontallyCenterAligned:
-                    navManager.AddCSS("justify-content-center");
+                    SetObjectManager.AddCSS("justify-content-center");
                     break;
                 case NavOrientationsEnum.HorizontallyRightAligned:
-                    navManager.AddCSS("justify-content-end");
+                    SetObjectManager.AddCSS("justify-content-end");
                     break;
                 case NavOrientationsEnum.Vertically:
-                    if (!navManager.ReadCSS().Any(x => x.StartsWith("flex-") && x.EndsWith("-column")))
-                        navManager.AddCSS("flex-column");
+                    if (!SetObjectManager.ReadCSS().Any(x => x.StartsWith("flex-") && x.EndsWith("-column")))
+                        SetObjectManager.AddCSS("flex-column");
 
-                    navManager.IsTabsStyle = false;
+                    SetObjectManager.IsTabsStyle = false;
                     break;
                 case NavOrientationsEnum.HorizontallyFill:
-                    navManager.AddCSS("nav-fill");
+                    SetObjectManager.AddCSS("nav-fill");
                     break;
                 case NavOrientationsEnum.HorizontallyJustified:
-                    navManager.AddCSS("nav-justified");
+                    SetObjectManager.AddCSS("nav-justified");
                     break;
                 default:
 
                     break;
             }
 
-            if (navManager is NavJavaScriptBehaviorManager && navManager.NavigationOrientation == NavOrientationsEnum.Vertically)
-                return View("VerticallyNavJavaScriptBehavior", navManager);
+            if (SetObjectManager is NavJavaScriptBehaviorManager && SetObjectManager.NavigationOrientation == NavOrientationsEnum.Vertically)
+                return View("VerticallyNavJavaScriptBehavior", SetObjectManager);
             else
-                return View(navManager);
+                return View(SetObjectManager);
         }
     }
 }

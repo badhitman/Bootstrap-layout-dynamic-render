@@ -9,7 +9,7 @@
         string li_class_style = "nav-item" + (navItem.ChildsCount > 0 ? " dropdown" : string.Empty);
 
         <li class="@li_class_style">
-            @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetNavItem = navItem })
+            @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem })
         </li>
     }
 </ul>

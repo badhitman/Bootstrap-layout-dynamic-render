@@ -8,9 +8,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
 {
     public class NavbarToggler : ViewComponent
     {
-        public IViewComponentResult Invoke(NavbarTogglerManager navbarToggler)
+        public IViewComponentResult Invoke(NavbarTogglerManager SetObjectManager)
         {
-            return View(navbarToggler);
+            return View(SetObjectManager);
         }
     }
 }

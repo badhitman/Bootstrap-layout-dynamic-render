@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public abstract class AbstractCoreNavManager : AbstractNestedToolsManager
+    public abstract class AbstractCoreNavManager : AbstractSafeNestedToolsManager
     {
         public void DisableNavItem(string disable_nav_by_id)
         {

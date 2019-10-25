@@ -20,7 +20,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
             if (string.IsNullOrWhiteSpace(SetNavHref))
                 throw new ArgumentNullException(nameof(SetNavHref));
 
-            AddDomNode(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
+            Childs.Add(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
             return (NavItemModel)Childs[Childs.Count - 1];
         }
     }

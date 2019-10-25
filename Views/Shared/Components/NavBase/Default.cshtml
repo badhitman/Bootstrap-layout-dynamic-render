@@ -11,7 +11,7 @@
 @{
     string ViewComponentName = Model.NavWrapperType == BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul ? typeof(NavWrapUL).Name : typeof(NavWrapNAV).Name;
 }
-@await Component.InvokeAsync(ViewComponentName, new { navManager = Model })
+@await Component.InvokeAsync(ViewComponentName, new { SetObjectManager = Model })
 @if (Model is NavJavaScriptBehaviorManager)
 {
     NavJavaScriptBehaviorManager NavJavaScriptBehavior = Model as NavJavaScriptBehaviorManager;
