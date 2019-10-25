@@ -4,7 +4,11 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    class TextInputManager
+    public class TextInputManager : AbstractTextedInputManager
     {
+        public TextInputManager() : base(BootstrapViewComponents.InputTypesEnum.text)
+        {
+
+        }
     }
 }
