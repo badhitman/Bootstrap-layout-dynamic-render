@@ -38,6 +38,8 @@
 }
 </header>
 ```
+***result:***
+![Bootstrap - Navbar base (demo ul->li->a)](../../../demo/navbar-base-ul-li-a.jpg)
 
 
 
