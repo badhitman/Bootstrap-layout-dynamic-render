@@ -27,6 +27,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 
         public void AddSubNode(NavbarNavManager navbarNav)
         {
+            navbarNav.AddCSS("navbar-nav");
             Childs.Add(navbarNav);
         }
     }

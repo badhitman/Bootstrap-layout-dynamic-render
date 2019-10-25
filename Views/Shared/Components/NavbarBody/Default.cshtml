@@ -1,12 +1,8 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @using BootstrapViewComponentsRazorLibrary.Service
-@model NavbarBodyManager
+@model AbstractNestedToolsManager
 @foreach (AbstractDomManager adm in Model.GetChilds())
-{
-    @if (adm is NavbarNavManager)
-    {
-        adm.AddCSS("navbar-nav");
-    }
+{    
     @await Component.InvokeAsync(adm.ViewComponentName, new { SetObjectManager = adm })
 }

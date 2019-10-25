@@ -1,1 +1,7 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Service
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
+@model FormManager
+<form @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+    @await Component.InvokeAsync(typeof(NavbarBody).Name, new { SetObjectManager = Model })
+</form>

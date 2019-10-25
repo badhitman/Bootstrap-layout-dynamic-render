@@ -163,7 +163,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить атрибуты (в том числе события) одной строкой
         /// </summary>
-        public string StringAttributes
+        public virtual string StringAttributes
         {
             get
             {
