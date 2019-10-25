@@ -39,7 +39,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Navbar base (demo ul->li->a)](../../../demo/navbar-base-ul-li-a.jpg)
+![Bootstrap - Navbar base (demo ul->li->a)](../../../../demo/navbar-base-ul-li-a.jpg)
 
 
 
