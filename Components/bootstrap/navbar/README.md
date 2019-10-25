@@ -10,36 +10,32 @@
 
 ```cshtml
 <header>
-  @{
-    NavbarManager nav = new NavbarManager() { Id_DOM = "TopMenu" };
-    nav.NavbarBrand = new NavbarBrandManager()
-    {
-      NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-      Id_DOM = "navbar-brand",
-      NavbarBrandDom = new NavItemModel("brand") { Href = "/brand", Header = " Brand", Title = "Описание бренда" },
-      ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
-    };
+@{
+  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "TopMenu" };
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand",
+    NavbarBrandDom = new NavItemModel("brand") { Href = "/brand", Header = " Brand", Title = "Описание бренда" },
+    ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
+  };
 
-    NavbarNavManager navbarNav = new NavbarNavManager();
-    navbarNav.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
-    navbarNav.AddNavItem("link-nav-id", "Link", "#");
+  NavbarNavManager navbar_nav_manager = new NavbarNavManager();
+  navbar_nav_manager.AddCSS("mr-auto");
+  navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
+  navbar_nav_manager.AddNavItem("link-nav-id", "Link", "#");
 
-    NavItemModel navItem = navbarNav.AddNavItem("dropdown-nav-id", "Dropdown", "#");
-    navItem.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "action-nav-id");
-    navItem.AddSubNav("Another action", "#", "another-action-nav-id");
-    navItem.AddSubNav(null);
-    navItem.AddSubNav("Something else here", "#", "something-else-here-nav-id");
+  NavItemModel navbar_nav_dropdown_item = navbar_nav_manager.AddNavItem("dropdown-nav-id", "Dropdown", "#");
+  navbar_nav_dropdown_item.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "action-nav-id");
+  navbar_nav_dropdown_item.AddSubNav("Another action", "#", "another-action-nav-id");
+  navbar_nav_dropdown_item.AddSubNav(null);
+  navbar_nav_dropdown_item.AddSubNav("Something else here", "#", "something-else-here-nav-id");
 
-    navbarNav.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
+  navbar_nav_manager.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
 
-    nav.NavbarBody.AddSubNode(navbarNav);
-
-
-    nav.NavbarBody.AddSubNode(new NavbarTextManager() { Id_DOM = "navbar-text-id", Header = "Navbar text with an inline element" });
-    nav.NavbarBody.AddSubNode(new FormManager());
-    //nav.NavbarBody.AddSubNode(new NavbarNavManager());
-    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = nav });
-  }
+  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
 </header>
 ```
 

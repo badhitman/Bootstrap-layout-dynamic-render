@@ -313,7 +313,7 @@
 > В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
 
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
-![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../../demo/nav-flex-utilities-nav-a.jpg)
+![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column nav->a)](../../../demo/nav-flex-utilities-nav-a.jpg)
 
 ## [Tabs with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#tabs-with-dropdowns)
 ```cshtml

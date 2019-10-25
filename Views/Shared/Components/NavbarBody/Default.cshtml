@@ -4,5 +4,9 @@
 @model NavbarBodyManager
 @foreach (AbstractDomManager adm in Model.GetChilds())
 {
+    @if (adm is NavbarNavManager)
+    {
+        adm.AddCSS("navbar-nav");
+    }
     @await Component.InvokeAsync(adm.ViewComponentName, new { SetObjectManager = adm })
 }
