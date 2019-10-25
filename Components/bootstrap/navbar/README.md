@@ -21,7 +21,7 @@
   };
 
   NavbarNavManager navbar_nav_manager = new NavbarNavManager();
-  navbar_nav_manager.AddCSS("mr-auto");
+  navbar_nav_manager.AddCSS("mr-auto"); // добавляем контейнеру стили: margin-right: auto !important;
   navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
   navbar_nav_manager.AddNavItem("link-nav-id", "Link", "#");
 
