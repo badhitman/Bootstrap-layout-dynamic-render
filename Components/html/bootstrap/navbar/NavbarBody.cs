@@ -1,7 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
-using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar;
+using BootstrapViewComponentsRazorLibrary.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -15,7 +15,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
             logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
         }
 
-        public IViewComponentResult Invoke(NavbarBodyManager SetObjectManager)
+        public IViewComponentResult Invoke(AbstractNestedToolsManager SetObjectManager)
         {
             return View(SetObjectManager);
         }

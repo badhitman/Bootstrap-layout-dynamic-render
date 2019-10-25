@@ -44,7 +44,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
             {
                 if (!string.IsNullOrWhiteSpace(Placeholder))
                     SetAttribute("placeholder", Placeholder);
+                
+                if (!string.IsNullOrWhiteSpace(PatternInput))
+                    SetAttribute("pattern", PatternInput);
 
+                if (SizeInput>0)
+                    SetAttribute("size", SizeInput);
+                
+                if (Autocomplete != null)
+                    SetAttribute("autocomplete", Autocomplete == true ? "on" : "off");
 
                 return base.StringAttributes;
             }

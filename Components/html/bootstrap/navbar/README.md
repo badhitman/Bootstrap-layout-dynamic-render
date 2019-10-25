@@ -20,6 +20,7 @@
     ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
   };
 
+
   NavbarNavManager navbar_nav_manager = new NavbarNavManager();
   navbar_nav_manager.AddCSS("mr-auto"); // добавляем контейнеру стили: margin-right: auto !important;
   navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
@@ -34,6 +35,25 @@
   navbar_nav_manager.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
 
   navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+
+  FormManager formManager = new FormManager();
+
+  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  {
+    Placeholder = "Search"
+  };
+  input_manager.AddCSS("form-control mr-sm-2", true);
+   formManager.AddSubNode(input_manager);
+
+  ButtonBaseManager button_manager = new ButtonBaseManager("Search");
+  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
+
+  formManager.AddSubNode(button_manager);
+
+
+  formManager.AddCSS("my-2 my-lg-0", true);
+  navbar_manager.NavbarBody.AddSubNode(formManager);
+
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
 </header>
