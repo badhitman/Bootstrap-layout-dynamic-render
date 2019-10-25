@@ -16,5 +16,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         {
             InputType = SetInputType;
         }
+
+        public override string StringAttributes
+        {
+            get
+            {
+                SetAttribute("type", InputType.ToString());
+                SetAttribute("aria-label", InputType.ToString().Substring(0, 1).ToUpper() + InputType.ToString().Substring(1) + " input");
+                return base.StringAttributes;
+            }
+        }
     }
 }

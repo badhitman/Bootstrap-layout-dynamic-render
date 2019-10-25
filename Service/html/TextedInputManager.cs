@@ -6,7 +6,7 @@ using BootstrapViewComponents;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public abstract class AbstractTextedInputManager : InputBaseManager
+    public class TextedInputManager : InputBaseManager
     {
         /// <summary>
         /// Выводит текст внутри поля формы, который исчезает при получении фокуса.
@@ -26,16 +26,28 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         /// Если размер шрифта изменяется с помощью стилей, ширина также соответственно меняется. 
         /// </summary>
         public int SizeInput { get; set; } = 0;
-        
+
         /// <summary>
         /// Этот атрибут помогает заполнять поля форм текстом, который был введён в них ранее.
         /// Значения сохраняет и подставляет браузер, при этом автозаполнение по соображениям безопасности может отключаться пользователем в настройках и не может в таком случае управляться атрибутом [autocomplete].
         /// </summary>
         public bool? Autocomplete { get; set; } = null;
-        
-        public AbstractTextedInputManager(InputTypesEnum SetInputType) : base(SetInputType)
+
+        public TextedInputManager(InputTypesEnum SetInputType) : base(SetInputType)
         {
 
+        }
+
+        public override string StringAttributes
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(Placeholder))
+                    SetAttribute("placeholder", Placeholder);
+
+
+                return base.StringAttributes;
+            }
         }
     }
 }
