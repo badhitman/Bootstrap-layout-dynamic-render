@@ -298,6 +298,52 @@
 ***result:***
 ![Demo](../../../../demo/navbar-base-form.jpg)
 
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager()
+  {
+    Id_DOM = "top-menu-navbar-dom-id",
+    NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.NULL
+  };
+  navbar_manager.NavbarActions.IsHidesCollapse = false;
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
+    {
+      Href = "#",
+      Header = " Brand",
+      Title = "Описание бренда"
+    }
+  };
+
+  FormManager formManager = new FormManager();
+
+  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  {
+    Placeholder = "Search"
+  };
+  input_manager.AddCSS("form-control mr-sm-2", true);
+  formManager.AddSubNode(input_manager);
+
+  ButtonBaseManager button_manager = new ButtonBaseManager("Search")
+  {
+    ButtonType = ButtonTypesEnum.submit
+  };
+  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
+
+  formManager.AddSubNode(button_manager);
+
+  navbar_manager.NavbarActions.AddSubNode(formManager);
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+***result:***
+![Demo](../../../../demo/navbar-base-brand-form.jpg)
 
 ## [Text](https://getbootstrap.com/docs/4.3/components/navbar/#text)
 >  дополняется
