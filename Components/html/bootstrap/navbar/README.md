@@ -106,12 +106,25 @@
 <header>
 @{
   NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-dom-id" };
-
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    Id_DOM = "navbar-brand-dom-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
+    {
+      Href = "#",
+      Title = "Описание бренда",
+      ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
+    }
+  };
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  <br />
+  navbar_manager.Id_DOM = "top-menu-2-dom-id";
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-2-dom-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-2-dom-id")
     {
       Href = "#",
       Header = " Brand",
@@ -119,7 +132,6 @@
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
-
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
 </header>
