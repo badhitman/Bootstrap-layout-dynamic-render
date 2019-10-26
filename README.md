@@ -7,28 +7,6 @@
 ## [Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
 > [в процессе ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar)
 
-## [Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
-Пример использования в .cshtml
-```cshtml
-@using BootstrapViewComponents
-
-<p>
-    @{
-        List<Breadcrumbs.BreadcrumbItem> BreadcrumbItems = new List<Breadcrumbs.BreadcrumbItem>(){
-            new Breadcrumbs.BreadcrumbItem(){ text = "Пользователи", href = "/Users"},
-            new Breadcrumbs.BreadcrumbItem(){ text = "Иван Петров", href = "/Users/Details/1"},
-            new Breadcrumbs.BreadcrumbItem(){ text = "Журнал операций"}
-        };
-    }
-    @await Component.InvokeAsync(typeof(BootstrapViewComponents.Breadcrumbs), new { BreadcrumbItems = BreadcrumbItems })
-</p>
-```
-
-###### Результат:
-
-![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)
-
-
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
@@ -113,3 +91,26 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 ![Bootstrap - pagination demo 2](./demo/pagination2.png)
 
 ![Bootstrap - pagination demo 3](./demo/pagination3.png)
+
+
+## [Breadcrumbs](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
+Пример использования в .cshtml
+```cshtml
+@using BootstrapViewComponents
+
+<p>
+    @{
+        List<Breadcrumbs.BreadcrumbItem> BreadcrumbItems = new List<Breadcrumbs.BreadcrumbItem>(){
+            new Breadcrumbs.BreadcrumbItem(){ text = "Пользователи", href = "/Users"},
+            new Breadcrumbs.BreadcrumbItem(){ text = "Иван Петров", href = "/Users/Details/1"},
+            new Breadcrumbs.BreadcrumbItem(){ text = "Журнал операций"}
+        };
+    }
+    @await Component.InvokeAsync(typeof(BootstrapViewComponents.Breadcrumbs), new { BreadcrumbItems = BreadcrumbItems })
+</p>
+```
+
+###### Результат:
+
+![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)
+
