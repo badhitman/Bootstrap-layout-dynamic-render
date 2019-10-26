@@ -52,7 +52,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
             if (SetObjectManager.NavbarColorScheme != Models.bootstrap.NavbarColorSchemesEnum.NULL)
             {
                 SetObjectManager.AddCSS("navbar-" + SetObjectManager.NavbarColorScheme.ToString().ToLower());
-            }
+            }            
 
             return View(SetObjectManager);
         }

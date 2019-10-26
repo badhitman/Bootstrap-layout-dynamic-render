@@ -10,6 +10,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
     {
         public IViewComponentResult Invoke(AbstractCoreNavManager SetObjectManager)
         {
+            SetObjectManager.ChildsAddCSS("nav-item");
             return View(SetObjectManager);
         }
     }
