@@ -57,14 +57,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public NavbarBrandManager NavbarBrand { get; set; }
 
-        public string CollapseTarget  => Id_DOM + "NavbarCollapsedContent";
-        public NavbarBodyManager NavbarBody { get; set; } = new NavbarBodyManager();
+        public string CollapseTarget => Id_DOM + "NavbarCollapsedContent";
+        public NavbarBodyManager NavbarActions { get; set; } = new NavbarBodyManager();
 
         public override string ViewComponentName => nameof(NavbarBase);
 
         public NavbarManager()
         {
-            
+
         }
     }
 }

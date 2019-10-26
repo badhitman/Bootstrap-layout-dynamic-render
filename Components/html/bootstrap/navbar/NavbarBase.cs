@@ -18,7 +18,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
 
         public IViewComponentResult Invoke(NavbarManager SetObjectManager)
         {
-            if(SetObjectManager.NavbarExpandSize == BootstrapViewComponents.BootstrapSizingEnum.Block)
+            if (SetObjectManager.NavbarExpandSize == BootstrapViewComponents.BootstrapSizingEnum.Block)
             {
                 SetObjectManager.NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.Lg;
                 logger.LogError("Для Navbar размер Block не предусмотрен. Будет сброшено на Lg");
@@ -52,7 +52,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
             if (SetObjectManager.NavbarColorScheme != Models.bootstrap.NavbarColorSchemesEnum.NULL)
             {
                 SetObjectManager.AddCSS("navbar-" + SetObjectManager.NavbarColorScheme.ToString().ToLower());
-            }            
+            }
 
             return View(SetObjectManager);
         }

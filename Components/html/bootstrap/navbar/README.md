@@ -265,7 +265,39 @@
 ![Demo](../../../../demo/navbar-base-dropdowns-ul-li-a.jpg)
 
 ## [Forms](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
->  дополняется
+>  Поместите различные элементы управления и компоненты формы в навигационную панель **.form-inline**.
+
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager()
+  {
+    Id_DOM = "top-menu-navbar-dom-id"
+  };
+  navbar_manager.NavbarActions.IsHidesCollapse = false;
+  FormManager formManager = new FormManager() { Id_DOM = "navbar-form-dom-id" };
+
+  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  {
+    Placeholder = "Search",
+    Id_DOM = "navbar-form-search-input-dom-id"
+  };
+  input_manager.AddCSS("form-control mr-sm-2", true);
+  formManager.AddSubNode(input_manager);
+
+  ButtonBaseManager button_manager = new ButtonBaseManager("Search");
+  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
+
+  formManager.AddSubNode(button_manager);
+  navbar_manager.NavbarActions.AddSubNode(formManager);
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+***result:***
+![Demo](../../../../demo/navbar-base-form.jpg)
+
 
 ## [Text](https://getbootstrap.com/docs/4.3/components/navbar/#text)
 >  дополняется
