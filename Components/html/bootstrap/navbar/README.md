@@ -73,7 +73,7 @@
 - [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar#external-content) для группировки и скрытия содержимого навигационной панели.
 
 ## [Brand](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
-
+```cshtml
 <header>
 @{
   NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-dom-id" };
@@ -96,8 +96,9 @@
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
 </header>
+```
 ***result:***
-[Demo](../../../../demo/navbar-base-brand-a.jpg)
+![Demo](../../../../demo/navbar-base-brand-a.jpg)
 
 
 ## [Nav](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
