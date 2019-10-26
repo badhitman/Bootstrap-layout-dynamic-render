@@ -73,6 +73,8 @@
 - [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar#external-content) для группировки и скрытия содержимого навигационной панели.
 
 ## [Brand](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
+> **.navbar-brand** может быть применен к большинству типов **тегов**, но `<a></a>` работает лучше всего, поскольку другие типы тегов могут потребовать дополнительных **utility classes** или пользовательских стилей.
+
 ```cshtml
 <header>
 @{
