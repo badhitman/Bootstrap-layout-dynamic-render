@@ -236,9 +236,9 @@
     Id_DOM = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
     {
-                            Href = "#",
-                            Header = " Brand",
-                            Title = "Описание бренда"
+      Href = "#",
+      Header = " Brand",
+      Title = "Описание бренда"
     }
   };
 
