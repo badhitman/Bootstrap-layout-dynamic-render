@@ -16,8 +16,13 @@
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
     Id_DOM = "navbar-brand-id",
-    NavbarBrandDom = new BrandNavItemModel("brand-id") { Href = "#", Header = " Brand", Title = "Описание бренда" },
-    ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
+    NavbarBrandDom = new BrandNavItemModel("brand-id")
+	{
+	  Href = "#",
+	  Header = " Brand",
+	  Title = "Описание бренда",
+      ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
+	}
   };
 
 
@@ -142,7 +147,37 @@
 ![Demo](../../../../demo/navbar-base-brand-a-img.jpg)
 
 ## [Nav](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
->  дополняется
+>  Навигационные ссылки **Navbar** построены на основе **.nav** . Имеют свой собственный класс модификации и требуют использования классов `toggler` для правильного адаптивного стиля.
+Навигация в **navbars** также будет растягиваться, чтобы занять как можно больше горизонтального пространства, чтобы сохранить содержимое **navbar** надежно выровнено.
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-navbar-dom-id" };
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
+    {
+      Href = "#",
+      Header = " Brand",
+      Title = "Описание бренда"
+    }
+  };
+
+  NavbarNavManager navbar_nav_manager = new NavbarNavManager();
+  navbar_nav_manager.AddNavItem(id_dom: "home-nav-dom-id", header: "Home", href: "#").IsActive = true;
+  navbar_nav_manager.AddNavItem("features-nav-dom-id", "Features", "#");
+  navbar_nav_manager.AddNavItem("pricing-nav-dom-id", "Pricing", "#");
+  navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Disabled", "#").IsDisabled = true;
+  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+***result:***
+![Demo](../../../../demo/navbar-nav-ul-li-a.jpg)
 
 ## [Forms](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
 >  дополняется
