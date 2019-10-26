@@ -102,6 +102,30 @@
 ***result:***
 ![Demo](../../../../demo/navbar-base-brand-a.jpg)
 
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-dom-id" };
+
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
+    {
+      Href = "#",
+      Header = " Brand",
+      Title = "Описание бренда",
+      ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
+    }
+  };
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+***result:***
+![Demo](../../../../demo/navbar-base-brand-a-img.jpg)
 
 ## [Nav](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
 >  дополняется

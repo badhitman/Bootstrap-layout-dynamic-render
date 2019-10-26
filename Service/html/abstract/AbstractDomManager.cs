@@ -78,10 +78,35 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута у объекта, но не будет указывать значение этого атрибута (т.е. будет пропущен знак = и его значение)</param>
         public AbstractDomManager SetAttribute(string attr_name, string attr_value)
         {
+            attr_name = attr_name.Trim().ToLower();
             if (!CustomAttributes.ContainsKey(attr_name))
                 CustomAttributes.Add(attr_name, attr_value);
             else
                 CustomAttributes[attr_name] = attr_value;
+
+            if (attr_name == "id")
+                Id_DOM = attr_value;
+
+            if (attr_name == "name")
+                Name_DOM = attr_value;
+
+            if (attr_name == "accesskey")
+                Accesskey = attr_value;
+
+            if (attr_name == "contenteditable")
+                Contenteditable = attr_value.ToLower() == "true";
+
+            if (attr_name == "hidden")
+                Hidden = true;
+
+            if (attr_name == "tabindex")
+            {
+                if (!Regex.IsMatch(@"^-?\d+$", attr_value))
+                    return this;
+                Tabindex = int.Parse(attr_value);
+            }
+            if (attr_name == "title")
+                Title = attr_value;
 
             return this;
         }
