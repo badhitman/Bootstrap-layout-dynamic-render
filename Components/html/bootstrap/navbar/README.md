@@ -15,8 +15,8 @@
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand",
-    NavbarBrandDom = new NavItemModel("brand") { Href = "/brand", Header = " Brand", Title = "Описание бренда" },
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("brand-id") { Href = "#", Header = " Brand", Title = "Описание бренда" },
     ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
   };
 
@@ -58,9 +58,9 @@
 }
 </header>
 ```
-***result:*** пример: слева (синим) монитор ПК, справа (красным) на дисплее **iPhone 6/6/7**. Дисплей iPhone демонстрируется в двух состояниях: свёрнутый слева (коричневый) и развернутый справа (зелёный)
+***result:*** пример: монитор ПК (слева синим) и на дисплее **iPhone 6/6/7** (справа красным). Дисплей **iPhone** в свою очередь демонстрируется в двух состояниях: свёрнутый (левее коричневый) и развернутый (правее зелёный)
 ![Bootstrap - Navbar base (demo ul->li->a)](../../../../demo/navbar-base-ul-li-a.jpg)
-В примере выше использовались утилиты [color](https://getbootstrap.com/docs/4.3/utilities/colors/) (__bg-light__) и [spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/) (__my-2, my-lg-0, mr-sm-0, my-sm-0__).
+В примере выше использовались утилиты [color](https://getbootstrap.com/docs/4.3/utilities/colors/) (__bg-light__) и [spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/) (__my-2, my-lg-0, mr-sm-0, my-sm-0, mr-auto__).
 
 
 > Navbars поставляются со встроенной поддержкой [нескольких субкомпонентов](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
@@ -73,7 +73,32 @@
 - [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar#external-content) для группировки и скрытия содержимого навигационной панели.
 
 ## [Brand](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
->  дополняется
+
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-dom-id" };
+
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Href = "#", Header = " Brand", Title = "Описание бренда" }
+  };
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  
+  <br />
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Header = " Brand", Title = "Описание бренда" }
+  };
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+***result:***
+[Demo](../../../../demo/navbar-base-brand-a.jpg)
+
 
 ## [Nav](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
 >  дополняется

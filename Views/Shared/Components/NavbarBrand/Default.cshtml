@@ -1,28 +1,14 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
+@model NavbarBrandManager
 @{
-    string BrandHeader = ViewBag.BrandHeader;
-    string BrandHref = ViewBag.BrandHref;
-    string BrandImgSrc = ViewBag.BrandImgSrc;
+    string BrandHeader = Model.NavbarBrandDom.Header;
+    string BrandImgSrc = Model.NavbarBrandDom.ImageNavbarBrandSrc;
 }
-@if (string.IsNullOrWhiteSpace(BrandHeader) && string.IsNullOrWhiteSpace(BrandHref) && string.IsNullOrWhiteSpace(BrandImgSrc))
-{
-    @: <!-- Navbar brand not established -->
-}
-else
-{
-    @if (!string.IsNullOrWhiteSpace(BrandHref) || !string.IsNullOrWhiteSpace(BrandImgSrc))
+<a @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+    @if (!string.IsNullOrWhiteSpace(BrandImgSrc))
     {
-        if (string.IsNullOrWhiteSpace(BrandImgSrc))
-        {
-            @: <a class="navbar-brand" href="@(string.IsNullOrWhiteSpace(BrandHref) ? "#" : BrandHref)">@BrandHeader</a>
-        }
-        else
-        {
-            @: <a class="navbar-brand" href="@(string.IsNullOrWhiteSpace(BrandHref) ? "#" : BrandHref)"><img src="@Html.Raw(BrandImgSrc)" width="30" height="30" class="d-inline-block align-top" alt="Brand img @BrandHeader">@BrandHeader</a>
-        }
+        @: <img src="@Html.Raw(BrandImgSrc)" width="30" height="30" class="d-inline-block align-top" alt="Brand img @BrandHeader">
     }
-    else
-    {
-        @: <span class="navbar-brand mb-0 h1">@BrandHeader</span>
-    }
-}
+    @BrandHeader
+</a>
