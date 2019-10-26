@@ -219,6 +219,51 @@
 ***result:***
 ![Demo](../../../../demo/navbar-nav-div-a.jpg)
 
+> Вы также можете использовать выпадающее меню в панели навигации.
+Выпадающие меню требуют оберточного элемента для позиционирования, поэтому обязательно используйте отдельные и вложенные элементы: **.nav-item** и **.nav-link**, как показано ниже:
+
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager()
+  {
+    Id_DOM = "top-menu-navbar-dom-id"
+  };
+
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
+    {
+                            Href = "#",
+                            Header = " Brand",
+                            Title = "Описание бренда"
+    }
+  };
+
+  NavbarNavManager navbar_nav_manager = new NavbarNavManager();
+
+  navbar_nav_manager.AddNavItem(id_dom: "home-nav-dom-id", header: "Home", href: "#").IsActive = true;
+  navbar_nav_manager.AddNavItem("features-nav-dom-id", "Features", "#");
+  navbar_nav_manager.AddNavItem("pricing-nav-dom-id", "Pricing", "#");
+
+  NavItemModel navItem = navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Dropdown link", "#");
+                    
+  navItem.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "dropdown-action-dom-id");
+  navItem.AddSubNav(header_nav: "Another action", href_nav: "#", id_dom: "dropdown-another-action-dom-id");
+  navItem.AddSubNav(null);
+  navItem.AddSubNav(header_nav: "Something else here", href_nav: "#", id_dom: "dropdown-something-action-dom-id");
+
+  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+***result:***
+![Demo](../../../../demo/navbar-base-dropdowns-ul-li-a.jpg)
+
 ## [Forms](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
 >  дополняется
 
