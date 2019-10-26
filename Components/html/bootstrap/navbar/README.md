@@ -60,7 +60,7 @@
 ```
 ***result:*** пример: слева (синим) монитор ПК, справа (красным) на дисплее **iPhone 6/6/7**. Дисплей iPhone демонстрируется в двух состояниях: свёрнутый слева (коричневый) и развернутый справа (зелёный)
 ![Bootstrap - Navbar base (demo ul->li->a)](../../../../demo/navbar-base-ul-li-a.jpg)
-
+В примере выше использовались утилиты [color](https://getbootstrap.com/docs/4.3/utilities/colors/) (__bg-light__) и [spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/) (__my-2, my-lg-0, mr-sm-0, my-sm-0__).
 
 
 > Navbars поставляются со встроенной поддержкой [нескольких субкомпонентов](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
