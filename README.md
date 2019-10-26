@@ -15,17 +15,17 @@
 ```c#
 public List<PageSizeItem> ListSizes
 {
-	get
-	{
-		return new List<PageSizeItem>()
-		{
-			new PageSizeItem(){ Value = 5, Title = "5", Tooltip = "По 5 элементов на странице" },
-			new PageSizeItem(){ Value = 10, Title = "10", Tooltip = "По 10 элементов на странице" },
-			new PageSizeItem(){ Value = 30, Title = "30", Tooltip = "По 30 элементов на странице" },
-			new PageSizeItem(){ Value = 50, Title = "50", Tooltip = "По 50 элементов на странице" },
-			new PageSizeItem(){ Value = 100, Title = "100", Tooltip = "По 100 элементов на странице" }
-		};
-	}
+  get
+  {
+    return new List<PageSizeItem>()
+    {
+        new PageSizeItem(){ Value = 5, Title = "5", Tooltip = "По 5 элементов на странице" },
+        new PageSizeItem(){ Value = 10, Title = "10", Tooltip = "По 10 элементов на странице" },
+        new PageSizeItem(){ Value = 30, Title = "30", Tooltip = "По 30 элементов на странице" },
+        new PageSizeItem(){ Value = 50, Title = "50", Tooltip = "По 50 элементов на странице" },
+        new PageSizeItem(){ Value = 100, Title = "100", Tooltip = "По 100 элементов на странице" }
+    };
+  }
 }
 ```
 
