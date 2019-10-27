@@ -7,16 +7,16 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyLeftAligned;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyLeftAligned;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -122,7 +122,7 @@
     nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Link", "nav-link", "#");
     nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;                    
+    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;        
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
   @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
@@ -145,7 +145,7 @@
     nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
     nav.AddNav("Link", "nav-link", "#");
     nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;                    
+    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;        
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
   }
   @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
@@ -304,7 +304,7 @@
     // по умолчанию <a></a> якоря уже будут иметь обязательные классы стилей. мы к ним добавляем дополнительные
     // классы стилей будут добавлены толкьо в существующие(уже добавленые) пункты меню
     nav.ChildsAddCSS("flex-sm-fill text-sm-center");
-                   
+       
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
   }
   @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
