@@ -24,41 +24,28 @@
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
-
-
   NavbarNavManager navbar_nav_manager = new NavbarNavManager();
   navbar_nav_manager.AddCSS("mr-auto"); // добавляем контейнеру стили: margin-right: auto !important;
   navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
   navbar_nav_manager.AddNavItem("link-nav-id", "Link", "#");
-
   NavItemModel navbar_nav_dropdown_item = navbar_nav_manager.AddNavItem("dropdown-nav-id", "Dropdown", "#");
   navbar_nav_dropdown_item.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "action-nav-id");
-  navbar_nav_dropdown_item.AddSubNav("Another action", "#", "another-action-nav-id");
-  navbar_nav_dropdown_item.AddSubNav(null);
+  navbar_nav_dropdown_item.AddSubNav("Another action", "#", "another-action-nav-id");  navbar_nav_dropdown_item.AddSubNav(null);
   navbar_nav_dropdown_item.AddSubNav("Something else here", "#", "something-else-here-nav-id");
-
   navbar_nav_manager.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
-
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
-
   FormManager formManager = new FormManager();
-
   TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
   {
     Placeholder = "Search"
   };
   input_manager.AddCSS("form-control mr-sm-2", true);
-   formManager.AddSubNode(input_manager);
-
+  formManager.AddSubNode(input_manager);
   ButtonBaseManager button_manager = new ButtonBaseManager("Search");
   button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
-
   formManager.AddSubNode(button_manager);
-
-
   formManager.AddCSS("my-2 my-lg-0", true);
   navbar_manager.NavbarActions.AddSubNode(formManager);
-
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
 </header>
