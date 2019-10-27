@@ -17,12 +17,12 @@
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
     Id_DOM = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("brand-id")
-	{
+    {
 	  Href = "#",
 	  Header = " Brand",
 	  Title = "Описание бренда",
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
-	}
+    }
   };
 
 
