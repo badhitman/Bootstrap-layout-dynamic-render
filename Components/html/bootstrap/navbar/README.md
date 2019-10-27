@@ -490,8 +490,11 @@
 
 > Также обратите внимание, что `.sticky-top` использует позицию: `sticky`, которая в некоторых браузерах не имеет полной поддержки.
 
-***result:***
-![Demo](../../../../demo/navbar-placement-fixed-top.jpg)
+***result:*** Firefox 70 (x64) Win7
+![Demo](../../../../demo/navbar-placement-fixed-top-firefox-70-x64-win7.jpg)
+
+***result:*** Google Chrome 78.0.3904.70 (x64) Win7
+![Demo](../../../../demo/navbar-placement-fixed-top-google-chrome-78-x64-win7.jpg)
 
 ## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
 >  дополняется
