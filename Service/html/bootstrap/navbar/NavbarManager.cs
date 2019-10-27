@@ -36,7 +36,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Choose from.navbar-light for use with light background colors, or.navbar-dark for dark background colors.
         /// Then, customize with .bg-* utilities.
         /// </summary>
-        public BackgroundColorThemesEnum BackgroundColorTheme { get; private set; } = BackgroundColorThemesEnum.light;
+        public BackgroundColorThemesEnum BackgroundColorTheme { get; set; } = BackgroundColorThemesEnum.light;
 
         /// <summary>
         /// Color schemes
@@ -44,7 +44,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities.
         /// Choose from.navbar-light for use with light background colors, or.navbar-dark for dark background colors.Then, customize with .bg-* utilities.
         /// </summary>
-        public NavbarColorSchemesEnum NavbarColorScheme { get; private set; } = NavbarColorSchemesEnum.light;
+        public NavbarColorSchemesEnum NavbarColorScheme { get; set; } = NavbarColorSchemesEnum.light;
 
         /// <summary>
         /// Позиционирование для размещения навигационных панелей в нестатических положениях

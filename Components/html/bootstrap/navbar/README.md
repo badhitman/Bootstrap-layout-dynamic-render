@@ -408,7 +408,80 @@
 ![Demo](../../../../demo/navbar-base-nav-ul-li-a-and-text.jpg)
 
 ## [Color schemes](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
->  дополняется
+>  Тематизация навигационной панели никогда не была проще благодаря сочетанию классов тематизации и утилит фонового цвета.
+Выбирайте между **.navbar-light** для использования со светлыми цветами фона, или **.navbar-dark** на темном фоне цвета.
+Затем настройте цвет заднего фона с помощью утилит **.bg-* **
+
+```cshtml
+<header>
+                @{
+                    NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
+                    navbar_manager.NavbarBrand = new NavbarBrandManager()
+                    {
+                        NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+                        Id_DOM = "navbar-brand-id",
+                        NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
+                        {
+                            Href = "#",
+                            Header = " Brand navbar",
+                            Title = "Описание бренда"
+                        }
+                    };
+
+                    NavbarNavManager navbar_nav_manager = new NavbarNavManager();
+                    navbar_nav_manager.AddCSS("mr-auto");
+                    navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
+                    navbar_nav_manager.AddNavItem("features-nav-id", "Features", "#");
+                    navbar_nav_manager.AddNavItem("pricing-nav-id", "Pricing", "#");
+                    navbar_nav_manager.AddNavItem("disabled-nav-id", "About", "#");
+
+                    navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
+
+                    FormManager formManager = new FormManager();
+
+                    TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+                    {
+                        Placeholder = "Search"
+                    };
+                    input_manager.AddCSS("form-control mr-sm-2", true);
+                    formManager.AddSubNode(input_manager);
+
+                    ButtonBaseManager button_manager = new ButtonBaseManager("Search");
+                    button_manager.AddCSS("btn btn-outline-info my-2 my-sm-0", true);
+
+                    formManager.AddSubNode(button_manager);
+
+
+                    formManager.AddCSS("my-2 my-lg-0", true);
+                    navbar_manager.NavbarActions.AddSubNode(formManager);
+
+                    navbar_manager.NavbarColorScheme = NavbarColorSchemesEnum.dark;
+                    navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.dark;
+                    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+                    <br />
+
+                    navbar_manager.Id_DOM = "navbar-top-menu-dom-id-2";
+                    navbar_manager.ClearCSS();
+                    button_manager.ClearCSS();
+                    button_manager.AddCSS("btn btn-outline-light my-2 my-sm-0");
+                    navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.primary;
+                    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+                    <br />
+
+                    navbar_manager.Id_DOM = "navbar-top-menu-dom-id-3";
+                    navbar_manager.ClearCSS();
+                    button_manager.ClearCSS();
+                    button_manager.AddCSS("btn btn-outline-primary my-2 my-sm-0");
+                    navbar_manager.NavbarColorScheme = NavbarColorSchemesEnum.light;
+                    navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.NULL;
+                    navbar_manager.SetAttribute("style", "background-color: #e3f2fd;");
+                    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+                }
+            </header>
+```
+
+***result:***
+![Demo](../../../../demo/navbar-base-color-schemes.jpg)
 
 ## [Containers](https://getbootstrap.com/docs/4.3/components/navbar/#containers)
 >  дополняется
