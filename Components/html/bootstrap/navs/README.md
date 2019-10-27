@@ -30,16 +30,16 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyLeftAligned;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.nav;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyLeftAligned;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.nav;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -53,16 +53,16 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyCenterAligned;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyCenterAligned;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -71,16 +71,16 @@
 В следующем примере навигация распологается справа по горизонтали (применяется класс Bootstrap стилей: **.justify-content-end**):
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyRightAligned;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyRightAligned;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -92,16 +92,16 @@
 Горизонтальное расположение в виде стэка определяется через ориентацию (свойство: `nav.NavigationOrientation`):
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.Vertically;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.Vertically;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -111,21 +111,22 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.Vertically;
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.Vertically;
 
-    // добавляем адаптивный пользовательский класс стилей
-    nav.AddCSS("flex-md-column");
-    // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles as List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
+  // добавляем адаптивный пользовательский класс стилей
+  nav.AddCSS("flex-md-column");
+  // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
+  // таким образом добавив класс "flex-md-column" мы сообщаем, что класс "flex-column" (добавдляемый по умолчанию для вертикального позиционирования блока навигации), не будет добавлен
 
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;        
+    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+    nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
@@ -134,21 +135,22 @@
 > Традиционно, вертикальная навигация возможна и без `<ul>`s.
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.Vertically;
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.Vertically;
 
-    // добавляем адаптивный пользовательский класс стилей
-    nav.AddCSS("flex-md-column");
-    // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles as List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
+  // добавляем адаптивный пользовательский класс стилей
+  nav.AddCSS("flex-md-column");
+  // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
+  // таким образом добавив класс "flex-md-column" мы сообщаем, что класс "flex-column" (добавдляемый по умолчанию для вертикального позиционирования блока навигации), не будет добавлен
 
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;        
+    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+    nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -165,16 +167,16 @@
 **Tabs** стиль определяется через соответсвующее свойствао `nav.IsTabsStyle = true;`
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.IsTabsStyle = true;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.IsTabsStyle = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -184,16 +186,16 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.IsTabsStyle = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.nav;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.IsTabsStyle = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.nav;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -208,15 +210,16 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.IsTabsStyle = false;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.nav;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -226,16 +229,17 @@
 > Для принудительного расширения `.nav`s по всей доступной ширине применяется один из двух классов-модификаторов.
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Much longer nav link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
+  nav.IsTabsStyle = false;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Much longer nav link", "nav-item-link-much-longer-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -247,16 +251,17 @@
 
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Much longer nav link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.nav;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
+  nav.IsTabsStyle = false;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Much longer nav link", "nav-item-link-much-longer-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.nav;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -265,16 +270,17 @@
 Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует клас стилей: **.nav-justified**):
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyJustified;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Much longer nav link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.HorizontallyJustified;
+  nav.IsTabsStyle = false;
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Much longer nav link", "nav-item-link-much-longer-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -287,27 +293,28 @@
 Через механизм установки CSS стилей можно гибче манипулировать адаптивной вёрсткой:
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.Vertically;
-    
-    // добавление пользователського класса стилей блоку навигации
-    // по умолчанию там уже будут классы "nav", "flex-column" (в случае вертикальной ориентации) и "nav-pills" (в случае применения стиля Pills)
-    nav.AddCSS("flex-sm-row");
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.NavigationOrientation = NavOrientationsEnum.Vertically;
 
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-link", "#");
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true; 
+  // добавление пользователського класса стилей блоку навигации
+  // по умолчанию там уже будут классы "nav", "flex-column" (в случае вертикальной ориентации) и "nav-pills" (в случае применения стиля Pills)
+  nav.AddCSS("flex-sm-row");
 
-    // метод добавления пользовательских классов в дочерние елементы (пункты меню на уровне тега <a></a>)
-    // по умолчанию <a></a> якоря уже будут иметь обязательные классы стилей. мы к ним добавляем дополнительные
-    // классы стилей будут добавлены толкьо в существующие(уже добавленые) пункты меню
-    nav.ChildsAddCSS("flex-sm-fill text-sm-center");
-       
-    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+  nav.AddNav("Longer nav link", "nav-item-longer-link-dom-id", "#");
+  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.nav;
+
+  // метод добавления пользовательских классов в дочерние елементы (пункты меню на уровне тега <a></a>)
+  // по умолчанию <a></a> якоря уже будут иметь обязательные классы стилей. мы к ним добавляем дополнительные
+  // классы стилей будут добавлены толкьо в существующие(уже добавленые) пункты меню
+  nav.ChildsAddCSS("flex-sm-fill text-sm-center");
+
+  nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+}
+@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 > В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
@@ -319,19 +326,19 @@
 ```cshtml
 <header>
   @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
     nav.IsTabsStyle = true;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
+    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
 
-    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "dropdown-nav", "#");
-    dropdown_nav.AddSubNav("Action", "dropdown-item-1", "#");
-    dropdown_nav.AddSubNav("Another action", "dropdown-item-2", "#");
-    dropdown_nav.AddSubNav("Something else here", "dropdown-item-3", "#");
+    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "nav-dropdown-dom-id", "#");
+    dropdown_nav.AddSubNav("Action", "nav-dropdown-action-sub-item-dom-id", "#");
+    dropdown_nav.AddSubNav("Another action", "nav-dropdown-another-action-sub-item-dom-id", "#");
+    dropdown_nav.AddSubNav("Something else here", "nav-dropdown-something-action-sub-item-dom-id", "#");
     dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
-    dropdown_nav.AddSubNav("Separated link", "dropdown-item-4", "#");
+    dropdown_nav.AddSubNav("Separated link", "nav-dropdown-separated-link-sub-item-dom-id", "#");
 
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
+    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
 
     nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
@@ -345,20 +352,21 @@
 ```cshtml
 <header>
   @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-menu");
-    nav.NavigationOrientation = NavOrientationsEnum.HorizontallyJustified;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home", SetNavHref: "#").IsActive = true;
+    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+    nav.IsTabsStyle = false;
+    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
 
-    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "dropdown-nav", "#");
-    dropdown_nav.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "dropdown-item-1");
-    dropdown_nav.AddSubNav("Another action", "#", "dropdown-item-2");
-    dropdown_nav.AddSubNav("Something else here", "#", "dropdown-item-3");
+    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "nav-dropdown-dom-id", "#");
+    dropdown_nav.AddSubNav("Action", "nav-dropdown-action-sub-item-dom-id", "#");
+    dropdown_nav.AddSubNav("Another action", "nav-dropdown-another-action-sub-item-dom-id", "#");
+    dropdown_nav.AddSubNav("Something else here", "nav-dropdown-something-action-sub-item-dom-id", "#");
     dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
-    dropdown_nav.AddSubNav("Separated link", "dropdown-item-4", "#");
+    dropdown_nav.AddSubNav("Separated link", "nav-dropdown-separated-link-sub-item-dom-id", "#");
 
-    nav.AddNav("Link", "nav-link-second", "#");
-    nav.AddNav("Disabled", "nav-disabled", "#").IsDisabled = true;
-    nav.NavWrapperType = NavWrapperTypesEnum.ul;
+    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
+    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+
+    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
   }
   @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
