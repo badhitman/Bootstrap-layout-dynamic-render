@@ -10,5 +10,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
         public override string ViewComponentName => nameof(NavbarText);
 
         public string Header { get; set; }
+        
+        public NavbarTextManager(string SetHeader)
+        {
+            Header = SetHeader;
+        }
     }
 }

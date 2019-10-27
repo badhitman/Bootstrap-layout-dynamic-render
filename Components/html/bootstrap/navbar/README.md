@@ -346,7 +346,27 @@
 ![Demo](../../../../demo/navbar-base-brand-form.jpg)
 
 ## [Text](https://getbootstrap.com/docs/4.3/components/navbar/#text)
->  дополняется
+
+>  Навигационные панели могут содержать текстовые данные с помощью **.navbar-text**.
+Этот класс регулирует вертикальное выравнивание и горизонтальный интервал для строк текста.
+
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager()
+  {
+    Id_DOM = "top-menu-navbar-dom-id",
+    NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.NULL
+  };
+    navbar_manager.NavbarActions.IsHidesCollapse = false;
+    NavbarTextManager navbarText = new NavbarTextManager("Navbar text with an inline element");
+    navbar_manager.NavbarActions.AddSubNode(navbarText);
+    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+***result:***
+![Demo](../../../../demo/navbar-base-text.jpg)
 
 ## [Color schemes](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
 >  дополняется
