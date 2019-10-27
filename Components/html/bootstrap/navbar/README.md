@@ -496,6 +496,9 @@
 ###### Google Chrome 78.0.3904.70 (x64) Win7 ***result:***
 ![Demo](../../../../demo/navbar-placement-fixed-top-google-chrome-78-x64-win7.jpg)
 
+###### IE 11.0.9600.19507 (x64) Win7 ***result:***
+![Demo](../../../../demo/navbar-placement-fixed-top-ie-11-x64-win7.jpg)
+
 ## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
 >  дополняется
 
