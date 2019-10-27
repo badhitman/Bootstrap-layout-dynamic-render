@@ -345,7 +345,7 @@
   @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
-***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
+***result:***
 ![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../../../demo/nav-dropdowns-tabs-ul-li-a.jpg)
 
 ## [Pills with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
