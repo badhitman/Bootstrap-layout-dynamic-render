@@ -39,7 +39,7 @@
 
   navbar_nav_manager.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
 
-  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
   FormManager formManager = new FormManager();
 
@@ -57,7 +57,7 @@
 
 
   formManager.AddCSS("my-2 my-lg-0", true);
-  navbar_manager.NavbarBody.AddSubNode(formManager);
+  navbar_manager.NavbarActions.AddSubNode(formManager);
 
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
@@ -170,7 +170,7 @@
   navbar_nav_manager.AddNavItem("features-nav-dom-id", "Features", "#");
   navbar_nav_manager.AddNavItem("pricing-nav-dom-id", "Pricing", "#");
   navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Disabled", "#").IsDisabled = true;
-  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
@@ -210,7 +210,7 @@
   navbar_nav_manager.AddNavItem("features-nav-dom-id", "Features", "#");
   navbar_nav_manager.AddNavItem("pricing-nav-dom-id", "Pricing", "#");
   navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Disabled", "#").IsDisabled = true;
-  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
@@ -255,7 +255,7 @@
   navItem.AddSubNav(null);
   navItem.AddSubNav(header_nav: "Something else here", href_nav: "#", id_dom: "dropdown-something-action-dom-id");
 
-  navbar_manager.NavbarBody.AddSubNode(navbar_nav_manager);
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
 }
