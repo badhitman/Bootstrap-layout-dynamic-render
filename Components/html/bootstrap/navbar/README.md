@@ -418,14 +418,14 @@
   NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
-      NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-      Id_DOM = "navbar-brand-id",
-      NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
-      {
-          Href = "#",
-          Header = " Brand navbar",
-          Title = "Описание бренда"
-      }
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
+    {
+      Href = "#",
+      Header = " Brand navbar",
+      Title = "Описание бренда"
+    }
   };
 
   NavbarNavManager navbar_nav_manager = new NavbarNavManager();
@@ -441,7 +441,7 @@
 
   TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
   {
-      Placeholder = "Search"
+    Placeholder = "Search"
   };
   input_manager.AddCSS("form-control mr-sm-2", true);
   formManager.AddSubNode(input_manager);
