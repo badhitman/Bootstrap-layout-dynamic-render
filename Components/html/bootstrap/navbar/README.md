@@ -483,15 +483,15 @@
 ***result:***
 ![Demo](../../../../demo/navbar-base-color-schemes.jpg)
 
-## [Containers](https://getbootstrap.com/docs/4.3/components/navbar/#containers)
->  дополняется
-
 ## [Placement](https://getbootstrap.com/docs/4.3/components/navbar/#placement)
 >  Используйте утилиты позиционирования для размещения навигационных панелей в нестатических положениях.
 Выберите одно из фиксированных положений `top`, `fixed to the bottom` или `stickied to the top` (прокручивает страницу до тех пор, пока она не достигнет вершины, а затем остается там).
 Фиксированные навигационные панели используют `position: fixed`, что означает, что они вытягиваются из нормального потока **DOM** и могут требовать пользовательского **CSS** (например, `padding-top` на `<body>`), чтобы предотвратить перекрытие с другими элементами.
 
 > Также обратите внимание, что `.sticky-top` использует позицию: `sticky`, которая в некоторых браузерах не имеет полной поддержки.
+
+***result:***
+![Demo](../../../../demo/navbar-placement-fixed-top.jpg)
 
 ## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
 >  дополняется
