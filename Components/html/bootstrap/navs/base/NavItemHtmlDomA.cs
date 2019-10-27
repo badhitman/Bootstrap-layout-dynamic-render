@@ -12,8 +12,12 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
         {
             SetObjectManager.AddCSS("nav-link");
             if (SetObjectManager.IsActive)
+            {
                 SetObjectManager.AddCSS("active");
-
+                string sr_html_injection = "<span class=\"sr-only\">(current)</span>";
+                if (!SetObjectManager.Header.EndsWith(sr_html_injection))
+                    SetObjectManager.Header += " " + sr_html_injection;
+            }
             if (SetObjectManager.ChildsCount > 0)
             {
                 SetObjectManager.AddCSS("dropdown-toggle");

@@ -368,6 +368,14 @@
 ***result:***
 ![Demo](../../../../demo/navbar-base-text.jpg)
 
+> Совмещайте с другими компонентами и утилитами по мере необходимости.
+
+```cshtml
+
+```
+***result:***
+![Demo](../../../../demo/navbar-base-nav-ul-li-a-and-text.jpg)
+
 ## [Color schemes](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
 >  дополняется
 
