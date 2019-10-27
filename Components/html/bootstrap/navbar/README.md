@@ -490,6 +490,27 @@
 
 > Также обратите внимание, что `.sticky-top` использует позицию: `sticky`, которая в некоторых браузерах не имеет полной поддержки.
 
+```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
+  navbar_manager.NavbarPlacement = NavbarPlacementsEnum.FixedTop;
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
+    {
+      Href = "#",
+      Header = " Brand navbar",
+      Title = "Описание бренда"
+    }
+  };
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+
 ###### Firefox 70 (x64) Win7 ***result:***
 ![Demo](../../../../demo/navbar-placement-fixed-top-firefox-70-x64-win7.jpg)
 
