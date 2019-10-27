@@ -371,7 +371,38 @@
 > Совмещайте с другими компонентами и утилитами по мере необходимости.
 
 ```cshtml
+<header>
+@{
+  NavbarManager navbar_manager = new NavbarManager()
+  {
+    Id_DOM = "top-menu-navbar-dom-id",
+    NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.Lg
+  };
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandDom = new BrandNavItemModel("brand-dom-id")
+    {
+      Header = "Navbar w/ text",
+      Href = "#"
+    }
+  };
 
+  navbar_manager.NavbarActions.IsHidesCollapse = true;
+
+  NavbarNavManager navbar_nav_manager = new NavbarNavManager();
+  navbar_nav_manager.AddCSS("mr-auto");
+  navbar_nav_manager.AddNavItem(id_dom: "home-nav-dom-id", header: "Home", href: "#").IsActive = true;
+  navbar_nav_manager.AddNavItem("features-nav-dom-id", "Features", "#");
+  navbar_nav_manager.AddNavItem("pricing-nav-dom-id", "Pricing", "#");
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
+
+  NavbarTextManager navbarText = new NavbarTextManager("Navbar text with an inline element");
+  navbarText.AddCSS("navbar-text");
+  navbar_manager.NavbarActions.AddSubNode(navbarText);
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
 ```
 ***result:***
 ![Demo](../../../../demo/navbar-base-nav-ul-li-a-and-text.jpg)
