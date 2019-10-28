@@ -507,6 +507,82 @@
 ###### IE 11.0.9600.19507 (x64) Win7 ***result:***
 ![Demo](../../../../demo/navbar-placement-fixed-top-ie-11-x64-win7.jpg)
 
+## Nav x2
+
+При необходимости можно совмещать два Nav в одном Navbar
+
+```cshtml
+<header>
+@{
+  int CountUnreadedMessages = 0;
+  if (ViewBag.CountUnreadedMessages is int)
+  {
+    CountUnreadedMessages = ViewBag.CountUnreadedMessages;
+  }
+
+  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
+  navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.dark;
+  navbar_manager.NavbarColorScheme = NavbarColorSchemesEnum.dark;
+  navbar_manager.NavbarBrand = new NavbarBrandManager()
+  {
+    NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
+    Id_DOM = "navbar-brand-id",
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
+    {
+      Href = "/",
+      Header = " <span class=\"text-primary\">Shop</span><strong class=\"text-success\">ON</strong>",
+      Title = "Мерчант"
+    }
+  };
+
+  NavbarNavManager navbar_nav_manager = new NavbarNavManager() { Id_DOM = "navbar-nav-left-dom-id" };
+  navbar_nav_manager.AddCSS("mr-auto");
+  navbar_nav_manager.AddNavItem(id_dom: "about-nav-dom-id", header: "About", href: "/about");
+  navbar_nav_manager.AddNavItem("other-1-link-nav-dom-id", "Other 1", "#");
+  navbar_nav_manager.AddNavItem("other-2-link-nav-dom-id", "Other 2", "#");
+  navbar_nav_manager.AddNavItem("other-3-link-nav-dom-id", "Other 3", "#");
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
+
+  navbar_nav_manager = new NavbarNavManager() { Id_DOM = "navbar-nav-right-dom-id" };
+  navbar_nav_manager.AddCSS("ml-auto");
+  @if (Model.User is null)
+  {
+    navbar_nav_manager.AddNavItem("navbar-login-link-nav-dom-id", "Войти", "/account/login").AddCSS("text-primary");
+  }
+  else
+  {
+    NavItemModel navbar_nav_item;
+    if (Model.User.AccessLevel >= AccessLevelUserModel.Manager)
+    {
+      navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-admin-nav-dropdown-dom-id", "Управление", "#");
+      navbar_nav_item.AddCSS("bg-danger text-white");
+      navbar_nav_item.AddSubNav(header_nav: "Финансы", href_nav: "/finance/", id_dom: "navbar-finance-nav-dom-id");
+      navbar_nav_item.AddSubNav("Доставка", "/delivery/", "navbar-delivery-nav-dom-id");
+      navbar_nav_item.AddSubNav("Пользователи", "/users/", "navbar-users-nav-dom-id");
+      navbar_nav_item.AddSubNav("Справочники", "/assortment/", "navbar-assortment-nav-id");
+      navbar_nav_item.AddSubNav("Файлы", "/files/", "navbar-files-nav-id");
+    }
+    navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-unreaded-messages-nav-dom-id", "Уведомления", "/messages/");
+    navbar_nav_item.Header += " <span class='badge" + (CountUnreadedMessages > 0 ? " text-danger badge-light" : "") + "'>" + CountUnreadedMessages + "</span>";
+    navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-profile-nav-dropdown-dom-id", "Профиль", "#");
+    navbar_nav_item.AddSubNav(header_nav: "Акаунт", href_nav: "/account/", id_dom: "navbar-account-nav-dom-id");
+    navbar_nav_item.AddSubNav(null);
+    navbar_nav_item.AddSubNav(header_nav: "Выход", href_nav: "/account/logout", id_dom: "navbar-logout-nav-dom-id");
+  }
+
+  navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
+
+  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+}
+</header>
+```
+
+***result:*** навигация для неавторизованого пользователя
+![Demo](../../../../demo/navbar-dual-nav-guest.jpg)
+
+***result:*** навигация для администратора
+![Demo](../../../../demo/navbar-dual-nav-admin.jpg)
+
 ## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
 >  дополняется
 
