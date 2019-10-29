@@ -2,16 +2,15 @@
 // © https://github.com/badhitman 
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs;
-using BootstrapViewComponentsRazorLibrary.Service;
+using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using System;
-using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
 {
     /// <summary>
     /// Пункт меню nav-item
     /// </summary>
-    public class NavItemModel : AbstractNestedToolsManager
+    public class NavItemModel : AbstractCoreNavManager
     {
         public string Header { get; set; }
 
@@ -29,17 +28,6 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
                 Id_DOM = Guid.NewGuid().ToString();
             else
                 Id_DOM = html_dom_id;
-        }
-
-        /// <summary>
-        /// Сброс состояния (IsActive||IsDisable)
-        /// </summary>
-        public void ResetNavItems()
-        {
-            IsActive = false;
-            IsDisabled = false;
-            foreach (NavItemModel nav_sub_item in GetChilds().Where(x => !(x is null)))
-                nav_sub_item.ResetNavItems();
         }
 
         public void AddSubNav(string header_nav, string href_nav = "#", string id_dom = null)

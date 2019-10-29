@@ -2,5 +2,5 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarTextManager
 <span @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
-    @Model.Header
+    @Html.Raw(Model.Header)
 </span>

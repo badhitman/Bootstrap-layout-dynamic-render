@@ -584,10 +584,10 @@
 ![Demo](../../../../demo/navbar-dual-nav-admin.jpg)
 
 ## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
->  дополняется
+>  в процессе...
 
 ## [Toggler](https://getbootstrap.com/docs/4.3/components/navbar/#toggler)
->  дополняется
+>  в процессе...
 
 ## [External content](https://getbootstrap.com/docs/4.3/components/navbar/#external-content)
->  дополняется
+>  в процессе...

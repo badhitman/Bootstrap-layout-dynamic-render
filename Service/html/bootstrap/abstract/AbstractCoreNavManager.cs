@@ -2,62 +2,38 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public abstract class AbstractCoreNavManager : AbstractNestedToolsManager
     {
-        public void DisableNavItem(string disable_nav_by_id)
+        private void FindAllNavigationItems(ref List<NavItemModel> navItems, Predicate<NavItemModel> FindPredicateUnit = null)
         {
-            disable_nav_by_id = disable_nav_by_id.ToLower();
-            foreach (NavItemModel nav_item in Childs)
+            foreach (NavItemModel nav_item in Childs.Where(x => !(x is null) && x is NavItemModel))
             {
-                if (nav_item.Id_DOM.ToLower() == disable_nav_by_id)
-                {
-                    nav_item.IsDisabled = true;
-                    return;
-                }
-                foreach (NavItemModel nav_sub_item in nav_item.GetChilds().Where(x => !(x is null)))
-                {
-                    if (nav_sub_item.Id_DOM.ToLower() == disable_nav_by_id)
-                    {
-                        nav_sub_item.IsDisabled = true;
-                        return;
-                    }
-                }
-            }
-        }
+                if (FindPredicateUnit is null || FindPredicateUnit(nav_item))
+                    navItems.Add(nav_item);
 
-        public void ActivateNavItem(string activate_nav_by_id)
-        {
-            activate_nav_by_id = activate_nav_by_id.ToLower();
-
-            foreach (NavItemModel nav_item in Childs)
-            {
-                if (nav_item.Id_DOM.ToLower() == activate_nav_by_id)
-                {
-                    nav_item.IsActive = true;
-                    return;
-                }
-                foreach (NavItemModel nav_sub_item in nav_item.GetChilds().Where(x => !(x is null)))
-                {
-                    if (nav_sub_item.Id_DOM.ToLower() == activate_nav_by_id)
-                    {
-                        nav_sub_item.IsActive = true;
-                        return;
-                    }
-                }
+                FindAllNavigationItems(ref navItems);
             }
         }
 
         /// <summary>
-        /// Сброс состояния (IsActive||IsDisable) всех пунктов меню
+        /// Найти все элементы меню, которые соответствуют предикату
+        /// 
+        /// bool FindPredicateUnit(NavItemModel navItem) { return navItem.Id_DOM.ToLower() == activate_nav_by_id; };
+        /// FindNavigationItems(FindPredicateUnit).ForEach(x => x);
         /// </summary>
-        public void ResetNavItems()
+        /// <param name="FindPredicateUnit"></param>
+        /// <returns>Все элементы меню, которые соответствуют предикату</returns>
+        public List<NavItemModel> FindNavigationItems(Predicate<NavItemModel> FindPredicateUnit = null)
         {
-            foreach (NavItemModel nav_item in Childs)
-                nav_item.ResetNavItems();
+            List<NavItemModel> navItems = new List<NavItemModel>();
+            FindAllNavigationItems(ref navItems, FindPredicateUnit);
+            return navItems;
         }
     }
 }
