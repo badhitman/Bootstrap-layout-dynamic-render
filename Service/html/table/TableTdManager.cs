@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.table
 {
-    public class TableTdManager : AbstractNestedToolsManager
+    public class TableTdManager : ManagedListNodesManager
     {
         public override string ViewComponentName => nameof(TableTdBase);
 

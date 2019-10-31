@@ -8,7 +8,7 @@ using System.Net.Http;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
 {
-    public class FormManager : AbstractNestedToolsManager
+    public class FormManager : ManagedListNodesManager
     {
         public override string ViewComponentName => nameof(FormBase);
 
@@ -47,11 +47,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Управляет автозаполнением полей форм. Значение может быть перекрыто атрибутом autocomplete у конкретных элементов формы.
         /// </summary>
         public bool? AutoComplete { get; set; } = null;
-
-        public void AddSubNode(AbstractDomManager ChildNode)
-        {
-            Childs.Add(ChildNode);
-        }
 
         public override string StringAttributes
         {
