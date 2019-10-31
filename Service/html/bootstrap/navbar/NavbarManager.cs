@@ -44,7 +44,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// Theming the navbar has never been easier thanks to the combination of theming classes and background-color utilities.
         /// Choose from.navbar-light for use with light background colors, or.navbar-dark for dark background colors.Then, customize with .bg-* utilities.
         /// </summary>
-        public NavbarColorSchemesEnum NavbarColorScheme { get; set; } = NavbarColorSchemesEnum.light;
+        public MonochromeColorSchemesEnum NavbarColorScheme { get; set; } = MonochromeColorSchemesEnum.light;
 
         /// <summary>
         /// Позиционирование для размещения навигационных панелей в нестатических положениях
@@ -58,7 +58,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         public NavbarBrandManager NavbarBrand { get; set; }
 
         public string CollapseTarget => Id_DOM + "NavbarCollapsedContent";
-        public NavbarBodyManager NavbarActions { get; set; } = new NavbarBodyManager();
+        public UniversalListManager NavbarActions { get; set; } = new UniversalListManager();
 
         public override string ViewComponentName => nameof(NavbarBase);
 

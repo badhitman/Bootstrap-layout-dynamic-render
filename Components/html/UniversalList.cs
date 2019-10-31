@@ -5,12 +5,12 @@ using BootstrapViewComponentsRazorLibrary.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
+namespace BootstrapViewComponentsRazorLibrary.Components.html
 {
-    public class NavbarBody : ViewComponent
+    public class UniversalList : ViewComponent
     {
         protected ILogger logger;
-        public NavbarBody(ILoggerFactory _loggerFactory)
+        public UniversalList(ILoggerFactory _loggerFactory)
         {
             logger = _loggerFactory.CreateLogger(this.GetType().Name + "Class");
         }

@@ -17,7 +17,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 if (FindPredicateUnit is null || FindPredicateUnit(nav_item))
                     navItems.Add(nav_item);
 
-                FindAllNavigationItems(ref navItems);
+                nav_item.FindAllNavigationItems(ref navItems, FindPredicateUnit);
             }
         }
 

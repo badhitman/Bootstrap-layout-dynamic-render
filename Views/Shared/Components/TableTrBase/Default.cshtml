@@ -1,7 +1,7 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
-@using BootstrapViewComponentsRazorLibrary.Service
+@using BootstrapViewComponentsRazorLibrary.Service.html.table
 @using BootstrapViewComponentsRazorLibrary.Components.html
-@model FormManager
-<form @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+@model TableTrManager
+<tr @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
-</form>
+</tr>

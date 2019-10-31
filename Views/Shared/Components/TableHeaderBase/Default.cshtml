@@ -1,0 +1,8 @@
+﻿@*© https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Service.html.table
+@using BootstrapViewComponentsRazorLibrary.Components.html
+<thead @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+    <tr>
+        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+    </tr>
+</thead>

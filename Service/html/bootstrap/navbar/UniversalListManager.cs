@@ -1,18 +1,15 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
-using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using BootstrapViewComponentsRazorLibrary.Components.html;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 {
-    public class NavbarBodyManager : AbstractNestedToolsManager
+    public class UniversalListManager : AbstractNestedToolsManager
     {
         public bool IsHidesCollapse { get; set; } = true;
 
-        public override string ViewComponentName => nameof(NavbarBody);
+        public override string ViewComponentName => nameof(UniversalList);
 
         public void AddSubNode(FormManager navbarform)
         {

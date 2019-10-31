@@ -301,7 +301,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить CSS классы одной строкой (разделитель пробел)
         /// </summary>
-        public string StringCSS
+        public virtual string StringCSS
         {
             get
             {

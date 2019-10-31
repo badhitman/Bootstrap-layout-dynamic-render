@@ -48,14 +48,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public bool? AutoComplete { get; set; } = null;
 
-        public void AddSubNode(ButtonBaseManager SetButtonBaseManager)
+        public void AddSubNode(AbstractDomManager ChildNode)
         {
-            Childs.Add(SetButtonBaseManager);
-        }
-
-        public void AddSubNode(InputBaseManager SetInputBaseManager)
-        {
-            Childs.Add(SetInputBaseManager);
+            Childs.Add(ChildNode);
         }
 
         public override string StringAttributes

@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -49,7 +50,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
             {
                 SetObjectManager.AddCSS("bg-" + SetObjectManager.BackgroundColorTheme.ToString().ToLower());
             }
-            if (SetObjectManager.NavbarColorScheme != Models.bootstrap.NavbarColorSchemesEnum.NULL)
+            if (SetObjectManager.NavbarColorScheme != MonochromeColorSchemesEnum.NULL)
             {
                 SetObjectManager.AddCSS("navbar-" + SetObjectManager.NavbarColorScheme.ToString().ToLower());
             }
