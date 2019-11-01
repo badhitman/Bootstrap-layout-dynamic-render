@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.table
 {
-    public class TableThManager : AbstractDomManager
+    public class TableThManager : ManagedListNodesManager
     {
         public string Header { get; set; }
         public override string ViewComponentName => nameof(TableThBase);

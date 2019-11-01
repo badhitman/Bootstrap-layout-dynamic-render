@@ -4,5 +4,5 @@
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractNestedToolsManager
 <div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
-    @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model.GetChilds() })
+    @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </div>

@@ -1,6 +1,11 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Service.html.table
+@using BootstrapViewComponentsRazorLibrary.Components.html
 @model TableThManager
 <th @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
     @Html.Raw(Model.Header)
+    @if (Model.ChildsCount > 0)
+    {
+        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+    }
 </th>

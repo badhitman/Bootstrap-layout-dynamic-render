@@ -1,11 +1,10 @@
 ﻿@*© https://github.com/badhitman - @fakegov*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
-@using BootstrapViewComponentsRazorLibrary.Models.bootstrap
-@using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
+@using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractCoreNavManager
 <div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
-    @foreach (NavItemModel navItem in Model.GetChilds())
+    @if (Model.ChildsCount > 0)
     {
-        @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem })
+        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
     }
 </div>
