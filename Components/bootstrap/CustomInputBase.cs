@@ -1,4 +1,7 @@
-﻿using BootstrapViewComponentsRazorLibrary.Service.bootstrap.input;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service.bootstrap.input;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

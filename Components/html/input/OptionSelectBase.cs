@@ -1,4 +1,7 @@
-﻿using BootstrapViewComponentsRazorLibrary.Service.html.input;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service.html.input;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +11,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.html.input
 {
    public class OptionSelectBase : ViewComponent
     {
-        public IViewComponentResult Invoke(OptionSelectManager SetObjectManager)
+        public IViewComponentResult Invoke(OptionSelectInputManager SetObjectManager)
         {
             return View(SetObjectManager);
         }

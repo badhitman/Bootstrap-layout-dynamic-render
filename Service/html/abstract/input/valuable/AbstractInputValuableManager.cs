@@ -2,18 +2,21 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
-using BootstrapViewComponentsRazorLibrary.Service.html;
+using BootstrapViewComponentsRazorLibrary.Components.bootstrap.input;
+using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
+namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public abstract class AbstractInputManager : AbstractInputsManager
+    public abstract class AbstractInputValuableManager : AbstractInputManager
     {
         public InputTypesEnum InputType { get; set; }
 
-        protected AbstractInputManager(InputTypesEnum SetInputType)
+        public override string ViewComponentName => nameof(InputBase);
+
+        public AbstractInputValuableManager(InputTypesEnum SetInputType)
         {
             InputType = SetInputType;
         }

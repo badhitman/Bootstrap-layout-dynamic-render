@@ -1,4 +1,7 @@
-﻿using BootstrapViewComponentsRazorLibrary.Service.html;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service.html;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,7 +11,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.html.input
 {
     public class LabelBase : ViewComponent
     {
-        public IViewComponentResult Invoke(LabelManager SetObjectManager)
+        public IViewComponentResult Invoke(LabelInputManager SetObjectManager)
         {
             return View(SetObjectManager);
         }

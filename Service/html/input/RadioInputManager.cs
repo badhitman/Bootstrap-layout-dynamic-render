@@ -1,18 +1,17 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BootstrapViewComponentsRazorLibrary.Components.html
+namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class DivBase : ViewComponent
+    public class RadioInputManager : AbstractInputValuableBoolManager
     {
-        public IViewComponentResult Invoke()
+        public RadioInputManager() : base(BootstrapViewComponents.InputTypesEnum.radio)
         {
-            return View();
+
         }
     }
 }

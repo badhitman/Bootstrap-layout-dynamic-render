@@ -1,11 +1,14 @@
-﻿using BootstrapViewComponentsRazorLibrary.Components.html.input;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Components.html.input;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class OptionSelectManager : AbstractDomManager
+    public class OptionSelectInputManager : AbstractDomManager
     {
         public override string ViewComponentName => nameof(OptionSelectBase);
 

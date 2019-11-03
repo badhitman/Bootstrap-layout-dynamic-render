@@ -1,11 +1,14 @@
-﻿using BootstrapViewComponentsRazorLibrary.Components.html.input;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Components.html.input;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public class LabelManager : AbstractDomManager
+    public class LabelInputManager : AbstractDomManager
     {
         public override string ViewComponentName => nameof(LabelBase);
 

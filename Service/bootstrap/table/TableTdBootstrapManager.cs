@@ -1,4 +1,7 @@
-﻿using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
+﻿////////////////////////////////////////////////
+// © https://github.com/badhitman - @fakegov
+////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service.html.table;
 using System;
 using System.Collections.Generic;

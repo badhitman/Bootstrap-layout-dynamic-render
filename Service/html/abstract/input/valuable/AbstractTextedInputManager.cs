@@ -6,7 +6,7 @@ using BootstrapViewComponents;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public class TextedInputManager : InputManager
+    public abstract class AbstractTextedInputManager : AbstractInputDataValuableManager
     {
         /// <summary>
         /// Выводит текст внутри поля формы, который исчезает при получении фокуса.
@@ -33,7 +33,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         /// </summary>
         public bool? Autocomplete { get; set; } = null;
 
-        public TextedInputManager(InputTypesEnum SetInputType) : base(SetInputType)
+        public AbstractTextedInputManager(InputTypesEnum SetInputType) : base(SetInputType)
         {
 
         }
@@ -44,13 +44,13 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
             {
                 if (!string.IsNullOrWhiteSpace(Placeholder))
                     SetAttribute("placeholder", Placeholder);
-                
+
                 if (!string.IsNullOrWhiteSpace(PatternInput))
                     SetAttribute("pattern", PatternInput);
 
-                if (SizeInput>0)
+                if (SizeInput > 0)
                     SetAttribute("size", SizeInput);
-                
+
                 if (Autocomplete != null)
                     SetAttribute("autocomplete", Autocomplete == true ? "on" : "off");
 
