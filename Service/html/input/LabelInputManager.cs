@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public class InputLabelManager : AbstractDomManager
+    public class LabelInputManager : AbstractDomManager
     {
         public override string ViewComponentName => nameof(LabelBase);
 

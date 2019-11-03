@@ -9,9 +9,9 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Components.html.input
 {
-   public class OptionSelectBase : ViewComponent
+    public class OptionSelectBase : ViewComponent
     {
-        public IViewComponentResult Invoke(OptionSelectInputManager SetObjectManager)
+        public IViewComponentResult Invoke(InputOptionSelectManager SetObjectManager)
         {
             return View(SetObjectManager);
         }
