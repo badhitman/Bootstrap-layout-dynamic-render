@@ -61,10 +61,5 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         public UniversalListManager NavbarActions { get; set; } = new UniversalListManager();
 
         public override string ViewComponentName => nameof(NavbarBase);
-
-        public NavbarManager()
-        {
-
-        }
     }
 }

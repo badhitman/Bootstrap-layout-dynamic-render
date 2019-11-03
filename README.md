@@ -2,10 +2,10 @@
 Вьюеры семейства Bootstrap 4.3 - C# .Net Standart 2.0
 
 ## [Navs](https://getbootstrap.com/docs/4.3/components/navs/)
-> [документация](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navs)
+> [документация](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
 
 ## [Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
-> [в процессе ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar)
+> [в процессе ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 

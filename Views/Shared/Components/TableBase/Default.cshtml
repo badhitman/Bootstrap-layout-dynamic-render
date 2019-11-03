@@ -4,17 +4,17 @@
 @using BootstrapViewComponentsRazorLibrary.Components.html.table
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model TableManager
-    <table @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
-        @await Component.InvokeAsync(typeof(TableHeaderBase).Name, new { SetObjectManager = Model.TableHeader })
-        <tbody>
-            @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
-        </tbody>
-        @if (Model is TableBootstrapManager)
+<table @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+    @await Component.InvokeAsync(typeof(TableHeaderBase).Name, new { SetObjectManager = Model.TableHeader })
+    <tbody>
+        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+    </tbody>
+    @if (Model is TableBootstrapManager)
+    {
+        TableBootstrapManager on_table = (Model as TableBootstrapManager);
+        if (!string.IsNullOrWhiteSpace(on_table.CaptionText))
         {
-            TableBootstrapManager on_table = (Model as TableBootstrapManager);
-            if (!string.IsNullOrWhiteSpace(on_table.CaptionText))
-            {
-                <caption>@Html.Raw(on_table.CaptionText)</caption>
-            }
+            <caption>@Html.Raw(on_table.CaptionText)</caption>
         }
-    </table>
+    }
+</table>

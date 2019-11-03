@@ -31,7 +31,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         /// <summary>
         /// флаг/признак - только для чтения
         /// </summary>
-        public bool @Readonly { get; set; } = false;
+        public bool Readonly { get; set; } = false;
 
         /// <summary>
         /// флаг/признак - обязательно для заполнения
