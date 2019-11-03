@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Remove="Service\html\abstract\AbstractFormFieldsManager.cs" />
+    <Compile Remove="Service\html\abstract\input\valuable\AbstractInputValuableManager.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,7 +11,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap
 {
     public class CustomInputBase : ViewComponent
     {
-        public IViewComponentResult Invoke(CustomInputManager SetObjectManager)
+        public IViewComponentResult Invoke(AbstractCustomInputManager SetObjectManager)
         {
             return View(SetObjectManager);
         }

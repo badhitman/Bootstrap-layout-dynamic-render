@@ -1,17 +1,18 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponents;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class RadioInputManager : AbstractInputValuableBoolManager
+    public class InputDateManager : AbstractTextedInputManager
     {
-        public RadioInputManager() : base(BootstrapViewComponents.InputTypesEnum.radio)
+        public InputDateManager()
         {
-
+            SetAttribute("type", InputTypesEnum.date.ToString());
         }
     }
 }

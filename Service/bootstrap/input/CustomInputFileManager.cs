@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public class CustomInputFileManager : CustomInputManager
+    public class CustomInputFileManager : AbstractCustomInputManager
     {
         public override string StringCSS
         {

@@ -12,6 +12,13 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public abstract class AbstractInputManager : AbstractDomManager
     {
+        public override string ViewComponentName => nameof(InputBase);
+
+        /// <summary>
+        /// Имя поля формы
+        /// </summary>
+        public string NameDom { get; set; }
+
         /// <summary>
         /// флаг/признак - только для чтения
         /// </summary>
@@ -32,5 +39,28 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         /// Такая связь необходима в случае, когда поле располагается за пределами [form], например, при создании её программно или по соображениям дизайна.
         /// </summary>
         public string FormDomId { get; set; }
+
+        public override string StringAttributes
+        {
+            get
+            {
+                if (!string.IsNullOrWhiteSpace(NameDom))
+                    SetAttribute("name", NameDom);
+
+                if (!string.IsNullOrWhiteSpace(FormDomId))
+                    SetAttribute("form", FormDomId);
+
+                if (Autofocus)
+                    SetAttribute("autofocus", null);
+
+                if (Required)
+                    SetAttribute("required", null);
+
+                if (Readonly)
+                    SetAttribute("readonly", null);
+
+                return base.StringAttributes;
+            }
+        }
     }
 }

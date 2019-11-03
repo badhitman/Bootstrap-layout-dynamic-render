@@ -6,23 +6,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BootstrapViewComponentsRazorLibrary.Service.html
+namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class LabelInputManager : AbstractDomManager
+    public class InputOptionSelectManager : AbstractDomManager
     {
-        public override string ViewComponentName => nameof(LabelBase);
-
-        public string For { get; set; }
+        public override string ViewComponentName => nameof(OptionSelectBase);
 
         public string Header { get; set; }
+
+        public string Value { get; set; }
 
         public override string StringAttributes
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(For))
-                    SetAttribute("for",For);
-
+                SetAttribute("value", Value);
                 return base.StringAttributes;
             }
         }

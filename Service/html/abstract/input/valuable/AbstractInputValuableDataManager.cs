@@ -8,7 +8,7 @@ using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public abstract class AbstractInputDataValuableManager : AbstractInputValuableManager
+    public abstract class AbstractInputDataValuableManager : AbstractInputManager
     {
         /// <summary>
         /// Определяет значение элемента формы, которое будет отправлено на сервер или получено с помощью клиентских скриптов.
@@ -22,7 +22,5 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         /// для файлового поля(input type = "file") не оказывает влияние.
         /// </summary>
         public string Value { get; set; } = null;
-
-        public AbstractInputDataValuableManager(InputTypesEnum SetInputType) : base(SetInputType) { }
     }
 }

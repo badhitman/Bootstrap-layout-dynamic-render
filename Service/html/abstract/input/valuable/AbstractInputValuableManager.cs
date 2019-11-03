@@ -14,7 +14,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
     {
         public InputTypesEnum InputType { get; set; }
 
-        public override string ViewComponentName => nameof(InputBase);
+        
 
         public AbstractInputValuableManager(InputTypesEnum SetInputType)
         {

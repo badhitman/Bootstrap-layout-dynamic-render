@@ -1,17 +1,18 @@
 ﻿////////////////////////////////////////////////
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
+using BootstrapViewComponents;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class CheckboxInputManager : AbstractInputValuableBoolManager
+    public class InputSearchManager : AbstractTextedInputManager
     {
-        public CheckboxInputManager() : base(BootstrapViewComponents.InputTypesEnum.checkbox)
+        public InputSearchManager()
         {
-
+            SetAttribute("type", InputTypesEnum.search.ToString());
         }
     }
 }
