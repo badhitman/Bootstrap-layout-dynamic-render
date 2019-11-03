@@ -2,13 +2,14 @@
 // © https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
+using BootstrapViewComponentsRazorLibrary.Service.html;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public abstract class AbstractInputManager : AbstractDomManager
+    public abstract class AbstractInputManager : AbstractInputsManager
     {
         public InputTypesEnum InputType { get; set; }
 

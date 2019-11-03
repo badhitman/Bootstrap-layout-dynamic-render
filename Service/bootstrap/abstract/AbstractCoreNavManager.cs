@@ -12,7 +12,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
     {
         private void FindAllNavigationItems(ref List<NavItemModel> navItems, Predicate<NavItemModel> FindPredicateUnit = null)
         {
-            foreach (NavItemModel nav_item in Childs.Where(x => !(x is null) && x is NavItemModel))
+            foreach (NavItemModel nav_item in Childs.Where(x => !(x is null)))
             {
                 if (FindPredicateUnit is null || FindPredicateUnit(nav_item))
                     navItems.Add(nav_item);

@@ -8,9 +8,9 @@ using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public class InputBaseManager : AbstractInputManager
+    public class InputManager : AbstractInputManager
     {
-        public InputBaseManager(InputTypesEnum SetInputType) : base(SetInputType)
+        public InputManager(InputTypesEnum SetInputType) : base(SetInputType)
         {
 
         }

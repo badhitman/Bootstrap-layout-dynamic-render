@@ -6,7 +6,7 @@ using BootstrapViewComponents;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public class TextedInputManager : InputBaseManager
+    public class TextedInputManager : InputManager
     {
         /// <summary>
         /// Выводит текст внутри поля формы, который исчезает при получении фокуса.
