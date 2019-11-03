@@ -11,8 +11,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.input
 {
     public abstract class AbstractCustomInputManager : ManagedListNodesManager
     {
-        LabelInputManager Label;
-        AbstractInputManager Input;
+        public LabelInputManager Label { get; set; }
+
+        public AbstractInputManager Input { get; set; }
+
+        public string HelpCaption { get; set; }
+
+        public string ValidFeedback { get; set; } = "Looks good!";
+
+        public string InvalidFeedback { get; set; }
 
         public override string ViewComponentName => nameof(CustomInputBase);
     }
