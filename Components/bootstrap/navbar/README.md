@@ -51,7 +51,7 @@
 </header>
 ```
 ***result:*** пример: монитор ПК (слева синим) и на дисплее **iPhone 6/6/7** (справа красным). Дисплей **iPhone** в свою очередь демонстрируется в двух состояниях: свёрнутый (левее коричневый) и развернутый (правее зелёный)
-![Bootstrap - Navbar base (demo ul->li->a)](../../../../demo/navbar-base-ul-li-a.jpg)
+![Bootstrap - Navbar base (demo ul->li->a)](../../../demo/navbar-base-ul-li-a.jpg)
 В примере выше использовались утилиты [color](https://getbootstrap.com/docs/4.3/utilities/colors/) (__bg-light__) и [spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/) (__my-2, my-lg-0, mr-sm-0, my-sm-0, mr-auto__).
 
 
@@ -92,7 +92,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-brand-a.jpg)
+![Demo](../../../demo/navbar-base-brand-a.jpg)
 
 > Добавление изображений к **.navbar-brand**, скорее всего, потребует пользовательских стилей или утилит для правильного размера. Вот несколько примеров для демонстрации.
 
@@ -131,7 +131,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-brand-a-img.jpg)
+![Demo](../../../demo/navbar-base-brand-a-img.jpg)
 
 ## [Nav](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
 >  Навигационные ссылки **Navbar** построены на основе **.nav** . Имеют свой собственный класс модификации и требуют использования классов `toggler` для правильного адаптивного стиля.
@@ -164,7 +164,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-nav-ul-li-a.jpg)
+![Demo](../../../demo/navbar-nav-ul-li-a.jpg)
 
 > И поскольку мы используем классы для наших навигаторов, вы можете полностью избежать подхода на основе списка, если хотите.
 
@@ -204,7 +204,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-nav-div-a.jpg)
+![Demo](../../../demo/navbar-nav-div-a.jpg)
 
 > Вы также можете использовать выпадающее меню в панели навигации.
 Выпадающие меню требуют оберточного элемента для позиционирования, поэтому обязательно используйте отдельные и вложенные элементы: **.nav-item** и **.nav-link**, как показано ниже:
@@ -249,7 +249,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-dropdowns-ul-li-a.jpg)
+![Demo](../../../demo/navbar-base-dropdowns-ul-li-a.jpg)
 
 ## [Forms](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
 >  Поместите различные элементы управления и компоненты формы в навигационную панель **.form-inline**.
@@ -283,7 +283,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-form.jpg)
+![Demo](../../../demo/navbar-base-form.jpg)
 
 ```cshtml
 <header>
@@ -330,7 +330,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-brand-form.jpg)
+![Demo](../../../demo/navbar-base-brand-form.jpg)
 
 ## [Text](https://getbootstrap.com/docs/4.3/components/navbar/#text)
 
@@ -353,7 +353,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-text.jpg)
+![Demo](../../../demo/navbar-base-text.jpg)
 
 > Совмещайте с другими компонентами и утилитами по мере необходимости.
 
@@ -392,7 +392,7 @@
 </header>
 ```
 ***result:***
-![Demo](../../../../demo/navbar-base-nav-ul-li-a-and-text.jpg)
+![Demo](../../../demo/navbar-base-nav-ul-li-a-and-text.jpg)
 
 ## [Color schemes](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
 >  Тематизация навигационной панели никогда не была проще благодаря сочетанию классов тематизации и утилит фонового цвета.
@@ -468,7 +468,7 @@
 ```
 
 ***result:***
-![Demo](../../../../demo/navbar-base-color-schemes.jpg)
+![Demo](../../../demo/navbar-base-color-schemes.jpg)
 
 ## [Placement](https://getbootstrap.com/docs/4.3/components/navbar/#placement)
 >  Используйте утилиты позиционирования для размещения навигационных панелей в нестатических положениях.
@@ -499,13 +499,13 @@
 ```
 
 ###### Firefox 70 (x64) Win7 ***result:***
-![Demo](../../../../demo/navbar-placement-fixed-top-firefox-70-x64-win7.jpg)
+![Demo](../../../demo/navbar-placement-fixed-top-firefox-70-x64-win7.jpg)
 
 ###### Google Chrome 78.0.3904.70 (x64) Win7 ***result:***
-![Demo](../../../../demo/navbar-placement-fixed-top-google-chrome-78-x64-win7.jpg)
+![Demo](../../../demo/navbar-placement-fixed-top-google-chrome-78-x64-win7.jpg)
 
 ###### IE 11.0.9600.19507 (x64) Win7 ***result:***
-![Demo](../../../../demo/navbar-placement-fixed-top-ie-11-x64-win7.jpg)
+![Demo](../../../demo/navbar-placement-fixed-top-ie-11-x64-win7.jpg)
 
 ## Nav x2
 
@@ -578,10 +578,10 @@
 ```
 
 ***result:*** навигация для неавторизованого пользователя
-![Demo](../../../../demo/navbar-dual-nav-guest.jpg)
+![Demo](../../../demo/navbar-dual-nav-guest.jpg)
 
 ***result:*** навигация для администратора
-![Demo](../../../../demo/navbar-dual-nav-admin.jpg)
+![Demo](../../../demo/navbar-dual-nav-admin.jpg)
 
 ## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
 >  в процессе...
