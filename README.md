@@ -7,6 +7,31 @@
 ## [Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
 > [в процессе ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
 
+## [Buttons](https://getbootstrap.com/docs/4.3/components/buttons/)
+
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Primary") { BackgroundColorTheme = BackgroundColorThemesEnum.primary });
+  div.AddChild(new BootstrapButtonManager("Secondary") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary });
+  div.AddChild(new BootstrapButtonManager("Success") { BackgroundColorTheme = BackgroundColorThemesEnum.success });
+  div.AddChild(new BootstrapButtonManager("Danger") { BackgroundColorTheme = BackgroundColorThemesEnum.danger });
+  div.AddChild(new BootstrapButtonManager("Warning") { BackgroundColorTheme = BackgroundColorThemesEnum.warning });
+  div.AddChild(new BootstrapButtonManager("Info") { BackgroundColorTheme = BackgroundColorThemesEnum.info });
+  div.AddChild(new BootstrapButtonManager("Light") { BackgroundColorTheme = BackgroundColorThemesEnum.light });
+  div.AddChild(new BootstrapButtonManager("Dark") { BackgroundColorTheme = BackgroundColorThemesEnum.dark });
+
+  BootstrapButtonManager button = new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.NULL };
+  button.AddCSS("btn-link ml-5");
+  div.AddChild(button);
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+
+**result:**
+![Buttons demo](./demo/btn-demo.jpg)
+
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.

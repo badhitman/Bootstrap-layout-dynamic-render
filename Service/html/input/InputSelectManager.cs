@@ -1,8 +1,8 @@
 ﻿////////////////////////////////////////////////
-// MIT License. https://github.com/badhitman - @fakegov
+// https://github.com/badhitman
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
-// MIT License. https://github.com/badhitman - @fakegov
+// https://github.com/badhitman
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Components.html.input;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;

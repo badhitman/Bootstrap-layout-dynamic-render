@@ -1,5 +1,5 @@
 ﻿////////////////////////////////////////////////
-// MIT License. https://github.com/badhitman - @fakegov
+// https://github.com/badhitman
 // Описание HTML объектов позаимствовано с сайта http://htmlbook.ru
 ////////////////////////////////////////////////
 using System;

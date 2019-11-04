@@ -13,11 +13,5 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
             span.AddCSS("input-group-text");
             Childs.Add(span);
         }
-
-        public void AddButton(string header_text)
-        {
-            ButtonBaseManager button = new ButtonBaseManager(header_text);
-
-        }
     }
 }
