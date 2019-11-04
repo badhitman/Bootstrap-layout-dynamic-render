@@ -1,7 +1,7 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model FormManager
-<form @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<form @Html.Raw(Model.GetStringAttributes)>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </form>

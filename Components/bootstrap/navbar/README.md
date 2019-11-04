@@ -11,11 +11,11 @@
 ```cshtml
 <header>
 @{
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "TopMenu" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "TopMenu" };
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("brand-id")
     {
       Href = "#",
@@ -28,25 +28,25 @@
   navbar_nav_manager.AddCSS("mr-auto"); // добавляем контейнеру стили: margin-right: auto !important;
   navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
   navbar_nav_manager.AddNavItem("link-nav-id", "Link", "#");
-  NavItemModel navbar_nav_dropdown_item = navbar_nav_manager.AddNavItem("dropdown-nav-id", "Dropdown", "#");
-  navbar_nav_dropdown_item.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "action-nav-id");
-  navbar_nav_dropdown_item.AddSubNav("Another action", "#", "another-action-nav-id");  navbar_nav_dropdown_item.AddSubNav(null);
+  NavItemManager navbar_nav_dropdown_item = navbar_nav_manager.AddNavItem("dropdown-nav-id", "Dropdown", "#");
+  navbar_nav_dropdown_item.AddSubNav(header_nav: "Action", href_nav: "#", id_nav: "action-nav-id");
+  navbar_nav_dropdown_item.AddSubNav("Another action", "#", "another-action-nav-id"); navbar_nav_dropdown_item.AddSubNav(null);
   navbar_nav_dropdown_item.AddSubNav("Something else here", "#", "something-else-here-nav-id");
   navbar_nav_manager.AddNavItem("disabled-nav-id", "Disabled", "#").IsDisabled = true;
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
   FormManager formManager = new FormManager();
-  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  InputSearchManager input_manager = new InputSearchManager()
   {
     Placeholder = "Search"
   };
-  input_manager.AddCSS("form-control mr-sm-2", true);
-  formManager.AddSubNode(input_manager);
+  input_manager.AddCSS("form-control mr-sm-2");
+  formManager.AddChild(input_manager);
   ButtonBaseManager button_manager = new ButtonBaseManager("Search");
-  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
-  formManager.AddSubNode(button_manager);
-  formManager.AddCSS("my-2 my-lg-0", true);
+  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0");
+  formManager.AddChild(button_manager);
+  formManager.AddCSS("my-2 my-lg-0");
   navbar_manager.NavbarActions.AddSubNode(formManager);
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -70,12 +70,12 @@
 ```cshtml
 <header>
 @{
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-dom-id" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "top-menu-dom-id" };
 
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Href = "#", Header = " Brand", Title = "Описание бренда" }
   };
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
@@ -84,10 +84,10 @@
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Header = " Brand", Title = "Описание бренда" }
   };
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -99,11 +99,11 @@
 ```cshtml
 <header>
 @{
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-dom-id" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "top-menu-dom-id" };
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-dom-id",
+    ID = "navbar-brand-dom-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
     {
       Href = "#",
@@ -113,11 +113,11 @@
   };
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
   <br />
-  navbar_manager.Id_DOM = "top-menu-2-dom-id";
+  navbar_manager.ID = "top-menu-2-dom-id";
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-2-dom-id",
+    ID = "navbar-brand-2-dom-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-2-dom-id")
     {
       Href = "#",
@@ -126,7 +126,7 @@
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -139,11 +139,11 @@
 ```cshtml
 <header>
 @{
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "top-menu-navbar-dom-id" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "top-menu-navbar-dom-id" };
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
     {
       Href = "#",
@@ -159,7 +159,7 @@
   navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Disabled", "#").IsDisabled = true;
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -173,13 +173,13 @@
 @{
   NavbarManager navbar_manager = new NavbarManager()
   {
-    Id_DOM = "top-menu-navbar-dom-id"
+    ID = "top-menu-navbar-dom-id"
   };
 
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
     {
       Href = "#",
@@ -199,7 +199,7 @@
   navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Disabled", "#").IsDisabled = true;
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -214,13 +214,13 @@
 @{
   NavbarManager navbar_manager = new NavbarManager()
   {
-    Id_DOM = "top-menu-navbar-dom-id"
+    ID = "top-menu-navbar-dom-id"
   };
 
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
     {
       Href = "#",
@@ -235,16 +235,16 @@
   navbar_nav_manager.AddNavItem("features-nav-dom-id", "Features", "#");
   navbar_nav_manager.AddNavItem("pricing-nav-dom-id", "Pricing", "#");
 
-  NavItemModel navItem = navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Dropdown link", "#");
+  NavItemManager navItem = navbar_nav_manager.AddNavItem("disabled-nav-dom-id", "Dropdown link", "#");
                     
-  navItem.AddSubNav(header_nav: "Action", href_nav: "#", id_dom: "dropdown-action-dom-id");
-  navItem.AddSubNav(header_nav: "Another action", href_nav: "#", id_dom: "dropdown-another-action-dom-id");
+  navItem.AddSubNav(header_nav: "Action", href_nav: "#", id_nav: "dropdown-action-dom-id");
+  navItem.AddSubNav(header_nav: "Another action", href_nav: "#", id_nav: "dropdown-another-action-dom-id");
   navItem.AddSubNav(null);
-  navItem.AddSubNav(header_nav: "Something else here", href_nav: "#", id_dom: "dropdown-something-action-dom-id");
+  navItem.AddSubNav(header_nav: "Something else here", href_nav: "#", id_nav: "dropdown-something-action-dom-id");
 
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -259,26 +259,26 @@
 @{
   NavbarManager navbar_manager = new NavbarManager()
   {
-    Id_DOM = "top-menu-navbar-dom-id"
+    ID = "top-menu-navbar-dom-id"
   };
   navbar_manager.NavbarActions.IsHidesCollapse = false;
-  FormManager formManager = new FormManager() { Id_DOM = "navbar-form-dom-id" };
+  FormManager formManager = new FormManager() { ID = "navbar-form-dom-id" };
 
-  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  InputSearchManager input_manager = new InputSearchManager()
   {
     Placeholder = "Search",
-    Id_DOM = "navbar-form-search-input-dom-id"
+    ID = "navbar-form-search-input-dom-id"
   };
-  input_manager.AddCSS("form-control mr-sm-2", true);
-  formManager.AddSubNode(input_manager);
+  input_manager.AddCSS("form-control mr-sm-2");
+  formManager.AddChild(input_manager);
 
   ButtonBaseManager button_manager = new ButtonBaseManager("Search");
-  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
+  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0");
 
-  formManager.AddSubNode(button_manager);
+  formManager.AddChild(button_manager);
   navbar_manager.NavbarActions.AddSubNode(formManager);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -290,14 +290,14 @@
 @{
   NavbarManager navbar_manager = new NavbarManager()
   {
-    Id_DOM = "top-menu-navbar-dom-id",
+    ID = "top-menu-navbar-dom-id",
     NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.NULL
   };
   navbar_manager.NavbarActions.IsHidesCollapse = false;
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-nav-dom-id")
     {
       Href = "#",
@@ -308,24 +308,24 @@
 
   FormManager formManager = new FormManager();
 
-  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  InputSearchManager input_manager = new InputSearchManager()
   {
     Placeholder = "Search"
   };
-  input_manager.AddCSS("form-control mr-sm-2", true);
-  formManager.AddSubNode(input_manager);
+  input_manager.AddCSS("form-control mr-sm-2");
+  formManager.AddChild(input_manager);
 
   ButtonBaseManager button_manager = new ButtonBaseManager("Search")
   {
     ButtonType = ButtonTypesEnum.submit
   };
-  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0", true);
+  button_manager.AddCSS("btn btn-outline-success my-2 my-sm-0");
 
-  formManager.AddSubNode(button_manager);
+  formManager.AddChild(button_manager);
 
   navbar_manager.NavbarActions.AddSubNode(formManager);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -342,13 +342,13 @@
 @{
   NavbarManager navbar_manager = new NavbarManager()
   {
-    Id_DOM = "top-menu-navbar-dom-id",
+    ID = "top-menu-navbar-dom-id",
     NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.NULL
   };
     navbar_manager.NavbarActions.IsHidesCollapse = false;
     NavbarTextManager navbarText = new NavbarTextManager("Navbar text with an inline element");
     navbar_manager.NavbarActions.AddSubNode(navbarText);
-    @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+    @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -362,7 +362,7 @@
 @{
   NavbarManager navbar_manager = new NavbarManager()
   {
-    Id_DOM = "top-menu-navbar-dom-id",
+    ID = "top-menu-navbar-dom-id",
     NavbarExpandSize = BootstrapViewComponents.BootstrapSizingEnum.Lg
   };
   navbar_manager.NavbarBrand = new NavbarBrandManager()
@@ -387,7 +387,7 @@
   navbarText.AddCSS("navbar-text");
   navbar_manager.NavbarActions.AddSubNode(navbarText);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -402,11 +402,11 @@
 ```cshtml
 <header>
 @{
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "navbar-top-menu-dom-id" };
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
     {
       Href = "#",
@@ -426,43 +426,42 @@
 
   FormManager formManager = new FormManager();
 
-  TextedInputManager input_manager = new TextedInputManager(BootstrapViewComponents.InputTypesEnum.search)
+  InputSearchManager input_manager = new InputSearchManager()
   {
     Placeholder = "Search"
   };
-  input_manager.AddCSS("form-control mr-sm-2", true);
-  formManager.AddSubNode(input_manager);
+  input_manager.AddCSS("form-control mr-sm-2");
+  formManager.AddChild(input_manager);
 
   ButtonBaseManager button_manager = new ButtonBaseManager("Search");
-  button_manager.AddCSS("btn btn-outline-info my-2 my-sm-0", true);
+  button_manager.AddCSS("btn btn-outline-info my-2 my-sm-0");
 
-  formManager.AddSubNode(button_manager);
+  formManager.AddChild(button_manager);
 
-
-  formManager.AddCSS("my-2 my-lg-0", true);
+  formManager.AddCSS("my-2 my-lg-0");
   navbar_manager.NavbarActions.AddSubNode(formManager);
 
-  navbar_manager.NavbarColorScheme = NavbarColorSchemesEnum.dark;
+  navbar_manager.NavbarColorScheme = MonochromeColorSchemesEnum.dark;
   navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.dark;
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
   <br />
 
-  navbar_manager.Id_DOM = "navbar-top-menu-dom-id-2";
+  navbar_manager.ID = "navbar-top-menu-dom-id-2";
   navbar_manager.ClearCSS();
   button_manager.ClearCSS();
   button_manager.AddCSS("btn btn-outline-light my-2 my-sm-0");
   navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.primary;
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
   <br />
 
-  navbar_manager.Id_DOM = "navbar-top-menu-dom-id-3";
+  navbar_manager.ID = "navbar-top-menu-dom-id-3";
   navbar_manager.ClearCSS();
   button_manager.ClearCSS();
   button_manager.AddCSS("btn btn-outline-primary my-2 my-sm-0");
-  navbar_manager.NavbarColorScheme = NavbarColorSchemesEnum.light;
+  navbar_manager.NavbarColorScheme = MonochromeColorSchemesEnum.light;
   navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.NULL;
-  navbar_manager.SetAttribute("style", "background-color: #e3f2fd;");
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  navbar_manager.SetStyle("background-color", "#e3f2fd");
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -480,12 +479,12 @@
 ```cshtml
 <header>
 @{
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "navbar-top-menu-dom-id" };
   navbar_manager.NavbarPlacement = NavbarPlacementsEnum.FixedTop;
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
     {
       Href = "#",
@@ -493,7 +492,7 @@
       Title = "Описание бренда"
     }
   };
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```
@@ -520,13 +519,13 @@
     CountUnreadedMessages = ViewBag.CountUnreadedMessages;
   }
 
-  NavbarManager navbar_manager = new NavbarManager() { Id_DOM = "navbar-top-menu-dom-id" };
+  NavbarManager navbar_manager = new NavbarManager() { ID = "navbar-top-menu-dom-id" };
   navbar_manager.BackgroundColorTheme = BackgroundColorThemesEnum.dark;
-  navbar_manager.NavbarColorScheme = NavbarColorSchemesEnum.dark;
+  navbar_manager.NavbarColorScheme = MonochromeColorSchemesEnum.dark;
   navbar_manager.NavbarBrand = new NavbarBrandManager()
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
-    Id_DOM = "navbar-brand-id",
+    ID = "navbar-brand-id",
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
     {
       Href = "/",
@@ -535,7 +534,7 @@
     }
   };
 
-  NavbarNavManager navbar_nav_manager = new NavbarNavManager() { Id_DOM = "navbar-nav-left-dom-id" };
+  NavbarNavManager navbar_nav_manager = new NavbarNavManager() { ID = "navbar-nav-left-dom-id" };
   navbar_nav_manager.AddCSS("mr-auto");
   navbar_nav_manager.AddNavItem(id_dom: "about-nav-dom-id", header: "About", href: "/about");
   navbar_nav_manager.AddNavItem("other-1-link-nav-dom-id", "Other 1", "#");
@@ -543,7 +542,7 @@
   navbar_nav_manager.AddNavItem("other-3-link-nav-dom-id", "Other 3", "#");
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
-  navbar_nav_manager = new NavbarNavManager() { Id_DOM = "navbar-nav-right-dom-id" };
+  navbar_nav_manager = new NavbarNavManager() { ID = "navbar-nav-right-dom-id" };
   navbar_nav_manager.AddCSS("ml-auto");
   @if (Model.User is null)
   {
@@ -556,7 +555,7 @@
     {
       navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-admin-nav-dropdown-dom-id", "Управление", "#");
       navbar_nav_item.AddCSS("bg-danger text-white");
-      navbar_nav_item.AddSubNav(header_nav: "Финансы", href_nav: "/finance/", id_dom: "navbar-finance-nav-dom-id");
+      navbar_nav_item.AddSubNav(header_nav: "Финансы", href_nav: "/finance/", id_nav: "navbar-finance-nav-dom-id");
       navbar_nav_item.AddSubNav("Доставка", "/delivery/", "navbar-delivery-nav-dom-id");
       navbar_nav_item.AddSubNav("Пользователи", "/users/", "navbar-users-nav-dom-id");
       navbar_nav_item.AddSubNav("Справочники", "/assortment/", "navbar-assortment-nav-id");
@@ -565,14 +564,14 @@
     navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-unreaded-messages-nav-dom-id", "Уведомления", "/messages/");
     navbar_nav_item.Header += " <span class='badge" + (CountUnreadedMessages > 0 ? " text-danger badge-light" : "") + "'>" + CountUnreadedMessages + "</span>";
     navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-profile-nav-dropdown-dom-id", "Профиль", "#");
-    navbar_nav_item.AddSubNav(header_nav: "Акаунт", href_nav: "/account/", id_dom: "navbar-account-nav-dom-id");
+    navbar_nav_item.AddSubNav(header_nav: "Акаунт", href_nav: "/account/", id_nav: "navbar-account-nav-dom-id");
     navbar_nav_item.AddSubNav(null);
-    navbar_nav_item.AddSubNav(header_nav: "Выход", href_nav: "/account/logout", id_dom: "navbar-logout-nav-dom-id");
+    navbar_nav_item.AddSubNav(header_nav: "Выход", href_nav: "/account/logout", id_nav: "navbar-logout-nav-dom-id");
   }
 
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
 
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
 </header>
 ```

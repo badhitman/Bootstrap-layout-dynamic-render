@@ -1,4 +1,4 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarBrandManager
-<span @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">@Model.NavbarBrandDom.Header</span>
+<span @Html.Raw(Model.GetStringAttributes)>@Model.NavbarBrandDom.Header</span>

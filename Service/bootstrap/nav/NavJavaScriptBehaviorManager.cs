@@ -30,17 +30,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public NavJavaScriptBehaviorManager(string DomId)
         {
-            Id_DOM = DomId;
+            ID = DomId;
         }
 
-        public NavItemModel AddNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
+        public NavItemManager AddNav(string SetNavHeader, string SetNavId, string SetNavCachedContent)
         {
-            NavItemModel navItem = new NavItemModel(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId, Id_DOM = SetNavId + "-tab" };
+            NavItemManager navItem = new NavItemManager(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId, ID = SetNavId + "-tab" };
             navItem.SetAttribute(new Dictionary<string, string>() { { "data-toggle", this.IsTabsStyle ? "tab" : "pill" }, { "role", "tab" }, { "aria-controls", SetNavId } });
             
             Childs.Add(navItem);
             CacheContents.Add(SetNavId, SetNavCachedContent);
-            return (NavItemModel)Childs[Childs.Count - 1];
+            return (NavItemManager)Childs[Childs.Count - 1];
         }        
     }
 }

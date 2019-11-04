@@ -24,18 +24,18 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         {
             foreach (AbstractDomManager child in Childs)
             {
-                child.AddCSS(css_class, true);
+                child.AddCSS(css_class);
                 if (child is AbstractNestedToolsManager || child.GetType().IsSubclassOf(typeof(AbstractNestedToolsManager)))
                     ((AbstractNestedToolsManager)child).ChildsAddCSS(css_class);
             }
         }
 
         /// <summary>
-        /// Установить класс объекту по его Id_DOM
+        /// Установить класс объекту по его ID
         /// </summary>
         public AbstractNestedToolsManager AddByIdCSS(string id_dom, string css_class)
         {
-            if (Id_DOM.ToLower().Equals(id_dom.ToLower()))
+            if (ID.ToLower().Equals(id_dom.ToLower()))
                 AddCSS(css_class);
 
             foreach (AbstractDomManager adm in Childs.Where(x => !(x is null) && x is AbstractNestedToolsManager))
@@ -46,7 +46,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public AbstractNestedToolsManager SetAttributeById(string id_dom, string attr_name, string attr_value)
         {
-            if (Id_DOM.ToLower().Equals(id_dom.ToLower()))
+            if (ID.ToLower().Equals(id_dom.ToLower()))
                 SetAttribute(attr_name, attr_value);
 
             foreach (AbstractDomManager adm in Childs.Where(x => !(x is null) && x is AbstractNestedToolsManager))

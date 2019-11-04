@@ -1,18 +1,55 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
-@model BootstrapViewComponentsRazorLibrary.Models.bootstrap.NavItemModel
-<a @Html.Raw(Model.StringAttributes) class="@Model.StringCSS" href="@Html.Raw(Model.Href)">@Html.Raw(Model.Header)</a>
+@using BootstrapViewComponentsRazorLibrary.Service.html
+@using BootstrapViewComponentsRazorLibrary.Models.html
+
+@model NavItemManager
+@{
+    LinkBasicManager link = new LinkBasicManager() { Header = Model.Header, ID = Model.ID, Href = Model.Href, Target = BrowserTargetsEnum.NULL };
+    link.AddCSS("nav-link");
+    link.AddCSS(Model.ReadCSS());
+    link.SetAttribute(Model.ReadAttributes());
+    if (Model.IsActive)
+    {
+        link.AddCSS("active");
+        string sr_html_injection = "<span class=\"sr-only\">(current)</span>";
+        if (!link.Header.EndsWith(sr_html_injection))
+        {
+            link.Header += " " + sr_html_injection;
+        }
+    }
+
+    if (Model.ChildsCount > 0)
+    {
+        link.AddCSS("dropdown-toggle");
+        link.SetAttribute("data-toggle", "dropdown");
+        link.SetAttribute("role", "button");
+        link.SetAttribute("aria-haspopup", "true");
+        link.SetAttribute("aria-expanded", "false");
+    }
+
+    if (Model.IsDisabled)
+    {
+        link.AddCSS(" disabled");
+        link.Tabindex = -1;
+        link.SetAttribute("aria-disabled", "true");
+    }
+
+    @await Component.InvokeAsync(link.ViewComponentName, new { SetObjectManager = link })
+}
 @if (Model.ChildsCount > 0)
 {
     <div class="dropdown-menu">
-        @foreach (NavItemModel navItem in Model.GetChilds())
+        @foreach (NavItemManager navItem in Model.GetChilds())
         {
             if (navItem is null)
             {
                 <div class="dropdown-divider"></div> }
             else
             {
-                <a class="dropdown-item" href="@navItem.Href">@navItem.Header</a>
+                link = new LinkBasicManager() { Header = navItem.Header, ID = navItem.ID, Href = navItem.Href, Target = (navItem.Href == "#" ? BrowserTargetsEnum.NULL : BrowserTargetsEnum._blank) };
+                link.AddCSS("dropdown-item");
+                @await Component.InvokeAsync(link.ViewComponentName, new { SetObjectManager = link })
             }
         }
     </div>

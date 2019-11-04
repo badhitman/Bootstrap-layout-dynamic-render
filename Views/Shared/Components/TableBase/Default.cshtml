@@ -1,10 +1,10 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.html
 @using BootstrapViewComponentsRazorLibrary.Service.html.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html.table
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model TableManager
-<table @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<table @Html.Raw(Model.GetStringAttributes)>
     @await Component.InvokeAsync(typeof(TableHeaderBase).Name, new { SetObjectManager = Model.TableHeader })
     <tbody>
         @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })

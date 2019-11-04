@@ -25,7 +25,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input.valuable
         /// </summary>
         public int SizeWidth { get; set; } = 0;
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
@@ -35,7 +35,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input.valuable
                 if (!string.IsNullOrWhiteSpace(PatternInput))
                     SetAttribute("pattern", PatternInput);
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

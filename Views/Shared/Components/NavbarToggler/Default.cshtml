@@ -1,6 +1,6 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarTogglerManager
-<button @Html.Raw(Model.StringAttributes) class="navbar-toggler" type="button" data-toggle="collapse" data-target="#@Model.TargetName" aria-controls="@Model.TargetName" aria-expanded="false" aria-label="Toggle navigation">
+<button @Html.Raw(Model.GetStringAttributes) class="navbar-toggler" type="button" data-toggle="collapse" data-target="#@Model.TargetName" aria-controls="@Model.TargetName" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>

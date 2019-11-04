@@ -13,9 +13,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 
         public override string ViewComponentName => "NavWrap" + NavWrapper.ToString().ToUpper();
 
-        public NavItemModel AddNavItem(string id_dom, string header, string href)
+        public NavItemManager AddNavItem(string id_dom, string header, string href)
         {
-            NavItemModel navItem = new NavItemModel(id_dom) { Header = header, Href = href };
+            NavItemManager navItem = new NavItemManager(id_dom) { Header = header, Href = href };
             Childs.Add(navItem);
             return navItem;
         }

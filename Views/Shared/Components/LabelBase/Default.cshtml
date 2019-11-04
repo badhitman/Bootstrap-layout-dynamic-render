@@ -1,6 +1,6 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.html
 @model LabelInputManager
-<label class="@Model.StringCSS" @Html.Raw(Model.StringAttributes)>
+<label  @Html.Raw(Model.GetStringAttributes)>
     @Model.Header
 </label>

@@ -7,12 +7,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class InputGroupPrependManager : AbstractInputGroupCuttingManager
     {
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
                 AddCSS("input-group-prepend");
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

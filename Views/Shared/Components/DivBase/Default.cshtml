@@ -1,8 +1,7 @@
-﻿@*https://github.com/badhitman*@
-@using BootstrapViewComponentsRazorLibrary.Service.html
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractNestedToolsManager
-<div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<div @Html.Raw(Model.GetStringAttributes)>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </div>

@@ -16,12 +16,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 
         public string Value { get; set; }
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
                 SetAttribute("value", Value);
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

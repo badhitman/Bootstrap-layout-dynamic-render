@@ -1,16 +1,24 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractCoreNavManager
-<ul @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
-    @foreach (NavItemModel navItem in Model.GetChilds())
+<ul @Html.Raw(Model.GetStringAttributes)>
+    @foreach (NavItemManager navItem in Model.GetChilds())
     {
-        string li_class_style = "nav-item" + (navItem.ChildsCount > 0 ? " dropdown" : string.Empty);
-        if (navItem.IsActive)
+        if (Model is NavJavaScriptBehaviorManager)
         {
-            li_class_style += " active";
+            navItem.SetAttribute("data-toggle", "tab");
+            navItem.SetAttribute("role", "tab");
+            navItem.SetAttribute("aria-controls", navItem.ID);
+
+            if (navItem.IsActive)
+            {
+                navItem.SetAttribute("aria-selected", "true");
+            }
         }
+
+        string li_class_style = "nav-item" + (navItem.ChildsCount > 0 ? " dropdown" : string.Empty);
         <li class="@li_class_style">
             @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem })
         </li>

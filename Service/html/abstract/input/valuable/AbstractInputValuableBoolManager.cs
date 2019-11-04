@@ -13,14 +13,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
     {
         public bool IsChecked { get; set; }
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
                 if (IsChecked)
                     SetAttribute("checked", "checked");
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

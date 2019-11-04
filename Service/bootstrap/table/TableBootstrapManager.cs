@@ -41,7 +41,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.bootstrap
         /// </summary>
         public string CaptionText { get; set; }
 
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
@@ -64,7 +64,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.bootstrap
                 if (IsHoverableRows)
                     AddCSS("table-hover");
 
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

@@ -16,14 +16,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public string Header { get; set; }
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
                 if (!string.IsNullOrWhiteSpace(For))
                     SetAttribute("for",For);
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

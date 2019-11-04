@@ -1,8 +1,8 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.html.table
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model TableTdManager
-<td @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<td @Html.Raw(Model.GetStringAttributes)>
     @Html.Raw(Model.Header)
     @if (Model.ChildsCount > 0)
     {

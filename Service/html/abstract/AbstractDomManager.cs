@@ -13,6 +13,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         ///////////////////////////////////////////////
         //
 
+        /// <summary>
+        /// Имя компонента для рендеринга
+        /// </summary>
         public abstract string ViewComponentName { get; }
 
         /// <summary>
@@ -25,12 +28,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Идентификатор/ID элемента в DOM
         /// </summary>
-        public string Id_DOM { get; set; } = null;
+        public string ID { get; set; } = null;
 
         /// <summary>
         /// Имя/Name элемента в DOM
         /// </summary>
-        public string Name_DOM { get; set; } = null;
+        public string Name { get; set; } = null;
 
         /// <summary>
         /// Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. Браузеры при этом используют различные комбинации клавиш.
@@ -66,29 +69,33 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         #region Управление атрибутами (и событиями) объекта
         ///////////////////////////////////////////////
         //
+
+        private static readonly string[] IndependentAttributes = new string[] { "style", "class" };
+
         /// <summary>
         /// Пользовательские атрибуты текущего HTML элемента
         /// </summary>
-        protected Dictionary<string, string> CustomAttributes { get; private set; } = new Dictionary<string, string>();
+        protected SortedDictionary<string, string> CustomAttributes { get; private set; } = new SortedDictionary<string, string>();
+
+        public List<KeyValuePair<string, string>> ReadAttributes() => CustomAttributes.ToList();
 
         /// <summary>
-        /// Установить или добавить атрибут.
+        /// Установить значение атрибута (добавить если атрибут отсутсвует).
         /// </summary>
         /// <param name="attr_name">Имя атрибута dom объекта</param>
-        /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута у объекта, но не будет указывать значение этого атрибута (т.е. будет пропущен знак = и его значение)</param>
+        /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута без упоминания значения этого атрибута (т.е. будет пропущен знак = и его значение)</param>
         public AbstractDomManager SetAttribute(string attr_name, string attr_value)
         {
             attr_name = attr_name.Trim().ToLower();
-            if (!CustomAttributes.ContainsKey(attr_name))
-                CustomAttributes.Add(attr_name, attr_value);
-            else
-                CustomAttributes[attr_name] = attr_value;
+
+            if (IndependentAttributes.Contains(attr_name))
+                return this;
 
             if (attr_name == "id")
-                Id_DOM = attr_value;
+                ID = attr_value;
 
             if (attr_name == "name")
-                Name_DOM = attr_value;
+                Name = attr_value;
 
             if (attr_name == "accesskey")
                 Accesskey = attr_value;
@@ -108,10 +115,19 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             if (attr_name == "title")
                 Title = attr_value;
 
+            if (!CustomAttributes.ContainsKey(attr_name))
+                CustomAttributes.Add(attr_name, attr_value);
+            else
+                CustomAttributes[attr_name] = attr_value;
+
             return this;
         }
-        public AbstractDomManager SetAttribute(string attr_name, int attr_value) => SetAttribute(attr_name, attr_value.ToString());
-        public AbstractDomManager SetAttribute(string attr_name, double attr_value) => SetAttribute(attr_name, attr_value.ToString());
+
+        public AbstractDomManager SetAttribute(List<KeyValuePair<string, string>> attributes)
+        {
+            attributes.ForEach(x=> SetAttribute(x.Key, x.Value));
+            return this;
+        }
 
         /// <summary>
         /// Установить DOM объекту составное значение атрибута
@@ -188,15 +204,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить атрибуты (в том числе события) одной строкой
         /// </summary>
-        public virtual string StringAttributes
+        public virtual string GetStringAttributes
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(Id_DOM))
-                    SetAttribute("id", Id_DOM.Trim());
+                if (!string.IsNullOrWhiteSpace(ID))
+                    SetAttribute("id", ID.Trim());
 
-                if (!string.IsNullOrWhiteSpace(Name_DOM))
-                    SetAttribute("name", Name_DOM.Trim());
+                if (!string.IsNullOrWhiteSpace(Name))
+                    SetAttribute("name", Name.Trim());
 
                 if (!string.IsNullOrWhiteSpace(Accesskey))
                     SetAttribute("accesskey", Accesskey.Trim());
@@ -213,6 +229,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 if (!string.IsNullOrWhiteSpace(Title))
                     SetAttribute("title", Title.Trim());
 
+                //var l = CustomAttributes.OrderBy(key => key.Key);
+
                 string attributes_as_string = " ";
 
                 foreach (KeyValuePair<string, string> kvp in CustomAttributes)
@@ -222,9 +240,89 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     else
                         attributes_as_string += kvp.Key + "=\"" + kvp.Value + "\" ";
                 }
+
+                if (CustomStyles.Count > 0)
+                    attributes_as_string += "style=\"" + GetStringStyles + "\" ";
+
+                if (css.Count > 0)
+                    attributes_as_string += "class=\"" + GetStringCSS + "\" ";
+
                 return attributes_as_string.Trim();
             }
         }
+
+        //
+        ///////////////////////////////////////////////
+        #endregion
+
+        #region Управление стилями/style объекта
+        ///////////////////////////////////////////////
+        //
+
+        /// <summary>
+        /// Пользовательские стили текущего HTML элемента
+        /// </summary>
+        protected SortedDictionary<string, string> CustomStyles { get; private set; } = new SortedDictionary<string, string>();
+
+        /// <summary>
+        /// Установить значение стиля (добавить если стиль отсутсвует).
+        /// </summary>
+        /// <param name="style_name">Имя стиля dom объекта</param>
+        /// <param name="style_value">Знаение стиля</param>
+        public AbstractDomManager SetStyle(string style_name, string style_value)
+        {
+            style_name = style_name.Trim().ToLower().Trim();
+            style_value = style_value.Trim().ToLower().Trim();
+
+            if (string.IsNullOrWhiteSpace(style_name) || string.IsNullOrWhiteSpace(style_value))
+                return this;
+
+            if (!CustomStyles.ContainsKey(style_name))
+                CustomStyles.Add(style_name, style_value);
+            else
+                CustomStyles[style_name] = style_value;
+
+            return this;
+        }
+
+        /// <summary>
+        /// Получить значение стиля
+        /// </summary>
+        public string GetStyle(string style_name)
+        {
+            if (CustomStyles.ContainsKey(style_name))
+                return CustomStyles[style_name];
+
+            return null;
+        }
+
+        /// <summary>
+        /// Удалить стиль (если существует)
+        /// </summary>
+        public AbstractDomManager RemoveStyle(string style_name)
+        {
+            if (CustomStyles.ContainsKey(style_name))
+                CustomStyles.Remove(style_name);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Получить стили одной строкой
+        /// </summary>
+        public virtual string GetStringStyles
+        {
+            get
+            {
+                string styles_as_string = " ";
+
+                foreach (KeyValuePair<string, string> kvp in CustomStyles)
+                    styles_as_string += kvp.Key + ":" + kvp.Value + "; ";
+
+                return styles_as_string.Trim();
+            }
+        }
+
         //
         ///////////////////////////////////////////////
         #endregion
@@ -247,28 +345,38 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Добавить CSS класс текущему объекту (если такой класс ещё не назначен объекту)
         /// </summary>
-        public AbstractDomManager AddCSS(string css_class, bool check_spices = false, bool low_and_trim_name_class = true)
+        public AbstractDomManager AddCSS(string css_class)
         {
-            if (low_and_trim_name_class)
-                css_class = css_class?.Trim().ToLower();
+            if (string.IsNullOrWhiteSpace(css_class))
+                return this;
 
-            if (check_spices && regex_spice.IsMatch(css_class))
+            css_class = css_class.Trim().ToLower();
+
+            if (regex_spice.IsMatch(css_class))
                 foreach (string s in regex_spice.Split(css_class))
-                    AddCSS(s, false, false);
+                    AddCSS(s);
             else if (!string.IsNullOrEmpty(css_class) && !css.Contains(css_class))
                 css.Add(css_class);
+            return this;
+        }
+
+        public AbstractDomManager AddCSS(string[] css_classes)
+        {
+            foreach (string s in css_classes)
+                AddCSS(s);
             return this;
         }
 
         /// <summary>
         /// Удалить класс CSS
         /// </summary>
-        public AbstractDomManager RemoveCSS(string css_class, bool check_spices = false)
+        public AbstractDomManager RemoveCSS(string css_class)
         {
-            if (check_spices && regex_spice.IsMatch(css_class))
+            css_class = css_class?.Trim().ToLower();
+            if (regex_spice.IsMatch(css_class))
             {
                 foreach (string s in regex_spice.Split(css_class))
-                    RemoveCSS(s, false);
+                    RemoveCSS(s);
             }
             else if (!string.IsNullOrEmpty(css_class))
                 css.Remove(css_class);
@@ -301,7 +409,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить CSS классы одной строкой (разделитель пробел)
         /// </summary>
-        public virtual string StringCSS
+        public virtual string GetStringCSS
         {
             get
             {

@@ -10,18 +10,18 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
     {
         public NavReferenceBehaviorManager(string DomId)
         {
-            Id_DOM = DomId;
+            ID = DomId;
         }
 
-        public NavItemModel AddNav(string SetNavHeader, string SetNavId, string SetNavHref)
+        public NavItemManager AddNav(string SetNavHeader, string SetNavHref, string SetNavId)
         {
             if (string.IsNullOrWhiteSpace(SetNavId))
                 throw new ArgumentNullException(nameof(SetNavId));
             if (string.IsNullOrWhiteSpace(SetNavHref))
                 throw new ArgumentNullException(nameof(SetNavHref));
 
-            Childs.Add(new NavItemModel(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
-            return (NavItemModel)Childs[Childs.Count - 1];
+            Childs.Add(new NavItemManager(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
+            return (NavItemManager)Childs[Childs.Count - 1];
         }
     }
 }

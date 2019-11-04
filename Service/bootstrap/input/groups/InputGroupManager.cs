@@ -28,7 +28,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public override string ViewComponentName => nameof(InputGroupBase);
 
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
@@ -40,7 +40,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 if (InputGroupSize != TwinSizingEnum.NULL)
                     AddCSS("input-group-" + InputGroupSize.ToString());
 
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

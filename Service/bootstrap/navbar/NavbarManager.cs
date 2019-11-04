@@ -4,6 +4,7 @@
 using BootstrapViewComponents;
 using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
 using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
+using BootstrapViewComponentsRazorLibrary.Service.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar;
 
 namespace BootstrapViewComponentsRazorLibrary.Service
@@ -57,9 +58,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public NavbarBrandManager NavbarBrand { get; set; }
 
-        public string CollapseTarget => Id_DOM + "NavbarCollapsedContent";
+        public string CollapseTarget => ID + "NavbarCollapsedContent";
 
-        public UniversalListManager NavbarActions { get; set; } = new UniversalListManager();
+        public NavbarActionsManager NavbarActions { get; set; } = new NavbarActionsManager();
 
         public override string ViewComponentName => nameof(NavbarBase);
     }

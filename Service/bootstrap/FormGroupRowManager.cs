@@ -8,7 +8,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
     {
         public FormGroupRowManager()
         {
-            AddCSS("row align-items-center", true);
+            AddCSS("row align-items-center");
         }
     }
 }

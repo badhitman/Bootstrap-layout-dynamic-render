@@ -10,9 +10,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public abstract class AbstractCoreNavManager : AbstractNestedToolsManager
     {
-        private void FindAllNavigationItems(ref List<NavItemModel> navItems, Predicate<NavItemModel> FindPredicateUnit = null)
+        private void FindAllNavigationItems(ref List<NavItemManager> navItems, Predicate<NavItemManager> FindPredicateUnit = null)
         {
-            foreach (NavItemModel nav_item in Childs.Where(x => !(x is null)))
+            foreach (NavItemManager nav_item in Childs.Where(x => !(x is null)))
             {
                 if (FindPredicateUnit is null || FindPredicateUnit(nav_item))
                     navItems.Add(nav_item);
@@ -24,14 +24,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         /// <summary>
         /// Найти все элементы меню, которые соответствуют предикату
         /// 
-        /// bool FindPredicateUnit(NavItemModel navItem) { return navItem.Id_DOM.ToLower() == activate_nav_by_id; };
+        /// bool FindPredicateUnit(NavItemModel navItem) { return navItem.ID.ToLower() == activate_nav_by_id; };
         /// FindNavigationItems(FindPredicateUnit).ForEach(x => x);
         /// </summary>
         /// <param name="FindPredicateUnit"></param>
         /// <returns>Все элементы меню, которые соответствуют предикату</returns>
-        public List<NavItemModel> FindNavigationItems(Predicate<NavItemModel> FindPredicateUnit = null)
+        public List<NavItemManager> FindNavigationItems(Predicate<NavItemManager> FindPredicateUnit = null)
         {
-            List<NavItemModel> navItems = new List<NavItemModel>();
+            List<NavItemManager> navItems = new List<NavItemManager>();
             FindAllNavigationItems(ref navItems, FindPredicateUnit);
             return navItems;
         }

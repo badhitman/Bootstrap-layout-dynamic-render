@@ -31,13 +31,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public BackgroundColorThemesEnum BackgroundColorTheme { get; set; } = BackgroundColorThemesEnum.primary;
 
-        public BootstrapButtonManager(string SetHeader) : base(SetHeader) { }
+        public BootstrapButtonManager(string SetHeader) : base(SetHeader)
+        {
+            AddCSS("btn");
+        }
 
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
-                AddCSS("btn");
                 if (BackgroundColorTheme != BackgroundColorThemesEnum.NULL)
                     AddCSS("btn-" + (IsOutlineStyle ? "outline-" : "") + BackgroundColorTheme.ToString());
 
@@ -60,7 +62,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                     SetAttribute("aria-pressed", "true");
                 }
 
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

@@ -5,7 +5,12 @@
 
 ```cshtml
 @{
-  LinkBasicManager link = new LinkBasicManager() { Header = "My html web link", ID = "link-dom-id", Href = "#" };
+  LinkBasicManager link = new LinkBasicManager()
+  {
+    Header = "My html web link",
+    ID = "link-dom-id",
+    Href = "#"
+  };
   @await Component.InvokeAsync(link.ViewComponentName, new { SetObjectManager = link })
 }
 ```

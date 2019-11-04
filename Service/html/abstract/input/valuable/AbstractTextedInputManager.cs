@@ -15,17 +15,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         /// </summary>
         public bool? Autocomplete { get; set; } = null;
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
                 if (SizeWidth > 0)
-                    SetAttribute("size", SizeWidth);
+                    SetAttribute("size", SizeWidth.ToString());
 
                 if (Autocomplete != null)
                     SetAttribute("autocomplete", Autocomplete == true ? "on" : "off");
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

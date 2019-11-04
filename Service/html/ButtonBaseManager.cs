@@ -19,14 +19,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
             Header = SetHeader;
         }
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
                 if (ButtonType != ButtonTypesEnum.NULL)
                     SetAttribute("type", ButtonType.ToString());
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

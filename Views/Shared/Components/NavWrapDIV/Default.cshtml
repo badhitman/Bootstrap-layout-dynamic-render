@@ -1,8 +1,8 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractCoreNavManager
-<div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<div @Html.Raw(Model.GetStringAttributes)>
     @if (Model.ChildsCount > 0)
     {
         @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })

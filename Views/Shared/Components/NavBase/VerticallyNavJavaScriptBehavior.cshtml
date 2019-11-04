@@ -1,4 +1,4 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
@@ -19,7 +19,7 @@
         @{
             NavJavaScriptBehaviorManager NavJavaScriptBehavior = Model as NavJavaScriptBehaviorManager;
             string id_active_nav = "";
-            foreach (NavItemModel navItem in NavJavaScriptBehavior.GetChilds())
+            foreach (NavItemManager navItem in NavJavaScriptBehavior.GetChilds())
             {
                 if (navItem.IsActive)
                 {
@@ -29,7 +29,7 @@
             }
 
             string fade_style = NavJavaScriptBehavior.IsFadeStyle ? " fade" : string.Empty;
-            @:<div class="tab-content" id="@(Model.Id_DOM)Content">
+            @:<div class="tab-content" id="@(Model.ID)Content">
                 //string set_first_tab_as_active = " show active";
                 foreach (KeyValuePair<string, string> kvp in NavJavaScriptBehavior.CacheContents)
                 {

@@ -1,11 +1,11 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractNavManager
 <nav>
-    <div @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
-        @foreach (NavItemModel navItem in Model.GetChilds())
+    <div @Html.Raw(Model.GetStringAttributes)>
+        @foreach (NavItemManager navItem in Model.GetChilds())
         {
             @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem });
         }

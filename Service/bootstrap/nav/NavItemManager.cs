@@ -10,7 +10,7 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
     /// <summary>
     /// Пункт меню nav-item
     /// </summary>
-    public class NavItemModel : AbstractCoreNavManager
+    public class NavItemManager : AbstractCoreNavManager
     {
         public string Header { get; set; }
 
@@ -22,15 +22,15 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
 
         public override string ViewComponentName => nameof(NavItemHtmlDomA);
 
-        public NavItemModel(string html_dom_id)
+        public NavItemManager(string html_dom_id)
         {
             if (string.IsNullOrWhiteSpace(html_dom_id))
-                Id_DOM = Guid.NewGuid().ToString();
+                ID = Guid.NewGuid().ToString();
             else
-                Id_DOM = html_dom_id;
+                ID = html_dom_id;
         }
 
-        public void AddSubNav(string header_nav, string href_nav = "#", string id_dom = null)
+        public void AddSubNav(string header_nav, string href_nav = "#", string id_nav = null)
         {
             if (string.IsNullOrEmpty(header_nav))
             {
@@ -38,7 +38,7 @@ namespace BootstrapViewComponentsRazorLibrary.Models.bootstrap
                 return;
             }
 
-            Childs.Add(new NavItemModel(id_dom) { Header = header_nav, Href = href_nav });
+            Childs.Add(new NavItemManager(id_nav) { Header = header_nav, Href = href_nav });
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractNavManager
-<nav @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<nav @Html.Raw(Model.GetStringAttributes)>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </nav>

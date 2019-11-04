@@ -32,7 +32,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar
 
             if (string.IsNullOrWhiteSpace(BrandHref) && string.IsNullOrWhiteSpace(BrandImgSrc))
             {
-                SetObjectManager.AddCSS("mb-0 h1", true);
+                SetObjectManager.AddCSS("mb-0 h1");
                 return View("Span", SetObjectManager);
             }
 

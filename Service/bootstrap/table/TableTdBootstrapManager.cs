@@ -13,14 +13,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.bootstrap.table
     {
         public BackgroundColorThemesEnum ColorScheme { get; set; } = BackgroundColorThemesEnum.NULL;
 
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
                 if (ColorScheme != BackgroundColorThemesEnum.NULL)
                     AddCSS("table-" + ColorScheme.ToString().ToLower());
 
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

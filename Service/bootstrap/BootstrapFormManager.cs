@@ -13,7 +13,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public bool IsWasValidated { get; set; } = false;
 
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
@@ -23,7 +23,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 if (IsWasValidated)
                     AddCSS("was-validated");
 
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

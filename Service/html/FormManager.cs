@@ -35,7 +35,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// _parent - Загружает страницу во фрейм-родитель, если фреймов нет, то это значение работает как _self.
         /// _top - Отменяет все фреймы и загружает страницу в полном окне браузера, если фреймов нет, то это значение работает как _self.
         /// </summary>
-        public FormTargetsEnum? FormTarget { get; set; } = null;
+        public BrowserTargetsEnum? FormTarget { get; set; } = null;
 
         /// <summary>
         /// Отменяет встроенную проверку данных введенных пользователем в форме на корректность.
@@ -48,7 +48,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public bool? AutoComplete { get; set; } = null;
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
@@ -73,7 +73,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 if (!(AutoComplete is null))
                     SetAttribute("autocomplete", AutoComplete == true ? "on" : "off");
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
 

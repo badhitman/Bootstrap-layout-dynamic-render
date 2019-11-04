@@ -10,13 +10,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyLeftAligned;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -33,13 +33,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyLeftAligned;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.nav;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -56,13 +56,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyCenterAligned;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -74,13 +74,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyRightAligned;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -95,13 +95,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.Vertically;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -120,13 +120,13 @@
   // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
   // таким образом добавив класс "flex-md-column" мы сообщаем, что класс "flex-column" (добавдляемый по умолчанию для вертикального позиционирования блока навигации), не будет добавлен
 
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+    nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+    nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+    nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+    nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
@@ -144,13 +144,13 @@
   // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
   // таким образом добавив класс "flex-md-column" мы сообщаем, что класс "flex-column" (добавдляемый по умолчанию для вертикального позиционирования блока навигации), не будет добавлен
 
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-    nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+    nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+    nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+    nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+    nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
     nav.NavWrapperType = NavWrapperTypesEnum.nav;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -170,13 +170,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.IsTabsStyle = true;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -189,13 +189,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.IsTabsStyle = true;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.nav;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -213,13 +213,13 @@
 @{
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.IsTabsStyle = false;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Link", "nav-item-link-first-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.nav;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -233,13 +233,13 @@
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
   nav.IsTabsStyle = false;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Much longer nav link", "nav-item-link-much-longer-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Much longer nav link", "#", "nav-item-link-much-longer-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -255,13 +255,13 @@
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyFill;
   nav.IsTabsStyle = false;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Much longer nav link", "nav-item-link-much-longer-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Much longer nav link", "#", "nav-item-link-much-longer-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.nav;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -274,13 +274,13 @@
   NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
   nav.NavigationOrientation = NavOrientationsEnum.HorizontallyJustified;
   nav.IsTabsStyle = false;
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Much longer nav link", "nav-item-link-much-longer-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Much longer nav link", "#", "nav-item-link-much-longer-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.ul;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -301,10 +301,10 @@
   // по умолчанию там уже будут классы "nav", "flex-column" (в случае вертикальной ориентации) и "nav-pills" (в случае применения стиля Pills)
   nav.AddCSS("flex-sm-row");
 
-  nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
-  nav.AddNav("Longer nav link", "nav-item-longer-link-dom-id", "#");
-  nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-  nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Longer nav link", "#", "nav-item-longer-link-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = NavWrapperTypesEnum.nav;
 
   // метод добавления пользовательских классов в дочерние елементы (пункты меню на уровне тега <a></a>)
@@ -312,9 +312,9 @@
   // классы стилей будут добавлены толкьо в существующие(уже добавленые) пункты меню
   nav.ChildsAddCSS("flex-sm-fill text-sm-center");
 
-  nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+  nav.NavWrapperType = NavWrapperTypesEnum.nav;
 }
-@await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 > В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
@@ -325,24 +325,24 @@
 ## [Tabs with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#tabs-with-dropdowns)
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
-    nav.IsTabsStyle = true;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.IsTabsStyle = true;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
 
-    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "nav-dropdown-dom-id", "#");
-    dropdown_nav.AddSubNav("Action", "nav-dropdown-action-sub-item-dom-id", "#");
-    dropdown_nav.AddSubNav("Another action", "nav-dropdown-another-action-sub-item-dom-id", "#");
-    dropdown_nav.AddSubNav("Something else here", "nav-dropdown-something-action-sub-item-dom-id", "#");
-    dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
-    dropdown_nav.AddSubNav("Separated link", "nav-dropdown-separated-link-sub-item-dom-id", "#");
+  NavItemManager dropdown_nav = nav.AddNav("Dropdown", "#", "nav-dropdown-dom-id");
+  dropdown_nav.AddSubNav("Action", "#", "nav-dropdown-action-sub-item-dom-id");
+  dropdown_nav.AddSubNav("Another action", "#", "nav-dropdown-another-action-sub-item-dom-id");
+  dropdown_nav.AddSubNav("Something else here", "#", "nav-dropdown-something-action-sub-item-dom-id");
+  dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
+  dropdown_nav.AddSubNav("Separated link", "#", "nav-dropdown-separated-link-sub-item-dom-id");
 
-    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
 
-    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -351,24 +351,24 @@
 ## [Pills with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
 ```cshtml
 <header>
-  @{
-    NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
-    nav.IsTabsStyle = false;
-    nav.AddNav(SetNavHeader: "Active", SetNavId: "nav-home-dom-id", SetNavHref: "#").IsActive = true;
+@{
+  NavReferenceBehaviorManager nav = new NavReferenceBehaviorManager("top-nav-menu-dom-id");
+  nav.IsTabsStyle = false;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
 
-    NavItemModel dropdown_nav = nav.AddNav("Dropdown", "nav-dropdown-dom-id", "#");
-    dropdown_nav.AddSubNav("Action", "nav-dropdown-action-sub-item-dom-id", "#");
-    dropdown_nav.AddSubNav("Another action", "nav-dropdown-another-action-sub-item-dom-id", "#");
-    dropdown_nav.AddSubNav("Something else here", "nav-dropdown-something-action-sub-item-dom-id", "#");
-    dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
-    dropdown_nav.AddSubNav("Separated link", "nav-dropdown-separated-link-sub-item-dom-id", "#");
+  NavItemManager dropdown_nav = nav.AddNav("Dropdown", "#", "nav-dropdown-dom-id");
+  dropdown_nav.AddSubNav("Action", "#", "nav-dropdown-action-sub-item-dom-id");
+  dropdown_nav.AddSubNav("Another action", "#", "nav-dropdown-another-action-sub-item-dom-id");
+  dropdown_nav.AddSubNav("Something else here", "#", "nav-dropdown-something-action-sub-item-dom-id");
+  dropdown_nav.AddSubNav(null);//<div class="dropdown-divider"></div>
+  dropdown_nav.AddSubNav("Separated link", "#", "nav-dropdown-separated-link-sub-item-dom-id");
 
-    nav.AddNav("Link", "nav-item-link-second-dom-id", "#");
-    nav.AddNav("Disabled", "nav-item-disabled-dom-id", "#").IsDisabled = true;
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
 
-    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
@@ -377,22 +377,22 @@
 ## [JavaScript behavior](https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior)
 ```cshtml
 <header>
-  @{
-    // test content for tabs
-    string contetnt_home = "Home! Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.";
-    string contetnt_profile = "Profile! Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.";
-    string contetnt_contact = "Contact! Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.";
+@{
+  // test content for tabs
+  string contetnt_home = "Home! Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.";
+  string contetnt_profile = "Profile! Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.";
+  string contetnt_contact = "Contact! Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.";
 
-    NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu");
-    nav.IsTabsStyle =  true;
-    nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
-    nav.AddNav("Profile", "nav-profile", contetnt_profile);
-    nav.AddNav("Contact", "nav-contact", contetnt_contact);
+  NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu");
+  nav.IsTabsStyle = true;
+  nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
+  nav.AddNav("Profile", "nav-profile", contetnt_profile);
+  nav.AddNav("Contact", "nav-contact", contetnt_contact);
 
-    nav.IsFadeStyle = true;
-    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
-  }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+  nav.IsFadeStyle = true;
+  nav.NavWrapperType = NavWrapperTypesEnum.ul;
+}
+@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -419,9 +419,9 @@
     nav.AddNav("Contact", "nav-contact", contetnt_contact);
 
     nav.IsFadeStyle = true;
-    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.nav;
+    nav.NavWrapperType = NavWrapperTypesEnum.nav;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = false })
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -447,9 +447,9 @@
     nav.AddNav("Profile", "nav-profile", contetnt_profile);
     nav.AddNav("Contact", "nav-contact", contetnt_contact);
     nav.IsFadeStyle = true;
-    nav.NavWrapperType = BootstrapViewComponentsRazorLibrary.Models.NavWrapperTypesEnum.ul;
+    nav.NavWrapperType = NavWrapperTypesEnum.ul;
   }
-  @await Component.InvokeAsync(typeof(NavBase).Name, new { SetObjectManager = nav, SetPillsTheme = true })
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 

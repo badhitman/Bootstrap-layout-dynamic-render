@@ -40,7 +40,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         /// </summary>
         public string FormDomId { get; set; }
 
-        public override string StringAttributes
+        public override string GetStringAttributes
         {
             get
             {
@@ -59,7 +59,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 if (Readonly)
                     SetAttribute("readonly", null);
 
-                return base.StringAttributes;
+                return base.GetStringAttributes;
             }
         }
     }

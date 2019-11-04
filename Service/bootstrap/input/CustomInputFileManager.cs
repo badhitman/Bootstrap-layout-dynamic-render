@@ -11,12 +11,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class CustomInputFileManager : AbstractCustomInputManager
     {
-        public override string StringCSS
+        public override string GetStringCSS
         {
             get
             {
                 AddCSS("custom-file");
-                return base.StringCSS;
+                return base.GetStringCSS;
             }
         }
     }

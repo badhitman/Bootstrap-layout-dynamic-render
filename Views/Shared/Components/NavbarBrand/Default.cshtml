@@ -1,11 +1,11 @@
-﻿@*https://github.com/badhitman*@
+﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarBrandManager
 @{
     string BrandHeader = Model.NavbarBrandDom.Header;
     string BrandImgSrc = Model.NavbarBrandDom.ImageNavbarBrandSrc;
 }
-<a @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+<a @Html.Raw(Model.GetStringAttributes)>
     @if (!string.IsNullOrWhiteSpace(BrandImgSrc))
     {
         @: <img src="@Html.Raw(BrandImgSrc)" width="30" height="30" class="d-inline-block align-top" alt="Brand img @BrandHeader">
