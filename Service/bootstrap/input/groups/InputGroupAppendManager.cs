@@ -5,13 +5,13 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public class InputGroupPrependManager : DivBaseManager
+    public class InputGroupAppendManager : AbstractInputGroupCuttingManager
     {
         public override string StringCSS
         {
             get
             {
-                AddCSS("input-group-prepend");
+                AddCSS("input-group-append");
                 return base.StringCSS;
             }
         }

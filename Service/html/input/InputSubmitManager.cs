@@ -1,5 +1,5 @@
 ﻿////////////////////////////////////////////////
-// © https://github.com/badhitman - @fakegov
+// MIT License. https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
 using BootstrapViewComponentsRazorLibrary.Service.bootstrap;

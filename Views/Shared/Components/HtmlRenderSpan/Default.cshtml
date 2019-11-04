@@ -1,0 +1,11 @@
+﻿@*MIT License. https://github.com/badhitman - @fakegov*@
+@using BootstrapViewComponentsRazorLibrary.Service.html
+@using BootstrapViewComponentsRazorLibrary.Components.html
+@model SpanManager
+<span @Html.Raw(Model.StringAttributes) class="@Model.StringCSS">
+    @Model.Header
+    @if (Model.ChildsCount > 0)
+    {
+        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+    }
+</span>

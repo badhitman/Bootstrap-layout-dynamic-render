@@ -1,5 +1,5 @@
 ﻿////////////////////////////////////////////////
-// © https://github.com/badhitman - @fakegov
+// MIT License. https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Service.html.input.valuable;
 using System;

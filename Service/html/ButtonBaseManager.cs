@@ -1,5 +1,5 @@
 ﻿////////////////////////////////////////////////
-// © https://github.com/badhitman - @fakegov
+// MIT License. https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Components.html;
 using BootstrapViewComponentsRazorLibrary.Models.html;
@@ -12,7 +12,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public string Header { get; set; }
 
-        public override string ViewComponentName => nameof(ButtonBase);
+        public override string ViewComponentName => nameof(HtmlRenderButton);
 
         public ButtonBaseManager(string SetHeader)
         {

@@ -1,5 +1,5 @@
 ﻿////////////////////////////////////////////////
-// © https://github.com/badhitman - @fakegov
+// MIT License. https://github.com/badhitman - @fakegov
 ////////////////////////////////////////////////
 using BootstrapViewComponents;
 using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navbar;
@@ -57,7 +57,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public NavbarBrandManager NavbarBrand { get; set; }
 
-        public string CollapseTarget => Id_DOM + "NavbarCollapsedContent";
+        public string CollapseTarget => Id_DOM + "NavbarCollapsedContent";
+
         public UniversalListManager NavbarActions { get; set; } = new UniversalListManager();
 
         public override string ViewComponentName => nameof(NavbarBase);
