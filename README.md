@@ -29,7 +29,7 @@
 }
 ```
 
-**result:**
+***result:***
 ![Buttons demo](./demo/btn-demo.jpg)
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
