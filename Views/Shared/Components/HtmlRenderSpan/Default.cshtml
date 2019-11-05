@@ -2,7 +2,7 @@
 @using BootstrapViewComponentsRazorLibrary.Service.html
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model SpanManager
-<span @Html.Raw(Model.GetStringAttributes)>
+<span @Html.Raw(Model.GetStringAttributes())>
     @Model.Header
     @if (Model.ChildsCount > 0)
     {

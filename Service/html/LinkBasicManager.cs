@@ -16,18 +16,18 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public BrowserTargetsEnum Target { get; set; } = BrowserTargetsEnum._blank;
 
-        public override string GetStringAttributes
+        public override string GetStringAttributes()
         {
-            get
-            {
+            //get
+            //{
                 if (Target != BrowserTargetsEnum.NULL)
                     SetAttribute("target", Target.ToString());
 
                 if (!string.IsNullOrWhiteSpace(Href))
                     SetAttribute("href", Href);
 
-                return base.GetStringAttributes;
-            }
+                return base.GetStringAttributes();
+            //}
         }
     }
 }

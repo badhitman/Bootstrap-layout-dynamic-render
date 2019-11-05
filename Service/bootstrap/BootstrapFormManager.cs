@@ -13,18 +13,18 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public bool IsWasValidated { get; set; } = false;
 
-        public override string GetStringCSS
+        public override string GetStringCSS()
         {
-            get
-            {
+            //get
+            //{
                 if (IsInlineForm)
                     AddCSS("form-inline");
 
                 if (IsWasValidated)
                     AddCSS("was-validated");
 
-                return base.GetStringCSS;
-            }
+                return base.GetStringCSS();
+            //}
         }
     }
 }

@@ -13,15 +13,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.bootstrap.table
     {
         public MonochromeColorSchemesEnum TableHeaderColorScheme { get; set; } = MonochromeColorSchemesEnum.NULL;
 
-        public override string GetStringAttributes
+        public override string GetStringAttributes()
         {
-            get
-            {
+            //get
+            //{
                 if (TableHeaderColorScheme != MonochromeColorSchemesEnum.NULL)
                     AddCSS("thead-" + TableHeaderColorScheme.ToString().ToLower());
 
-                return base.GetStringAttributes;
-            }
+                return base.GetStringAttributes();
+            //}
         }
     }
 }

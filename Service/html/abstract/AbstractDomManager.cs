@@ -204,10 +204,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить атрибуты (в том числе события) одной строкой
         /// </summary>
-        public virtual string GetStringAttributes
+        public virtual string GetStringAttributes()
         {
-            get
-            {
+            //get
+            //{
                 if (!string.IsNullOrWhiteSpace(ID))
                     SetAttribute("id", ID.Trim());
 
@@ -229,8 +229,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 if (!string.IsNullOrWhiteSpace(Title))
                     SetAttribute("title", Title.Trim());
 
-                //var l = CustomAttributes.OrderBy(key => key.Key);
-
                 string attributes_as_string = " ";
 
                 foreach (KeyValuePair<string, string> kvp in CustomAttributes)
@@ -241,14 +239,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                         attributes_as_string += kvp.Key + "=\"" + kvp.Value + "\" ";
                 }
 
-                if (CustomStyles.Count > 0)
-                    attributes_as_string += "style=\"" + GetStringStyles + "\" ";
-
                 if (css.Count > 0)
-                    attributes_as_string += "class=\"" + GetStringCSS + "\" ";
+                    attributes_as_string += "class=\"" + GetStringCSS() + "\" ";
+
+                if (CustomStyles.Count > 0)
+                    attributes_as_string += "style=\"" + GetStringStyles() + "\" ";
 
                 return attributes_as_string.Trim();
-            }
+            //}
         }
 
         //
@@ -310,17 +308,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить стили одной строкой
         /// </summary>
-        public virtual string GetStringStyles
+        public virtual string GetStringStyles()
         {
-            get
-            {
+            //get
+            //{
                 string styles_as_string = " ";
 
                 foreach (KeyValuePair<string, string> kvp in CustomStyles)
                     styles_as_string += kvp.Key + ":" + kvp.Value + "; ";
 
                 return styles_as_string.Trim();
-            }
+            //}
         }
 
         //
@@ -409,14 +407,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Получить CSS классы одной строкой (разделитель пробел)
         /// </summary>
-        public virtual string GetStringCSS
+        public virtual string GetStringCSS()
         {
-            get
-            {
+            //get
+            //{
                 string css_as_string = "";
                 css.ForEach(x => css_as_string += " " + x);
                 return css_as_string.Trim();
-            }
+            //}
         }
         //
         ///////////////////////////////////////////////

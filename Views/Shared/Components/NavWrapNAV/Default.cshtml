@@ -2,6 +2,6 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractNavManager
-<nav @Html.Raw(Model.GetStringAttributes)>
+<nav @Html.Raw(Model.GetStringAttributes())>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </nav>

@@ -4,7 +4,7 @@
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractNavManager
 <nav>
-    <div @Html.Raw(Model.GetStringAttributes)>
+    <div @Html.Raw(Model.GetStringAttributes())>
         @foreach (NavItemManager navItem in Model.GetChilds())
         {
             @await Component.InvokeAsync(typeof(NavItemHtmlDomA).Name, new { SetObjectManager = navItem });

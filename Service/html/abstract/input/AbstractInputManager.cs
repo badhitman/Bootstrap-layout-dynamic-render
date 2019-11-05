@@ -40,10 +40,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         /// </summary>
         public string FormDomId { get; set; }
 
-        public override string GetStringAttributes
+        public override string GetStringAttributes()
         {
-            get
-            {
+            //get
+            //{
                 if (!string.IsNullOrWhiteSpace(NameDom))
                     SetAttribute("name", NameDom);
 
@@ -59,8 +59,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 if (Readonly)
                     SetAttribute("readonly", null);
 
-                return base.GetStringAttributes;
-            }
+                return base.GetStringAttributes();
+            //}
         }
     }
 }

@@ -18,15 +18,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.bootstrap.table
             Childs.Add(tdBootstrapManager);
         }
 
-        public override string GetStringCSS
+        public override string GetStringCSS()
         {
-            get
-            {
+            //get
+            //{
                 if (TableColorScheme != BackgroundColorThemesEnum.NULL)
                     AddCSS("table-" + TableColorScheme.ToString().ToLower());
 
-                return base.GetStringCSS;
-            }
+                return base.GetStringCSS();
+            //}
         }
     }
 }

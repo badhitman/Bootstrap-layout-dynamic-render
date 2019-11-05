@@ -1,6 +1,6 @@
 ﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.html
 @model LinkBasicManager
-<a @Html.Raw(Model.GetStringAttributes)>
+<a @Html.Raw(Model.GetStringAttributes())>
     @Html.Raw(Model.Header)
 </a>

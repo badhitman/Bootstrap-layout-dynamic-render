@@ -2,6 +2,6 @@
 @using BootstrapViewComponentsRazorLibrary.Service
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model FormManager
-<form @Html.Raw(Model.GetStringAttributes)>
+<form @Html.Raw(Model.GetStringAttributes())>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </form>

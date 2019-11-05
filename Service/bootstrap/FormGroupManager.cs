@@ -7,14 +7,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class FormGroupManager : AbstractCustomInputManager
     {
-        public override string GetStringCSS
+        public override string GetStringCSS()
         {
-            get
-            {
+            //get
+            //{
                 AddCSS("form-group");
 
-                return base.GetStringCSS;
-            }
+                return base.GetStringCSS();
+            //}
         }
     }
 }

@@ -4,7 +4,7 @@
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarManager
-<nav  @Html.Raw(Model.GetStringAttributes)>
+<nav  @Html.Raw(Model.GetStringAttributes())>
     @if (Model.NavbarBrand != null && Model.NavbarBrand.NavbarBrandPosition == BootstrapViewComponentsRazorLibrary.Models.bootstrap.navbar.NavbarBrandPositioningEnum.Left)
     {
         @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetObjectManager = Model.NavbarBrand })

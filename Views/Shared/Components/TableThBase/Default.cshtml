@@ -2,7 +2,7 @@
 @using BootstrapViewComponentsRazorLibrary.Service.html.table
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model TableThManager
-<th @Html.Raw(Model.GetStringAttributes)>
+<th @Html.Raw(Model.GetStringAttributes())>
     @Html.Raw(Model.Header)
     @if (Model.ChildsCount > 0)
     {

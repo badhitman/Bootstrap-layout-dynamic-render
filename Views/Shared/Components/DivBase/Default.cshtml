@@ -2,6 +2,6 @@
 @using BootstrapViewComponentsRazorLibrary.Service
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractNestedToolsManager
-<div @Html.Raw(Model.GetStringAttributes)>
+<div @Html.Raw(Model.GetStringAttributes())>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </div>

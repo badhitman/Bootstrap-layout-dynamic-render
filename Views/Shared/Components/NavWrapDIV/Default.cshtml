@@ -2,7 +2,7 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model AbstractCoreNavManager
-<div @Html.Raw(Model.GetStringAttributes)>
+<div @Html.Raw(Model.GetStringAttributes())>
     @if (Model.ChildsCount > 0)
     {
         @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })

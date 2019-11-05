@@ -28,10 +28,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public override string ViewComponentName => nameof(InputGroupBase);
 
-        public override string GetStringCSS
+        public override string GetStringCSS()
         {
-            get
-            {
+            //get
+            //{
                 if (IsFlexNowrap)
                     AddCSS("flex-nowrap");
 
@@ -40,8 +40,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 if (InputGroupSize != TwinSizingEnum.NULL)
                     AddCSS("input-group-" + InputGroupSize.ToString());
 
-                return base.GetStringCSS;
-            }
+                return base.GetStringCSS();
+            //}
         }
     }
 }

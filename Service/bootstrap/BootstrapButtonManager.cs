@@ -36,10 +36,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
             AddCSS("btn");
         }
 
-        public override string GetStringCSS
+        public override string GetStringCSS()
         {
-            get
-            {
+            //get
+            //{
                 if (BackgroundColorTheme != BackgroundColorThemesEnum.NULL)
                     AddCSS("btn-" + (IsOutlineStyle ? "outline-" : "") + BackgroundColorTheme.ToString());
 
@@ -62,8 +62,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                     SetAttribute("aria-pressed", "true");
                 }
 
-                return base.GetStringCSS;
-            }
+                return base.GetStringCSS();
+            //}
         }
     }
 }

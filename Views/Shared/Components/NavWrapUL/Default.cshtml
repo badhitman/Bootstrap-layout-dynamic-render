@@ -3,7 +3,7 @@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @using BootstrapViewComponentsRazorLibrary.Components.bootstrap.navs
 @model AbstractCoreNavManager
-<ul @Html.Raw(Model.GetStringAttributes)>
+<ul @Html.Raw(Model.GetStringAttributes())>
     @foreach (NavItemManager navItem in Model.GetChilds())
     {
         if (Model is NavJavaScriptBehaviorManager)

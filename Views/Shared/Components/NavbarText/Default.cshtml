@@ -1,6 +1,6 @@
 ﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 @model NavbarTextManager
-<span @Html.Raw(Model.GetStringAttributes)>
+<span @Html.Raw(Model.GetStringAttributes())>
     @Html.Raw(Model.Header)
 </span>

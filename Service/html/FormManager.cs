@@ -48,10 +48,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public bool? AutoComplete { get; set; } = null;
 
-        public override string GetStringAttributes
+        public override string GetStringAttributes()
         {
-            get
-            {
+            //get
+            //{
                 if (FormMethod != null)
                     SetAttribute("method", FormMethod.ToString());
 
@@ -73,8 +73,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 if (!(AutoComplete is null))
                     SetAttribute("autocomplete", AutoComplete == true ? "on" : "off");
 
-                return base.GetStringAttributes;
-            }
+                return base.GetStringAttributes();
+            //}
         }
 
         /// <summary>

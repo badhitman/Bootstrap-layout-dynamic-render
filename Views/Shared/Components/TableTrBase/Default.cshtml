@@ -2,6 +2,6 @@
 @using BootstrapViewComponentsRazorLibrary.Service.html.table
 @using BootstrapViewComponentsRazorLibrary.Components.html
 @model TableTrManager
-<tr @Html.Raw(Model.GetStringAttributes)>
+<tr @Html.Raw(Model.GetStringAttributes())>
     @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
 </tr>
