@@ -10,7 +10,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap
     {
         public IViewComponentResult Invoke(BootstrapButtonManager SetObjectManager)
         {
-            if (SetObjectManager is BootstrapLinkButtonManager)
+            if (SetObjectManager is BootstrapButtonLinkManager)
                 return View("Link", SetObjectManager);
             else
                 return View(SetObjectManager);

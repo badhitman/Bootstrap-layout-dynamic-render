@@ -6,12 +6,12 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public class BootstrapLinkButtonManager : BootstrapButtonManager
+    public class BootstrapButtonLinkManager : BootstrapButtonManager
     {
 
         public string Href { get; set; } = "#";
 
-        public BootstrapLinkButtonManager(string SetHeader, string SetHref) : base(SetHeader)
+        public BootstrapButtonLinkManager(string SetHeader, string SetHref) : base(SetHeader)
         {
             Href = SetHref;
         }
