@@ -64,6 +64,7 @@
 <input type="submit" value="Submit" class="btn btn-primary">
 ```
 ***result*** render
+
 ![Buttons demo](./demo/btn-tags-demo.png)
 
 ## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
