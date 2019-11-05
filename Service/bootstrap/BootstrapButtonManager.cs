@@ -38,33 +38,54 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
             AddCSS("btn");
         }
 
+        public override string GetStringAttributes()
+        {
+            if (this is BootstrapButtonInputManager)
+            {
+                switch ((this as BootstrapButtonInputManager).InputType)
+                {
+                    case BootstrapButtonInputTypesEnum.reset:
+                        ButtonType = Models.html.ButtonTypesEnum.reset;
+                        break;
+                    case BootstrapButtonInputTypesEnum.submit:
+                        ButtonType = Models.html.ButtonTypesEnum.submit;
+                        break;
+                    default:
+                        ButtonType = Models.html.ButtonTypesEnum.button;
+                        break;
+                }
+                SetAttribute("type", ButtonType.ToString());
+            }
+            return base.GetStringAttributes();
+        }
+
         public override string GetStringCSS()
         {
             //get
             //{
-                if (BackgroundColorTheme != BackgroundColorThemesEnum.NULL)
-                    AddCSS("btn-" + (IsOutlineStyle ? "outline-" : "") + BackgroundColorTheme.ToString());
+            if (BackgroundColorTheme != BackgroundColorThemesEnum.NULL)
+                AddCSS("btn-" + (IsOutlineStyle ? "outline-" : "") + BackgroundColorTheme.ToString());
 
-                if (SizeButton != TwinSizingEnum.NULL)
-                    AddCSS("btn-" + BackgroundColorTheme.ToString());
+            if (SizeButton != TwinSizingEnum.NULL)
+                AddCSS("btn-" + BackgroundColorTheme.ToString());
 
-                if (IsBlockBtn)
-                    AddCSS("btn-block");
+            if (IsBlockBtn)
+                AddCSS("btn-block");
 
-                if (IsActive)
-                {
-                    AddCSS("active");
-                    SetAttribute("aria-pressed", "true");
-                }
+            if (IsActive)
+            {
+                AddCSS("active");
+                SetAttribute("aria-pressed", "true");
+            }
 
-                if (ToggleActiveState)
-                {
-                    SetAttribute("data-toggle", "button");
-                    SetAttribute("autocomplete", "off");
-                    SetAttribute("aria-pressed", "true");
-                }
+            if (ToggleActiveState)
+            {
+                SetAttribute("data-toggle", "button");
+                SetAttribute("autocomplete", "off");
+                SetAttribute("aria-pressed", "true");
+            }
 
-                return base.GetStringCSS();
+            return base.GetStringCSS();
             //}
         }
     }

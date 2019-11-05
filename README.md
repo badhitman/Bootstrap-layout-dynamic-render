@@ -45,15 +45,25 @@
 @{
   DivBaseManager div = new DivBaseManager();
 
-  div.AddChild(new BootstrapLinkButtonManager(new ButtonSettingsModel()){ Header = "Link", Href = "#"});
+  div.AddChild(new BootstrapButtonLinkManager("Link", "#"));
   div.AddChild(new BootstrapButtonManager("Button"));
+  //
+  div.AddChild(new BootstrapButtonInputManager("Input"));
+  div.AddChild(new BootstrapButtonInputManager("Reset", BootstrapButtonInputTypesEnum.reset));
+  div.AddChild(new BootstrapButtonInputManager("Submit", BootstrapButtonInputTypesEnum.submit));
 
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
-
-
-
+***result***
+```html
+<a href="#" role="button" type="button" class="btn btn-primary">Link</a>
+<button type="button" class="btn btn-primary">Button</button>
+<input type="button" value="Input" class="btn btn-primary">
+<input type="reset" value="Reset" class="btn btn-primary">
+<input type="submit" value="Submit" class="btn btn-primary">
+```
+![Buttons demo](./demo/btn-tags-demo.png)
 
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)

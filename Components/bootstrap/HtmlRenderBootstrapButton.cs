@@ -12,6 +12,8 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap
         {
             if (SetObjectManager is BootstrapButtonLinkManager)
                 return View("Link", SetObjectManager);
+            else if (SetObjectManager is BootstrapButtonInputManager)
+                return View("Input", SetObjectManager);
             else
                 return View(SetObjectManager);
         }
