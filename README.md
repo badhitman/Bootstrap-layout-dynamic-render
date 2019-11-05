@@ -13,16 +13,32 @@
 @{
   DivBaseManager div = new DivBaseManager();
 
-  div.AddChild(new BootstrapButtonManager("Primary") { BackgroundColorTheme = BackgroundColorThemesEnum.primary });
-  div.AddChild(new BootstrapButtonManager("Secondary") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary });
-  div.AddChild(new BootstrapButtonManager("Success") { BackgroundColorTheme = BackgroundColorThemesEnum.success });
-  div.AddChild(new BootstrapButtonManager("Danger") { BackgroundColorTheme = BackgroundColorThemesEnum.danger });
-  div.AddChild(new BootstrapButtonManager("Warning") { BackgroundColorTheme = BackgroundColorThemesEnum.warning });
-  div.AddChild(new BootstrapButtonManager("Info") { BackgroundColorTheme = BackgroundColorThemesEnum.info });
-  div.AddChild(new BootstrapButtonManager("Light") { BackgroundColorTheme = BackgroundColorThemesEnum.light });
-  div.AddChild(new BootstrapButtonManager("Dark") { BackgroundColorTheme = BackgroundColorThemesEnum.dark });
+  ButtonSettingsModel ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.primary };
+  div.AddChild(new BootstrapButtonManager("Primary", ButtonSettings));
 
-  BootstrapButtonManager button = new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.NULL };
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.secondary };
+  div.AddChild(new BootstrapButtonManager("Secondary", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.success };
+  div.AddChild(new BootstrapButtonManager("Success", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.danger };
+  div.AddChild(new BootstrapButtonManager("Danger", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.warning };
+  div.AddChild(new BootstrapButtonManager("Warning", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.info };
+  div.AddChild(new BootstrapButtonManager("Info", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.light };
+  div.AddChild(new BootstrapButtonManager("Light", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.dark };
+  div.AddChild(new BootstrapButtonManager("Dark", ButtonSettings));
+
+  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.NULL };
+  BootstrapButtonManager button = new BootstrapButtonManager("Link", ButtonSettings);
   button.AddCSS("btn-link ml-5");
   div.AddChild(button);
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
@@ -31,6 +47,30 @@
 
 ***result:***
 ![Buttons demo](./demo/btn-demo.jpg)
+
+## [Button tags](https://getbootstrap.com/docs/4.3/components/buttons/#button-tags)
+
+> Классы **.btn** предназначены для использования с элементом `<button>`.
+Однако вы также можете использовать эти классы для элементов `<a>` или `<input>`. Некоторые браузеры могут применять разную визуализацию.
+
+> При использовании классов кнопок на элементах `<a>`, которые используются для запуска внутристраничных функций (например, сворачивания содержимого), 
+вместо ссылок на новые страницы или разделы текущей страницы, этим ссылкам следует присвоить `role="button"`, 
+чтобы соответствующим образом передать их назначение вспомогательным технологиям, таким как средства чтения с экрана.
+
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapLinkButtonManager(new ButtonSettingsModel()){ Header = "Link", Href = "#"});
+  div.AddChild(new BootstrapButtonManager("Button"));
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+
+
+
+
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
