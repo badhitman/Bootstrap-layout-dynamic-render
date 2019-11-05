@@ -65,6 +65,11 @@
 ```
 ![Buttons demo](./demo/btn-tags-demo.png)
 
+## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
+
+> Нужны кнопки, но хотите избежать черезмерно насыщеный цвет фона, которые они приносят?
+Замените классы модификаторов по умолчанию на ** .btn-outline-* **, чтобы удалить все фоновые изображения и цвета на любой кнопке.
+
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
