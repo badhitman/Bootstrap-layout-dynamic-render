@@ -13,32 +13,16 @@
 @{
   DivBaseManager div = new DivBaseManager();
 
-  ButtonSettingsModel ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.primary };
-  div.AddChild(new BootstrapButtonManager("Primary", ButtonSettings));
+  div.AddChild(new BootstrapButtonManager("Primary") { BackgroundColorTheme = BackgroundColorThemesEnum.primary });
+  div.AddChild(new BootstrapButtonManager("Secondary") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary });
+  div.AddChild(new BootstrapButtonManager("Success") { BackgroundColorTheme = BackgroundColorThemesEnum.success });
+  div.AddChild(new BootstrapButtonManager("Danger") { BackgroundColorTheme = BackgroundColorThemesEnum.danger });
+  div.AddChild(new BootstrapButtonManager("Warning") { BackgroundColorTheme = BackgroundColorThemesEnum.warning });
+  div.AddChild(new BootstrapButtonManager("Info") { BackgroundColorTheme = BackgroundColorThemesEnum.info });
+  div.AddChild(new BootstrapButtonManager("Light") { BackgroundColorTheme = BackgroundColorThemesEnum.light });
+  div.AddChild(new BootstrapButtonManager("Dark") { BackgroundColorTheme = BackgroundColorThemesEnum.dark });
 
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.secondary };
-  div.AddChild(new BootstrapButtonManager("Secondary", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.success };
-  div.AddChild(new BootstrapButtonManager("Success", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.danger };
-  div.AddChild(new BootstrapButtonManager("Danger", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.warning };
-  div.AddChild(new BootstrapButtonManager("Warning", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.info };
-  div.AddChild(new BootstrapButtonManager("Info", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.light };
-  div.AddChild(new BootstrapButtonManager("Light", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.dark };
-  div.AddChild(new BootstrapButtonManager("Dark", ButtonSettings));
-
-  ButtonSettings = new ButtonSettingsModel() { BackgroundColorTheme = BackgroundColorThemesEnum.NULL };
-  BootstrapButtonManager button = new BootstrapButtonManager("Link", ButtonSettings);
+  BootstrapButtonManager button = new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.NULL };
   button.AddCSS("btn-link ml-5");
   div.AddChild(button);
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })

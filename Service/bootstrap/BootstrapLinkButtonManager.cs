@@ -6,20 +6,20 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public class BootstrapLinkButtonManager : LinkBasicManager
+    public class BootstrapLinkButtonManager : BootstrapButtonManager
     {
-        public ButtonSettingsModel ButtonSettings { get; private set; } = new ButtonSettingsModel();
 
-        public BootstrapLinkButtonManager(ButtonSettingsModel SetButtonSettings)
+        public string Href { get; set; } = "#";
+
+        public BootstrapLinkButtonManager(string SetHeader, string SetHref) : base(SetHeader)
         {
-            ButtonSettings = SetButtonSettings;
+            Href = SetHref;
         }
 
         public override string GetStringAttributes()
         {
             SetAttribute("role", "button");
-            
-            AddCSS(new BootstrapButtonManager("") { ButtonSettings = ButtonSettings }.GetStringCSS());
+            SetAttribute("href", Href);
             return base.GetStringAttributes();
         }
     }
