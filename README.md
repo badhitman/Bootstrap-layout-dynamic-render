@@ -55,7 +55,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
-***result***
+***result*** HTML
 ```html
 <a href="#" role="button" type="button" class="btn btn-primary">Link</a>
 <button type="button" class="btn btn-primary">Button</button>
@@ -63,6 +63,7 @@
 <input type="reset" value="Reset" class="btn btn-primary">
 <input type="submit" value="Submit" class="btn btn-primary">
 ```
+***result*** render
 ![Buttons demo](./demo/btn-tags-demo.png)
 
 ## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
@@ -70,6 +71,36 @@
 > Нужны кнопки, но хотите избежать черезмерно насыщеный цвет фона, которые они приносят?
 Замените классы модификаторов по умолчанию на ** .btn-outline-* **, чтобы удалить все фоновые изображения и цвета на любой кнопке.
 
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Primary") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.primary });
+  div.AddChild(new BootstrapButtonManager("Secondary") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.secondary });
+  div.AddChild(new BootstrapButtonManager("Success") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.success });
+  div.AddChild(new BootstrapButtonManager("Danger") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.danger });
+  div.AddChild(new BootstrapButtonManager("Warning") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.warning });
+  div.AddChild(new BootstrapButtonManager("Info") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.info });
+  div.AddChild(new BootstrapButtonManager("Light") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.light });
+  div.AddChild(new BootstrapButtonManager("Dark") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.dark });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+
+***result*** HTML
+```html
+<button type="button" class="btn btn-outline-primary">Primary</button>
+<button type="button" class="btn btn-outline-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-success">Success</button>
+<button type="button" class="btn btn-outline-danger">Danger</button>
+<button type="button" class="btn btn-outline-warning">Warning</button>
+<button type="button" class="btn btn-outline-info">Info</button>
+<button type="button" class="btn btn-outline-light">Light</button>
+<button type="button" class="btn btn-outline-dark">Dark</button>
+```
+
+![Buttons demo](./demo/btn-outline-demo.png)
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
