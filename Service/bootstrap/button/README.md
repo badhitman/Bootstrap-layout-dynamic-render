@@ -196,8 +196,16 @@
 
 ## [Toggle states](https://getbootstrap.com/docs/4.3/components/buttons/#toggle-states)
 
-```cshtml
+Кнопка-переключатель состояния (нажато/активно или же нет)
 
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Single toggle") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, ToggleActiveState = true });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
 ```
 
 ***result***
