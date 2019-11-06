@@ -56,7 +56,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 }
                 SetAttribute("type", ButtonType.ToString());
             }
-            GetStringCSS();
+
+            if (IsActive)
+                SetAttribute("aria-pressed", "true");
+
+            if (ToggleActiveState)
+            {
+                SetAttribute("data-toggle", "button");
+                SetAttribute("autocomplete", "off");
+                SetAttribute("aria-pressed", "true");
+            }
+
             return base.GetStringAttributes();
         }
 
@@ -74,17 +84,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 AddCSS("btn-block");
 
             if (IsActive)
-            {
                 AddCSS("active");
-                SetAttribute("aria-pressed", "true");
-            }
 
-            if (ToggleActiveState)
-            {
-                SetAttribute("data-toggle", "button");
-                SetAttribute("autocomplete", "off");
-                SetAttribute("aria-pressed", "true");
-            }
+
 
             return base.GetStringCSS();
             //}
