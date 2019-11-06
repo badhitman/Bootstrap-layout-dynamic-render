@@ -22,7 +22,7 @@
 
 ***result:***
 
-![Buttons demo](../demo/btn-demo.jpg)
+![Buttons demo](../../../demo/btn-demo.jpg)
 
 ## [Button tags](https://getbootstrap.com/docs/4.3/components/buttons/#button-tags)
 
@@ -50,7 +50,7 @@
 
 ***result***
 
-![Buttons demo](../demo/btn-tags-demo.png)
+![Buttons demo](../../../demo/btn-tags-demo.png)
 
 ## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
 
@@ -76,7 +76,7 @@
 
 ***result***
 
-![Buttons demo](../demo/btn-outline-demo.png)
+![Buttons demo](../../../demo/btn-outline-demo.png)
 
 ## [Sizes](https://getbootstrap.com/docs/4.3/components/buttons/#sizes)
 
@@ -96,7 +96,7 @@
 
 ***result***
 
-![Button large demo](../demo/btn-large-demo.jpg)
+![Button large demo](../../../demo/btn-large-demo.jpg)
 
 Пример мелких кнопок:
 ```cshtml
@@ -112,7 +112,7 @@
 
 ***result***
 
-![Button large demo](../demo/btn-small-demo.jpg)
+![Button large demo](../../../demo/btn-small-demo.jpg)
 
 Кнопки блочного типа (во всю ширину родительского DOM объекта) 
 ```cshtml
@@ -128,7 +128,7 @@
 
 ***result***
 
-![Button large demo](../demo/btn-block-demo.jpg)
+![Button large demo](../../../demo/btn-block-demo.jpg)
 
 ## [Active state](https://getbootstrap.com/docs/4.3/components/buttons/#active-state)
 
@@ -145,4 +145,4 @@
 }
 ```
 
-![Demo active button](../demo/btn-active-demo.jpg)
+![Demo active button](../../../demo/btn-active-demo.jpg)
