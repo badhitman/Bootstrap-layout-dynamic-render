@@ -56,6 +56,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 }
                 SetAttribute("type", ButtonType.ToString());
             }
+            //GetStringCSS();
             return base.GetStringAttributes();
         }
 
@@ -67,7 +68,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 AddCSS("btn-" + (IsOutlineStyle ? "outline-" : "") + BackgroundColorTheme.ToString());
 
             if (SizeButton != TwinSizingEnum.NULL)
-                AddCSS("btn-" + BackgroundColorTheme.ToString());
+                AddCSS("btn-" + SizeButton.ToString().ToLower());
 
             if (IsBlockBtn)
                 AddCSS("btn-block");

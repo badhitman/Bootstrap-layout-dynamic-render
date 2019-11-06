@@ -55,16 +55,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
-***result*** HTML
-```html
-<a href="#" role="button" type="button" class="btn btn-primary">Link</a>
-<button type="button" class="btn btn-primary">Button</button>
-<input type="button" value="Input" class="btn btn-primary">
-<input type="reset" value="Reset" class="btn btn-primary">
-<input type="submit" value="Submit" class="btn btn-primary">
-```
-***result*** render
-
+***result***
 ![Buttons demo](./demo/btn-tags-demo.png)
 
 ## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
@@ -88,10 +79,53 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
-
 ***result*** 
-
 ![Buttons demo](./demo/btn-outline-demo.png)
+
+## [Sizes](https://getbootstrap.com/docs/4.3/components/buttons/#sizes)
+
+Нужны большие или маленькие кнопки? Используйте соответсвующее свойство `SizeButton`. Этим свойством применяется **.btn-lg** или **.btn-sm** для указания размеров.
+
+Пример крупных кнопок:
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Large button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, SizeButton = TwinSizingEnum.Lg });
+  div.AddChild(new BootstrapButtonManager("Large button") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, SizeButton = TwinSizingEnum.Lg });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+![Button large demo](./demo/btn-large-demo.jpg)
+
+Пример мелких кнопок:
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Small button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, SizeButton = TwinSizingEnum.Sm });
+  div.AddChild(new BootstrapButtonManager("Small button") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, SizeButton = TwinSizingEnum.Sm });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+![Button large demo](./demo/btn-small-demo.jpg)
+
+Кнопки блочного типа (во всю ширину родителя) 
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Block level button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, SizeButton = TwinSizingEnum.Lg, IsBlockBtn = true });
+  div.AddChild(new BootstrapButtonManager("Block level button") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, SizeButton = TwinSizingEnum.Lg, IsBlockBtn = true });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+![Button large demo](./demo/btn-block-demo.jpg)
+
+
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
