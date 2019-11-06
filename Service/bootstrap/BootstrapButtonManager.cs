@@ -56,7 +56,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 }
                 SetAttribute("type", ButtonType.ToString());
             }
-            //GetStringCSS();
+            GetStringCSS();
             return base.GetStringAttributes();
         }
 

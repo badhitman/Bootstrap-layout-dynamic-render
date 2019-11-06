@@ -139,7 +139,22 @@
 
 ![Button large demo](./demo/btn-block-demo.jpg)
 
+## [Active state](https://getbootstrap.com/docs/4.3/components/buttons/#active-state)
 
+Кнопки можно отобразить нажатыми (с более темным фоном, более темной границей и тенью), пометив их при помощи свойства `IsActive`
+
+```
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Primary link") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, IsActive = true });
+  div.AddChild(new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, IsActive = true });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+
+![Demo active button](./demo/btn-active-demo.jpg)
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
