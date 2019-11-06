@@ -30,6 +30,7 @@
 ```
 
 ***result:***
+
 ![Buttons demo](./demo/btn-demo.jpg)
 
 ## [Button tags](https://getbootstrap.com/docs/4.3/components/buttons/#button-tags)
@@ -57,6 +58,7 @@
 ```
 
 ***result***
+
 ![Buttons demo](./demo/btn-tags-demo.png)
 
 ## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
@@ -81,7 +83,8 @@
 }
 ```
 
-***result*** 
+***result***
+
 ![Buttons demo](./demo/btn-outline-demo.png)
 
 ## [Sizes](https://getbootstrap.com/docs/4.3/components/buttons/#sizes)
@@ -100,7 +103,8 @@
 }
 ```
 
-***result*** 
+***result***
+
 ![Button large demo](./demo/btn-large-demo.jpg)
 
 Пример мелких кнопок:
@@ -115,7 +119,8 @@
 }
 ```
 
-***result*** 
+***result***
+
 ![Button large demo](./demo/btn-small-demo.jpg)
 
 Кнопки блочного типа (во всю ширину родительского DOM объекта) 
@@ -130,7 +135,8 @@
 }
 ```
 
-***result*** 
+***result***
+
 ![Button large demo](./demo/btn-block-demo.jpg)
 
 
