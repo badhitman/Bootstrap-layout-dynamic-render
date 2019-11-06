@@ -171,13 +171,6 @@
 }
 ```
 
-***html***
-
-```html
-<button disabled="disabled" type="button" class="btn btn-primary">Primary button</button>
-<button disabled="disabled" type="button" class="btn btn-secondary">Link</button>
-```
-
 ***result***
 
 ![Demo disable button](../../../demo/btn-disable-demo.jpg)
