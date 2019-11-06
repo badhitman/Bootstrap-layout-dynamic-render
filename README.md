@@ -97,6 +97,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+***result*** 
 ![Button large demo](./demo/btn-large-demo.jpg)
 
 Пример мелких кнопок:
@@ -110,9 +111,10 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+***result*** 
 ![Button large demo](./demo/btn-small-demo.jpg)
 
-Кнопки блочного типа (во всю ширину родителя) 
+Кнопки блочного типа (во всю ширину родительского DOM объекта) 
 ```cshtml
 @{
   DivBaseManager div = new DivBaseManager();
@@ -123,6 +125,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+***result*** 
 ![Button large demo](./demo/btn-block-demo.jpg)
 
 
