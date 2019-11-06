@@ -55,6 +55,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+
 ***result***
 ![Buttons demo](./demo/btn-tags-demo.png)
 
@@ -79,6 +80,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+
 ***result*** 
 ![Buttons demo](./demo/btn-outline-demo.png)
 
@@ -97,6 +99,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+
 ***result*** 
 ![Button large demo](./demo/btn-large-demo.jpg)
 
@@ -111,6 +114,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+
 ***result*** 
 ![Button large demo](./demo/btn-small-demo.jpg)
 
@@ -125,6 +129,7 @@
   @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
 }
 ```
+
 ***result*** 
 ![Button large demo](./demo/btn-block-demo.jpg)
 
