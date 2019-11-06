@@ -193,3 +193,13 @@
 ***result***
 
 ![Demo disable link button](../../../demo/btn-link-disable-demo.jpg)
+
+## [Toggle states](https://getbootstrap.com/docs/4.3/components/buttons/#toggle-states)
+
+```cshtml
+
+```
+
+***result***
+
+![Demo Toggle states button](../../../demo/btn-toggle-states-demo.jpg)
