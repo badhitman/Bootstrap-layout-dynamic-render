@@ -25,7 +25,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
             if (IsDisabled)
             {
-                RemoveAttribute("disabled");
                 Tabindex = -1;
                 SetAttribute("aria-disabled", "true");
             }

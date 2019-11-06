@@ -108,7 +108,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
             if (attr_name == "tabindex")
             {
-                if (!Regex.IsMatch(@"^-?\d+$", attr_value))
+                if (!Regex.IsMatch(attr_value, @"^-?\d+$"))
                     return this;
                 Tabindex = int.Parse(attr_value);
             }
