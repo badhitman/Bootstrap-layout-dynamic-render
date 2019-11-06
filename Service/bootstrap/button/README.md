@@ -158,7 +158,7 @@
 
 ## [Disabled state](https://getbootstrap.com/docs/4.3/components/buttons/#disabled-state)
 
-Сделайте кнопки неактивными, добавив отключенный логический атрибут к любому элементу `<button>`
+Сделайте кнопки неактивными, задав логический атрибут кнопки `IsDisabled = true`
 
 ```cshtml
 @{
