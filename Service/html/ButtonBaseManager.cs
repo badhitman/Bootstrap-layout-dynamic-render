@@ -6,7 +6,7 @@ using BootstrapViewComponentsRazorLibrary.Models.html;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public class ButtonBaseManager : AbstractDomManager
+    public class ButtonBaseManager : AbstractDisengageableManager
     {
         public ButtonTypesEnum ButtonType { get; set; } = ButtonTypesEnum.button;
 
@@ -23,10 +23,11 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         {
             //get
             //{
-                if (ButtonType != ButtonTypesEnum.NULL)
-                    SetAttribute("type", ButtonType.ToString());
+            
+            if (ButtonType != ButtonTypesEnum.NULL)
+                SetAttribute("type", ButtonType.ToString());
 
-                return base.GetStringAttributes();
+            return base.GetStringAttributes();
             //}
         }
     }

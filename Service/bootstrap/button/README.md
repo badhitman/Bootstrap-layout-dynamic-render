@@ -145,4 +145,58 @@
 }
 ```
 
+***html***
+
+```cshtml
+<button aria-pressed="true" type="button" class="btn btn-primary active">Primary link</button>
+<button aria-pressed="true" type="button" class="btn btn-secondary active">Link</button>
+```
+
+***result***
+
 ![Demo active button](../../../demo/btn-active-demo.jpg)
+
+## [Disabled state](https://getbootstrap.com/docs/4.3/components/buttons/#disabled-state)
+
+Сделайте кнопки неактивными, добавив отключенный логический атрибут к любому элементу `<button>`
+
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonManager("Primary button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, IsDisabled = true });
+  div.AddChild(new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, IsDisabled = true });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+
+***html***
+
+```html
+<button disabled="disabled" type="button" class="btn btn-primary">Primary button</button>
+<button disabled="disabled" type="button" class="btn btn-secondary">Link</button>
+```
+
+***result***
+
+![Demo disable button](../../../demo/btn-disable-demo.jpg)
+
+> Отключенные кнопки, использующие элемент `<a>` (BootstrapButtonLinkManager), ведут себя немного иначе:
+- `<a>`**s** не поддерживает атрибут **disabled**, поэтому добавляется класс стилей **.disabled**, чтобы он визуально казался отключенным.
+- Отключенные кнопки должны включать атрибут `aria-disabled="true"`, чтобы указать состояние элемента для вспомогательных технологий.
+
+```cshtml
+@{
+  DivBaseManager div = new DivBaseManager();
+
+  div.AddChild(new BootstrapButtonLinkManager("Primary link", "#") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, IsDisabled = true });
+  div.AddChild(new BootstrapButtonLinkManager("Link", "#") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, IsDisabled = true });
+
+  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+}
+```
+
+***result***
+
+![Demo disable link button](../../../demo/btn-link-disable-demo.jpg)

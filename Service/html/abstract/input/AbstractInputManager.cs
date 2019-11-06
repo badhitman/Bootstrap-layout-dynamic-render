@@ -10,7 +10,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public abstract class AbstractInputManager : AbstractDomManager
+    public abstract class AbstractInputManager : AbstractDisengageableManager
     {
         public override string ViewComponentName => nameof(InputBase);
 
