@@ -41,7 +41,7 @@
 
 ***result:***
 
-![Button toolbar](../../../../demo/btn-toolbar-mixed-demo.jpg)
+![Button mixed toolbar](../../../../demo/btn-toolbar-mixed-demo.jpg)
 
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/button-group/#sizing)
 
@@ -53,7 +53,7 @@
 
 ***result:***
 
-![Button sizing](../../../../demo/btn-group-sizing-demo.jpg)
+![Button group sizing](../../../../demo/btn-group-sizing-demo.jpg)
 
 ## Nesting[¶](https://getbootstrap.com/docs/4.3/components/button-group/#nesting)
 
