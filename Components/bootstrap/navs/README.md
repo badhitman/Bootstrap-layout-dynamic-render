@@ -1,4 +1,4 @@
-## [Base nav](https://getbootstrap.com/docs/4.3/components/navs/#base-nav)
+## Base nav[¶](https://getbootstrap.com/docs/4.3/components/navs/#base-nav)
 > Базовая навигация построена с применением **flexbox** и обеспечивает прочную основу для формирования всех типов навигационных компонентов.
 Он включает в себя некоторые переопределения стилей (например: для работы со списками и т.п.)
 
@@ -45,7 +45,7 @@
 ***result:***
 ![Bootstrap - Navs (base demo nav->a)](../../../demo/nav-base-nav-a.jpg)
 
-## [Horizontal alignment](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
+## Horizontal alignment[¶](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
 > Измените горизонтальное выравнивание навигатора с помощью утилит flexbox. По умолчанию навигаторы выровнены по левому краю, но вы можете легко изменить их на выравнивание по центру или по правому краю.
 
 Выравнивание назначается через позиционирование `nav.NavigationOrientation`.
@@ -86,7 +86,7 @@
 ***result:***
 ![Bootstrap - Horizontal alignment (demo right-alignment)](../../../demo/nav-horizontal-right-alignment.jpg)
 
-## [Vertical](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
+## Vertical[¶](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > Сделать навигацию в виде стэка можно изменив направление элемента flex с помощью утилиты **.flex-column**.
 
 Горизонтальное расположение в виде стэка определяется через ориентацию (свойство: `nav.NavigationOrientation`):
@@ -157,7 +157,7 @@
 ![Bootstrap - Vertical alignment (base demo vertical nav->a)](../../../demo/nav-vertical-alignment-nav-a.jpg)
 
 
-## [Tabs](https://getbootstrap.com/docs/4.3/components/navs/#tabs)
+## Tabs[¶](https://getbootstrap.com/docs/4.3/components/navs/#tabs)
 > За основу берется базовая навигация и добавляется `.nav-tabs` класс для создания интерфейса с вкладками.
 Используйте их для создания вкладочных областей с помощью `JavaScript tab` плагина.
 
@@ -201,7 +201,7 @@
 ***result:***
 ![Bootstrap - Tabs style (base demo tabs nav->a)](../../../demo/nav-tabs-nav-a.jpg)
 
-## [Pills](https://getbootstrap.com/docs/4.3/components/navs/#pills)
+## Pills[¶](https://getbootstrap.com/docs/4.3/components/navs/#pills)
 > Возьмите базовую навигацию, но примените к нему `.nav-pills`
 
 Нельзя совмещать стили **Pills** и **[Tabs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs#tabs)** одновременно
@@ -225,7 +225,7 @@
 ***result:***
 ![Bootstrap - Pills style (base demo Pills ul->li->a)](../../../demo/nav-pills-ul-li-a.jpg)
 
-## [Fill and justify](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
+## Fill and justify[¶](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
 > Для принудительного расширения `.nav`s по всей доступной ширине применяется один из двух классов-модификаторов.
 ```cshtml
 <header>
@@ -287,7 +287,7 @@
 ![Bootstrap - Fill (base demo pills justified ul->li->a)](../../../demo/nav-pills-justified-ul-li-a.jpg)
 > Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от предыдущего примера (`.nav-fill`), каждый элемент навигации будет одинаковой ширины.
 
-## [Working with flex utilities](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
+## Working with flex utilities[¶](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
 > Если вам нужны адаптивные варианты навигации, рассмотрите возможность использования ряда flexbox-утилит
 
 Через механизм установки CSS стилей можно гибче манипулировать адаптивной вёрсткой:
@@ -322,7 +322,7 @@
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
 ![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column nav->a)](../../../demo/nav-flex-utilities-nav-a.jpg)
 
-## [Tabs with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#tabs-with-dropdowns)
+## Tabs with dropdowns[¶](https://getbootstrap.com/docs/4.3/components/navs/#tabs-with-dropdowns)
 ```cshtml
 <header>
 @{
@@ -348,7 +348,7 @@
 ***result:***
 ![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../../demo/nav-dropdowns-tabs-ul-li-a.jpg)
 
-## [Pills with dropdowns](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
+## Pills with dropdowns[¶](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
 ```cshtml
 <header>
 @{
@@ -374,7 +374,7 @@
 ***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
 ![Bootstrap - Tabs-pills with dropdowns (base demo pills dropdowns ul->li->a)](../../../demo/nav-dropdowns-pills-ul-li-a.jpg)
 
-## [JavaScript behavior](https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior)
+## JavaScript behavior[¶](https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior)
 ```cshtml
 <header>
 @{

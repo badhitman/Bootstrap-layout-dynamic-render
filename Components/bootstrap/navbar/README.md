@@ -1,4 +1,4 @@
-## [Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
+## Navbar[¶](https://getbootstrap.com/docs/4.3/components/navbar/)
 > Вот что нужно знать, прежде чем начать работу с навигационной панелью:
 
 - Навигационные панели требуют обертывания `.navbar` при помощи `.navbar-expand{-sm|-md|-lg|-xl}` для гибкой адаптивной разметки.
@@ -64,7 +64,7 @@
 - [**.navbar-text**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar#text) для добавления вертикально центрированных строк текста.
 - [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/html/bootstrap/navbar#external-content) для группировки и скрытия содержимого навигационной панели.
 
-## [Brand](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
+## Brand[¶](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
 > **.navbar-brand** может быть применен к большинству типов **тегов**, но `<a></a>` работает лучше всего, поскольку другие типы тегов могут потребовать дополнительных **utility classes** или пользовательских стилей.
 
 ```cshtml
@@ -133,7 +133,7 @@
 ***result:***
 ![Demo](../../../demo/navbar-base-brand-a-img.jpg)
 
-## [Nav](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
+## Nav[¶](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
 >  Навигационные ссылки **Navbar** построены на основе **.nav** . Имеют свой собственный класс модификации и требуют использования классов `toggler` для правильного адаптивного стиля.
 Навигация в **navbars** также будет растягиваться, чтобы занять как можно больше горизонтального пространства, чтобы сохранить содержимое **navbar** надежно выровнено.
 ```cshtml
@@ -251,7 +251,7 @@
 ***result:***
 ![Demo](../../../demo/navbar-base-dropdowns-ul-li-a.jpg)
 
-## [Forms](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
+## Forms[¶](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
 >  Поместите различные элементы управления и компоненты формы в навигационную панель **.form-inline**.
 
 ```cshtml
@@ -332,7 +332,7 @@
 ***result:***
 ![Demo](../../../demo/navbar-base-brand-form.jpg)
 
-## [Text](https://getbootstrap.com/docs/4.3/components/navbar/#text)
+## Text[¶](https://getbootstrap.com/docs/4.3/components/navbar/#text)
 
 >  Навигационные панели могут содержать текстовые данные с помощью **.navbar-text**.
 Этот класс регулирует вертикальное выравнивание и горизонтальный интервал для строк текста.
@@ -394,7 +394,7 @@
 ***result:***
 ![Demo](../../../demo/navbar-base-nav-ul-li-a-and-text.jpg)
 
-## [Color schemes](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
+## Color schemes[¶](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
 >  Тематизация навигационной панели никогда не была проще благодаря сочетанию классов тематизации и утилит фонового цвета.
 Выбирайте между **.navbar-light** для использования со светлыми цветами фона, или **.navbar-dark** на темном фоне цвета.
 Затем настройте цвет заднего фона с помощью утилит **.bg-* **
@@ -469,7 +469,7 @@
 ***result:***
 ![Demo](../../../demo/navbar-base-color-schemes.jpg)
 
-## [Placement](https://getbootstrap.com/docs/4.3/components/navbar/#placement)
+## Placement[¶](https://getbootstrap.com/docs/4.3/components/navbar/#placement)
 >  Используйте утилиты позиционирования для размещения навигационных панелей в нестатических положениях.
 Выберите одно из фиксированных положений `top`, `fixed to the bottom` или `stickied to the top` (прокручивает страницу до тех пор, пока она не достигнет вершины, а затем остается там).
 Фиксированные навигационные панели используют `position: fixed`, что означает, что они вытягиваются из нормального потока **DOM** и могут требовать пользовательского **CSS** (например, `padding-top` на `<body>`), чтобы предотвратить перекрытие с другими элементами.
@@ -582,11 +582,11 @@
 ***result:*** навигация для администратора
 ![Demo](../../../demo/navbar-dual-nav-admin.jpg)
 
-## [Responsive behaviors](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
+## Responsive behaviors[¶](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
 >  в процессе...
 
-## [Toggler](https://getbootstrap.com/docs/4.3/components/navbar/#toggler)
->  в процессе...
+## Toggler[¶](https://getbootstrap.com/docs/4.3/components/navbar/#toggler)
+>  ...
 
-## [External content](https://getbootstrap.com/docs/4.3/components/navbar/#external-content)
->  в процессе...
+## External content[¶](https://getbootstrap.com/docs/4.3/components/navbar/#external-content)
+>  ...

@@ -1,8 +1,8 @@
-# [Button group](https://getbootstrap.com/docs/4.3/components/button-group/)
+# Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/)
 
 > Группировка серии кнопок в единый элемент управления
 
-## [Basic example](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
+## Basic example[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
 
 > Оберните серию кнопок (с классом: **.btn**) в **.btn-group**.
 Объеденив **radio** и **checkbox**, а JavaScript поведение будет обеспечено при помощи [плагина кнопок](https://getbootstrap.com/docs/4.3/components/buttons/#button-plugin).

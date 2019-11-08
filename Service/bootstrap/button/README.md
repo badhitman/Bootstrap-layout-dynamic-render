@@ -1,4 +1,4 @@
-# [Buttons](https://getbootstrap.com/docs/4.3/components/buttons/)
+# Buttons[¶](https://getbootstrap.com/docs/4.3/components/buttons/)
 
 ```cshtml
 @{
@@ -24,7 +24,7 @@
 
 ![Buttons demo](../../../demo/btn-demo.jpg)
 
-## [Button tags](https://getbootstrap.com/docs/4.3/components/buttons/#button-tags)
+## Button tags[¶](https://getbootstrap.com/docs/4.3/components/buttons/#button-tags)
 
 > Классы **.btn** предназначены для использования с элементом `<button>`.
 Однако вы также можете использовать эти классы для элементов `<a>` или `<input>`. Некоторые браузеры могут применять разную визуализацию.
@@ -52,7 +52,7 @@
 
 ![Buttons demo](../../../demo/btn-tags-demo.png)
 
-## [Outline buttons](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
+## Outline buttons[¶](https://getbootstrap.com/docs/4.3/components/buttons/#outline-buttons)
 
 > Нужны кнопки, но хотите избежать черезмерно насыщеный цвет фона, которые они приносят?
 Замените классы модификаторов по умолчанию на **.btn-outline-**\* , чтобы удалить все фоновые изображения и цвета на любой кнопке.
@@ -78,7 +78,7 @@
 
 ![Buttons demo](../../../demo/btn-outline-demo.png)
 
-## [Sizes](https://getbootstrap.com/docs/4.3/components/buttons/#sizes)
+## Sizes[¶](https://getbootstrap.com/docs/4.3/components/buttons/#sizes)
 
 Нужны большие или маленькие кнопки? Используйте соответсвующее свойство `SizeButton`. Этим свойством применяется **.btn-lg** или **.btn-sm** для указания размеров.
 
@@ -130,7 +130,7 @@
 
 ![Button large demo](../../../demo/btn-block-demo.jpg)
 
-## [Active state](https://getbootstrap.com/docs/4.3/components/buttons/#active-state)
+## Active state[¶](https://getbootstrap.com/docs/4.3/components/buttons/#active-state)
 
 Кнопки можно отобразить нажатыми (с более темным фоном, более темной границей и тенью), пометив их при помощи свойства `IsActive`
 
@@ -156,7 +156,7 @@
 
 ![Demo active button](../../../demo/btn-active-demo.jpg)
 
-## [Disabled state](https://getbootstrap.com/docs/4.3/components/buttons/#disabled-state)
+## Disabled state[¶](https://getbootstrap.com/docs/4.3/components/buttons/#disabled-state)
 
 Сделайте кнопки неактивными, задав логический атрибут кнопки `IsDisabled = true`
 
@@ -194,7 +194,7 @@
 
 ![Demo disable link button](../../../demo/btn-link-disable-demo.jpg)
 
-## [Toggle states](https://getbootstrap.com/docs/4.3/components/buttons/#toggle-states)
+## Toggle states[¶](https://getbootstrap.com/docs/4.3/components/buttons/#toggle-states)
 
 Кнопка-переключатель состояния (нажато/активно или же нет)
 

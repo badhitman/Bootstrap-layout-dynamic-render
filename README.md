@@ -1,19 +1,19 @@
 # Bootstrap ViewComponent`s ASP Razor Library
 Вьюеры семейства Bootstrap 4.3 - C# .Net Standart 2.0
 
-## Navs [¶](https://getbootstrap.com/docs/4.3/components/navs/)
+## Navs[¶](https://getbootstrap.com/docs/4.3/components/navs/)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
 
-## Navbar [¶](https://getbootstrap.com/docs/4.3/components/navbar/)
+## Navbar[¶](https://getbootstrap.com/docs/4.3/components/navbar/)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
 
-## Buttons [¶](https://getbootstrap.com/docs/4.3/components/buttons/)
+## Buttons[¶](https://getbootstrap.com/docs/4.3/components/buttons/)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button)
 
-## Button group [¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
+## Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button/group)
 
-## Pagination [¶](https://getbootstrap.com/docs/4.3/components/pagination/)
+## Pagination[¶](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
 В данном контексте этот список необходим для определения максимального и минимального размера страницы
@@ -99,7 +99,7 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 ![Bootstrap - pagination demo 3](./demo/pagination3.png)
 
 
-## Breadcrumbs [¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
+## Breadcrumbs[¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
 Пример использования в .cshtml
 ```cshtml
 @using BootstrapViewComponents
