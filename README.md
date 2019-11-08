@@ -2,13 +2,16 @@
 Вьюеры семейства Bootstrap 4.3 - C# .Net Standart 2.0
 
 ## [Navs](https://getbootstrap.com/docs/4.3/components/navs/)
-> [документация](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
 
 ## [Navbar](https://getbootstrap.com/docs/4.3/components/navbar/)
-> [в процессе ...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
 
 ## [Buttons](https://getbootstrap.com/docs/4.3/components/buttons/)
-> [в процессе](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button)
+
+## [Button group](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button/group)
 
 ## [Pagination](https://getbootstrap.com/docs/4.3/components/pagination/)
 
