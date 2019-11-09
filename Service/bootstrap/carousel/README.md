@@ -92,4 +92,4 @@
 
 ***result:***
 
-![Carousel ndividual carousel item interval demo](../../../../demo/carousel-ndividual-carousel-item-interval-demo.jpg)
+![Carousel individual carousel item interval demo](../../../../demo/carousel-ndividual-carousel-item-interval-demo.jpg)
