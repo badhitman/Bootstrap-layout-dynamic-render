@@ -13,6 +13,21 @@
 ## Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button/group)
 
+## List group[¶](https://getbootstrap.com/docs/4.3/components/list-group/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/list)
+
+## Carousel[¶](https://getbootstrap.com/docs/4.3/components/carousel/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/carousel)
+
+## Collapse[¶](https://getbootstrap.com/docs/4.3/components/collapse/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/collapse)
+
+## Dropdowns[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/dropdowns)
+
+## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
+> [readme...]()
+
 ## Pagination[¶](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
