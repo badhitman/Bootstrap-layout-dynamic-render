@@ -330,4 +330,186 @@
 
 ***result:***
 
-![Forms inline](../../../../demo/forms-inline-inputs.jpg)
+![Forms inline](../../../../demo/forms-inline.jpg)
+
+> Пользовательские элементы управления формы и `select`**s** тоже поддерживаются.
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Forms inline сustom controls and selects](../../../../demo/forms-inline-сustom-controls-and-selects.jpg)
+
+> Альтернативы скрытым меткам
+У вспомогательных технологий, такие как программы чтения с экрана, могут иметь проблемы с вашими формами, если вы не включаете метку для каждого ввода.
+Для таких inline форм, вы можете спрятать ярлыки с помощью ".sr-only" класса.
+Существуют и другие альтернативные способы предоставления метки для вспомогательных технологий. Например атрибуты **aria-label**, **aria-labelledby** или **title**.
+Если ни один из них не присутствует, вспомогательные технологии могут прибегнуть к использованию атрибута **placeholder**, если он присутствует, но обратите внимание, что использование **placeholder** в качестве замены для других методов маркировки не рекомендуется.
+
+## Help text[¶](https://getbootstrap.com/docs/4.3/components/forms/#help-text)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Forms input help text](../../../../demo/forms-input-help-text.jpg)
+
+> Inline текст может использовать любой типичный Inline HTML-элемент (будь то `<small>`, `<span>` или что-то еще) без какого либо служебного класса.
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Forms inline input help text](../../../../demo/forms-inline-input-help-text.jpg)
+
+## Disabled forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled-forms)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Disabled forms](../../../../demo/disabled-forms.jpg)
+
+## Validation forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#validation)
+
+> 
+
+## How it works[¶](https://getbootstrap.com/docs/4.3/components/forms/#how-it-works)
+
+> 
+
+## Custom styles[¶](https://getbootstrap.com/docs/4.3/components/forms/#custom-styles)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Validation forms](../../../../demo/validation-forms-custom-styles.jpg)
+
+## Browser defaults[¶](https://getbootstrap.com/docs/4.3/components/forms/#browser-defaults)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Validation forms browser defaults](../../../../demo/validation-forms-browser-defaults.jpg)
+
+## Server side[¶](https://getbootstrap.com/docs/4.3/components/forms/#server-side)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Validation forms server side](../../../../demo/validation-forms-server-side.jpg)
+
+## Supported elements[¶](https://getbootstrap.com/docs/4.3/components/forms/#supported-elements)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Validation forms supported elements](../../../../demo/validation-forms-supported-elements.jpg)
+
+## Tooltips[¶](https://getbootstrap.com/docs/4.3/components/forms/#tooltips)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Validation forms tooltips](../../../../demo/validation-forms-tooltips.jpg)
+
+## Customizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#customizing)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Validation forms customizing](../../../../demo/validation-forms-customizing.jpg)
+
+## Custom forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#custom-forms)
+
+> 
+
+## Checkboxes and radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes-and-radios-1)
+
+> 
+
+## Checkboxes[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes)
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms checkboxes](../../../../demo/custom-forms-checkboxes.jpg)
+
+> Пользовательские `checkbox`**es** также могут использовать псевдокласс: **indeterminate** при ручной установке с помощью JavaScript (для этого в HTML нет доступного атрибута).
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms radios](../../../../demo/custom-forms-radios.jpg)
