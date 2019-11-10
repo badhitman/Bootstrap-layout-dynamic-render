@@ -512,4 +512,166 @@
 
 ***result:***
 
+![Custom forms checkboxes indeterminate](../../../../demo/custom-forms-checkboxes-indeterminate.jpg)
+
+> Если вы используете jQuery,то должно быть достаточно что-то вроде этого:
+
+```js
+@{
+  $('.your-checkbox').prop('indeterminate', true);
+}
+```
+
+## Radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#radios)
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
 ![Custom forms radios](../../../../demo/custom-forms-radios.jpg)
+
+## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline-1)
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms radios inline](../../../../demo/custom-forms-radios-inline.jpg)
+
+## Disabled[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms disabled](../../../../demo/custom-forms-disabled.jpg)
+
+## Switches[¶](https://getbootstrap.com/docs/4.3/components/forms/#switches)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms switches](../../../../demo/custom-forms-switches.jpg)
+
+## Select menu[¶](https://getbootstrap.com/docs/4.3/components/forms/#select-menu)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms select menu](../../../../demo/custom-forms-select-menu.jpg)
+
+> Вы также можете установить размер пользовательских `<selects>`**s**, чтобы соответствовать текстовым `<inputs>` аналогичного размера.
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms select menu size](../../../../demo/custom-forms-select-menu-size.jpg)
+
+> Множественный выбор также поддерживается:
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms select menu multiple attribute](../../../../demo/custom-forms-select-menu-multiple-attribute.jpg)
+
+> Как и атрибут размера:
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms select menu size attribute](../../../../demo/custom-forms-select-menu-size-attribute.jpg)
+
+## Range[¶](https://getbootstrap.com/docs/4.3/components/forms/#range)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms range](../../../../demo/custom-forms-range.jpg)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms range max](../../../../demo/custom-forms-range-max.jpg)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms range step](../../../../demo/custom-forms-range-step.jpg)
+
+## File browser[¶](https://getbootstrap.com/docs/4.3/components/forms/#file-browser)
+
+> 
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Custom forms file browser](../../../../demo/custom-forms-file-browser.jpg)

@@ -28,6 +28,9 @@
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/forms)
 
+## Input group[¶](https://getbootstrap.com/docs/4.3/components/input-group/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/input/group)
+
 ## Pagination[¶](https://getbootstrap.com/docs/4.3/components/pagination/)
 
 > шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
