@@ -52,7 +52,7 @@
 
 ![Carousel with controls demo](../../../../demo/carousel-with-controls-demo.jpg)
 
-## With indicators[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-indicators)
+## With indicators[↗](https://getbootstrap.com/docs/4.3/components/carousel/#with-indicators)
 
 > Наряду с элементами управления для карусели доступны также **индикация**.
 
