@@ -24,7 +24,7 @@
 
 ## Slides only[¶](https://getbootstrap.com/docs/4.3/components/carousel/#slides-only)
 
-> Вот карусель только со слайдами без дополнительных элементов управления/индикации.
+> Ниже представлена карусель только со слайдами без дополнительных элементов управления или индикации.
 Обратите внимание на наличие **.d-block** и **.w-100** на изображениях карусели, чтобы предотвратить выравнивание браузером изображения по умолчанию.
 
 ```cshtml
@@ -39,7 +39,7 @@
 
 ## With controls[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-controls)
 
-> 
+> Добавление элементов управления для переключения слайда **< "назад"** и **"вперёд" >**:
 
 ```cshtml
 @{
@@ -53,7 +53,7 @@
 
 ## With indicators[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-indicators)
 
-> 
+> Наряду с элементами управления для добавления доступны также индикаторы к карусели.
 
 ```cshtml
 @{
@@ -67,7 +67,9 @@
 
 ## With captions[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-captions)
 
-> 
+> Лёгкое добавление подписи к слайдам с помощью элемента **.carousel-caption** внутри любого **.carousel-item**.
+Они могут быть легко скрыты на небольших видовых экранах, как показано ниже, с помощью дополнительных утилит отображения.
+Мы скрываем их изначально с **.d-none** и возвращаем их на средних устройствах **.d-md-block**.
 
 ```cshtml
 @{
@@ -81,7 +83,7 @@
 
 ## Crossfade[¶](https://getbootstrap.com/docs/4.3/components/carousel/#crossfade)
 
-> 
+> Добавление к карусели класса **.carousel-fade** обеспечит анимацию **"плавного перехода"** между слайдами вместо скольжения.
 
 ```cshtml
 @{
@@ -95,7 +97,7 @@
 
 ## Individual .carousel-item interval[¶](https://getbootstrap.com/docs/4.3/components/carousel/#individual-carousel-item-interval)
 
-> 
+> Добавьте `data-interval=""` к **.carousel-item** для изменения времени задержки между автоматическим циклическим переходом к следующему элементу.
 
 ```cshtml
 @{
