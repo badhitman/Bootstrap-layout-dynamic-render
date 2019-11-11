@@ -21,7 +21,8 @@
 
 ## Form controls[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-controls)
 
-> 
+> Текстовые контролы `<input>`**s**, `<select>`**s** и `<textarea>`s — оформлены классом стилей **.form-control**.
+В базовое оформление включены стили для общего внешнего вида, состояния фокуса, размеров и многого другого.
 
 ```cshtml
 @{
@@ -47,7 +48,7 @@
 
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#sizing)
 
-> 
+> Установите высоту, используя такие классы, как **.form-control-lg** и **.form-control-sm**.
 
 ```cshtml
 @{
@@ -71,6 +72,9 @@
 
 ## Readonly[¶](https://getbootstrap.com/docs/4.3/components/forms/#readonly)
 
+> Добавьте логический атрибут `readonly` для `<input>`, чтобы предотвратить изменение значения поля формы.
+Поля формы **"только для чтения"** выглядят светлее остальных и похоже на **"отключенные"**, но сохраняют стандартный курсор.
+
 ```cshtml
 @{
 
@@ -82,6 +86,8 @@
 ![Forms controls readonly](../../../../demo/forms-controls-readonly.jpg)
 
 ## Readonly plain text[¶](https://getbootstrap.com/docs/4.3/components/forms/#readonly-plain-text)
+
+> Если вы хотите, чтобы элементы `<input readonly>` в вашей форме были оформлены как обычный текст, используйте класс **.form-control-plaintext** для удаления оформления полей формы по умолчанию и сохранения правильного **margin** и **padding**.
 
 ```cshtml
 @{
@@ -101,11 +107,11 @@
 
 ***result:***
 
-![Forms controls readonly plain text 2](../../../../demo/forms-controls-readonly-plain-text-2.jpg)
+![Forms inline controls readonly plain text](../../../../demo/forms-inline-controls-readonly-plain-text.jpg)
 
 ## Range Inputs[¶](https://getbootstrap.com/docs/4.3/components/forms/#range-inputs)
 
-> 
+> Установите горизонтально прокручиваемый "range `<input>`**s**" с помощью **.form-control-range**.
 
 ```cshtml
 @{
@@ -119,11 +125,18 @@
 
 ## Checkboxes and radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes-and-radios)
 
-> 
+> По умолчанию `checkbox`**es** и `radio`**s** усовершенствованны с помощью единого класса стилей **.form-check**, который улучшает макет и поведение их HTML-элементов. `Сheckbox`**es** предназначены для выбора одного или нескольких вариантов в списке, в то время как `radio`**s** предназначены для выбора одного варианта из многих.
+
+> Поддерживаются отключенные `checkbox`**es** и `radio`**s**.
+Отключенный **disabled** применяет более светлый цвет елементу, чтобы помочь указать состояние `<input>`’***s**.
+
+> `Checkbox`**es** и `radio`**s** используются для поддержки валидации формы на основе HTML и предоставления кратких, доступных меток.
+Таким образом, ваши `<input>`s `<label>`s являются одноуровневыми элементами, а не `<input>` внутри `<label>`.
+Это немного более подробно, так как вы должны указать **id** и атрибуты, чтобы связать `<input>` и `<label>`.
 
 ## Default (stacked)[¶](https://getbootstrap.com/docs/4.3/components/forms/#default-stacked)
 
-> 
+> По умолчанию любое количество `checkbox`**es** и `radio`**s**, которые являются непосредственными дочерними элементами, будут вертикально сложены c соответствующими отступами **.form-check**.
 
 ```cshtml
 @{
@@ -147,7 +160,7 @@
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline)
 
-> 
+> Группируйте `checkbox`**es** и `radio`**s** в одной горизонтальной строке путем добавления **.form-check-inline** в любой **.form-check**.
 
 ```cshtml
 @{
