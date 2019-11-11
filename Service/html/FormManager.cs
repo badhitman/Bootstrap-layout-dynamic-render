@@ -50,31 +50,28 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
-                if (FormMethod != null)
-                    SetAttribute("method", FormMethod.ToString());
+            if (FormMethod != null)
+                SetAttribute("method", FormMethod.ToString());
 
-                if(EncTypeData != null)
-                    SetAttribute("enctype", GetEnctypeHtmlForm(EncTypeData));
+            if (EncTypeData != null)
+                SetAttribute("enctype", GetEnctypeHtmlForm(EncTypeData));
 
-                if(!string.IsNullOrWhiteSpace(FormAction))
-                    SetAttribute("action", FormAction);
+            if (!string.IsNullOrWhiteSpace(FormAction))
+                SetAttribute("action", FormAction);
 
-                if (!string.IsNullOrWhiteSpace(AcceptCharset))
-                    SetAttribute("accept-charset", AcceptCharset);
+            if (!string.IsNullOrWhiteSpace(AcceptCharset))
+                SetAttribute("accept-charset", AcceptCharset);
 
-                if (!(FormTarget is null))
-                    SetAttribute("target", FormTarget?.ToString("g"));
+            if (!(FormTarget is null))
+                SetAttribute("target", FormTarget?.ToString("g"));
 
-                if (NoValidate)
-                    SetAttribute("novalidate", null);
+            if (NoValidate)
+                SetAttribute("novalidate", null);
 
-                if (!(AutoComplete is null))
-                    SetAttribute("autocomplete", AutoComplete == true ? "on" : "off");
+            if (!(AutoComplete is null))
+                SetAttribute("autocomplete", AutoComplete == true ? "on" : "off");
 
-                return base.GetStringAttributes();
-            //}
+            return base.GetStringAttributes();
         }
 
         /// <summary>

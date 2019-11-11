@@ -9,12 +9,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
     {
         public override string GetStringCSS()
         {
-            //get
-            //{
-                AddCSS("form-group");
+            AddCSS("form-group");
 
-                return base.GetStringCSS();
-            //}
+            return base.GetStringCSS();
         }
 
          

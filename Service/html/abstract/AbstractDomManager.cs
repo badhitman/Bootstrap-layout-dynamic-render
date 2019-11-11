@@ -86,42 +86,95 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута без упоминания значения этого атрибута (т.е. будет пропущен знак = и его значение)</param>
         public AbstractDomManager SetAttribute(string attr_name, string attr_value)
         {
-            attributes_as_string = string.Empty;
-
             attr_name = attr_name.Trim().ToLower();
 
             if (IndependentAttributes.Contains(attr_name))
                 return this;
 
             if (attr_name == "id")
-                ID = attr_value;
+            {
+                if (attr_value != ID)
+                {
+                    attributes_as_string = string.Empty;
+                    ID = attr_value;
+                }
+                return this;
+            }
 
             if (attr_name == "name")
-                Name = attr_value;
+            {
+                if (attr_value != Name)
+                {
+                    attributes_as_string = string.Empty;
+                    Name = attr_value;
+                }
+                return this;
+            }
 
             if (attr_name == "accesskey")
-                Accesskey = attr_value;
+            {
+                if (attr_value != Accesskey)
+                {
+                    attributes_as_string = string.Empty;
+                    Accesskey = attr_value;
+                }
+                return this;
+            }
 
             if (attr_name == "contenteditable")
-                Contenteditable = attr_value.ToLower() == "true";
+            {
+                bool new_value = attr_value.ToLower() == "true" || attr_value.ToLower().EndsWith("editable");
+                if (Contenteditable != new_value)
+                {
+                    attributes_as_string = string.Empty;
+                    Contenteditable = new_value;
+                }
+                return this;
+            }
 
             if (attr_name == "hidden")
-                Hidden = true;
+            {
+                bool new_value = attr_value.ToLower() == "true" || attr_value.ToLower() == "hidden";
+                if (new_value != Hidden)
+                {
+                    attributes_as_string = string.Empty;
+                    Hidden = new_value;
+                }
+                return this;
+            }
 
             if (attr_name == "tabindex")
             {
-                if (!Regex.IsMatch(attr_value, @"^-?\d+$"))
-                    return this;
-                Tabindex = int.Parse(attr_value);
+                if (attr_value != Tabindex.ToString())
+                {
+                    if (!Regex.IsMatch(attr_value, @"^-?\d+$"))
+                        return this;
+                    attributes_as_string = string.Empty;
+                    Tabindex = int.Parse(attr_value);
+                }
+                return this;
             }
+
             if (attr_name == "title")
-                Title = attr_value;
+            {
+                if (attr_value != Title)
+                {
+                    attributes_as_string = string.Empty;
+                    Title = attr_value;
+                }
+                return this;
+            }
 
             if (!CustomAttributes.ContainsKey(attr_name))
+            {
+                attributes_as_string = string.Empty;
                 CustomAttributes.Add(attr_name, attr_value);
-            else
+            }
+            else if (CustomAttributes[attr_name] != attr_value)
+            {
+                attributes_as_string = string.Empty;
                 CustomAttributes[attr_name] = attr_value;
-
+            }
             return this;
         }
 

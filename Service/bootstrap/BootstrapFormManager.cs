@@ -15,16 +15,13 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public override string GetStringCSS()
         {
-            //get
-            //{
-                if (IsInlineForm)
-                    AddCSS("form-inline");
+            if (IsInlineForm)
+                AddCSS("form-inline");
 
-                if (IsWasValidated)
-                    AddCSS("was-validated");
+            if (IsWasValidated)
+                AddCSS("was-validated");
 
-                return base.GetStringCSS();
-            //}
+            return base.GetStringCSS();
         }
     }
 }
