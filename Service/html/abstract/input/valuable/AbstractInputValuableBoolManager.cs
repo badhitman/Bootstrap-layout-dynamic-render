@@ -15,13 +15,13 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
+            if (string.IsNullOrWhiteSpace(CacheAttributes))
+            {
                 if (IsChecked)
                     SetAttribute("checked", "checked");
+            }
 
-                return base.GetStringAttributes();
-            //}
+            return base.GetStringAttributes();
         }
     }
 }

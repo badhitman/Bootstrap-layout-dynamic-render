@@ -12,7 +12,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
     {
         public InputCheckboxManager()
         {
-            SetAttribute("type", InputTypesEnum.checkbox.ToString());
+
+        }
+
+        public override string GetStringAttributes()
+        {
+            if (string.IsNullOrWhiteSpace(CacheAttributes))
+            {
+                SetAttribute("type", InputTypesEnum.checkbox.ToString());
+            }
+
+            return base.GetStringAttributes();
         }
     }
 }

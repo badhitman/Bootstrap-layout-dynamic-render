@@ -17,16 +17,20 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
+            if (string.IsNullOrWhiteSpace(CacheAttributes))
+            {
                 if (SizeWidth > 0)
                     SetAttribute("size", SizeWidth.ToString());
+                else
+                    RemoveAttribute("size");
 
                 if (Autocomplete != null)
                     SetAttribute("autocomplete", Autocomplete == true ? "on" : "off");
+                else
+                    RemoveAttribute("autocomplete");
+            }
 
-                return base.GetStringAttributes();
-            //}
+            return base.GetStringAttributes();
         }
     }
 }

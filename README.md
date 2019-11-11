@@ -149,3 +149,6 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ## Scrollspy[¶](https://getbootstrap.com/docs/4.3/components/scrollspy/)
 > [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/scrollspy)
+
+## Tables[¶](https://getbootstrap.com/docs/4.3/content/tables/)
+> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/table)

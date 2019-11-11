@@ -31,11 +31,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         public string ID { get; set; } = null;
 
         /// <summary>
-        /// Имя/Name элемента в DOM
-        /// </summary>
-        public string Name { get; set; } = null;
-
-        /// <summary>
         /// Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. Браузеры при этом используют различные комбинации клавиш.
         /// </summary>
         public string Accesskey { get; set; } = null;
@@ -97,16 +92,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 {
                     CacheAttributes = string.Empty;
                     ID = attr_value;
-                }
-                return this;
-            }
-
-            if (attr_name == "name")
-            {
-                if (attr_value != Name)
-                {
-                    CacheAttributes = string.Empty;
-                    Name = attr_value;
                 }
                 return this;
             }
@@ -270,9 +255,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             if (!string.IsNullOrWhiteSpace(ID))
                 SetAttribute("id", ID.Trim());
 
-            if (!string.IsNullOrWhiteSpace(Name))
-                SetAttribute("name", Name.Trim());
-
             if (!string.IsNullOrWhiteSpace(Accesskey))
                 SetAttribute("accesskey", Accesskey.Trim());
 
@@ -307,6 +289,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
             return CacheAttributes.Trim();
         }
+        
         protected string CacheAttributes { get; private set; }
 
         //
