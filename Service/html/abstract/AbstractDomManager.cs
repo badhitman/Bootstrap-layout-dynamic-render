@@ -407,7 +407,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager AddCSS(string css_class)
         {
-            css_as_string = string.Empty;
             if (string.IsNullOrWhiteSpace(css_class))
                 return this;
 
@@ -416,14 +415,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             if (regex_spice.IsMatch(css_class))
                 foreach (string s in regex_spice.Split(css_class))
                     AddCSS(s);
+
             else if (!string.IsNullOrEmpty(css_class) && !css.Contains(css_class))
+            {
+                css_as_string = string.Empty;
                 css.Add(css_class);
+            }
             return this;
         }
 
         public AbstractDomManager AddCSS(string[] css_classes)
         {
-            css_as_string = string.Empty;
             foreach (string s in css_classes)
                 AddCSS(s);
             return this;
@@ -434,15 +436,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager RemoveCSS(string css_class)
         {
-            css_as_string = string.Empty;
             css_class = css_class?.Trim().ToLower();
             if (regex_spice.IsMatch(css_class))
             {
                 foreach (string s in regex_spice.Split(css_class))
                     RemoveCSS(s);
             }
-            else if (!string.IsNullOrEmpty(css_class))
+            else if (!string.IsNullOrEmpty(css_class) && css.Contains(css_class))
+            {
                 css.Remove(css_class);
+                css_as_string = string.Empty;
+            }
             return this;
         }
 
@@ -451,13 +455,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager TogleCSS(string css_class)
         {
-            css_as_string = string.Empty;
             if (!string.IsNullOrEmpty(css_class))
             {
                 if (!css.Contains(css_class))
                     css.Add(css_class);
                 else
                     css.Remove(css_class);
+
+                css_as_string = string.Empty;
             }
             return this;
         }
