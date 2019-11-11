@@ -1,8 +1,4 @@
-# Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
-
-> Примеры и рекомендации по использованию стилей элементов управления формами, параметров компоновки и пользовательских компонентов для создания различных форм.
-
-## Overview[¶](https://getbootstrap.com/docs/4.3/components/forms/#overview)
+# Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#overview)
 
 > Классы **Bootstrap** форм расширяют [перегруженые стили](https://getbootstrap.com/docs/4.3/content/reboot/#forms).
 Используйте эти классы, для более согласованного отображения в браузерах и устройствах.

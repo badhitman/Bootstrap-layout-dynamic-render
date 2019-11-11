@@ -137,3 +137,15 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ## Input group[¶](https://getbootstrap.com/docs/4.3/components/input-group/)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/input/group)
+
+## Cards[¶](https://getbootstrap.com/docs/4.3/components/card/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/cards)
+
+## Media object[¶](https://getbootstrap.com/docs/4.3/components/media-object/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/media)
+
+## Progress[¶](https://getbootstrap.com/docs/4.3/components/progress/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/progress)
+
+## Scrollspy[¶](https://getbootstrap.com/docs/4.3/components/scrollspy/)
+> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/scrollspy)
