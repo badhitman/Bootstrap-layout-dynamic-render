@@ -86,6 +86,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <param name="attr_value">Если знаение атрибута IS NULL, то генератор объявит имя атрибута без упоминания значения этого атрибута (т.е. будет пропущен знак = и его значение)</param>
         public AbstractDomManager SetAttribute(string attr_name, string attr_value)
         {
+            attributes_as_string = string.Empty;
+
             attr_name = attr_name.Trim().ToLower();
 
             if (IndependentAttributes.Contains(attr_name))
@@ -125,7 +127,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public AbstractDomManager SetAttribute(List<KeyValuePair<string, string>> attributes)
         {
-            attributes.ForEach(x=> SetAttribute(x.Key, x.Value));
+            attributes.ForEach(x => SetAttribute(x.Key, x.Value));
             return this;
         }
 
@@ -156,6 +158,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager SetAttribute(Dictionary<string, string> in_custom_atributes)
         {
+            attributes_as_string = string.Empty;
             foreach (KeyValuePair<string, string> kvp in in_custom_atributes)
                 SetAttribute(kvp.Key, kvp.Value);
 
@@ -178,6 +181,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager RemoveAttribute(string attr_name)
         {
+            attributes_as_string = string.Empty;
             if (CustomAttributes.ContainsKey(attr_name))
                 CustomAttributes.Remove(attr_name);
 
@@ -190,6 +194,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager SetEvent(UniversalEventsEnum my_event, string event_src)
         {
+            attributes_as_string = string.Empty;
             if (string.IsNullOrEmpty(event_src))
             {
                 if (CustomAttributes.ContainsKey(my_event.ToString("g")))
@@ -206,8 +211,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public virtual string GetStringAttributes()
         {
-            //get
-            //{
+            if (string.IsNullOrWhiteSpace(attributes_as_string))
+            {
                 if (!string.IsNullOrWhiteSpace(ID))
                     SetAttribute("id", ID.Trim());
 
@@ -229,7 +234,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 if (!string.IsNullOrWhiteSpace(Title))
                     SetAttribute("title", Title.Trim());
 
-                string attributes_as_string = " ";
+                attributes_as_string = " ";
 
                 foreach (KeyValuePair<string, string> kvp in CustomAttributes)
                 {
@@ -244,10 +249,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
                 if (CustomStyles.Count > 0)
                     attributes_as_string += "style=\"" + GetStringStyles() + "\" ";
-
-                return attributes_as_string.Trim();
-            //}
+            }
+            return attributes_as_string.Trim();
         }
+        private string attributes_as_string;
 
         //
         ///////////////////////////////////////////////
@@ -269,6 +274,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <param name="style_value">Знаение стиля</param>
         public AbstractDomManager SetStyle(string style_name, string style_value)
         {
+            styles_as_string = string.Empty;
             style_name = style_name.Trim().ToLower().Trim();
             style_value = style_value.Trim().ToLower().Trim();
 
@@ -299,6 +305,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager RemoveStyle(string style_name)
         {
+            styles_as_string = string.Empty;
             if (CustomStyles.ContainsKey(style_name))
                 CustomStyles.Remove(style_name);
 
@@ -310,16 +317,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public virtual string GetStringStyles()
         {
-            //get
-            //{
-                string styles_as_string = " ";
+            if (string.IsNullOrWhiteSpace(styles_as_string))
+            {
+                styles_as_string = " ";
 
                 foreach (KeyValuePair<string, string> kvp in CustomStyles)
                     styles_as_string += kvp.Key + ":" + kvp.Value + "; ";
+            }
 
-                return styles_as_string.Trim();
-            //}
+            return styles_as_string.Trim();
         }
+        private string styles_as_string;
 
         //
         ///////////////////////////////////////////////
@@ -328,6 +336,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         #region CSS классы стилей
         ///////////////////////////////////////////////
         //
+
         /// <summary>
         /// Для поиска пробелов в передаваемых CSS классах
         /// </summary>
@@ -345,6 +354,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager AddCSS(string css_class)
         {
+            css_as_string = string.Empty;
             if (string.IsNullOrWhiteSpace(css_class))
                 return this;
 
@@ -360,6 +370,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public AbstractDomManager AddCSS(string[] css_classes)
         {
+            css_as_string = string.Empty;
             foreach (string s in css_classes)
                 AddCSS(s);
             return this;
@@ -370,6 +381,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager RemoveCSS(string css_class)
         {
+            css_as_string = string.Empty;
             css_class = css_class?.Trim().ToLower();
             if (regex_spice.IsMatch(css_class))
             {
@@ -378,7 +390,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             }
             else if (!string.IsNullOrEmpty(css_class))
                 css.Remove(css_class);
-
             return this;
         }
 
@@ -387,6 +398,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager TogleCSS(string css_class)
         {
+            css_as_string = string.Empty;
             if (!string.IsNullOrEmpty(css_class))
             {
                 if (!css.Contains(css_class))
@@ -394,12 +406,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 else
                     css.Remove(css_class);
             }
-
             return this;
         }
 
         public AbstractDomManager ClearCSS()
         {
+            css_as_string = string.Empty;
             css.Clear();
             return this;
         }
@@ -409,13 +421,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public virtual string GetStringCSS()
         {
-            //get
-            //{
-                string css_as_string = "";
+            if (string.IsNullOrWhiteSpace(css_as_string))
+            {
+                css_as_string = "";
                 css.ForEach(x => css_as_string += " " + x);
-                return css_as_string.Trim();
-            //}
+            }
+            return css_as_string.Trim();
         }
+        private string css_as_string;
+
         //
         ///////////////////////////////////////////////
         #endregion    
