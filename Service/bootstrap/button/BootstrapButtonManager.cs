@@ -35,7 +35,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public BootstrapButtonManager(string SetHeader) : base(SetHeader)
         {
-            AddCSS("btn");
+            
         }
 
         public override string GetStringAttributes()
@@ -66,14 +66,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                 SetAttribute("autocomplete", "off");
                 SetAttribute("aria-pressed", "true");
             }
-
+            
             return base.GetStringAttributes();
         }
 
         public override string GetStringCSS()
         {
-            //get
-            //{
+            AddCSS("btn");
+
             if (BackgroundColorTheme != BackgroundColorThemesEnum.NULL)
                 AddCSS("btn-" + (IsOutlineStyle ? "outline-" : "") + BackgroundColorTheme.ToString());
 
@@ -86,10 +86,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
             if (IsActive)
                 AddCSS("active");
 
-
-
             return base.GetStringCSS();
-            //}
         }
     }
 }

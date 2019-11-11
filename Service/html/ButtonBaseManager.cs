@@ -21,14 +21,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
-            
             if (ButtonType != ButtonTypesEnum.NULL)
                 SetAttribute("type", ButtonType.ToString());
 
             return base.GetStringAttributes();
-            //}
         }
     }
 }

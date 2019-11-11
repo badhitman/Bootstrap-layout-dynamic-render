@@ -95,7 +95,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             {
                 if (attr_value != ID)
                 {
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     ID = attr_value;
                 }
                 return this;
@@ -105,7 +105,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             {
                 if (attr_value != Name)
                 {
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     Name = attr_value;
                 }
                 return this;
@@ -115,7 +115,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             {
                 if (attr_value != Accesskey)
                 {
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     Accesskey = attr_value;
                 }
                 return this;
@@ -126,7 +126,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 bool new_value = attr_value.ToLower() == "true" || attr_value.ToLower().EndsWith("editable");
                 if (Contenteditable != new_value)
                 {
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     Contenteditable = new_value;
                 }
                 return this;
@@ -137,7 +137,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 bool new_value = attr_value.ToLower() == "true" || attr_value.ToLower() == "hidden";
                 if (new_value != Hidden)
                 {
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     Hidden = new_value;
                 }
                 return this;
@@ -149,7 +149,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 {
                     if (!Regex.IsMatch(attr_value, @"^-?\d+$"))
                         return this;
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     Tabindex = int.Parse(attr_value);
                 }
                 return this;
@@ -159,7 +159,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             {
                 if (attr_value != Title)
                 {
-                    attributes_as_string = string.Empty;
+                    CacheAttributes = string.Empty;
                     Title = attr_value;
                 }
                 return this;
@@ -167,12 +167,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
             if (!CustomAttributes.ContainsKey(attr_name))
             {
-                attributes_as_string = string.Empty;
+                CacheAttributes = string.Empty;
                 CustomAttributes.Add(attr_name, attr_value);
             }
             else if (CustomAttributes[attr_name] != attr_value)
             {
-                attributes_as_string = string.Empty;
+                CacheAttributes = string.Empty;
                 CustomAttributes[attr_name] = attr_value;
             }
             return this;
@@ -211,7 +211,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager SetAttribute(Dictionary<string, string> in_custom_atributes)
         {
-            attributes_as_string = string.Empty;
+            CacheAttributes = string.Empty;
             foreach (KeyValuePair<string, string> kvp in in_custom_atributes)
                 SetAttribute(kvp.Key, kvp.Value);
 
@@ -234,7 +234,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager RemoveAttribute(string attr_name)
         {
-            attributes_as_string = string.Empty;
+            CacheAttributes = string.Empty;
             if (CustomAttributes.ContainsKey(attr_name))
                 CustomAttributes.Remove(attr_name);
 
@@ -247,7 +247,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager SetEvent(UniversalEventsEnum my_event, string event_src)
         {
-            attributes_as_string = string.Empty;
+            CacheAttributes = string.Empty;
             if (string.IsNullOrEmpty(event_src))
             {
                 if (CustomAttributes.ContainsKey(my_event.ToString("g")))
@@ -264,48 +264,50 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public virtual string GetStringAttributes()
         {
-            if (string.IsNullOrWhiteSpace(attributes_as_string))
+            if (!string.IsNullOrWhiteSpace(CacheAttributes))
+                return CacheAttributes.Trim();
+
+            if (!string.IsNullOrWhiteSpace(ID))
+                SetAttribute("id", ID.Trim());
+
+            if (!string.IsNullOrWhiteSpace(Name))
+                SetAttribute("name", Name.Trim());
+
+            if (!string.IsNullOrWhiteSpace(Accesskey))
+                SetAttribute("accesskey", Accesskey.Trim());
+
+            if (Contenteditable)
+                SetAttribute("contenteditable", "true");
+
+            if (Hidden)
+                SetAttribute("hidden", null);
+
+            if (Tabindex != default)
+                SetAttribute("tabindex", Tabindex.ToString());
+
+            if (!string.IsNullOrWhiteSpace(Title))
+                SetAttribute("title", Title.Trim());
+
+            CacheAttributes = " ";
+
+            foreach (KeyValuePair<string, string> kvp in CustomAttributes)
             {
-                if (!string.IsNullOrWhiteSpace(ID))
-                    SetAttribute("id", ID.Trim());
-
-                if (!string.IsNullOrWhiteSpace(Name))
-                    SetAttribute("name", Name.Trim());
-
-                if (!string.IsNullOrWhiteSpace(Accesskey))
-                    SetAttribute("accesskey", Accesskey.Trim());
-
-                if (Contenteditable)
-                    SetAttribute("contenteditable", "true");
-
-                if (Hidden)
-                    SetAttribute("hidden", null);
-
-                if (Tabindex != default)
-                    SetAttribute("tabindex", Tabindex.ToString());
-
-                if (!string.IsNullOrWhiteSpace(Title))
-                    SetAttribute("title", Title.Trim());
-
-                attributes_as_string = " ";
-
-                foreach (KeyValuePair<string, string> kvp in CustomAttributes)
-                {
-                    if (kvp.Value is null)
-                        attributes_as_string += kvp.Key + " ";
-                    else
-                        attributes_as_string += kvp.Key + "=\"" + kvp.Value + "\" ";
-                }
-
-                if (css.Count > 0)
-                    attributes_as_string += "class=\"" + GetStringCSS() + "\" ";
-
-                if (CustomStyles.Count > 0)
-                    attributes_as_string += "style=\"" + GetStringStyles() + "\" ";
+                if (kvp.Value is null)
+                    CacheAttributes += kvp.Key + " ";
+                else
+                    CacheAttributes += kvp.Key + "=\"" + kvp.Value + "\" ";
             }
-            return attributes_as_string.Trim();
+
+            string tmp_css_string = GetStringCSS();
+            if (!string.IsNullOrWhiteSpace(tmp_css_string))
+                CacheAttributes += "class=\"" + tmp_css_string + "\" ";
+
+            if (CustomStyles.Count > 0)
+                CacheAttributes += "style=\"" + GetStringStyles() + "\" ";
+
+            return CacheAttributes.Trim();
         }
-        private string attributes_as_string;
+        protected string CacheAttributes { get; private set; }
 
         //
         ///////////////////////////////////////////////
@@ -327,7 +329,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <param name="style_value">Знаение стиля</param>
         public AbstractDomManager SetStyle(string style_name, string style_value)
         {
-            styles_as_string = string.Empty;
+            CacheStyles = string.Empty;
             style_name = style_name.Trim().ToLower().Trim();
             style_value = style_value.Trim().ToLower().Trim();
 
@@ -358,7 +360,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public AbstractDomManager RemoveStyle(string style_name)
         {
-            styles_as_string = string.Empty;
+            CacheStyles = string.Empty;
             if (CustomStyles.ContainsKey(style_name))
                 CustomStyles.Remove(style_name);
 
@@ -370,17 +372,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public virtual string GetStringStyles()
         {
-            if (string.IsNullOrWhiteSpace(styles_as_string))
+            if (string.IsNullOrWhiteSpace(CacheStyles) && CustomStyles.Count > 0)
             {
-                styles_as_string = " ";
+                CacheStyles = " ";
 
                 foreach (KeyValuePair<string, string> kvp in CustomStyles)
-                    styles_as_string += kvp.Key + ":" + kvp.Value + "; ";
+                    CacheStyles += kvp.Key + ":" + kvp.Value + "; ";
             }
 
-            return styles_as_string.Trim();
+            return CacheStyles.Trim();
         }
-        private string styles_as_string;
+        protected string CacheStyles { get; private set; }
 
         //
         ///////////////////////////////////////////////
@@ -418,7 +420,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
             else if (!string.IsNullOrEmpty(css_class) && !css.Contains(css_class))
             {
-                css_as_string = string.Empty;
+                CacheCSS = string.Empty;
                 css.Add(css_class);
             }
             return this;
@@ -445,7 +447,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
             else if (!string.IsNullOrEmpty(css_class) && css.Contains(css_class))
             {
                 css.Remove(css_class);
-                css_as_string = string.Empty;
+                CacheCSS = string.Empty;
             }
             return this;
         }
@@ -462,14 +464,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                 else
                     css.Remove(css_class);
 
-                css_as_string = string.Empty;
+                CacheCSS = string.Empty;
             }
             return this;
         }
 
         public AbstractDomManager ClearCSS()
         {
-            css_as_string = string.Empty;
+            CacheCSS = string.Empty;
             css.Clear();
             return this;
         }
@@ -479,14 +481,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         public virtual string GetStringCSS()
         {
-            if (string.IsNullOrWhiteSpace(css_as_string))
+            if (string.IsNullOrWhiteSpace(CacheCSS))
             {
-                css_as_string = "";
-                css.ForEach(x => css_as_string += " " + x);
+                CacheCSS = "";
+                css.ForEach(x => CacheCSS += " " + x);
             }
-            return css_as_string.Trim();
+            return CacheCSS.Trim();
         }
-        private string css_as_string;
+        protected string CacheCSS { get; private set; }
 
         //
         ///////////////////////////////////////////////

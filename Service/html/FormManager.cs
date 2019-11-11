@@ -35,7 +35,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// _parent - Загружает страницу во фрейм-родитель, если фреймов нет, то это значение работает как _self.
         /// _top - Отменяет все фреймы и загружает страницу в полном окне браузера, если фреймов нет, то это значение работает как _self.
         /// </summary>
-        public BrowserTargetsEnum? FormTarget { get; set; } = null;
+        public BrowserTargetsEnum FormTarget { get; set; } = BrowserTargetsEnum.NULL;
 
         /// <summary>
         /// Отменяет встроенную проверку данных введенных пользователем в форме на корректность.
@@ -50,26 +50,43 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
         public override string GetStringAttributes()
         {
-            if (FormMethod != null)
-                SetAttribute("method", FormMethod.ToString());
+            if (string.IsNullOrWhiteSpace(CacheAttributes))
+            {
+                if (FormMethod != null)
+                    SetAttribute("method", FormMethod.ToString());
+                else
+                    RemoveAttribute("method");
 
-            if (EncTypeData != null)
-                SetAttribute("enctype", GetEnctypeHtmlForm(EncTypeData));
+                if (EncTypeData != null)
+                    SetAttribute("enctype", GetEnctypeHtmlForm(EncTypeData));
+                else
+                    RemoveAttribute("enctype");
 
-            if (!string.IsNullOrWhiteSpace(FormAction))
-                SetAttribute("action", FormAction);
+                if (!string.IsNullOrWhiteSpace(FormAction))
+                    SetAttribute("action", FormAction);
+                else
+                    RemoveAttribute("action");
 
-            if (!string.IsNullOrWhiteSpace(AcceptCharset))
-                SetAttribute("accept-charset", AcceptCharset);
+                if (!string.IsNullOrWhiteSpace(AcceptCharset))
+                    SetAttribute("accept-charset", AcceptCharset);
+                else
+                    RemoveAttribute("accept-charset");
 
-            if (!(FormTarget is null))
-                SetAttribute("target", FormTarget?.ToString("g"));
+                if (FormTarget != BrowserTargetsEnum.NULL)
+                    SetAttribute("target", FormTarget.ToString("g"));
+                else
+                    RemoveAttribute("target");
 
-            if (NoValidate)
-                SetAttribute("novalidate", null);
+                if (NoValidate)
+                    SetAttribute("novalidate", null);
+                else
+                    RemoveAttribute("novalidate");
 
-            if (!(AutoComplete is null))
-                SetAttribute("autocomplete", AutoComplete == true ? "on" : "off");
+                if (!(AutoComplete is null))
+                    SetAttribute("autocomplete", AutoComplete == true ? "on" : "off");
+                else
+                    RemoveAttribute("autocomplete");
+            }
 
             return base.GetStringAttributes();
         }
