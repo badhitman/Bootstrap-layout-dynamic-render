@@ -46,7 +46,7 @@
 
 ***result:***
 
-![Forms overview](../../../../demo/forms-overview.jpg)
+![Forms overview](../../../demo/forms-overview.jpg)
 
 ## Form controls[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-controls)
 
