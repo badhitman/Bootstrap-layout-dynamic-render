@@ -8,7 +8,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.bootstrap.input
 {
     public class InputBase : ViewComponent
     {
-        public IViewComponentResult Invoke(AbstractInputDataValuableManager SetObjectManager)
+        public IViewComponentResult Invoke(AbstractInputManager SetObjectManager)
         {
             return View(SetObjectManager);
         }

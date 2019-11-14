@@ -7,13 +7,13 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
-    public class InputGroupManager : AbstractCustomInputManager
+    public class InputGroupManager
     {
         /// <summary>
         /// Wrapping:
         /// Input groups wrap by default via flex-wrap: wrap in order to accommodate custom form field validation within an input group. You may disable this with .flex-nowrap.
         /// </summary>
-        public bool IsFlexNowrap { get; set; } = false;
+        /*public bool IsFlexNowrap { get; set; } = false;
 
         /// <summary>
         /// Sizing:
@@ -30,8 +30,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public override string GetStringCSS()
         {
-            //get
-            //{
                 if (IsFlexNowrap)
                     AddCSS("flex-nowrap");
 
@@ -41,7 +39,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
                     AddCSS("input-group-" + InputGroupSize.ToString());
 
                 return base.GetStringCSS();
-            //}
-        }
+        }*/
     }
 }

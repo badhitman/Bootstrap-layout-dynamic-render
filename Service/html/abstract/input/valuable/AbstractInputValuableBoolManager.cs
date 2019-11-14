@@ -19,6 +19,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
             {
                 if (IsChecked)
                     SetAttribute("checked", "checked");
+                else
+                    RemoveAttribute("checked");
             }
 
             return base.GetStringAttributes();

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class InputTextManager: AbstractTextedInputManager
+    public class InputTextManager : AbstractTextedInputManager
     {
         public InputTextManager()
         {

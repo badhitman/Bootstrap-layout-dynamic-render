@@ -5,6 +5,6 @@
 <div @Html.Raw(Model.GetStringAttributes())>
     @if (Model.ChildsCount > 0)
     {
-        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+        @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model })
     }
 </div>

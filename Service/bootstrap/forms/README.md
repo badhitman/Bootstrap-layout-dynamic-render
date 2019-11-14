@@ -7,7 +7,40 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager(){ ID = "domo-form-dom-id"};
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Email address";
+  SingleGroup.CustomInput.Input = new InputEmailManager()
+  {
+    Placeholder = "Enter email",
+    ID = "input-email-dom-id"
+  };
+
+  SingleGroup.CustomInput.HelpCaption = "We'll never share your email with anyone else.";
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Password";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "Password",
+    ID = "input-password-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Input = new InputCheckboxManager() { ID = "input-checkbox-dom-id" };
+  SingleGroup.CustomInput.Label = "Check me out";
+  form.AddChild(SingleGroup);
+
+  form.AddChild(new BootstrapButtonManager("Submit")
+  {
+    ButtonType = ButtonTypesEnum.submit,
+    BackgroundColorTheme = BackgroundColorThemesEnum.primary
+  });
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 

@@ -2,25 +2,30 @@
 // https://github.com/badhitman
 ////////////////////////////////////////////////
 using BootstrapViewComponentsRazorLibrary.Components.bootstrap;
+using BootstrapViewComponentsRazorLibrary.Models.bootstrap;
 using BootstrapViewComponentsRazorLibrary.Service.html;
+using BootstrapViewComponentsRazorLibrary.Service.html.input;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.input
 {
-    public abstract class AbstractCustomInputManager : ManagedListNodesManager
+    public class CustomInputModel
     {
-        public LabelInputManager Label { get; set; }
+        public string Label { get; set; }
+        public bool LabelSrOnly { get; set; } = false;
+
 
         public AbstractInputManager Input { get; set; }
+        public bool IsInputCustomStyle { get; set; } = false;
 
         public string HelpCaption { get; set; }
 
-        public string ValidFeedback { get; set; } = "Looks good!";
+        public TwinSizingEnum SizeInput { get; set; } = TwinSizingEnum.NULL;
+
+        public string ValidFeedback { get; set; }
 
         public string InvalidFeedback { get; set; }
-
-        public override string ViewComponentName => nameof(CustomInputBase);
     }
 }

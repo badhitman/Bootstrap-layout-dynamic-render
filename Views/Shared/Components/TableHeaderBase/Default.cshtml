@@ -3,6 +3,6 @@
 @using BootstrapViewComponentsRazorLibrary.Components.html
 <thead @Html.Raw(Model.GetStringAttributes())>
     <tr>
-        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+        @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model })
     </tr>
 </thead>

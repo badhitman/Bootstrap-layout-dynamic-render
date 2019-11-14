@@ -1,6 +1,8 @@
 ﻿////////////////////////////////////////////////
 // https://github.com/badhitman
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service.html;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -12,7 +14,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         #region Поля
         ///////////////////////////////////////////////
         //
-
         /// <summary>
         /// Имя компонента для рендеринга
         /// </summary>
@@ -28,7 +29,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Идентификатор/ID элемента в DOM
         /// </summary>
-        public string ID { get; set; } = null;
+        public virtual string ID { get; set; } = null;
 
         /// <summary>
         /// Позволяет получить доступ к элементу с помощью заданного сочетания клавиш. Браузеры при этом используют различные комбинации клавиш.
@@ -93,7 +94,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     CacheAttributes = string.Empty;
                     ID = attr_value;
                 }
-                return this;
             }
 
             if (attr_name == "accesskey")
@@ -103,7 +103,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     CacheAttributes = string.Empty;
                     Accesskey = attr_value;
                 }
-                return this;
             }
 
             if (attr_name == "contenteditable")
@@ -114,7 +113,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     CacheAttributes = string.Empty;
                     Contenteditable = new_value;
                 }
-                return this;
             }
 
             if (attr_name == "hidden")
@@ -125,7 +123,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     CacheAttributes = string.Empty;
                     Hidden = new_value;
                 }
-                return this;
             }
 
             if (attr_name == "tabindex")
@@ -137,7 +134,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     CacheAttributes = string.Empty;
                     Tabindex = int.Parse(attr_value);
                 }
-                return this;
             }
 
             if (attr_name == "title")
@@ -147,7 +143,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service
                     CacheAttributes = string.Empty;
                     Title = attr_value;
                 }
-                return this;
             }
 
             if (!CustomAttributes.ContainsKey(attr_name))
@@ -289,7 +284,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service
 
             return CacheAttributes.Trim();
         }
-        
+
         protected string CacheAttributes { get; private set; }
 
         //
@@ -390,16 +385,16 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Добавить CSS класс текущему объекту (если такой класс ещё не назначен объекту)
         /// </summary>
-        public AbstractDomManager AddCSS(string css_class)
+        public AbstractDomManager AddCSS(string css_class, bool check_separator = true)
         {
             if (string.IsNullOrWhiteSpace(css_class))
                 return this;
 
             css_class = css_class.Trim().ToLower();
 
-            if (regex_spice.IsMatch(css_class))
+            if (check_separator && regex_spice.IsMatch(css_class))
                 foreach (string s in regex_spice.Split(css_class))
-                    AddCSS(s);
+                    AddCSS(s, false);
 
             else if (!string.IsNullOrEmpty(css_class) && !css.Contains(css_class))
             {
@@ -419,13 +414,16 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// <summary>
         /// Удалить класс CSS
         /// </summary>
-        public AbstractDomManager RemoveCSS(string css_class)
+        public AbstractDomManager RemoveCSS(string css_class, bool check_separator = true)
         {
+            if (css.Count == 0)
+                return this;
+
             css_class = css_class?.Trim().ToLower();
-            if (regex_spice.IsMatch(css_class))
+            if (check_separator && regex_spice.IsMatch(css_class))
             {
                 foreach (string s in regex_spice.Split(css_class))
-                    RemoveCSS(s);
+                    RemoveCSS(s, false);
             }
             else if (!string.IsNullOrEmpty(css_class) && css.Contains(css_class))
             {
@@ -436,19 +434,37 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         }
 
         /// <summary>
+        /// Удаление CSS класса про предикату
+        /// </summary>
+        /// <param name="predicate">Предикат определения класса для удаления</param>
+        public AbstractDomManager RemoveCSS(Predicate<string> predicate)
+        {
+            css.Where(x => predicate(x)).ToList().ForEach(x => RemoveCSS(x));
+            return this;
+        }
+
+        /// <summary>
         /// Если класса нет, то будет добавлен. Если класс есть, то будет удалён
         /// </summary>
-        public AbstractDomManager TogleCSS(string css_class)
+        public AbstractDomManager TogleCSS(string css_class, bool check_separator = true)
         {
-            if (!string.IsNullOrEmpty(css_class))
-            {
-                if (!css.Contains(css_class))
-                    css.Add(css_class);
-                else
-                    css.Remove(css_class);
+            if (string.IsNullOrEmpty(css_class))
+                return this;
 
-                CacheCSS = string.Empty;
+            css_class = css_class.Trim().ToLower();
+            if (check_separator && regex_spice.IsMatch(css_class))
+            {
+                foreach (string s in regex_spice.Split(css_class))
+                    TogleCSS(s, false);
             }
+
+            if (!css.Contains(css_class))
+                css.Add(css_class);
+            else
+                css.Remove(css_class);
+
+            CacheCSS = string.Empty;
+
             return this;
         }
 

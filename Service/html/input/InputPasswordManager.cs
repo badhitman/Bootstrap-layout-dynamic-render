@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class InputPasswordManager : AbstractInputDataValuableManager
+    public class InputPasswordManager : AbstractTextedInputManager
     {
         public InputPasswordManager()
         {

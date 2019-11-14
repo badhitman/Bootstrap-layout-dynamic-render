@@ -1,8 +1,0 @@
-﻿@*MIT License (https://github.com/badhitman)*@
-@using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
-@using BootstrapViewComponentsRazorLibrary.Service
-@model AbstractNestedToolsManager
-@foreach (AbstractDomManager adm in Model.GetChilds())
-{    
-    @await Component.InvokeAsync(adm.ViewComponentName, new { SetObjectManager = adm })
-}

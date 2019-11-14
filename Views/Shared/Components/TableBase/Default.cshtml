@@ -7,6 +7,6 @@
 <table @Html.Raw(Model.GetStringAttributes())>
     @await Component.InvokeAsync(typeof(TableHeaderBase).Name, new { SetObjectManager = Model.TableHeader })
     <tbody>
-        @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model })
+        @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model })
     </tbody>
 </table>

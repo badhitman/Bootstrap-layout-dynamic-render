@@ -7,6 +7,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
 {
     public class UniversalListManager : AbstractNestedToolsManager
     {
-        public override string ViewComponentName => nameof(UniversalList);
+        public override string ViewComponentName => nameof(HtmlRenderUniversalList);
     }
 }

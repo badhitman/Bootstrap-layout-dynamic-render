@@ -26,12 +26,12 @@
                 {
                     @await Component.InvokeAsync(typeof(NavbarBrand).Name, new { SetObjectManager = Model.NavbarBrand })
                 }
-                @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model.NavbarActions })
+                @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model.NavbarActions })
             </div>
         }
         else
         {
-            @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = Model.NavbarActions })
+            @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model.NavbarActions })
         }
     }
 </nav>

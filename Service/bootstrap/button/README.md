@@ -16,7 +16,7 @@
   BootstrapButtonManager button = new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.NULL };
   button.AddCSS("btn-link ml-5");
   div.AddChild(button);
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -44,7 +44,7 @@
   div.AddChild(new BootstrapButtonInputManager("Reset", BootstrapButtonInputTypesEnum.reset));
   div.AddChild(new BootstrapButtonInputManager("Submit", BootstrapButtonInputTypesEnum.submit));
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -70,7 +70,7 @@
   div.AddChild(new BootstrapButtonManager("Light") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.light });
   div.AddChild(new BootstrapButtonManager("Dark") { IsOutlineStyle = true, BackgroundColorTheme = BackgroundColorThemesEnum.dark });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -90,7 +90,7 @@
   div.AddChild(new BootstrapButtonManager("Large button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, SizeButton = TwinSizingEnum.Lg });
   div.AddChild(new BootstrapButtonManager("Large button") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, SizeButton = TwinSizingEnum.Lg });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -106,7 +106,7 @@
   div.AddChild(new BootstrapButtonManager("Small button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, SizeButton = TwinSizingEnum.Sm });
   div.AddChild(new BootstrapButtonManager("Small button") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, SizeButton = TwinSizingEnum.Sm });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -122,7 +122,7 @@
   div.AddChild(new BootstrapButtonManager("Block level button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, SizeButton = TwinSizingEnum.Lg, IsBlockBtn = true });
   div.AddChild(new BootstrapButtonManager("Block level button") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, SizeButton = TwinSizingEnum.Lg, IsBlockBtn = true });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -141,7 +141,7 @@
   div.AddChild(new BootstrapButtonManager("Primary link") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, IsActive = true });
   div.AddChild(new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, IsActive = true });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -167,7 +167,7 @@
   div.AddChild(new BootstrapButtonManager("Primary button") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, IsDisabled = true });
   div.AddChild(new BootstrapButtonManager("Link") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, IsDisabled = true });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -186,7 +186,7 @@
   div.AddChild(new BootstrapButtonLinkManager("Primary link", "#") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, IsDisabled = true });
   div.AddChild(new BootstrapButtonLinkManager("Link", "#") { BackgroundColorTheme = BackgroundColorThemesEnum.secondary, IsDisabled = true });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 
@@ -204,7 +204,7 @@
 
   div.AddChild(new BootstrapButtonManager("Single toggle") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, ToggleActiveState = true });
 
-  @await Component.InvokeAsync(typeof(UniversalList).Name, new { SetObjectManager = div })
+  @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = div })
 }
 ```
 

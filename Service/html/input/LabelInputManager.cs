@@ -18,13 +18,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
-                if (!string.IsNullOrWhiteSpace(For))
-                    SetAttribute("for",For);
+            if (!string.IsNullOrWhiteSpace(For))
+                SetAttribute("for", For);
 
-                return base.GetStringAttributes();
-            //}
+            return base.GetStringAttributes();
         }
     }
 }

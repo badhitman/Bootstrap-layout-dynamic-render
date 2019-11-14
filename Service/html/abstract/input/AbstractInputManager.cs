@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
+namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
     public abstract class AbstractInputManager : AbstractDisengageableManager
     {
@@ -17,7 +17,27 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         /// <summary>
         /// Имя поля формы
         /// </summary>
-        public string NameDom { get; set; }
+        public string NameDom
+        {
+            get => nameDom;
+            set
+            {
+                nameDom = value;
+                if (string.IsNullOrWhiteSpace(base.ID))
+                    base.ID = nameDom;
+            }
+        }
+        private string nameDom;
+        public override string ID
+        {
+            get => base.ID;
+            set
+            {
+                base.ID = value;
+                if (string.IsNullOrWhiteSpace(nameDom))
+                    nameDom = value;
+            }
+        }
 
         /// <summary>
         /// флаг/признак - только для чтения
@@ -42,8 +62,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
+            if (string.IsNullOrEmpty(CacheAttributes))
+            {
                 if (!string.IsNullOrWhiteSpace(NameDom))
                     SetAttribute("name", NameDom);
 
@@ -58,9 +78,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
                 if (Readonly)
                     SetAttribute("readonly", null);
+            }
 
-                return base.GetStringAttributes();
-            //}
+            return base.GetStringAttributes();
         }
     }
 }
