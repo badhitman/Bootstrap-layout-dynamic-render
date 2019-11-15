@@ -55,7 +55,52 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Email address";
+  SingleGroup.CustomInput.Input = new InputEmailManager()
+  {
+    Placeholder = "name@example.com",
+    ID = "input-email-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Example select";
+  InputSelectManager inputSelect = new InputSelectManager()
+  {
+    ID = "input-select-dom-id"
+  };
+  for (int i = 1; i < 6; i++)
+  {
+    inputSelect.AddItem(i.ToString(), null);
+  }
+  //
+  SingleGroup.CustomInput.Input = inputSelect;
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Example multiple select";
+  inputSelect = new InputSelectManager()
+  {
+    ID = "input-multiple-select-dom-id",
+    IsMultiple = true
+  };
+  for (int i = 1; i < 6; i++)
+  {
+    inputSelect.AddItem(i.ToString(), null);
+  }
+  //
+  SingleGroup.CustomInput.Input = inputSelect;
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Example textarea";
+  SingleGroup.CustomInput.Input = new TextareaManager() { ID = "input-textarea-dom-id", Placeholder = "Full-text input", SizeArea = 3 };
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
