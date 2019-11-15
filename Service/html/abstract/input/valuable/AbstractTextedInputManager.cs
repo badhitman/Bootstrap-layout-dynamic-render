@@ -19,8 +19,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
         {
             if (string.IsNullOrWhiteSpace(CacheAttributes))
             {
-                if (SizeWidth > 0)
-                    SetAttribute("size", SizeWidth.ToString());
+                if (SizeArea > 0)
+                    SetAttribute("size", SizeArea.ToString());
                 else
                     RemoveAttribute("size");
 

@@ -12,17 +12,25 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
     {
         public override string ViewComponentName => nameof(OptionSelectBase);
 
+        public bool IsSelect { get; set; } = false;
+
         public string Header { get; set; }
 
         public string Value { get; set; }
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
+            if (IsSelect)
+                SetAttribute("select", null);
+            else
+                RemoveAttribute("select");
+
+            if (!string.IsNullOrWhiteSpace(Value))
                 SetAttribute("value", Value);
-                return base.GetStringAttributes();
-            //}
+            else
+                RemoveAttribute("value");
+
+            return base.GetStringAttributes();
         }
     }
 }

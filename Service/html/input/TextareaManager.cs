@@ -10,6 +10,14 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
     public class TextareaManager : AbstractTextedBasicInputManager
     {
-        
+        public override string GetStringAttributes()
+        {
+            if (SizeArea > 0)
+                SetAttribute("rows", SizeArea.ToString());
+            else
+                RemoveAttribute("rows");
+
+            return base.GetStringAttributes();
+        }
     }
 }

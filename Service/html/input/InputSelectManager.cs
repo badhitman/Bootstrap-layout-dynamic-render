@@ -16,16 +16,18 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
     {
         public override string ViewComponentName => nameof(SelectBase);
 
-        public List<InputOptionSelectManager> Options { get; private set; }
+        public List<InputOptionSelectManager> Options { get; private set; } = new List<InputOptionSelectManager>();
 
         public bool IsMultiple { get; set; } = false;
+
+        public void AddItem(string header_option, string value_option)=> Options.Add(new InputOptionSelectManager() { Header = header_option, Value = value_option });
 
         public override string GetStringAttributes()
         {
             if (IsMultiple)
-                RemoveAttribute("multiple");
-            else
                 SetAttribute("multiple", null);
+            else
+                RemoveAttribute("multiple");
 
             return base.GetStringAttributes();
         }

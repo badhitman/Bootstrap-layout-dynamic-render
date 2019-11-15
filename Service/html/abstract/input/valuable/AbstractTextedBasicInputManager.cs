@@ -18,25 +18,22 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input.valuable
         /// </summary>
         public string PatternInput { get; set; }
 
-        /// <summary>
-        /// Ширина текстового поля, которое определяется числом символов моноширинного шрифта.
-        /// Иными словами, ширина задается количеством близстоящих букв одинаковой ширины по горизонтали.
-        /// Если размер шрифта изменяется с помощью стилей, ширина также соответственно меняется. 
-        /// </summary>
-        public int SizeWidth { get; set; } = 0;
+        public int SizeArea { get; set; } = 0;
 
         public override string GetStringAttributes()
         {
-            //get
-            //{
+            if (string.IsNullOrWhiteSpace(CacheAttributes))
+            {
                 if (!string.IsNullOrWhiteSpace(Placeholder))
                     SetAttribute("placeholder", Placeholder);
 
                 if (!string.IsNullOrWhiteSpace(PatternInput))
                     SetAttribute("pattern", PatternInput);
 
-                return base.GetStringAttributes();
-            //}
+                
+            }
+
+            return base.GetStringAttributes();
         }
     }
 }

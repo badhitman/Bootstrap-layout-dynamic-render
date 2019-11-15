@@ -50,7 +50,7 @@
 
 ## Form controls[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-controls)
 
-> Текстовые контролы `<input>`**s**, `<select>`**s** и `<textarea>`s — оформлены классом стилей **.form-control**.
+> Текстовые контролы `<input>`**s**, `<select>`**s** и `<textarea>`**s** — оформлены классом стилей **.form-control**.
 В базовое оформление включены стили для общего внешнего вида, состояния фокуса, размеров и многого другого.
 
 ```cshtml
@@ -61,7 +61,7 @@
 
 ***result:***
 
-![Forms controls](../../../../demo/forms-controls.jpg)
+![Forms controls](../../../demo/forms-controls.jpg)
 
 > Для `<inputs />`**s** файлов, вместо **.form-control** применяется **.form-control-file**.
 
@@ -73,7 +73,7 @@
 
 ***result:***
 
-![Forms file controls](../../../../demo/forms-form-file-control.jpg)
+![Forms file controls](../../../demo/forms-form-file-control.jpg)
 
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#sizing)
 
@@ -87,7 +87,7 @@
 
 ***result:***
 
-![Forms controls sizing](../../../../demo/forms-controls-sizing.jpg)
+![Forms controls sizing](../../../demo/forms-controls-sizing.jpg)
 
 ```cshtml
 @{
@@ -97,7 +97,7 @@
 
 ***result:***
 
-![Forms select controls sizing](../../../../demo/forms-select-controls-sizing.jpg)
+![Forms select controls sizing](../../../demo/forms-select-controls-sizing.jpg)
 
 ## Readonly[¶](https://getbootstrap.com/docs/4.3/components/forms/#readonly)
 
@@ -112,7 +112,7 @@
 
 ***result:***
 
-![Forms controls readonly](../../../../demo/forms-controls-readonly.jpg)
+![Forms controls readonly](../../../demo/forms-controls-readonly.jpg)
 
 ## Readonly plain text[¶](https://getbootstrap.com/docs/4.3/components/forms/#readonly-plain-text)
 
@@ -126,7 +126,7 @@
 
 ***result:***
 
-![Forms controls readonly plain text](../../../../demo/forms-controls-readonly-plain-text.jpg)
+![Forms controls readonly plain text](../../../demo/forms-controls-readonly-plain-text.jpg)
 
 ```cshtml
 @{
@@ -136,7 +136,7 @@
 
 ***result:***
 
-![Forms inline controls readonly plain text](../../../../demo/forms-inline-controls-readonly-plain-text.jpg)
+![Forms inline controls readonly plain text](../../../demo/forms-inline-controls-readonly-plain-text.jpg)
 
 ## Range Inputs[¶](https://getbootstrap.com/docs/4.3/components/forms/#range-inputs)
 
@@ -150,7 +150,7 @@
 
 ***result:***
 
-![Forms range inputs](../../../../demo/forms-range-inputs.jpg)
+![Forms range inputs](../../../demo/forms-range-inputs.jpg)
 
 ## Checkboxes and radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes-and-radios)
 
@@ -175,7 +175,7 @@
 
 ***result:***
 
-![Forms checkboxes](../../../../demo/forms-checkboxes.jpg)
+![Forms checkboxes](../../../demo/forms-checkboxes.jpg)
 
 ```cshtml
 @{
@@ -185,7 +185,7 @@
 
 ***result:***
 
-![Forms radios](../../../../demo/forms-radios.jpg)
+![Forms radios](../../../demo/forms-radios.jpg)
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline)
 
@@ -199,7 +199,7 @@
 
 ***result:***
 
-![Forms inline checkboxes](../../../../demo/forms-inline-checkboxes.jpg)
+![Forms inline checkboxes](../../../demo/forms-inline-checkboxes.jpg)
 
 ```cshtml
 @{
@@ -209,7 +209,7 @@
 
 ***result:***
 
-![Forms inline radios](../../../../demo/forms-inline-radios.jpg)
+![Forms inline radios](../../../demo/forms-inline-radios.jpg)
 
 ## Without labels[¶](https://getbootstrap.com/docs/4.3/components/forms/#without-labels)
 
@@ -224,7 +224,7 @@
 
 ***result:***
 
-![Forms without labels](../../../../demo/forms-without-labels.jpg)
+![Forms without labels](../../../demo/forms-without-labels.jpg)
 
 ## Layout[¶](https://getbootstrap.com/docs/4.3/components/forms/#layout)
 
@@ -246,7 +246,7 @@
 
 ***result:***
 
-![Forms groups](../../../../demo/forms-groups.jpg)
+![Forms groups](../../../demo/forms-groups.jpg)
 
 ## Form grid[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-grid)
 
@@ -261,7 +261,7 @@
 
 ***result:***
 
-![Forms grid](../../../../demo/forms-grid.jpg)
+![Forms grid](../../../demo/forms-grid.jpg)
 
 ## Form row[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-row)
 
@@ -275,7 +275,7 @@
 
 ***result:***
 
-![Forms row](../../../../demo/forms-row.jpg)
+![Forms row](../../../demo/forms-row.jpg)
 
 > Более сложные и комплексные макеты также могут быть созданы с помощью **grid**-системы.
 
@@ -287,7 +287,7 @@
 
 ***result:***
 
-![Forms complex layouts](../../../../demo/forms-complex-layouts.jpg)
+![Forms complex layouts](../../../demo/forms-complex-layouts.jpg)
 
 ## Horizontal form[¶](https://getbootstrap.com/docs/4.3/components/forms/#horizontal-form)
 
@@ -302,7 +302,7 @@
 
 ***result:***
 
-![Forms horizontal rows](../../../../demo/forms-horizontal-rows.jpg)
+![Forms horizontal rows](../../../demo/forms-horizontal-rows.jpg)
 
 ###### Horizontal form label sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#horizontal-form-label-sizing)
 
@@ -316,7 +316,7 @@
 
 ***result:***
 
-![Forms horizontal form label sizing](../../../../demo/forms-horizontal-form-label-sizing.jpg)
+![Forms horizontal form label sizing](../../../demo/forms-horizontal-form-label-sizing.jpg)
 
 ## Column sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#column-sizing)
 
@@ -332,7 +332,7 @@
 
 ***result:***
 
-![Forms column sizing](../../../../demo/forms-horizontal-form-column-sizing.jpg)
+![Forms column sizing](../../../demo/forms-horizontal-form-column-sizing.jpg)
 
 ## Auto-sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#auto-sizing)
 
@@ -347,7 +347,7 @@
 
 ***result:***
 
-![Forms auto sizing](../../../../demo/forms-horizontal-form-auto-sizing.jpg)
+![Forms auto sizing](../../../demo/forms-horizontal-form-auto-sizing.jpg)
 
 > Затем вы можете повторить это еще раз с помощью классов столбцов, зависящих от размера.
 
@@ -359,7 +359,7 @@
 
 ***result:***
 
-![Forms auto sizing remix](../../../../demo/forms-horizontal-form-auto-sizing-remix.jpg)
+![Forms auto sizing remix](../../../demo/forms-horizontal-form-auto-sizing-remix.jpg)
 
 > [Пользовательские элементы управления формы](https://getbootstrap.com/docs/4.3/components/forms/#custom-forms) тоже поддерживаются
 
@@ -371,7 +371,7 @@
 
 ***result:***
 
-![Forms custom inputs](../../../../demo/forms-custom-inputs.jpg)
+![Forms custom inputs](../../../demo/forms-custom-inputs.jpg)
 
 ## Inline forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline-forms)
 
@@ -393,7 +393,7 @@
 
 ***result:***
 
-![Forms inline](../../../../demo/forms-inline.jpg)
+![Forms inline](../../../demo/forms-inline.jpg)
 
 > Пользовательские элементы управления формы и `select`**s** тоже поддерживаются.
 
@@ -405,7 +405,7 @@
 
 ***result:***
 
-![Forms inline сustom controls and selects](../../../../demo/forms-inline-сustom-controls-and-selects.jpg)
+![Forms inline сustom controls and selects](../../../demo/forms-inline-сustom-controls-and-selects.jpg)
 
 > Альтернативы скрытым меткам
 У вспомогательных технологий, такие как программы чтения с экрана, могут иметь проблемы с вашими формами, если вы не включаете метку для каждого ввода.
@@ -433,7 +433,7 @@
 
 ***result:***
 
-![Forms input help text](../../../../demo/forms-input-help-text.jpg)
+![Forms input help text](../../../demo/forms-input-help-text.jpg)
 
 > Inline текст может использовать любой типичный Inline HTML-элемент (будь то `<small>`, `<span>` или что-то еще) без какого либо служебного класса.
 
@@ -445,7 +445,7 @@
 
 ***result:***
 
-![Forms inline input help text](../../../../demo/forms-inline-input-help-text.jpg)
+![Forms inline input help text](../../../demo/forms-inline-input-help-text.jpg)
 
 ## Disabled forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled-forms)
 
@@ -459,7 +459,7 @@
 
 ***result:***
 
-![Disabled forms](../../../../demo/disabled-forms.jpg)
+![Disabled forms](../../../demo/disabled-forms.jpg)
 
 > Будьте осторожны с якорями! 
 По умолчанию браузеры будут обрабатывать все собственные элементы управления формой (элементы `<input>`, `<select>` и `<button>`) внутри `<fieldset disabled>` как отключенные, предотвращая на них взаимодействие с клавиатурой и мышью.
@@ -500,7 +500,7 @@
 
 ***result:***
 
-![Validation forms](../../../../demo/validation-forms-custom-styles.jpg)
+![Validation forms](../../../demo/validation-forms-custom-styles.jpg)
 
 ## Browser defaults[¶](https://getbootstrap.com/docs/4.3/components/forms/#browser-defaults)
 
@@ -514,7 +514,7 @@
 
 ***result:***
 
-![Validation forms browser defaults](../../../../demo/validation-forms-browser-defaults.jpg)
+![Validation forms browser defaults](../../../demo/validation-forms-browser-defaults.jpg)
 
 ## Server side[¶](https://getbootstrap.com/docs/4.3/components/forms/#server-side)
 
@@ -528,7 +528,7 @@
 
 ***result:***
 
-![Validation forms server side](../../../../demo/validation-forms-server-side.jpg)
+![Validation forms server side](../../../demo/validation-forms-server-side.jpg)
 
 ## Supported elements[¶](https://getbootstrap.com/docs/4.3/components/forms/#supported-elements)
 
@@ -542,7 +542,7 @@
 
 ***result:***
 
-![Validation forms supported elements](../../../../demo/validation-forms-supported-elements.jpg)
+![Validation forms supported elements](../../../demo/validation-forms-supported-elements.jpg)
 
 ## Tooltips[¶](https://getbootstrap.com/docs/4.3/components/forms/#tooltips)
 
@@ -556,7 +556,7 @@
 
 ***result:***
 
-![Validation forms tooltips](../../../../demo/validation-forms-tooltips.jpg)
+![Validation forms tooltips](../../../demo/validation-forms-tooltips.jpg)
 
 ## Customizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#customizing)
 
@@ -570,7 +570,7 @@
 
 ***result:***
 
-![Validation forms customizing](../../../../demo/validation-forms-customizing.jpg)
+![Validation forms customizing](../../../demo/validation-forms-customizing.jpg)
 
 ## Custom forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#custom-forms)
 
@@ -590,7 +590,7 @@
 
 ***result:***
 
-![Custom forms checkboxes](../../../../demo/custom-forms-checkboxes.jpg)
+![Custom forms checkboxes](../../../demo/custom-forms-checkboxes.jpg)
 
 > Пользовательские `checkbox`**es** также могут использовать псевдокласс: **indeterminate** при ручной установке с помощью JavaScript (для этого в HTML нет доступного атрибута).
 
@@ -602,7 +602,7 @@
 
 ***result:***
 
-![Custom forms checkboxes indeterminate](../../../../demo/custom-forms-checkboxes-indeterminate.jpg)
+![Custom forms checkboxes indeterminate](../../../demo/custom-forms-checkboxes-indeterminate.jpg)
 
 > Если вы используете jQuery,то должно быть достаточно что-то вроде этого:
 
@@ -622,7 +622,7 @@
 
 ***result:***
 
-![Custom forms radios](../../../../demo/custom-forms-radios.jpg)
+![Custom forms radios](../../../demo/custom-forms-radios.jpg)
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline-1)
 
@@ -634,7 +634,7 @@
 
 ***result:***
 
-![Custom forms radios inline](../../../../demo/custom-forms-radios-inline.jpg)
+![Custom forms radios inline](../../../demo/custom-forms-radios-inline.jpg)
 
 ## Disabled[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled)
 
@@ -648,7 +648,7 @@
 
 ***result:***
 
-![Custom forms disabled](../../../../demo/custom-forms-disabled.jpg)
+![Custom forms disabled](../../../demo/custom-forms-disabled.jpg)
 
 ## Switches[¶](https://getbootstrap.com/docs/4.3/components/forms/#switches)
 
@@ -662,7 +662,7 @@
 
 ***result:***
 
-![Custom forms switches](../../../../demo/custom-forms-switches.jpg)
+![Custom forms switches](../../../demo/custom-forms-switches.jpg)
 
 ## Select menu[¶](https://getbootstrap.com/docs/4.3/components/forms/#select-menu)
 
@@ -677,7 +677,7 @@
 
 ***result:***
 
-![Custom forms select menu](../../../../demo/custom-forms-select-menu.jpg)
+![Custom forms select menu](../../../demo/custom-forms-select-menu.jpg)
 
 > Вы также можете установить размер пользовательских `<selects>`**s**, чтобы соответствовать текстовым `<inputs>` аналогичного размера.
 
@@ -689,7 +689,7 @@
 
 ***result:***
 
-![Custom forms select menu size](../../../../demo/custom-forms-select-menu-size.jpg)
+![Custom forms select menu size](../../../demo/custom-forms-select-menu-size.jpg)
 
 > Множественный выбор также поддерживается:
 
@@ -701,7 +701,7 @@
 
 ***result:***
 
-![Custom forms select menu multiple attribute](../../../../demo/custom-forms-select-menu-multiple-attribute.jpg)
+![Custom forms select menu multiple attribute](../../../demo/custom-forms-select-menu-multiple-attribute.jpg)
 
 > Как и атрибут размера:
 
@@ -713,7 +713,7 @@
 
 ***result:***
 
-![Custom forms select menu size attribute](../../../../demo/custom-forms-select-menu-size-attribute.jpg)
+![Custom forms select menu size attribute](../../../demo/custom-forms-select-menu-size-attribute.jpg)
 
 ## Range[¶](https://getbootstrap.com/docs/4.3/components/forms/#range)
 
@@ -727,7 +727,7 @@
 
 ***result:***
 
-![Custom forms range](../../../../demo/custom-forms-range.jpg)
+![Custom forms range](../../../demo/custom-forms-range.jpg)
 
 > 
 
@@ -739,7 +739,7 @@
 
 ***result:***
 
-![Custom forms range max](../../../../demo/custom-forms-range-max.jpg)
+![Custom forms range max](../../../demo/custom-forms-range-max.jpg)
 
 > 
 
@@ -751,7 +751,7 @@
 
 ***result:***
 
-![Custom forms range step](../../../../demo/custom-forms-range-step.jpg)
+![Custom forms range step](../../../demo/custom-forms-range-step.jpg)
 
 ## File browser[¶](https://getbootstrap.com/docs/4.3/components/forms/#file-browser)
 
@@ -765,4 +765,4 @@
 
 ***result:***
 
-![Custom forms file browser](../../../../demo/custom-forms-file-browser.jpg)
+![Custom forms file browser](../../../demo/custom-forms-file-browser.jpg)
