@@ -108,11 +108,21 @@
 
 ![Forms controls](../../../demo/forms-controls.jpg)
 
-> Для `<inputs />`**s** файлов, вместо **.form-control** применяется **.form-control-file**.
+> Для файлов `<inputs />`**s**, вместо **.form-control** применяется **.form-control-file**.
 
 ```cshtml
 @{
+    BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+    FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+    SingleGroup.CustomInput.Label = "Example file input";
+    SingleGroup.CustomInput.Input = new InputFileManager()
+    {
+        ID = "input-file-dom-id"
+    };
+    form.AddChild(SingleGroup);
+
+    @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
