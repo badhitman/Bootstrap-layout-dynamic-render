@@ -14,5 +14,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
         public List<CustomInputModel> CustomInputs { get; protected set; } = new List<CustomInputModel>();
 
         public bool IsInline { get; set; } = false;
+
+        public override string GetStringCSS()
+        {
+            if (IsInline)
+                AddCSS("row align-items-center");
+            else
+                RemoveCSS("row align-items-center");
+
+            return base.GetStringCSS();
+        }
     }
 }

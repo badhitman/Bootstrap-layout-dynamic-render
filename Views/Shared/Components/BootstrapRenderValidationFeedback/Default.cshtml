@@ -1,0 +1,17 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@{
+    string ValidFeedback = ViewBag.ValidFeedback;
+    string InvalidFeedback = ViewBag.InvalidFeedback;
+}
+@if (!string.IsNullOrWhiteSpace(ValidFeedback))
+{
+    <div class="valid-feedback">
+        @ValidFeedback
+    </div>
+}
+@if (!string.IsNullOrWhiteSpace(InvalidFeedback))
+{
+    <div class="invalid-feedback">
+        @InvalidFeedback
+    </div>
+}

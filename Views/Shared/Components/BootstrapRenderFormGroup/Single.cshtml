@@ -2,6 +2,7 @@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap.forms
 @using BootstrapViewComponentsRazorLibrary.Service.html
 @using BootstrapViewComponentsRazorLibrary.Service.html.input
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap
 @model FormGroupSingleManager
 @{
     LabelInputManager label = new LabelInputManager() { Header = Model.CustomInput.Label, For = Model.CustomInput.Input.ID };
@@ -51,18 +52,7 @@
                 <div class="form-check">
                     @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
                 </div>
-                @if (!string.IsNullOrWhiteSpace(Model.CustomInput.ValidFeedback))
-                {
-                    <div class="valid-feedback">
-                        @Model.CustomInput.ValidFeedback
-                    </div>
-                }
-                @if (!string.IsNullOrWhiteSpace(Model.CustomInput.InvalidFeedback))
-                {
-                    <div class="invalid-feedback">
-                        @Model.CustomInput.InvalidFeedback
-                    </div>
-                }
+                @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
                 @if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
                 {
                     <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
@@ -78,18 +68,8 @@
             {
                 @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
             }
-            @if (!string.IsNullOrWhiteSpace(Model.CustomInput.ValidFeedback))
-            {
-                <div class="valid-feedback">
-                    @Model.CustomInput.ValidFeedback
-                </div>
-            }
-            @if (!string.IsNullOrWhiteSpace(Model.CustomInput.InvalidFeedback))
-            {
-                <div class="invalid-feedback">
-                    Model.CustomInput.InvalidFeedback
-                </div>
-            }
+            @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
+
             if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
             {
                 <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
@@ -133,18 +113,7 @@
                 @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
             }
             @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
-            @if (!string.IsNullOrWhiteSpace(Model.CustomInput.ValidFeedback))
-            {
-                <div class="valid-feedback">
-                    @Model.CustomInput.ValidFeedback
-                </div>
-            }
-            @if (!string.IsNullOrWhiteSpace(Model.CustomInput.InvalidFeedback))
-            {
-                <div class="invalid-feedback">
-                    @Model.CustomInput.InvalidFeedback
-                </div>
-            }
+            @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
             if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
             {
                 <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
@@ -152,8 +121,3 @@
         }
     }
 </div>
-
-@if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
-{
-
-}

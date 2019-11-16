@@ -114,6 +114,12 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)
 
+## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
+> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/forms)
+
+## Input group[¶](https://getbootstrap.com/docs/4.3/components/input-group/)
+> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/input/group)
+
 ## Buttons[¶](https://getbootstrap.com/docs/4.3/components/buttons/)
 > [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button)
 
@@ -131,12 +137,6 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ## Dropdowns[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/)
 > [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/dropdowns)
-
-## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/forms)
-
-## Input group[¶](https://getbootstrap.com/docs/4.3/components/input-group/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/input/group)
 
 ## Cards[¶](https://getbootstrap.com/docs/4.3/components/card/)
 > [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/cards)

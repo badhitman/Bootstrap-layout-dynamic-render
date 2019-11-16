@@ -1,3 +1,45 @@
 ﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapViewComponentsRazorLibrary.Service.bootstrap
+@using BootstrapViewComponentsRazorLibrary.Service.bootstrap.input
+@using BootstrapViewComponentsRazorLibrary.Service.html
 @model FormGroupStackedManager
+    <div @Html.Raw(Model.GetStringAttributes())>
+        @if (Model.IsInline)
+        {
+            <div class="row">
+                @foreach (CustomInputModel v in Model.CustomInputs)
+                {
+                    if (v.Input.GetType().IsSubclassOf(typeof(AbstractInputValuableBoolManager)))
+                    {
+                        <div class="form-check form-check-inline">
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-auto">
+
+                        </div>
+                    }
+                }
+            </div>
+        }
+        else
+        {
+            @foreach (CustomInputModel v in Model.CustomInputs)
+            {
+                if (v.Input.GetType().IsSubclassOf(typeof(AbstractInputValuableBoolManager)))
+                {
+                    <div class="form-check">
+
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+
+                    </div>
+                }
+            }
+        }
+    </div>
