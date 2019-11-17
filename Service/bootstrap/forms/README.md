@@ -174,7 +174,33 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
+  InputSelectManager SelectInput = new InputSelectManager();
+  SelectInput.AddItem("Large select", null);
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = SelectInput,
+    SizeInput = TwinSizingEnum.Lg
+  });
+
+  SelectInput = new InputSelectManager();
+  SelectInput.AddItem("Default select", null);
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = SelectInput
+  });
+
+  SelectInput = new InputSelectManager();
+  SelectInput.AddItem("Small select", null);
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = SelectInput,
+    SizeInput = TwinSizingEnum.Sm
+  });
+      
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
