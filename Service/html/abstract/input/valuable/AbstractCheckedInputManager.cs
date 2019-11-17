@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html
 {
-    public abstract class AbstractInputValuableBoolManager : AbstractInputManager
+    public abstract class AbstractCheckedInputManager : AbstractInputManager
     {
         public bool IsChecked { get; set; }
 

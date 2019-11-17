@@ -14,7 +14,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.forms
 
         public override string GetStringCSS()
         {
-            if (CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractInputValuableBoolManager)) && !IsHorisontal)
+            if (CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager)) && !IsHorisontal)
                 AddCSS("form-check");
 
             if (IsHorisontal)

@@ -1,0 +1,101 @@
+﻿@using BootstrapViewComponentsRazorLibrary.Models.bootstrap
+@using BootstrapViewComponentsRazorLibrary.Service.html
+@using BootstrapViewComponentsRazorLibrary.Components.bootstrap
+@using BootstrapViewComponentsRazorLibrary.Service.html.input
+@model StackedInputModel
+@{
+    LabelInputManager label = new LabelInputManager() { Header = Model.CustomInput.Label, For = Model.CustomInput.Input.ID };
+
+    if (Model.CustomInput.LabelSrOnly)
+    {
+        label.AddCSS("sr-only");
+    }
+
+    string HelpCaptionId = Model.CustomInput.Input.ID + "-" + nameof(Model.CustomInput.HelpCaption);
+
+    if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
+    {
+        Model.CustomInput.Input.SetAttribute("aria-describedby", HelpCaptionId);
+    }
+}
+@{
+    bool IsCheckedInput = Model.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager));
+    string classes = "";
+    if (IsCheckedInput)
+    {
+        classes = "form-check" + (Model.IsInline ? " form-check-inline" : "");
+    }
+    else
+    {
+        classes = (Model.IsInline ? "col-auto" : "mb-2");
+    }
+    <div class="@classes">
+        @if (IsCheckedInput)
+        {
+            Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.ToLower().StartsWith("form-control"); });
+            Model.CustomInput.Input.AddCSS("form-check-input");
+
+            if (string.IsNullOrWhiteSpace(label.Header))
+            {
+                label.RemoveCSS("form-check-label");
+                Model.CustomInput.Input.AddCSS("position-static");
+            }
+            else
+            {
+                Model.CustomInput.Input.RemoveCSS("position-static");
+                label.AddCSS("form-check-label");
+            }
+
+            @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
+
+            if (!string.IsNullOrWhiteSpace(label.Header))
+            {
+                @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
+            }
+
+            @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
+
+            if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
+            {
+                <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+            }
+        }
+        else
+        {
+            Model.CustomInput.Input.RemoveCSS("form-check-input");
+
+            string input_class = "form-control";
+            if (Model.CustomInput.Input is InputFileManager)
+            {
+                input_class += "-file";
+            }
+            else if (Model.CustomInput.Input is InputRangeManager)
+            {
+                input_class += "-range";
+            }
+
+            Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.StartsWith("form-control") && x != input_class; });
+            Model.CustomInput.Input.AddCSS(input_class);
+
+            if (Model.CustomInput.SizeInput != TwinSizingEnum.NULL)
+            {
+                Model.CustomInput.Input.AddCSS("form-control-" + Model.CustomInput.SizeInput.ToString().ToLower());
+            }
+            else
+            {
+                Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.ToLower().StartsWith("form-control-") && x.Length == 15 && (x.ToLower().EndsWith("-sm") || x.ToLower().EndsWith("-lg")); });
+            }
+
+            if (!string.IsNullOrWhiteSpace(label.Header))
+            {
+                @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
+            }
+            @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
+            @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
+            if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
+            {
+                <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+            }
+        }
+    </div>
+}

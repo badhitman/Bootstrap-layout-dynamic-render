@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class InputCheckboxManager : AbstractInputValuableBoolManager
+    public class InputCheckboxManager : AbstractCheckedInputManager
     {
         public InputCheckboxManager()
         {

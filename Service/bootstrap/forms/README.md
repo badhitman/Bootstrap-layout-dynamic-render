@@ -136,7 +136,35 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = ".form-control-lg"
+    },
+    SizeInput = TwinSizingEnum.Lg
+  });
+    GroupStacked.CustomInputs.Add(new CustomInputModel()
+    {
+      Input = new InputTextManager()
+      {
+        Placeholder = "Default input"
+      }
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = ".form-control-sm"
+    },
+    SizeInput = TwinSizingEnum.Sm
+  });
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 

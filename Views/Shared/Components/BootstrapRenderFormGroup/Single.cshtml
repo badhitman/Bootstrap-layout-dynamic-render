@@ -20,7 +20,7 @@
     }
 }
 <div @Html.Raw(Model.GetStringAttributes())>
-    @if (Model.CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractInputValuableBoolManager)))
+    @if (Model.CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager)))
     {
         Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.ToLower().StartsWith("form-control"); });
 
