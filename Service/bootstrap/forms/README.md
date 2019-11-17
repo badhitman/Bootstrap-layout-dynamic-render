@@ -215,7 +215,18 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Input = new InputTextManager()
+  {
+    Readonly = true,
+    Placeholder = "Readonly input here...",
+    ID = "input-text-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 

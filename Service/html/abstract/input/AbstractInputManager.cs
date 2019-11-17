@@ -72,12 +72,17 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html
 
                 if (Autofocus)
                     SetAttribute("autofocus", null);
+                RemoveAttribute("autofocus");
 
                 if (Required)
                     SetAttribute("required", null);
+                else
+                    RemoveAttribute("required");
 
                 if (Readonly)
                     SetAttribute("readonly", null);
+                else
+                    RemoveAttribute("readonly");
             }
 
             return base.GetStringAttributes();
