@@ -224,6 +224,23 @@
 
 ![Forms controls sizing](../../../demo/forms-controls-sizing.jpg)
 
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id"> 
+  <div class="form-group">
+    <div class="mb-2">
+      <input placeholder=".form-control-lg" type="text" class="form-control form-control-lg">
+    </div>
+    <div class="mb-2">
+      <input placeholder="Default input" type="text" class="form-control">
+    </div>
+    <div class="mb-2">
+      <input placeholder=".form-control-sm" type="text" class="form-control form-control-sm">
+    </div>
+  </div>
+</form>
+```
+
+
 ```cshtml
 @{
   BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
