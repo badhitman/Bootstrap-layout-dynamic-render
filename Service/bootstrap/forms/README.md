@@ -586,13 +586,50 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputCheckboxManager()
+    {
+      ID = "blankCheckbox"
+    }
+  });
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputRadioManager()
+    {
+      ID = "blankRadio1",
+      NameDom = "blankRadio",
+      Value = "option1"
+    }
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms without labels](../../../demo/forms-without-labels.jpg)
+
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-group">
+    <div class="form-check">
+      <input id="blankCheckbox" name="blankCheckbox" type="checkbox" class="form-check-input position-static">
+    </div>
+    <div class="form-check">
+      <input id="blankRadio1" name="blankRadio" type="radio" value="option1" class="form-check-input position-static">
+    </div>
+  </div>
+</form>
+```
 
 ## Layout[¶](https://getbootstrap.com/docs/4.3/components/forms/#layout)
 
