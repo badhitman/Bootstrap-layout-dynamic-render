@@ -478,7 +478,47 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+        Input = new InputRadioManager()
+        {
+            ID = "inlineRadio1",
+            NameDom = "inlineRadioOptions",
+            Value = "option1"
+        },
+        Label = "1"
+  });
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputRadioManager()
+    {
+      ID = "inlineRadio2",
+      NameDom = "inlineRadioOptions",
+      Value = "option2"
+    },
+    Label = "2"
+  });
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputRadioManager()
+    {
+      ID = "inlineRadio3",
+      NameDom = "inlineRadioOptions",
+      Value = "option3",
+      IsDisabled = true
+    },
+    Label = "3"
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
