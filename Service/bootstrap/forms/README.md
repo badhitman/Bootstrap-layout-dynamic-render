@@ -673,6 +673,19 @@
 
 ![Forms groups](../../../demo/forms-groups.jpg)
 
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-group">
+    <label for="input-example-dom-id">Example label</label>
+    <input id="input-example-dom-id" name="input-example-dom-id" placeholder="Example input" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="input-another-example-dom-id">Another label</label>
+    <input id="input-another-example-dom-id" name="input-another-example-dom-id" placeholder="Another label" type="text" class="form-control">
+  </div>
+</form>
+```
+
 ## Form grid[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-grid)
 
 > Более сложные формы могут быть построены с использованием **grid** классов сетки.
