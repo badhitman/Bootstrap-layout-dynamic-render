@@ -81,17 +81,21 @@
         Model.CustomInput.Input.RemoveCSS("form-check-input");
 
         string input_class = "form-control";
-        if (Model.CustomInput.Input is InputFileManager)
+        if (!Model.CustomInput.Input.ReadCSS().Any(x => x.StartsWith(input_class)))
         {
-            input_class += "-file";
-        }
-        else if (Model.CustomInput.Input is InputRangeManager)
-        {
-            input_class += "-range";
-        }
+            if (Model.CustomInput.Input is InputFileManager)
+            {
+                input_class += "-file";
+            }
+            else if (Model.CustomInput.Input is InputRangeManager)
+            {
+                input_class += "-range";
+            }
 
-        Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.StartsWith("form-control") && x != input_class; });
-        Model.CustomInput.Input.AddCSS(input_class);
+            //Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x != input_class && x.StartsWith("form-control"); });
+
+            Model.CustomInput.Input.AddCSS(input_class);
+        }
 
         if (Model.IsHorisontal)
         {
@@ -104,6 +108,14 @@
             {
                 <div class="col-sm-2"> </div>
             }
+            <div class="col-sm-10">
+                @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
+                @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback })
+                @if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
+                {
+                    <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+                }
+            </div>
         }
         else
         {

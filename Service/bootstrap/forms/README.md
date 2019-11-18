@@ -240,7 +240,29 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Email";
+  SingleGroup.CustomInput.Input = new InputTextManager()
+  {
+    ID = "input-email-dom-id",
+    Value = "email@example.com",
+    Readonly = true
+  };
+  SingleGroup.CustomInput.Input.AddCSS("form-control-plaintext");
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Password";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "Password",
+    ID = "input-password-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
