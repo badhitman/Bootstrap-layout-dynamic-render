@@ -172,9 +172,13 @@
 ```
 
 ***result:***
-
 ![Forms file controls](../../../demo/forms-form-file-control.jpg)
-
+```html
+<div class="form-group">
+  <label for="input-file-dom-id">Example file input</label>
+  <input id="input-file-dom-id" name="input-file-dom-id" type="file" class="form-control-file">
+</div>
+```
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#sizing)
 
 > Установите высоту, используя такие классы, как **.form-control-lg** и **.form-control-sm**.
