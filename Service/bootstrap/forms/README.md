@@ -16,7 +16,6 @@
     Placeholder = "Enter email",
     ID = "input-email-dom-id"
   };
-
   SingleGroup.CustomInput.HelpCaption = "We'll never share your email with anyone else.";
   form.AddChild(SingleGroup);
 
@@ -313,7 +312,18 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupSingleManager FormGroup = new FormGroupSingleManager();
+  FormGroup.CustomInput.Label = "Example Range input";
+  FormGroup.CustomInput.Input = new InputRangeManager()
+  {
+    ID = "formControlRange",
+    Value = "0"
+  };
+  form.AddChild(FormGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 

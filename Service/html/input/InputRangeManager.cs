@@ -19,7 +19,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
         public override string GetStringAttributes()
         {
             SetAttribute("type", InputTypesEnum.range.ToString());
-
+            
             SetAttribute("min", Min.ToString());
             SetAttribute("max", Max.ToString());
             SetAttribute("step", Step.ToString());
