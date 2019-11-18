@@ -645,7 +645,27 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Example label";
+  SingleGroup.CustomInput.Input = new InputTextManager()
+  {
+    Placeholder = "Example input",
+    ID = "input-example-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Another label";
+  SingleGroup.CustomInput.Input = new InputTextManager()
+  {
+    Placeholder = "Another label",
+    ID = "input-another-example-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
