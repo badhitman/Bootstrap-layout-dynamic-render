@@ -17,7 +17,7 @@ namespace BootstrapViewComponentsRazorLibrary.Components.html
 
         public IViewComponentResult Invoke(AbstractNestedToolsManager SetObjectManager)
         {
-            return View(SetObjectManager);
+            return View(SetObjectManager.GetChilds());
         }
     }
 }

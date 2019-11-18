@@ -693,13 +693,72 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  /////////////////////////////////////////////////
+  //
+
+  DivBaseManager div_row = new DivBaseManager().AddCSS("row") as DivBaseManager;
+
+  DivBaseManager div_col = new DivBaseManager().AddCSS("col") as DivBaseManager;
+  div_col.AddChild(new InputTextManager() { Placeholder = "First name" }.AddCSS("form-control"));
+  div_row.AddChild(div_col);
+
+  div_col = new DivBaseManager().AddCSS("col") as DivBaseManager;
+  div_col.AddChild(new InputTextManager() { Placeholder = "Last name" }.AddCSS("form-control"));
+  div_row.AddChild(div_col);
+  form.AddChild(div_row);
+
+  //
+  /////////////////////////////////////////////////
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms grid](../../../demo/forms-grid.jpg)
+
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="row">
+    <div class="col">
+      <input placeholder="First name" type="text" class="form-control">
+    </div>
+    <div class="col">
+      <input placeholder="Last name" type="text" class="form-control">
+    </div>
+  </div>
+</form>
+```
+
+```cshtml
+
+```
+
+***result:***
+
+![Forms grid](../../../demo/forms-grid-2.jpg)
+
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="row">
+    <div class="col">
+      <label>First label</label>
+      <input placeholder="First name" type="text" class="form-control">
+    </div>
+    <div class="col">   
+      <label>Last label</label>
+      <input placeholder="Last name" type="text" class="form-control">
+    </div>
+    <div class="col">   
+      <label>Description label</label>
+      <input placeholder="Description" type="text" class="form-control">
+    </div>
+  </div>
+</form>
+```
 
 ## Form row[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-row)
 

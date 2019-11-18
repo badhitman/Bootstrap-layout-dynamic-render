@@ -1,6 +1,7 @@
 ﻿////////////////////////////////////////////////
 // https://github.com/badhitman
 ////////////////////////////////////////////////
+using BootstrapViewComponentsRazorLibrary.Service.html;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,9 @@ namespace BootstrapViewComponentsRazorLibrary.Components.html
 {
     public class DivBase : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(DivBaseManager SetObjectManager)
         {
-            return View();
+            return View(SetObjectManager);
         }
     }
 }
