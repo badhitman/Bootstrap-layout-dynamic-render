@@ -379,7 +379,48 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputRadioManager()
+    {
+      Value = "option1",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios1",
+      IsChecked = true
+    },
+    Label = "Default checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputRadioManager()
+    {
+      Value = "option2",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios2"
+    },
+    Label = "Disabled checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputRadioManager()
+    {
+      Value = "option3",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios3",
+      IsDisabled = true
+    },
+    Label = "Disabled checkbox"
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
