@@ -17,10 +17,10 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 
         public override string GetStringCSS()
         {
-            //if (IsInline)
-            //    AddCSS("row align-items-center");
-            //else
-            //    RemoveCSS("row align-items-center");
+            if (IsInline)
+                AddCSS("form-row");
+            else
+                RemoveCSS("form-row");
 
             return base.GetStringCSS();
         }

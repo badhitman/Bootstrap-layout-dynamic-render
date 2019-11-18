@@ -380,6 +380,8 @@ namespace BootstrapViewComponentsRazorLibrary.Service
         /// </summary>
         private readonly List<string> css = new List<string>();
 
+        public bool ContainsClassCSS(Predicate<string> predicate) => css.Any(x => predicate(x));
+
         public string[] ReadCSS() => css.ToArray();
 
         /// <summary>

@@ -733,6 +733,7 @@
 </form>
 ```
 
+Вручную из низкоуровневых HTML тегов можно собирать различные конфигурации
 ```cshtml
 @{
   BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
@@ -792,15 +793,64 @@
 
 > Можно также использовать **.form-row** вместо стандартной строки сетки **.row**, чтобы переопределить зазор по умолчанию для более плотных и компактных макетов.
 
+абстракция `FormGroupStackedManager` при включённом `IsInline = true` исполнена в данном ключе 
+
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = "First name"
+    },
+    HelpCaption = "Имя пользователя"
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = "Last name"
+    },
+    HelpCaption = "Фамилия пользователя"
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = "Description"
+    },
+    HelpCaption = "Краткое примечание"
+  });
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms row](../../../demo/forms-row.jpg)
+
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-row">
+    <div class="col">
+      <input aria-describedby="-HelpCaption" placeholder="First name" type="text" class="form-control">
+      <small id="-HelpCaption" class="form-text text-muted">Имя пользователя</small>  </div>
+    <div class="col">
+      <input aria-describedby="-HelpCaption" placeholder="Last name" type="text" class="form-control">
+      <small id="-HelpCaption" class="form-text text-muted">Фамилия пользователя</small>
+    </div>
+    <div class="col">
+      <input aria-describedby="-HelpCaption" placeholder="Description" type="text" class="form-control">
+      <small id="-HelpCaption" class="form-text text-muted">Краткое примечание</small>
+    </div>
+  </div>
+</form>
+```
 
 > Более сложные и комплексные макеты также могут быть созданы с помощью **grid**-системы.
 

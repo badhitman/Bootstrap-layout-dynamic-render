@@ -1,6 +1,7 @@
 ﻿using BootstrapViewComponentsRazorLibrary.Components.bootstrap;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.forms
@@ -11,7 +12,9 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.forms
 
         public override string GetStringCSS()
         {
-            AddCSS("form-group");
+            if (!ContainsClassCSS(delegate (string s) { return s == "form-row"; }))
+                AddCSS("form-group");
+
             return base.GetStringCSS();
         }
     }
