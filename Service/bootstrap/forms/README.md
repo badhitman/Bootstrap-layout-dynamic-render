@@ -44,6 +44,7 @@
 ```
 
 ***result:***
+
 ![Forms overview](../../../demo/forms-overview.jpg)
 ```html
 <form accept-charset="utf-8" id="domo-form-dom-id">
@@ -120,6 +121,7 @@
 ```
 
 ***result:***
+
 ![Forms controls](../../../demo/forms-controls.jpg)
 ```html
 <form accept-charset="utf-8" id="domo-form-dom-id">
@@ -172,6 +174,7 @@
 ```
 
 ***result:***
+
 ![Forms file controls](../../../demo/forms-form-file-control.jpg)
 ```html
 <div class="form-group">
