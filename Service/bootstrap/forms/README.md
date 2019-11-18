@@ -316,10 +316,7 @@
 
   FormGroupSingleManager FormGroup = new FormGroupSingleManager();
   FormGroup.CustomInput.Label = "Example Range input";
-  FormGroup.CustomInput.Input = new InputRangeManager()
-  {
-    ID = "formControlRange"
-  };
+  FormGroup.CustomInput.Input = new InputRangeManager(){ID = "formControlRange"};
   form.AddChild(FormGroup);
 
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
