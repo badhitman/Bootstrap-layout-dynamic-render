@@ -686,6 +686,7 @@
 </form>
 ```
 
+
 ## Form grid[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-grid)
 
 > Более сложные формы могут быть построены с использованием **grid** классов сетки.
