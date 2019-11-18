@@ -13,8 +13,8 @@
   SingleGroup.CustomInput.Label = "Email address";
   SingleGroup.CustomInput.Input = new InputEmailManager()
   {
-  Placeholder = "Enter email",
-  ID = "input-email-dom-id"
+    Placeholder = "Enter email",
+    ID = "input-email-dom-id"
   };
 
   SingleGroup.CustomInput.HelpCaption = "We'll never share your email with anyone else.";
@@ -24,8 +24,8 @@
   SingleGroup.CustomInput.Label = "Password";
   SingleGroup.CustomInput.Input = new InputPasswordManager()
   {
-  Placeholder = "Password",
-  ID = "input-password-dom-id"
+    Placeholder = "Password",
+    ID = "input-password-dom-id"
   };
   form.AddChild(SingleGroup);
 
@@ -36,8 +36,8 @@
 
   form.AddChild(new BootstrapButtonManager("Submit")
   {
-  ButtonType = ButtonTypesEnum.submit,
-  BackgroundColorTheme = BackgroundColorThemesEnum.primary
+    ButtonType = ButtonTypesEnum.submit,
+    BackgroundColorTheme = BackgroundColorThemesEnum.primary
   });
 
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
@@ -61,8 +61,8 @@
   SingleGroup.CustomInput.Label = "Email address";
   SingleGroup.CustomInput.Input = new InputEmailManager()
   {
-  Placeholder = "name@example.com",
-  ID = "input-email-dom-id"
+    Placeholder = "name@example.com",
+    ID = "input-email-dom-id"
   };
   form.AddChild(SingleGroup);
 
@@ -70,7 +70,7 @@
   SingleGroup.CustomInput.Label = "Example select";
   InputSelectManager inputSelect = new InputSelectManager()
   {
-  ID = "input-select-dom-id"
+    ID = "input-select-dom-id"
   };
   for (int i = 1; i < 6; i++)
   {
@@ -112,17 +112,17 @@
 
 ```cshtml
 @{
-    BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
-    FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
-    SingleGroup.CustomInput.Label = "Example file input";
-    SingleGroup.CustomInput.Input = new InputFileManager()
-    {
-        ID = "input-file-dom-id"
-    };
-    form.AddChild(SingleGroup);
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Example file input";
+  SingleGroup.CustomInput.Input = new InputFileManager()
+  {
+    ID = "input-file-dom-id"
+  };
+  form.AddChild(SingleGroup);
 
-    @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
