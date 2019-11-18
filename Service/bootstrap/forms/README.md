@@ -403,7 +403,7 @@
       NameDom = "exampleRadios",
       ID = "exampleRadios2"
     },
-    Label = "Disabled checkbox"
+    Label = "Second default radio"
   });
 
   GroupStacked.CustomInputs.Add(new CustomInputModel()
