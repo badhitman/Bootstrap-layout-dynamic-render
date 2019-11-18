@@ -276,7 +276,25 @@
 ![Forms select controls sizing](../../../demo/forms-select-controls-sizing.jpg)
 
 ```html
-
+<form accept-charset="utf-8" id="domo-form-dom-id">  
+  <div class="form-group">
+    <div class="mb-2">
+      <select class="form-control form-control-lg">
+        <option>Large select</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <select class="form-control">
+        <option>Default select</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <select class="form-control form-control-sm">
+        <option>Small select</option>
+      </select>
+    </div>
+  </div>
+</form>
 ```
 
 ## Readonly[¶](https://getbootstrap.com/docs/4.3/components/forms/#readonly)
