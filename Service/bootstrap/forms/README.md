@@ -120,9 +120,39 @@
 ```
 
 ***result:***
-
 ![Forms controls](../../../demo/forms-controls.jpg)
-
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-group">
+    <label for="input-email-dom-id">Email address</label>
+    <input id="input-email-dom-id" name="input-email-dom-id" placeholder="name@example.com" type="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="input-select-dom-id">Example select</label>
+    <select id="input-select-dom-id" name="input-select-dom-id" class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="input-multiple-select-dom-id">Example multiple select</label>
+    <select id="input-multiple-select-dom-id" multiple="" name="input-multiple-select-dom-id" class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="input-textarea-dom-id">Example textarea</label>
+    <textarea id="input-textarea-dom-id" name="input-textarea-dom-id" placeholder="Full-text input" rows="3" class="form-control"></textarea>
+  </div>
+</form>
+```
 > Для файлов `<inputs />`**s**, вместо **.form-control** применяется **.form-control-file**.
 
 ```cshtml
