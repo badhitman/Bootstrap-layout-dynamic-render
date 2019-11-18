@@ -13,8 +13,8 @@
   SingleGroup.CustomInput.Label = "Email address";
   SingleGroup.CustomInput.Input = new InputEmailManager()
   {
-    Placeholder = "Enter email",
-    ID = "input-email-dom-id"
+  Placeholder = "Enter email",
+  ID = "input-email-dom-id"
   };
 
   SingleGroup.CustomInput.HelpCaption = "We'll never share your email with anyone else.";
@@ -24,8 +24,8 @@
   SingleGroup.CustomInput.Label = "Password";
   SingleGroup.CustomInput.Input = new InputPasswordManager()
   {
-    Placeholder = "Password",
-    ID = "input-password-dom-id"
+  Placeholder = "Password",
+  ID = "input-password-dom-id"
   };
   form.AddChild(SingleGroup);
 
@@ -36,8 +36,8 @@
 
   form.AddChild(new BootstrapButtonManager("Submit")
   {
-    ButtonType = ButtonTypesEnum.submit,
-    BackgroundColorTheme = BackgroundColorThemesEnum.primary
+  ButtonType = ButtonTypesEnum.submit,
+  BackgroundColorTheme = BackgroundColorThemesEnum.primary
   });
 
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
@@ -61,8 +61,8 @@
   SingleGroup.CustomInput.Label = "Email address";
   SingleGroup.CustomInput.Input = new InputEmailManager()
   {
-    Placeholder = "name@example.com",
-    ID = "input-email-dom-id"
+  Placeholder = "name@example.com",
+  ID = "input-email-dom-id"
   };
   form.AddChild(SingleGroup);
 
@@ -70,7 +70,7 @@
   SingleGroup.CustomInput.Label = "Example select";
   InputSelectManager inputSelect = new InputSelectManager()
   {
-    ID = "input-select-dom-id"
+  ID = "input-select-dom-id"
   };
   for (int i = 1; i < 6; i++)
   {
@@ -273,7 +273,33 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id", IsInlineForm = true };
 
+  FormGroupSingleManager FormGroup = new FormGroupSingleManager().AddCSS("mb-2") as FormGroupSingleManager;
+  FormGroup.CustomInput.Label = "Email";
+  FormGroup.CustomInput.LabelSrOnly = true;
+  FormGroup.CustomInput.Input = new InputTextManager()
+  {
+    ID = "staticEmail2",
+    Value = "email@example.com",
+    Readonly = true
+  };
+  FormGroup.CustomInput.Input.AddCSS("form-control-plaintext");
+  form.AddChild(FormGroup);
+
+  FormGroup = new FormGroupSingleManager().AddCSS("mx-sm-3 mb-2") as FormGroupSingleManager;
+  FormGroup.CustomInput.Label = "Password";
+  FormGroup.CustomInput.LabelSrOnly = true;
+  FormGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    ID = "inputPassword2",
+    Placeholder = "Password"
+  };
+  form.AddChild(FormGroup);
+
+  form.AddChild(new BootstrapButtonManager("Confirm identity") { BackgroundColorTheme = BackgroundColorThemesEnum.primary, ButtonType = ButtonTypesEnum.submit }.AddCSS("mb-2"));
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
