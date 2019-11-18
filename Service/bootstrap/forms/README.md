@@ -221,9 +221,7 @@
 ```
 
 ***result:***
-
 ![Forms controls sizing](../../../demo/forms-controls-sizing.jpg)
-
 ```html
 <form accept-charset="utf-8" id="domo-form-dom-id"> 
   <div class="form-group">
