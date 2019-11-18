@@ -5,20 +5,8 @@
 @using BootstrapViewComponentsRazorLibrary.Models.bootstrap
 @model FormGroupStackedManager
 <div @Html.Raw(Model.GetStringAttributes())>
-    @if (Model.IsInline)
+    @foreach (CustomInputModel v in Model.CustomInputs)
     {
-    <div class="row">
-        @foreach (CustomInputModel v in Model.CustomInputs)
-        {
-            await Html.RenderPartialAsync("StackedInput", new StackedInputModel() { CustomInput = v, IsInline = Model.IsInline });
-        }
-    </div>
-    }
-    else
-    {
-        @foreach (CustomInputModel v in Model.CustomInputs)
-        {
-            await Html.RenderPartialAsync("StackedInput", new StackedInputModel() { CustomInput = v, IsInline = Model.IsInline });
-        }
+        await Html.RenderPartialAsync("StackedInput", new StackedInputModel() { CustomInput = v, IsInline = Model.IsInline });
     }
 </div>
