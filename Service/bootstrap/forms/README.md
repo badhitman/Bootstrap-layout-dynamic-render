@@ -44,9 +44,25 @@
 ```
 
 ***result:***
-
 ![Forms overview](../../../demo/forms-overview.jpg)
-
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-group">
+    <label for="input-email-dom-id">Email address</label>
+    <input aria-describedby="input-email-dom-id-HelpCaption" id="input-email-dom-id" name="input-email-dom-id" placeholder="Enter email" type="email" class="form-control">
+    <small id="input-email-dom-id-HelpCaption" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="input-password-dom-id">Password</label>
+    <input id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="password" class="form-control">
+  </div>
+  <div class="form-check form-group">
+    <input id="input-checkbox-dom-id" name="input-checkbox-dom-id" type="checkbox" class="form-check-input">
+    <label for="input-checkbox-dom-id" class="form-check-label">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+```
 ## Form controls[¶](https://getbootstrap.com/docs/4.3/components/forms/#form-controls)
 
 > Текстовые контролы `<input>`**s**, `<select>`**s** и `<textarea>`**s** — оформлены классом стилей **.form-control**.
