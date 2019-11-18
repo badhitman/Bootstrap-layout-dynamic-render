@@ -852,6 +852,41 @@
 </form>
 ```
 
+Пример 2:
+
+```cshtml
+@{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = "First name"
+    }
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = "Last name"
+    }
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputTextManager()
+    {
+      Placeholder = "Description"
+    },
+    HelpCaption = "Краткое примечание"
+  });
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
+}
+```
+
 > Более сложные и комплексные макеты также могут быть созданы с помощью **grid**-системы.
 
 ```cshtml
