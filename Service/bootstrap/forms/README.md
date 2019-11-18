@@ -318,8 +318,7 @@
   FormGroup.CustomInput.Label = "Example Range input";
   FormGroup.CustomInput.Input = new InputRangeManager()
   {
-    ID = "formControlRange",
-    Value = "0"
+    ID = "formControlRange"
   };
   form.AddChild(FormGroup);
 
