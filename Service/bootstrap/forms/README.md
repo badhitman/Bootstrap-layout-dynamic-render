@@ -595,7 +595,7 @@
     Input = new InputCheckboxManager()
     {
       ID = "blankCheckbox"
-    }
+    }.SetAttribute("aria-label","Checkbox without labels demo") as InputCheckboxManager
   });
 
   GroupStacked.CustomInputs.Add(new CustomInputModel()
@@ -605,7 +605,7 @@
       ID = "blankRadio1",
       NameDom = "blankRadio",
       Value = "option1"
-    }
+    }.SetAttribute("aria-label","Radio without labels demo") as InputRadioManager
   });
 
   form.AddChild(GroupStacked);
@@ -622,10 +622,10 @@
 <form accept-charset="utf-8" id="domo-form-dom-id">
   <div class="form-group">
     <div class="form-check">
-      <input id="blankCheckbox" name="blankCheckbox" type="checkbox" class="form-check-input position-static">
+      <input id="blankCheckbox" name="blankCheckbox" type="checkbox" class="form-check-input position-static" aria-label="Checkbox without labels demo">
     </div>
     <div class="form-check">
-      <input id="blankRadio1" name="blankRadio" type="radio" value="option1" class="form-check-input position-static">
+      <input id="blankRadio1" name="blankRadio" type="radio" value="option1" class="form-check-input position-static" aria-label="Radio without labels demo">
     </div>
   </div>
 </form>
