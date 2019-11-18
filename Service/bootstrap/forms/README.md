@@ -238,7 +238,6 @@
 </form>
 ```
 
-
 ```cshtml
 @{
   BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
@@ -275,6 +274,10 @@
 ***result:***
 
 ![Forms select controls sizing](../../../demo/forms-select-controls-sizing.jpg)
+
+```html
+
+```
 
 ## Readonly[¶](https://getbootstrap.com/docs/4.3/components/forms/#readonly)
 
