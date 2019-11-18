@@ -199,7 +199,8 @@
     Input = SelectInput,
     SizeInput = TwinSizingEnum.Sm
   });
-      
+
+  form.AddChild(GroupStacked);    
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
