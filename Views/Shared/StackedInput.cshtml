@@ -19,7 +19,7 @@
     }
 }
 @{
-    bool IsCheckedInput = Model.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager));
+    bool IsCheckedInput = Model.CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager));
     string classes = "";
     if (IsCheckedInput)
     {

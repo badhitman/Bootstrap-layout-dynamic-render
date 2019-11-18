@@ -316,7 +316,7 @@
 
   FormGroupSingleManager FormGroup = new FormGroupSingleManager();
   FormGroup.CustomInput.Label = "Example Range input";
-  FormGroup.CustomInput.Input = new InputRangeManager(){ID = "formControlRange"};
+  FormGroup.CustomInput.Input = new InputRangeManager() { ID = "formControlRange" };
   form.AddChild(FormGroup);
 
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
@@ -344,7 +344,32 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputCheckboxManager()
+    {
+      ID = "defaultCheck1"
+    },
+    Label = "Default checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Input = new InputCheckboxManager()
+    {
+      ID = "defaultCheck2",
+      IsDisabled = true
+    },
+    Label = "Disabled checkbox"
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
