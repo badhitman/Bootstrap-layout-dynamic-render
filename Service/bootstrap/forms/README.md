@@ -565,6 +565,25 @@
 
 ![Forms inline checkboxes](../../../demo/forms-inline-checkboxes.jpg)
 
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-row">
+    <div class="form-check form-check-inline">
+      <input id="inlineCheckbox1" name="inlineCheckbox1" type="checkbox" class="form-check-input">
+      <label for="inlineCheckbox1" class="form-check-label">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input id="inlineCheckbox2" name="inlineCheckbox2" type="checkbox" class="form-check-input">
+      <label for="inlineCheckbox2" class="form-check-label">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input disabled="disabled" id="inlineCheckbox3" name="inlineCheckbox3" type="checkbox" class="form-check-input">
+      <label for="inlineCheckbox3" class="form-check-label">3</label>
+    </div>
+  </div>
+</form>
+```
+
 ```cshtml
 @{
   BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
