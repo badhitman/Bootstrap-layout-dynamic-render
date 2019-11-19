@@ -1,5 +1,5 @@
-# Bootstrap ViewComponent`s ASP Razor Library
-Вьюеры семейства Bootstrap 4.3 - C# .Net Standart 2.0
+# Bootstrap layout dynamic render (by C# ASP.NET Standard)
+Динамическая вёрстка Bootstrap 4.3
 
 ## Navs[¶](https://getbootstrap.com/docs/4.3/components/navs/)
 > [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
