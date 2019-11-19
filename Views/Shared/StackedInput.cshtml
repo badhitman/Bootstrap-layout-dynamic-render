@@ -29,7 +29,9 @@
     {
         classes = (Model.IsInline ? "col" : "mb-2");
     }
-    <div class="@classes">
+    classes += " " + Model.CustomInput.AddedClassesCSS?.Trim();
+
+    <div class="@classes.Trim()">
         @if (IsCheckedInput)
         {
             Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.ToLower().StartsWith("form-control"); });

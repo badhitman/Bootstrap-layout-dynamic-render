@@ -893,17 +893,156 @@
 ![Forms row](../../../demo/forms-row-2.jpg)
 
 
-> Более сложные и комплексные макеты также могут быть созданы с помощью **grid**-системы.
+> Блочная система позволяет строить комплексные макеты форм почти любой сложности.
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
 
+  /////////////////////////////////////////////////
+  //
+
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Email",
+    Input = new InputEmailManager()
+    {
+      Placeholder = "Email",
+      ID = "email-input-dom-id"
+    }
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Password",
+    Input = new InputPasswordManager()
+    {
+      Placeholder = "Password",
+      ID = "password-input-dom-id"
+    }
+  });
+  form.AddChild(GroupStacked);
+
+  //
+  /////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////
+  //
+
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Address";
+  SingleGroup.CustomInput.Input = new InputEmailManager()
+  {
+    Placeholder = "1234 Main St",
+    ID = "input-address-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  //
+  /////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////
+  //
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Address 2";
+  SingleGroup.CustomInput.Input = new InputEmailManager()
+  {
+    Placeholder = "Apartment, studio, or floor",
+    ID = "input-address-2-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  //
+  /////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////
+  //
+
+  GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "City",
+    Input = new InputTextManager()
+    {
+      Placeholder = "",
+      ID = "city-input-dom-id"
+    },
+    AddedClassesCSS = "col-md-6"
+  });
+  //
+  InputSelectManager InputSelect = new InputSelectManager()
+  {
+    ID = "state-select-input-dom-id"
+  };
+  InputSelect.AddItem("Choose...", null).IsSelect = true;
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "State",
+    Input = InputSelect,
+    AddedClassesCSS = "col-md-4"
+  });
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Zip",
+    Input = new InputTextManager()
+    {
+      Placeholder = "",
+      ID = "zip-input-dom-id"
+    },
+    AddedClassesCSS = "col-md-2"
+  });
+  form.AddChild(GroupStacked);
+
+  //
+  /////////////////////////////////////////////////
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms complex layouts](../../../demo/forms-complex-layouts.jpg)
+
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-row">
+    <div class="col">
+      <label for="email-input-dom-id">Email</label>
+      <input id="email-input-dom-id" name="email-input-dom-id" placeholder="Email" type="email" class="form-control">
+    </div>
+    <div class="col">
+      <label for="password-input-dom-id">Password</label>
+      <input id="password-input-dom-id" name="password-input-dom-id" placeholder="Password" type="password" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input-address-dom-id">Address</label>
+    <input id="input-address-dom-id" name="input-address-dom-id" placeholder="1234 Main St" type="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="input-address-2-dom-id">Address 2</label>
+    <input id="input-address-2-dom-id" name="input-address-2-dom-id" placeholder="Apartment, studio, or floor" type="email" class="form-control">
+  </div>
+  <div class="form-row">
+    <div class="col col-md-6">
+      <label for="city-input-dom-id">City</label>
+      <input id="city-input-dom-id" name="city-input-dom-id" type="text" class="form-control">
+    </div>
+    <div class="col col-md-4">
+      <label for="state-select-input-dom-id">State</label>
+      <select id="state-select-input-dom-id" name="state-select-input-dom-id" class="form-control">
+        <option select="">Choose...</option>
+      </select>
+    </div>
+    <div class="col col-md-2">
+      <label for="zip-input-dom-id">Zip</label>
+      <input id="zip-input-dom-id" name="zip-input-dom-id" type="text" class="form-control">
+    </div>
+  </div>
+</form>
+```
 
 ## Horizontal form[¶](https://getbootstrap.com/docs/4.3/components/forms/#horizontal-form)
 

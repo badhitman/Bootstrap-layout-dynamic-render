@@ -13,6 +13,11 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.input
 {
     public class CustomInputModel
     {
+        /// <summary>
+        /// Строка, добавляемая к form-group родителю
+        /// </summary>
+        public string AddedClassesCSS { get; set; }
+
         public string Label { get; set; }
         public bool LabelSrOnly { get; set; } = false;
 

@@ -20,7 +20,12 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 
         public bool IsMultiple { get; set; } = false;
 
-        public void AddItem(string header_option, string value_option)=> Options.Add(new InputOptionSelectManager() { Header = header_option, Value = value_option });
+        public InputOptionSelectManager AddItem(string header_option, string value_option)
+        {
+            InputOptionSelectManager InputOptionSelect = new InputOptionSelectManager() { Header = header_option, Value = value_option };
+            Options.Add(InputOptionSelect);
+            return InputOptionSelect;
+        }
 
         public override string GetStringAttributes()
         {
