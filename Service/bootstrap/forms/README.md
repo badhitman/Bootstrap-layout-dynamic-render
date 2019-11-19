@@ -902,19 +902,23 @@
   /////////////////////////////////////////////////
   //
 
-  DivBaseManager div_row = new DivBaseManager().AddCSS("row mb-2") as DivBaseManager;
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Email",
+    Input = new InputEmailManager() { Placeholder = "Email", ID = "email-input-dom-id" }
+  });
 
-  DivBaseManager div_col = new DivBaseManager().AddCSS("col") as DivBaseManager;
-  div_col.AddChild(new LabelInputManager() { For = "email-input-dom-id", Header = "Email" });
-  div_col.AddChild(new InputEmailManager() { ID = "email-input-dom-id", Placeholder = "Email" }.AddCSS("form-control"));
-  div_row.AddChild(div_col);
-
-  div_col = new DivBaseManager().AddCSS("col") as DivBaseManager;
-  div_col.AddChild(new LabelInputManager() { For = "password-input-dom-id", Header = "Password" });
-  div_col.AddChild(new InputPasswordManager() { ID = "password-input-dom-id", Placeholder = "Password" }.AddCSS("form-control"));
-  div_row.AddChild(div_col);
-
-  form.AddChild(div_row);
+  GroupStacked.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Password",
+    Input = new InputPasswordManager()
+    {
+      Placeholder = "Password",
+      ID = "password-input-dom-id"
+    }
+  });
+  form.AddChild(GroupStacked);
 
   //
   /////////////////////////////////////////////////
@@ -952,15 +956,11 @@
   /////////////////////////////////////////////////
   //
 
-  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  GroupStacked = new FormGroupStackedManager() { IsInline = true };
   GroupStacked.CustomInputs.Add(new CustomInputModel()
   {
     Label = "City",
-    Input = new InputTextManager()
-    {
-      Placeholder = "",
-      ID = "city-input-dom-id"
-    },
+    Input = new InputTextManager() { ID = "city-input-dom-id" },
     AddedClassesCSS = "col-md-6"
   });
   //
@@ -978,17 +978,24 @@
   GroupStacked.CustomInputs.Add(new CustomInputModel()
   {
     Label = "Zip",
-    Input = new InputTextManager()
-    {
-      Placeholder = "",
-      ID = "zip-input-dom-id"
-    },
+    Input = new InputTextManager() { ID = "zip-input-dom-id" },
     AddedClassesCSS = "col-md-2"
   });
   form.AddChild(GroupStacked);
 
   //
   /////////////////////////////////////////////////
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Input = new InputCheckboxManager() { ID = "input-checkbox-dom-id" };
+  SingleGroup.CustomInput.Label = "Check me out";
+  form.AddChild(SingleGroup);
+
+  form.AddChild(new BootstrapButtonManager("Submit")
+  {
+    ButtonType = ButtonTypesEnum.submit,
+    BackgroundColorTheme = BackgroundColorThemesEnum.primary
+  });
 
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
@@ -999,13 +1006,13 @@
 ![Forms complex layouts](../../../demo/forms-complex-layouts.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id"> 
-  <div class="row mb-2">  
-    <div class="col">
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-row">
+    <div class="form-group col">
       <label for="email-input-dom-id">Email</label>
       <input id="email-input-dom-id" name="email-input-dom-id" placeholder="Email" type="email" class="form-control">
     </div>
-    <div class="col">  
+    <div class="form-group col">
       <label for="password-input-dom-id">Password</label>
       <input id="password-input-dom-id" name="password-input-dom-id" placeholder="Password" type="password" class="form-control">
     </div>
@@ -1019,21 +1026,26 @@
     <input id="input-address-2-dom-id" name="input-address-2-dom-id" placeholder="Apartment, studio, or floor" type="email" class="form-control">
   </div>
   <div class="form-row">
-    <div class="col col-md-6">
+    <div class="form-group col col-md-6">
       <label for="city-input-dom-id">City</label>
       <input id="city-input-dom-id" name="city-input-dom-id" type="text" class="form-control">
     </div>
-    <div class="col col-md-4">
+    <div class="form-group col col-md-4">
       <label for="state-select-input-dom-id">State</label>
       <select id="state-select-input-dom-id" name="state-select-input-dom-id" class="form-control">
         <option select="">Choose...</option>
       </select>
     </div>
-    <div class="col col-md-2">
+    <div class="form-group col col-md-2">
       <label for="zip-input-dom-id">Zip</label>
       <input id="zip-input-dom-id" name="zip-input-dom-id" type="text" class="form-control">
     </div>
   </div>
+  <div class="form-check form-group">
+    <input id="input-checkbox-dom-id" name="input-checkbox-dom-id" type="checkbox" class="form-check-input">
+    <label for="input-checkbox-dom-id" class="form-check-label">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 ```
 

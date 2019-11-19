@@ -16,11 +16,15 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.forms
         {
             if (CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager)) && !IsHorisontal)
                 AddCSS("form-check");
+            else
+                RemoveCSS("form-check");
 
             if (IsHorisontal)
                 AddCSS("row");
+            else
+                RemoveCSS("row");
 
-            return base.GetStringCSS();
+            return (base.GetStringCSS() + CustomInput.AddedClassesCSS?.Trim()).Trim();
         }
     }
 }
