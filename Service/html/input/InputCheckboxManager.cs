@@ -10,11 +10,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
     public class InputCheckboxManager : AbstractCheckedInputManager
     {
-        public InputCheckboxManager()
-        {
-
-        }
-
         public override string GetStringAttributes()
         {
             if (string.IsNullOrWhiteSpace(CacheAttributes))

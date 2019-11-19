@@ -7,7 +7,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager(){ ID = "domo-form-dom-id"};
+  BootstrapFormManager form = new BootstrapFormManager(){ ID = "demo-form-dom-id"};
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
   SingleGroup.CustomInput.Label = "Email address";
@@ -47,7 +47,7 @@
 
 ![Forms overview](../../../demo/forms-overview.jpg)
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <label for="input-email-dom-id">Email address</label>
     <input aria-describedby="input-email-dom-id-HelpCaption" id="input-email-dom-id" name="input-email-dom-id" placeholder="Enter email" type="email" class="form-control">
@@ -71,7 +71,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
   SingleGroup.CustomInput.Label = "Email address";
@@ -124,7 +124,7 @@
 
 ![Forms controls](../../../demo/forms-controls.jpg)
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <label for="input-email-dom-id">Email address</label>
     <input id="input-email-dom-id" name="input-email-dom-id" placeholder="name@example.com" type="email" class="form-control">
@@ -159,7 +159,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
   SingleGroup.CustomInput.Label = "Example file input";
@@ -188,7 +188,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
   GroupStacked.CustomInputs.Add(new CustomInputModel()
@@ -223,7 +223,7 @@
 ***result:***
 ![Forms controls sizing](../../../demo/forms-controls-sizing.jpg)
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id"> 
+<form accept-charset="utf-8" id="demo-form-dom-id"> 
   <div class="form-group">
     <div class="mb-2">
       <input placeholder=".form-control-lg" type="text" class="form-control form-control-lg">
@@ -240,7 +240,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
   InputSelectManager SelectInput = new InputSelectManager();
@@ -276,7 +276,7 @@
 ![Forms select controls sizing](../../../demo/forms-select-controls-sizing.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">  
+<form accept-charset="utf-8" id="demo-form-dom-id">  
   <div class="form-group">
     <div class="mb-2">
       <select class="form-control form-control-lg">
@@ -304,7 +304,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
   SingleGroup.CustomInput.Input = new InputTextManager()
@@ -329,7 +329,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
   SingleGroup.CustomInput.Label = "Email";
@@ -361,7 +361,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id", IsInlineForm = true };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id", IsInlineForm = true };
 
   FormGroupSingleManager FormGroup = new FormGroupSingleManager().AddCSS("mb-2") as FormGroupSingleManager;
   FormGroup.CustomInput.Label = "Email";
@@ -401,7 +401,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupSingleManager FormGroup = new FormGroupSingleManager();
   FormGroup.CustomInput.Label = "Example Range input";
@@ -433,7 +433,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
 
@@ -468,7 +468,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
 
@@ -523,7 +523,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
 
@@ -566,7 +566,7 @@
 ![Forms inline checkboxes](../../../demo/forms-inline-checkboxes.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-row">
     <div class="form-check form-check-inline">
       <input id="inlineCheckbox1" name="inlineCheckbox1" type="checkbox" class="form-check-input">
@@ -586,7 +586,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
 
@@ -635,7 +635,7 @@
 ![Forms inline radios](../../../demo/forms-inline-radios.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-row">
     <div class="form-check form-check-inline">
       <input id="inlineRadio1" name="inlineRadioOptions" type="radio" value="option1" class="form-check-input">
@@ -660,7 +660,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager();
 
@@ -693,7 +693,7 @@
 ![Forms without labels](../../../demo/forms-without-labels.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <div class="form-check">
       <input id="blankCheckbox" name="blankCheckbox" type="checkbox" class="form-check-input position-static" aria-label="Checkbox without labels demo">
@@ -719,7 +719,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
   SingleGroup.CustomInput.Label = "Example label";
@@ -748,7 +748,7 @@
 ![Forms groups](../../../demo/forms-groups.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <label for="input-example-dom-id">Example label</label>
     <input id="input-example-dom-id" name="input-example-dom-id" placeholder="Example input" type="text" class="form-control">
@@ -767,7 +767,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   /////////////////////////////////////////////////
   //
@@ -795,7 +795,7 @@
 ![Forms grid](../../../demo/forms-grid.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="row">
     <div class="col">
       <input placeholder="First name" type="text" class="form-control">
@@ -810,7 +810,7 @@
 Вручную из низкоуровневых HTML тегов можно собирать самые различные макеты
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   /////////////////////////////////////////////////
   //
@@ -845,7 +845,7 @@
 ![Forms grid](../../../demo/forms-grid-2.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="row">
     <div class="col">
       <label>First label</label>
@@ -871,7 +871,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
   GroupStacked.CustomInputs.Add(new CustomInputModel()
@@ -909,7 +909,7 @@
 ![Forms row](../../../demo/forms-row.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-row">
     <div class="form-group col">
       <input aria-describedby="-HelpCaption" placeholder="First name" type="text" class="form-control">
@@ -936,7 +936,7 @@
 
 ```cshtml
 @{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
   /////////////////////////////////////////////////
   //
@@ -1045,7 +1045,7 @@
 ![Forms complex layouts](../../../demo/forms-complex-layouts.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-row">
     <div class="form-group col">
       <label for="email-input-dom-id">Email</label>
@@ -1095,13 +1095,154 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
+  /////////////////////////////////////////////////////////////////
+  //
+
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Email";
+  SingleGroup.CustomInput.Input = new InputEmailManager()
+  {
+    ID = "input-email-dom-id",
+    Placeholder = "Email"
+  };
+
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Password";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "Password",
+    ID = "input-password-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+  //
+  /////////////////////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////////////////////
+  //
+
+  FormGroupHorizontalStackedManager formGroupHorizontal = new FormGroupHorizontalStackedManager() { HeaderInputsGroup = "Radios" };
+  formGroupHorizontal.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "First radio",
+    Input = new InputRadioManager()
+    {
+      NameDom = "gridRadios",
+      ID = "gridRadios1",
+      Value = "option1",
+      IsChecked = true
+    }
+  });
+  formGroupHorizontal.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Second radio",
+    Input = new InputRadioManager()
+    {
+      NameDom = "gridRadios",
+      ID = "gridRadios2",
+      Value = "option2"
+    }
+  });
+  formGroupHorizontal.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Third disabled radio",
+    Input = new InputRadioManager()
+    {
+      NameDom = "gridRadios",
+      ID = "gridRadios3",
+      Value = "option3",
+      IsDisabled = true
+    }
+  });
+
+  form.AddChild(formGroupHorizontal);
+
+  //
+  /////////////////////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////////////////////
+  //
+
+  formGroupHorizontal = new FormGroupHorizontalStackedManager() { HeaderInputsGroup = "Checkbox" };
+  formGroupHorizontal.CustomInputs.Add(new CustomInputModel()
+  {
+    Label = "Example checkbox",
+    Input = new InputCheckboxManager()
+    {
+      NameDom = "gridCheck1"
+    }
+  });
+  
+  form.AddChild(formGroupHorizontal);
+
+  //
+  /////////////////////////////////////////////////////////////////
+
+  form.AddChild(new BootstrapButtonManager("Sign in")
+  {
+    ButtonType = ButtonTypesEnum.submit,
+    BackgroundColorTheme = BackgroundColorThemesEnum.primary
+  });
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms horizontal rows](../../../demo/forms-horizontal-rows.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">   
+  <div class="row form-group">
+    <label for="input-email-dom-id" class="col-sm-2 col-form-label">Email</label>  
+    <div class="col-sm-10">              
+      <input id="input-email-dom-id" name="input-email-dom-id" placeholder="Email" type="email" class="form-control">               
+    </div>
+  </div>
+  <div class="row form-group">
+    <label for="input-password-dom-id" class="col-sm-2 col-form-label">Password</label>  
+    <div class="col-sm-10">
+      <input id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="password" class="form-control">
+    </div>
+  </div>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input checked="checked" id="gridRadios1" name="gridRadios" type="radio" value="option1" class="form-check-input">
+          <label for="gridRadios1" class="form-check-label">First radio</label>
+        </div>
+        <div class="form-check">
+          <input id="gridRadios2" name="gridRadios" type="radio" value="option2" class="form-check-input">
+          <label for="gridRadios2" class="form-check-label">Second radio</label>
+        </div>
+        <div class="form-check">
+          <input disabled="disabled" id="gridRadios3" name="gridRadios" type="radio" value="option3" class="form-check-input">
+          <label for="gridRadios3" class="form-check-label">Third disabled radio</label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Checkbox</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input id="gridCheck1" name="gridCheck1" type="checkbox" class="form-check-input">
+          <label for="gridCheck1" class="form-check-label">Example checkbox</label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+```
 
 ###### Horizontal form label sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#horizontal-form-label-sizing)
 
