@@ -1110,6 +1110,12 @@
 
   form.AddChild(SingleGroup);
 
+  //
+  /////////////////////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////////////////////
+  //
+  
   SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
   SingleGroup.CustomInput.Label = "Password";
   SingleGroup.CustomInput.Input = new InputPasswordManager()
