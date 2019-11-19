@@ -1342,13 +1342,39 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  
+  GroupStacked.CustomInputs.Add(new CustomInputModel() { Input = new InputTextManager() { Placeholder = "City" }, AddedClassesCSS = "col-7" });
+  GroupStacked.CustomInputs.Add(new CustomInputModel() { Input = new InputTextManager() { Placeholder = "State" } });
+  GroupStacked.CustomInputs.Add(new CustomInputModel() { Input = new InputTextManager() { Placeholder = "Zip" } });
+  
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms column sizing](../../../demo/forms-horizontal-form-column-sizing.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">  
+  <div class="form-row">
+    <div class="form-group col col-7">
+      <input placeholder="City" type="text" class="form-control">
+    </div>
+    <div class="form-group col">
+      <input placeholder="State" type="text" class="form-control">
+    </div>
+    <div class="form-group col">
+      <input placeholder="Zip" type="text" class="form-control">
+    </div>
+  </div>
+</form>
+```
 
 ## Auto-sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#auto-sizing)
 
