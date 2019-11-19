@@ -902,26 +902,19 @@
   /////////////////////////////////////////////////
   //
 
-  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
-  GroupStacked.CustomInputs.Add(new CustomInputModel()
-  {
-    Label = "Email",
-    Input = new InputEmailManager()
-    {
-      Placeholder = "Email",
-      ID = "email-input-dom-id"
-    }
-  });
-  GroupStacked.CustomInputs.Add(new CustomInputModel()
-  {
-    Label = "Password",
-    Input = new InputPasswordManager()
-    {
-      Placeholder = "Password",
-      ID = "password-input-dom-id"
-    }
-  });
-  form.AddChild(GroupStacked);
+  DivBaseManager div_row = new DivBaseManager().AddCSS("row mb-2") as DivBaseManager;
+
+  DivBaseManager div_col = new DivBaseManager().AddCSS("col") as DivBaseManager;
+  div_col.AddChild(new LabelInputManager() { For = "email-input-dom-id", Header = "Email" });
+  div_col.AddChild(new InputEmailManager() { ID = "email-input-dom-id", Placeholder = "Email" }.AddCSS("form-control"));
+  div_row.AddChild(div_col);
+
+  div_col = new DivBaseManager().AddCSS("col") as DivBaseManager;
+  div_col.AddChild(new LabelInputManager() { For = "password-input-dom-id", Header = "Password" });
+  div_col.AddChild(new InputPasswordManager() { ID = "password-input-dom-id", Placeholder = "Password" }.AddCSS("form-control"));
+  div_row.AddChild(div_col);
+
+  form.AddChild(div_row);
 
   //
   /////////////////////////////////////////////////
@@ -959,7 +952,7 @@
   /////////////////////////////////////////////////
   //
 
-  GroupStacked = new FormGroupStackedManager() { IsInline = true };
+  FormGroupStackedManager GroupStacked = new FormGroupStackedManager() { IsInline = true };
   GroupStacked.CustomInputs.Add(new CustomInputModel()
   {
     Label = "City",
@@ -1006,13 +999,13 @@
 ![Forms complex layouts](../../../demo/forms-complex-layouts.jpg)
 
 ```html
-<form accept-charset="utf-8" id="domo-form-dom-id">
-  <div class="form-row">
+<form accept-charset="utf-8" id="domo-form-dom-id"> 
+  <div class="row mb-2">  
     <div class="col">
       <label for="email-input-dom-id">Email</label>
       <input id="email-input-dom-id" name="email-input-dom-id" placeholder="Email" type="email" class="form-control">
     </div>
-    <div class="col">
+    <div class="col">  
       <label for="password-input-dom-id">Password</label>
       <input id="password-input-dom-id" name="password-input-dom-id" placeholder="Password" type="password" class="form-control">
     </div>
