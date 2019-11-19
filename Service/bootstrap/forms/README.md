@@ -1256,13 +1256,83 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
+  /////////////////////////////////////////////////////////////////
+  //
+
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Email";
+  SingleGroup.CustomInput.Input = new InputEmailManager()
+  {
+    Placeholder = "col-form-label-sm"
+  };
+  SingleGroup.CustomInput.SizeInput = TwinSizingEnum.Sm;
+  form.AddChild(SingleGroup);
+
+  //
+  /////////////////////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////////////////////
+  //
+
+  SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Email";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "col-form-label"
+  };
+
+  form.AddChild(SingleGroup);
+
+  //
+  /////////////////////////////////////////////////////////////////
+
+  /////////////////////////////////////////////////////////////////
+  //
+
+  SingleGroup = new FormGroupSingleManager() { IsHorisontal = true };
+  SingleGroup.CustomInput.Label = "Email";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "col-form-label-lg"
+  };
+  SingleGroup.CustomInput.SizeInput = TwinSizingEnum.Lg;
+  form.AddChild(SingleGroup);
+
+  //
+  /////////////////////////////////////////////////////////////////
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms horizontal form label sizing](../../../demo/forms-horizontal-form-label-sizing.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">   
+  <div class="row form-group">
+    <label class="col-sm-2 col-form-label col-form-label-sm">Email</label> 
+    <div class="col-sm-10">                
+      <input placeholder="col-form-label-sm" type="email" class="form-control form-control-sm">
+    </div>
+  </div>
+  <div class="row form-group">
+    <label class="col-sm-2 col-form-label">Email</label>  
+    <div class="col-sm-10">
+      <input placeholder="col-form-label" type="password" class="form-control">
+    </div>
+  </div>
+  <div class="row form-group">
+    <label class="col-sm-2 col-form-label col-form-label-lg">Email</label>   
+    <div class="col-sm-10">                
+      <input placeholder="col-form-label-lg" type="password" class="form-control form-control-lg">
+    </div>
+  </div>
+</form>
+```
 
 ## Column sizing[¶](https://getbootstrap.com/docs/4.3/components/forms/#column-sizing)
 

@@ -90,6 +90,10 @@
 
             if (!string.IsNullOrWhiteSpace(label.Header))
             {
+                if (Model.CustomInput.SizeInput != TwinSizingEnum.NULL)
+                {
+                    label.AddCSS("col-form-label-" + Model.CustomInput.SizeInput.ToString().ToLower());
+                }
                 @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
             }
             @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
