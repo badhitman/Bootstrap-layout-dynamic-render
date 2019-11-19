@@ -634,6 +634,25 @@
 
 ![Forms inline radios](../../../demo/forms-inline-radios.jpg)
 
+```html
+<form accept-charset="utf-8" id="domo-form-dom-id">
+  <div class="form-row">
+    <div class="form-check form-check-inline">
+      <input id="inlineRadio1" name="inlineRadioOptions" type="radio" value="option1" class="form-check-input">
+      <label for="inlineRadio1" class="form-check-label">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input id="inlineRadio2" name="inlineRadioOptions" type="radio" value="option2" class="form-check-input">
+      <label for="inlineRadio2" class="form-check-label">2</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input disabled="disabled" id="inlineRadio3" name="inlineRadioOptions" type="radio" value="option3" class="form-check-input">
+      <label for="inlineRadio3" class="form-check-label">3</label>
+    </div>
+  </div>
+</form>
+```
+
 ## Without labels[¶](https://getbootstrap.com/docs/4.3/components/forms/#without-labels)
 
 > Добавление **position-static** к `<input>`**s** внутри **.form-check**, когда нет текста метки.
