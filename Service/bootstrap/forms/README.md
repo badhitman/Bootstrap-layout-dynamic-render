@@ -807,7 +807,7 @@
 </form>
 ```
 
-Вручную из низкоуровневых HTML тегов можно собирать различные конфигурации
+Вручную из низкоуровневых HTML тегов можно собирать самые различные макеты
 ```cshtml
 @{
   BootstrapFormManager form = new BootstrapFormManager() { ID = "domo-form-dom-id" };
@@ -911,14 +911,15 @@
 ```html
 <form accept-charset="utf-8" id="domo-form-dom-id">
   <div class="form-row">
-    <div class="col">
+    <div class="form-group col">
       <input aria-describedby="-HelpCaption" placeholder="First name" type="text" class="form-control">
-      <small id="-HelpCaption" class="form-text text-muted">Имя пользователя</small>  </div>
-    <div class="col">
+      <small id="-HelpCaption" class="form-text text-muted">Имя пользователя</small>
+    </div>
+    <div class="form-group col">
       <input aria-describedby="-HelpCaption" placeholder="Last name" type="text" class="form-control">
       <small id="-HelpCaption" class="form-text text-muted">Фамилия пользователя</small>
     </div>
-    <div class="col">
+    <div class="form-group col">
       <input aria-describedby="-HelpCaption" placeholder="Description" type="text" class="form-control">
       <small id="-HelpCaption" class="form-text text-muted">Краткое примечание</small>
     </div>
