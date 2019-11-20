@@ -1503,13 +1503,35 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id", IsInlineForm = true };
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Password";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "Password",
+    ID = "input-password-dom-id"
+  }.AddCSS("mx-sm-3") as InputPasswordManager;
+  SingleGroup.CustomInput.HelpCaption = "Must be 8-20 characters long.";
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms inline input help text](../../../demo/forms-inline-input-help-text.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id" class="form-inline">
+  <div class="form-group">
+    <label for="input-password-dom-id">Password</label>
+    <input aria-describedby="input-password-dom-id-HelpCaption" id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="password" class="mx-sm-3 form-control" />
+    <small id="input-password-dom-id-HelpCaption" class="form-text text-muted">Must be 8-20 characters long.</small>
+  </div>
+</form>
+```
 
 ## Disabled forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled-forms)
 
