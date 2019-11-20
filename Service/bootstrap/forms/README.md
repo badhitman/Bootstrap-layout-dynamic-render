@@ -1533,51 +1533,6 @@
 </form>
 ```
 
-и с кнопкой:
-
-```cshtml
-@{
-  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id", IsInlineForm = true };
-
-  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
-  SingleGroup.CustomInput.Label = "Password";
-  SingleGroup.CustomInput.Input = new InputTextManager()
-  {
-    Placeholder = "Password",
-    ID = "input-password-dom-id"
-  }.AddCSS("mx-sm-3") as InputTextManager;
-  SingleGroup.CustomInput.HelpCaption = "Must be 8-20 characters long.";
-  form.AddChild(SingleGroup);
-
-  SingleGroup = new FormGroupSingleManager();
-  SingleGroup.CustomInput.Input = new InputSubmitManager()
-  {
-    ID = "input-submit-dom-id",
-      Value = "Apply"
-    }.AddCSS("mx-sm-3 btn btn-outline-primary") as InputSubmitManager;
-    form.AddChild(SingleGroup);
-
-    @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
-}
-```
-
-***result:***
-
-![Forms inline input help text](../../../demo/forms-inline-input-help-text-with-button.jpg)
-
-```html
-<form accept-charset="utf-8" id="demo-form-dom-id" class="form-inline">
-  <div class="form-group">
-    <label for="input-password-dom-id">Password</label>
-    <input aria-describedby="input-password-dom-id-HelpCaption" id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="text" class="mx-sm-3 form-control" />
-    <small id="input-password-dom-id-HelpCaption" class="text-muted">Must be 8-20 characters long.</small>
-  </div>
-  <div class="form-group">
-    <input id="input-submit-dom-id" name="input-submit-dom-id" type="submit" value="Apply" class="mx-sm-3 btn btn-outline-primary form-control">
-  </div>
-</form>
-```
-
 ## Disabled forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled-forms)
 
 > Добавьте в `<input>` логический атрибут **disabled**, чтобы предотвратить взаимодействие с пользователем и сделать его более светлым.
