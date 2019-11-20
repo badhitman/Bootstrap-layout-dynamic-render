@@ -9,7 +9,7 @@ using System.Text;
 
 namespace BootstrapViewComponentsRazorLibrary.Service.html.input
 {
-    public class InputSubmitManager : AbstractInputManager
+    public class InputSubmitManager : AbstractInputDataValuableManager
     {
         public InputSubmitManager()
         {

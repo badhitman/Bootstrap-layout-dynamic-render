@@ -57,7 +57,7 @@
                 @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
                 @if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
                 {
-                    <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+                    <small id="@HelpCaptionId" class="text-muted">@Model.CustomInput.HelpCaption</small>
                 }
             </div>
         }
@@ -74,7 +74,7 @@
 
             if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
             {
-                <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+                <small id="@HelpCaptionId" class="text-muted">@Model.CustomInput.HelpCaption</small>
             }
         }
     }
@@ -121,7 +121,7 @@
                 @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback })
                 @if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
                 {
-                    <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+                    <small id="@HelpCaptionId" class="text-muted">@Model.CustomInput.HelpCaption</small>
                 }
             </div>
         }
@@ -136,7 +136,7 @@
             @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
             if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
             {
-                <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+                <small id="@HelpCaptionId" class="text-muted">@Model.CustomInput.HelpCaption</small>
             }
         }
     }
