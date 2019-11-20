@@ -23,7 +23,7 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap.input
 
 
         public AbstractInputManager Input { get; set; }
-        public bool IsInputCustomStyle { get; set; } = false;
+        public string CustomStyleInput { get; set; }
 
         public string HelpCaption { get; set; }
 

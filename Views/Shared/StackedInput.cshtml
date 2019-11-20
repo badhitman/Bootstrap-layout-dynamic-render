@@ -10,12 +10,20 @@
     {
         label.AddCSS("sr-only");
     }
+    else
+    {
+        label.RemoveCSS("sr-only");
+    }
 
     string HelpCaptionId = Model.CustomInput.Input.ID + "-" + nameof(Model.CustomInput.HelpCaption);
 
     if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
     {
         Model.CustomInput.Input.SetAttribute("aria-describedby", HelpCaptionId);
+    }
+    else
+    {
+        Model.CustomInput.Input.RemoveAttribute("aria-describedby");
     }
 }
 @{

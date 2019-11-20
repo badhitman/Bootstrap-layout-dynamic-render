@@ -1469,13 +1469,35 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Password";
+  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  {
+    Placeholder = "Password",
+    ID = "input-password-dom-id"
+  };
+  SingleGroup.CustomInput.HelpCaption = "Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.";
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms input help text](../../../demo/forms-input-help-text.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <label for="input-password-dom-id">Password</label>
+    <input aria-describedby="input-password-dom-id-HelpCaption" id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="password" class="form-control" />
+    <small id="input-password-dom-id-HelpCaption" class="form-text text-muted">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+  </div>
+</form>
+```
 
 > Inline текст может использовать любой типичный Inline HTML-элемент (будь то `<small>`, `<span>` или что-то еще) без какого либо служебного класса.
 
