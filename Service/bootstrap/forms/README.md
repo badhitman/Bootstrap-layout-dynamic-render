@@ -1507,28 +1507,40 @@
 
   FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
   SingleGroup.CustomInput.Label = "Password";
-  SingleGroup.CustomInput.Input = new InputPasswordManager()
+  SingleGroup.CustomInput.Input = new InputTextManager()
   {
     Placeholder = "Password",
     ID = "input-password-dom-id"
-  }.AddCSS("mx-sm-3") as InputPasswordManager;
+  }.AddCSS("mx-sm-3") as InputTextManager;
   SingleGroup.CustomInput.HelpCaption = "Must be 8-20 characters long.";
   form.AddChild(SingleGroup);
 
-  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
+  SingleGroup = new FormGroupSingleManager().AddCSS("ml-2 mt-2 mt-md-0") as FormGroupSingleManager;
+  SingleGroup.CustomInput.Input = new InputSubmitManager()
+  {
+    Value = "Save",
+    ID = "input-submit-dom-id"
+  };
+  form.AddChild(SingleGroup);
+
+    @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Forms inline input help text](../../../demo/forms-inline-input-help-text.jpg)
+![Forms inline input help text](../../../demo/forms-inline-input-help-text-sm.jpg)
 
 ```html
 <form accept-charset="utf-8" id="demo-form-dom-id" class="form-inline">
   <div class="form-group">
     <label for="input-password-dom-id">Password</label>
-    <input aria-describedby="input-password-dom-id-HelpCaption" id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="password" class="mx-sm-3 form-control" />
-    <small id="input-password-dom-id-HelpCaption" class="form-text text-muted">Must be 8-20 characters long.</small>
+    <input aria-describedby="input-password-dom-id-HelpCaption" id="input-password-dom-id" name="input-password-dom-id" placeholder="Password" type="text" class="mx-sm-3 form-control" />
+    <small id="input-password-dom-id-HelpCaption" class="text-muted">Must be 8-20 characters long.</small>
+  </div>
+  <div class="ml-2 mt-2 mt-md-0 form-group">
+    <input id="input-submit-dom-id" name="input-submit-dom-id" type="submit" value="Save" class="form-control">
   </div>
 </form>
 ```
