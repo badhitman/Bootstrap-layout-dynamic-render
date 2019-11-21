@@ -1530,7 +1530,7 @@
 ***result:***
 
 ![Forms inline input help text](../../../demo/forms-inline-input-help-text.jpg)
-![Forms inline input help text](../../../demo/forms-inline-input-help-text-sm.jpg)
+![Forms inline input help text smile](../../../demo/forms-inline-input-help-text-sm.jpg)
 
 ```html
 <form accept-charset="utf-8" id="demo-form-dom-id" class="form-inline">
@@ -1547,7 +1547,50 @@
 
 ## Disabled forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled-forms)
 
-> Добавьте в `<input>` логический атрибут **disabled**, чтобы предотвратить взаимодействие с пользователем и сделать его более светлым.
+> Установите логический атрибут **disabled** для `<input>`, чтобы предотвратить взаимодействие с пользователем и сделать его более светлым.
+
+```cshtml
+@{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
+
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Input = new InputTextManager()
+  {
+    ID = "disabledInput",
+    Placeholder = "Disabled input here...",
+    IsDisabled = true
+  };
+  form.AddChild(SingleGroup);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
+
+  <span>или</span><br />
+
+  InputTextManager inputText = new InputTextManager()
+  {
+    ID = "disabledInput",
+    Placeholder = "Disabled input here...",
+    IsDisabled = true
+  }.AddCSS("form-control") as InputTextManager;
+  @await Component.InvokeAsync(inputText.ViewComponentName, new { SetObjectManager = inputText })
+}
+```
+
+***result:***
+
+![Disabled forms](../../../demo/disabled-forms.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <input disabled="disabled" id="disabledInput" name="disabledInput" placeholder="Disabled input here..." type="text" class="form-control">
+  </div>
+</form>
+<span>или</span><br>
+<input disabled="disabled" id="disabledInput" name="disabledInput" placeholder="Disabled input here..." type="text" class="form-control" />
+```
+
+Что бы иметь возможность отключать сразу целмими наборами полей формы - используйте `<fieldset>` для группировки таких полей и устанавливайте для него атрибут **disabled**.
 
 ```cshtml
 @{
@@ -1557,7 +1600,8 @@
 
 ***result:***
 
-![Disabled forms](../../../demo/disabled-forms.jpg)
+![Disabled forms](../../../demo/disabled-fieldset-forms.jpg)
+
 
 > Будьте осторожны с якорями! 
 По умолчанию браузеры будут обрабатывать все собственные элементы управления формой (элементы `<input>`, `<select>` и `<button>`) внутри `<fieldset disabled>` как отключенные, предотвращая на них взаимодействие с клавиатурой и мышью.
