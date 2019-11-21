@@ -1665,7 +1665,7 @@
 
 > Кросс-браузерная совместимость:
 Хотя **Bootstrap** будет применять эти стили во всех браузерах, **Internet Explorer 11** и ниже не полностью поддерживает атрибут **disabled** в `<fieldset>`.
-Используйте пользовательский **JavaScript**, чтобы отключить набор полей в этих браузерах.
+Используйте пользовательский **JavaScript**, чтобы отключить `<fieldset>` в этих браузерах.
 
 ## Validation forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#validation)
 
@@ -1770,11 +1770,13 @@
 
 ## Custom forms[¶](https://getbootstrap.com/docs/4.3/components/forms/#custom-forms)
 
-> 
+> Для еще большей настройки и согласованности между браузерами используйте полностью настраиваемые элементы формы для замены настроек браузера по умолчанию.
+Они построены поверх семантической и доступной разметки, поэтому они являются надежными заменами для любого элемента управления формой по умолчанию.
 
 ## Checkboxes and radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes-and-radios-1)
 
-> 
+> Каждый **checkbox** и **radio** `<input>` и сопряжённый с ним `<label>` должны быть завернуты в `<div>` для создания пользовательского элемента управления.
+Структурно это тот же подход, что в обычном **.form-check**.
 
 ## Checkboxes[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes)
 

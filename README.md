@@ -114,6 +114,46 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)
 
+## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
+
+> Используйте Bootstrap JavaScript **modal** плагин для добавления диалоговых окон на ваш сайт для лайтбоксов, уведомлений пользователей или полностью пользовательского контента.
+
+#### How it works[¶](https://getbootstrap.com/docs/4.3/components/modal/#how-it-works)
+
+> Прежде чем начать работу с компонентом **modal** Bootstrap, обязательно прочитайте следующее:
+
+- Модальные объекты строятся с использованием **HTML**, **CSS** и **JavaScript**. Они расположены поверх всего остального в документе и отключают прокрутку `<body>`, чтобы вместо этого прокручивалось модальное содержимое.
+- Кликните мышкой за границами модального объекта и модальный объект автоматически закроется.
+- Bootstrap поддерживает только одно модальное окно за раз. Вложенные модальные объекты не поддерживаются.
+- Модальные объекты используют `position: fixed;`, в связи с чем рендеринг иногда может иметь некоторые особенности. По возможности разместите свой модальный HTML-код на верхнем уровне, чтобы избежать возможных помех со стороны других элементов. Вы, вероятно, столкнетесь с проблемами при вложении **.modal** внутри другого `position: fixed;` элемента.
+- Из-за `position: fixed;`, есть некоторые нюансы с использованием модальных объектов на мобильных устройствах. Дополнительную информацию см. [В документации по поддержке браузера](https://getbootstrap.com/docs/4.3/getting-started/browsers-devices/#modals-and-dropdowns-on-mobile).
+- Из-за определённой семантики HTML5, [HTML атрибут **autofocus**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus) не имеет никакого эффекта в модальных объектах Bootstrap. Чтобы достичь того же эффекта, используйте некоторые пользовательские JavaScript:
+
+```javascript
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+```
+
+> Анимационный эффект этого компонента зависит от **prefers-reduced-motion media query**.
+См. [раздел в документации](https://getbootstrap.com/docs/4.3/getting-started/accessibility/#reduced-motion).
+
+## Modal components[¶](https://getbootstrap.com/docs/4.3/components/modal/#modal-components)
+
+> Ниже приведен статический пример модального объекта (это означает, что его позиция и отображение были переопределены).
+Включены заголовок, тело (требуется для заполнения контентом) и нижний колонтитул (необязательно).
+В заголовке модального окна есть кнопка деактивации.
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Modal demo](../../../../demo/modal-demo.jpg)
+
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
 > [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/forms)
 
