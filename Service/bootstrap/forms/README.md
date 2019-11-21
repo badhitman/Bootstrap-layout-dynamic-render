@@ -1523,7 +1523,7 @@
   };
   form.AddChild(SingleGroup);
 
-    @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
@@ -1594,7 +1594,41 @@
 
 ```cshtml
 @{
+  BootstrapFormManager form = new BootstrapFormManager() { ID = "demo-form-dom-id" };
 
+  FieldsetManager fieldset = new FieldsetManager() { IsDisabled = true };
+
+  FormGroupSingleManager SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Disabled input";
+  SingleGroup.CustomInput.Input = new InputTextManager()
+  {
+    ID = "disabledTextInput",
+    Placeholder = "Disabled input"
+  };
+  fieldset.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Disabled select menu";
+  InputSelectManager inputSelect = new InputSelectManager()
+  {
+    ID = "disabledSelect"
+  };
+  inputSelect.AddItem("Disabled select", null);
+  SingleGroup.CustomInput.Input = inputSelect;
+  fieldset.AddChild(SingleGroup);
+
+  SingleGroup = new FormGroupSingleManager();
+  SingleGroup.CustomInput.Label = "Can't check this";
+
+  SingleGroup.CustomInput.Input = new InputCheckboxManager()
+  {
+    ID = "disabledFieldsetCheck"
+  };
+  fieldset.AddChild(SingleGroup);
+
+  form.AddChild(fieldset);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
@@ -1602,6 +1636,26 @@
 
 ![Disabled forms](../../../demo/disabled-fieldset-forms.jpg)
 
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <fieldset disabled="disabled">
+    <div class="form-group">
+      <label for="disabledTextInput">Disabled input</label>
+      <input id="disabledTextInput" name="disabledTextInput" placeholder="Disabled input" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="disabledSelect">Disabled select menu</label>
+      <select id="disabledSelect" name="disabledSelect" class="form-control">
+        <option>Disabled select</option>
+      </select>
+    </div>
+    <div class="form-check form-group">
+      <input id="disabledFieldsetCheck" name="disabledFieldsetCheck" type="checkbox" class="form-check-input">
+      <label for="disabledFieldsetCheck" class="form-check-label">Can't check this</label>
+    </div>
+  </fieldset>
+</form>
+```
 
 > Будьте осторожны с якорями! 
 По умолчанию браузеры будут обрабатывать все собственные элементы управления формой (элементы `<input>`, `<select>` и `<button>`) внутри `<fieldset disabled>` как отключенные, предотвращая на них взаимодействие с клавиатурой и мышью.
