@@ -9,7 +9,6 @@ namespace BootstrapViewComponentsRazorLibrary.Service.bootstrap
 {
     public class BootstrapButtonLinkManager : BootstrapButtonManager
     {
-
         public string Href { get; set; } = "#";
 
         public BootstrapButtonLinkManager(string SetHeader, string SetHref) : base(SetHeader)

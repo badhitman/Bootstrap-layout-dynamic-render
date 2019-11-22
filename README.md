@@ -154,6 +154,81 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ![Modal demo](../../../../demo/modal-demo.jpg)
 
+## Scrolling long content[¶](https://getbootstrap.com/docs/4.3/components/modal/#scrolling-long-content)
+
+> Когда модальное окно становятся слишком длинными для экрана устройства пользователя, оно прокручиваются целиком и независимо от самой страницы.
+
+> Вы можете создать прокручиваемое модальное окно, которое позволяет прокручивать непосредственно модальное тело, добавив **.modal-dialog-scrollable** в **.modal-dialog**.
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Modal demo](../../../../demo/modal-scrollable-modal-body-demo.jpg)
+
+## Vertically centered[¶](https://getbootstrap.com/docs/4.3/components/modal/#vertically-centered)
+
+> Добавьте **.modal-dialog-centtered** в **.modal-dialog**, чтобы вертикально центрировать модальное окно.
+
+```cshtml
+@{
+
+}
+```
+
+***result:***
+
+![Modal demo](../../../../demo/modal-vertically-centered-demo.jpg)
+
+## Tooltips and popovers[¶](https://getbootstrap.com/docs/4.3/components/modal/#tooltips-and-popovers)
+
+> При необходимости в модальных окнах могут быть размещены всплывающие подсказки и всплывающие окна.
+Когда модальные окна закрыты, любые всплывающие подсказки и всплывающие окна также автоматически удаляются.
+
+## Using the grid[¶](https://getbootstrap.com/docs/4.3/components/modal/#using-the-grid)
+
+> Используйте сеточную систему Bootstrap в теле модального окна, вложив **.container-liquid** в **.modal-body**.
+Затем используйте обычные классы системы сетки, как обычно.
+
+```cshtml
+@{
+
+}
+```
+
+## Varying modal content[¶](https://getbootstrap.com/docs/4.3/components/modal/#varying-modal-content)
+
+> У вас есть несколько кнопок, которые должны запускать одно и тот же модальное окно со слегка отличающимся содержимым?
+Используйте атрибуты **event.relatedTarget** и HTML `data- *` (возможно, через jQuery), чтобы варьировать содержимое модального окна в зависимости от того, какая кнопка была нажата.
+
+```cshtml
+@{
+
+}
+```
+
+## Optional sizes[¶](https://getbootstrap.com/docs/4.3/components/modal/#optional-sizes)
+
+> Модальные окна опционально имеют три размера, доступные через классы модификаторов для размещения в диалоге **.modal**.
+Эти размеры входят в определенные точки останова, чтобы избежать горизонтальных полос прокрутки на более узких окнах просмотра.
+
+- _Small_ **.modal-sm** - 300px
+- _Default_ None - 500px
+- _Large_ **.modal-lg** - 800px
+- _Extra large_ **.modal-xl** - 1140px
+
+> Модальное окно по умолчанию (без класса модификаторов) составляет «средний» размер.
+
+```cshtml
+@{
+
+}
+```
+
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
 > [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/forms)
 
