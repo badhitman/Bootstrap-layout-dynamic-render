@@ -2,7 +2,6 @@
 @using BootstrapAspDynamicRender.components
 @using BootstrapAspDynamicRender.models
 @using BootstrapAspDynamicRender.service
-@using BootstrapAspDynamicRender.components
 @model bsNavbar
 <nav @Html.Raw(Model.GetStringAttributes())>
     @if (Model.NavbarBrand != null && Model.NavbarBrand.NavbarBrandPosition == bmNavbarBrandPositionsEnum.Left)
