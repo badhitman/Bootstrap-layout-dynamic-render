@@ -1,6 +1,6 @@
-# Breadcrumbs[¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
+# Breadcrumbs[В¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
 
-Пример использования в **.cshtml**
+РџСЂРёРјРµСЂ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РІ **.cshtml**
 ```cshtml
 @using BootstrapAspDynamicRender.models
 @using BootstrapAspDynamicRender.components
@@ -8,15 +8,15 @@
   @{
     List<bmBreadcrumbItem> BreadcrumbItems = new List<bmBreadcrumbItem>()
 	{
-      new bmBreadcrumbItem(){ text = "Пользователи", href = "/Users"},
-      new bmBreadcrumbItem(){ text = "Иван Петров", href = "/Users/Details/1"},
-      new bmBreadcrumbItem(){ text = "Журнал операций"}
+      new bmBreadcrumbItem(){ text = "РџРѕР»СЊР·РѕРІР°С‚РµР»Рё", href = "/Users"},
+      new bmBreadcrumbItem(){ text = "РРІР°РЅ РџРµС‚СЂРѕРІ", href = "/Users/Details/1"},
+      new bmBreadcrumbItem(){ text = "Р–СѓСЂРЅР°Р» РѕРїРµСЂР°С†РёР№"}
     };
   }
   @await Component.InvokeAsync(typeof(brBreadcrumbs), new { BreadcrumbItems = BreadcrumbItems })
 </p>
 ```
 
-###### Результат:
+###### Р РµР·СѓР»СЊС‚Р°С‚:
 
 ![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)

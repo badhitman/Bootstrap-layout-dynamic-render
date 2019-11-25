@@ -1,12 +1,12 @@
-# Navbar[¶](https://getbootstrap.com/docs/4.3/components/navbar/)
-> Вот что нужно знать, прежде чем начать работу с навигационной панелью:
+# Navbar[В¶](https://getbootstrap.com/docs/4.3/components/navbar/)
+> Р’РѕС‚ С‡С‚Рѕ РЅСѓР¶РЅРѕ Р·РЅР°С‚СЊ, РїСЂРµР¶РґРµ С‡РµРј РЅР°С‡Р°С‚СЊ СЂР°Р±РѕС‚Сѓ СЃ РЅР°РІРёРіР°С†РёРѕРЅРЅРѕР№ РїР°РЅРµР»СЊСЋ:
 
-- Навигационные панели требуют обертывания `.navbar` при помощи `.navbar-expand{-sm|-md|-lg|-xl}` для гибкой адаптивной разметки.
-- Навигационные панели и их содержимое по умолчанию являются растягивающимся/жидкими. Используйте дополнительные контейнеры, чтобы ограничить их горизонтальную ширину.
-- Используйте классы утилит `spacing` и `flex` для управления расстоянием и выравниванием в навигационных панелях.
-- Навигационные панели реагируют по умолчанию, но вы можете легко изменить их, чтобы изменить это. Отзывчивое поведение зависит от нашего плагина **JavaScript Collapse**.
-- Навигационные панели по умолчанию скрыты при печати. Заставьте их быть напечатаны путем добавления `.d-print` на `.navbar`. Обратите внимание на классы утилиты **display**.
-- Обеспечьте доступность с помощью элемента `<nav>` или, если используется более общий элемент, такой как `<div>`, добавьте `role="navigation"` к каждой навигационной панели, чтобы явно определить ее как ориентир для пользователей вспомогательных технологий.
+- РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ РїР°РЅРµР»Рё С‚СЂРµР±СѓСЋС‚ РѕР±РµСЂС‚С‹РІР°РЅРёСЏ `.navbar` РїСЂРё РїРѕРјРѕС‰Рё `.navbar-expand{-sm|-md|-lg|-xl}` РґР»СЏ РіРёР±РєРѕР№ Р°РґР°РїС‚РёРІРЅРѕР№ СЂР°Р·РјРµС‚РєРё.
+- РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ РїР°РЅРµР»Рё Рё РёС… СЃРѕРґРµСЂР¶РёРјРѕРµ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ СЏРІР»СЏСЋС‚СЃСЏ СЂР°СЃС‚СЏРіРёРІР°СЋС‰РёРјСЃСЏ/Р¶РёРґРєРёРјРё. РСЃРїРѕР»СЊР·СѓР№С‚Рµ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РєРѕРЅС‚РµР№РЅРµСЂС‹, С‡С‚РѕР±С‹ РѕРіСЂР°РЅРёС‡РёС‚СЊ РёС… РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅСѓСЋ С€РёСЂРёРЅСѓ.
+- РСЃРїРѕР»СЊР·СѓР№С‚Рµ РєР»Р°СЃСЃС‹ СѓС‚РёР»РёС‚ `spacing` Рё `flex` РґР»СЏ СѓРїСЂР°РІР»РµРЅРёСЏ СЂР°СЃСЃС‚РѕСЏРЅРёРµРј Рё РІС‹СЂР°РІРЅРёРІР°РЅРёРµРј РІ РЅР°РІРёРіР°С†РёРѕРЅРЅС‹С… РїР°РЅРµР»СЏС….
+- РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ РїР°РЅРµР»Рё СЂРµР°РіРёСЂСѓСЋС‚ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ, РЅРѕ РІС‹ РјРѕР¶РµС‚Рµ Р»РµРіРєРѕ РёР·РјРµРЅРёС‚СЊ РёС…, С‡С‚РѕР±С‹ РёР·РјРµРЅРёС‚СЊ СЌС‚Рѕ. РћС‚Р·С‹РІС‡РёРІРѕРµ РїРѕРІРµРґРµРЅРёРµ Р·Р°РІРёСЃРёС‚ РѕС‚ РЅР°С€РµРіРѕ РїР»Р°РіРёРЅР° **JavaScript Collapse**.
+- РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ РїР°РЅРµР»Рё РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ СЃРєСЂС‹С‚С‹ РїСЂРё РїРµС‡Р°С‚Рё. Р—Р°СЃС‚Р°РІСЊС‚Рµ РёС… Р±С‹С‚СЊ РЅР°РїРµС‡Р°С‚Р°РЅС‹ РїСѓС‚РµРј РґРѕР±Р°РІР»РµРЅРёСЏ `.d-print` РЅР° `.navbar`. РћР±СЂР°С‚РёС‚Рµ РІРЅРёРјР°РЅРёРµ РЅР° РєР»Р°СЃСЃС‹ СѓС‚РёР»РёС‚С‹ **display**.
+- РћР±РµСЃРїРµС‡СЊС‚Рµ РґРѕСЃС‚СѓРїРЅРѕСЃС‚СЊ СЃ РїРѕРјРѕС‰СЊСЋ СЌР»РµРјРµРЅС‚Р° `<nav>` РёР»Рё, РµСЃР»Рё РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ Р±РѕР»РµРµ РѕР±С‰РёР№ СЌР»РµРјРµРЅС‚, С‚Р°РєРѕР№ РєР°Рє `<div>`, РґРѕР±Р°РІСЊС‚Рµ `role="navigation"` Рє РєР°Р¶РґРѕР№ РЅР°РІРёРіР°С†РёРѕРЅРЅРѕР№ РїР°РЅРµР»Рё, С‡С‚РѕР±С‹ СЏРІРЅРѕ РѕРїСЂРµРґРµР»РёС‚СЊ РµРµ РєР°Рє РѕСЂРёРµРЅС‚РёСЂ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… С‚РµС…РЅРѕР»РѕРіРёР№.
 
 ```cshtml
 <header>
@@ -20,12 +20,12 @@
     {
       Href = "#",
       Header = " Brand",
-      Title = "Описание бренда",
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°",
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
   bsNavbarNav navbar_nav_manager = new bsNavbarNav();
-  navbar_nav_manager.AddCSS("mr-auto"); // добавляем контейнеру стили: margin-right: auto !important;
+  navbar_nav_manager.AddCSS("mr-auto"); // РґРѕР±Р°РІР»СЏРµРј РєРѕРЅС‚РµР№РЅРµСЂСѓ СЃС‚РёР»Рё: margin-right: auto !important;
   navbar_nav_manager.AddNavItem(id_dom: "home-nav-id", header: "Home", href: "#").IsActive = true;
   navbar_nav_manager.AddNavItem("link-nav-id", "Link", "#");
   bsNavItem navbar_nav_dropdown_item = navbar_nav_manager.AddNavItem("dropdown-nav-id", "Dropdown", "#");
@@ -50,22 +50,22 @@
 }
 </header>
 ```
-***result:*** пример: монитор ПК (слева синим) и на дисплее **iPhone 6/6/7** (справа красным). Дисплей **iPhone** в свою очередь демонстрируется в двух состояниях: свёрнутый (левее коричневый) и развернутый (правее зелёный)
+***result:*** РїСЂРёРјРµСЂ: РјРѕРЅРёС‚РѕСЂ РџРљ (СЃР»РµРІР° СЃРёРЅРёРј) Рё РЅР° РґРёСЃРїР»РµРµ **iPhone 6/6/7** (СЃРїСЂР°РІР° РєСЂР°СЃРЅС‹Рј). Р”РёСЃРїР»РµР№ **iPhone** РІ СЃРІРѕСЋ РѕС‡РµСЂРµРґСЊ РґРµРјРѕРЅСЃС‚СЂРёСЂСѓРµС‚СЃСЏ РІ РґРІСѓС… СЃРѕСЃС‚РѕСЏРЅРёСЏС…: СЃРІС‘СЂРЅСѓС‚С‹Р№ (Р»РµРІРµРµ РєРѕСЂРёС‡РЅРµРІС‹Р№) Рё СЂР°Р·РІРµСЂРЅСѓС‚С‹Р№ (РїСЂР°РІРµРµ Р·РµР»С‘РЅС‹Р№)
 ![Bootstrap - Navbar base (demo ul->li->a)](../demo/navbar-base-ul-li-a.jpg)
-В примере выше использовались утилиты [color](https://getbootstrap.com/docs/4.3/utilities/colors/) (__bg-light__) и [spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/) (__my-2, my-lg-0, mr-sm-0, my-sm-0, mr-auto__).
+Р’ РїСЂРёРјРµСЂРµ РІС‹С€Рµ РёСЃРїРѕР»СЊР·РѕРІР°Р»РёСЃСЊ СѓС‚РёР»РёС‚С‹ [color](https://getbootstrap.com/docs/4.3/utilities/colors/) (__bg-light__) Рё [spacing](https://getbootstrap.com/docs/4.3/utilities/spacing/) (__my-2, my-lg-0, mr-sm-0, my-sm-0, mr-auto__).
 
 
-> Navbars поставляются со встроенной поддержкой [нескольких субкомпонентов](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
+> Navbars РїРѕСЃС‚Р°РІР»СЏСЋС‚СЃСЏ СЃРѕ РІСЃС‚СЂРѕРµРЅРЅРѕР№ РїРѕРґРґРµСЂР¶РєРѕР№ [РЅРµСЃРєРѕР»СЊРєРёС… СЃСѓР±РєРѕРјРїРѕРЅРµРЅС‚РѕРІ](https://getbootstrap.com/docs/4.3/components/navbar/#supported-content):
 
-- [**.navbar-brand**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#brand) для названия вашей компании, продукта или проекта. В том числе с аватаркой/картинкой.
-- [**.navbar-nav**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#nav) для `full-height` и `lightweight` навигации (включая поддержку выпадающих меню).
-- [**.navbar-toggler**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#toggler) для использования с нашим плагином _collapse_ и другими способами переключения навигации.
-- [**.form-inline**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#forms) для любых элементов управления и действий формы.
-- [**.navbar-text**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#text) для добавления вертикально центрированных строк текста.
-- [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#external-content) для группировки и скрытия содержимого навигационной панели.
+- [**.navbar-brand**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#brand) РґР»СЏ РЅР°Р·РІР°РЅРёСЏ РІР°С€РµР№ РєРѕРјРїР°РЅРёРё, РїСЂРѕРґСѓРєС‚Р° РёР»Рё РїСЂРѕРµРєС‚Р°. Р’ С‚РѕРј С‡РёСЃР»Рµ СЃ Р°РІР°С‚Р°СЂРєРѕР№/РєР°СЂС‚РёРЅРєРѕР№.
+- [**.navbar-nav**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#nav) РґР»СЏ `full-height` Рё `lightweight` РЅР°РІРёРіР°С†РёРё (РІРєР»СЋС‡Р°СЏ РїРѕРґРґРµСЂР¶РєСѓ РІС‹РїР°РґР°СЋС‰РёС… РјРµРЅСЋ).
+- [**.navbar-toggler**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#toggler) РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЃ РЅР°С€РёРј РїР»Р°РіРёРЅРѕРј _collapse_ Рё РґСЂСѓРіРёРјРё СЃРїРѕСЃРѕР±Р°РјРё РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РЅР°РІРёРіР°С†РёРё.
+- [**.form-inline**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#forms) РґР»СЏ Р»СЋР±С‹С… СЌР»РµРјРµРЅС‚РѕРІ СѓРїСЂР°РІР»РµРЅРёСЏ Рё РґРµР№СЃС‚РІРёР№ С„РѕСЂРјС‹.
+- [**.navbar-text**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#text) РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РІРµСЂС‚РёРєР°Р»СЊРЅРѕ С†РµРЅС‚СЂРёСЂРѕРІР°РЅРЅС‹С… СЃС‚СЂРѕРє С‚РµРєСЃС‚Р°.
+- [**.collapse.navbar-collapse**](https://github.com/badhitman/BootstrapAspDynamicRender/tree/master/Components/html/bootstrap/navbar#external-content) РґР»СЏ РіСЂСѓРїРїРёСЂРѕРІРєРё Рё СЃРєСЂС‹С‚РёСЏ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РЅР°РІРёРіР°С†РёРѕРЅРЅРѕР№ РїР°РЅРµР»Рё.
 
-## Brand[¶](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
-> **.navbar-brand** может быть применен к большинству типов **тегов**, но `<a></a>` работает лучше всего, поскольку другие типы тегов могут потребовать дополнительных **utility classes** или пользовательских стилей.
+## Brand[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#brand)
+> **.navbar-brand** РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСЂРёРјРµРЅРµРЅ Рє Р±РѕР»СЊС€РёРЅСЃС‚РІСѓ С‚РёРїРѕРІ **С‚РµРіРѕРІ**, РЅРѕ `<a></a>` СЂР°Р±РѕС‚Р°РµС‚ Р»СѓС‡С€Рµ РІСЃРµРіРѕ, РїРѕСЃРєРѕР»СЊРєСѓ РґСЂСѓРіРёРµ С‚РёРїС‹ С‚РµРіРѕРІ РјРѕРіСѓС‚ РїРѕС‚СЂРµР±РѕРІР°С‚СЊ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… **utility classes** РёР»Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёС… СЃС‚РёР»РµР№.
 
 ```cshtml
 <header>
@@ -76,7 +76,7 @@
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
     ID = "navbar-brand-id",
-    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Href = "#", Header = " Brand", Title = "Описание бренда" }
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Href = "#", Header = " Brand", Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°" }
   };
   @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
   
@@ -85,7 +85,7 @@
   {
     NavbarBrandPosition = NavbarBrandPositioningEnum.Left,
     ID = "navbar-brand-id",
-    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Header = " Brand", Title = "Описание бренда" }
+    NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id") { Header = " Brand", Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°" }
   };
   @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
 }
@@ -94,7 +94,7 @@
 ***result:***
 ![Demo](../demo/navbar-base-brand-a.jpg)
 
-> Добавление изображений к **.navbar-brand**, скорее всего, потребует пользовательских стилей или утилит для правильного размера. Вот несколько примеров для демонстрации.
+> Р”РѕР±Р°РІР»РµРЅРёРµ РёР·РѕР±СЂР°Р¶РµРЅРёР№ Рє **.navbar-brand**, СЃРєРѕСЂРµРµ РІСЃРµРіРѕ, РїРѕС‚СЂРµР±СѓРµС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёС… СЃС‚РёР»РµР№ РёР»Рё СѓС‚РёР»РёС‚ РґР»СЏ РїСЂР°РІРёР»СЊРЅРѕРіРѕ СЂР°Р·РјРµСЂР°. Р’РѕС‚ РЅРµСЃРєРѕР»СЊРєРѕ РїСЂРёРјРµСЂРѕРІ РґР»СЏ РґРµРјРѕРЅСЃС‚СЂР°С†РёРё.
 
 ```cshtml
 <header>
@@ -107,7 +107,7 @@
     NavbarBrandDom = new BrandNavItemModel("navbar-brand-dom-id")
     {
       Href = "#",
-      Title = "Описание бренда",
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°",
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
@@ -122,7 +122,7 @@
     {
       Href = "#",
       Header = " Brand",
-      Title = "Описание бренда",
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°",
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
@@ -133,9 +133,9 @@
 ***result:***
 ![Demo](../demo/navbar-base-brand-a-img.jpg)
 
-## Nav[¶](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
->  Навигационные ссылки **Navbar** построены на основе **.nav** . Имеют свой собственный класс модификации и требуют использования классов `toggler` для правильного адаптивного стиля.
-Навигация в **navbars** также будет растягиваться, чтобы занять как можно больше горизонтального пространства, чтобы сохранить содержимое **navbar** надежно выровнено.
+## Nav[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#nav)
+>  РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ СЃСЃС‹Р»РєРё **Navbar** РїРѕСЃС‚СЂРѕРµРЅС‹ РЅР° РѕСЃРЅРѕРІРµ **.nav** . РРјРµСЋС‚ СЃРІРѕР№ СЃРѕР±СЃС‚РІРµРЅРЅС‹Р№ РєР»Р°СЃСЃ РјРѕРґРёС„РёРєР°С†РёРё Рё С‚СЂРµР±СѓСЋС‚ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ РєР»Р°СЃСЃРѕРІ `toggler` РґР»СЏ РїСЂР°РІРёР»СЊРЅРѕРіРѕ Р°РґР°РїС‚РёРІРЅРѕРіРѕ СЃС‚РёР»СЏ.
+РќР°РІРёРіР°С†РёСЏ РІ **navbars** С‚Р°РєР¶Рµ Р±СѓРґРµС‚ СЂР°СЃС‚СЏРіРёРІР°С‚СЊСЃСЏ, С‡С‚РѕР±С‹ Р·Р°РЅСЏС‚СЊ РєР°Рє РјРѕР¶РЅРѕ Р±РѕР»СЊС€Рµ РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅРѕРіРѕ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР°, С‡С‚РѕР±С‹ СЃРѕС…СЂР°РЅРёС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ **navbar** РЅР°РґРµР¶РЅРѕ РІС‹СЂРѕРІРЅРµРЅРѕ.
 ```cshtml
 <header>
 @{
@@ -148,7 +148,7 @@
     {
       Href = "#",
       Header = " Brand",
-      Title = "Описание бренда"
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°"
     }
   };
 
@@ -166,7 +166,7 @@
 ***result:***
 ![Demo](../demo/navbar-nav-ul-li-a.jpg)
 
-> И поскольку мы используем классы для наших навигаторов, вы можете полностью избежать подхода на основе списка, если хотите.
+> Р РїРѕСЃРєРѕР»СЊРєСѓ РјС‹ РёСЃРїРѕР»СЊР·СѓРµРј РєР»Р°СЃСЃС‹ РґР»СЏ РЅР°С€РёС… РЅР°РІРёРіР°С‚РѕСЂРѕРІ, РІС‹ РјРѕР¶РµС‚Рµ РїРѕР»РЅРѕСЃС‚СЊСЋ РёР·Р±РµР¶Р°С‚СЊ РїРѕРґС…РѕРґР° РЅР° РѕСЃРЅРѕРІРµ СЃРїРёСЃРєР°, РµСЃР»Рё С…РѕС‚РёС‚Рµ.
 
 ```cshtml
 <header>
@@ -184,7 +184,7 @@
     {
       Href = "#",
       Header = " Brand",
-      Title = "Описание бренда"
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°"
     }
   };
 
@@ -206,8 +206,8 @@
 ***result:***
 ![Demo](../demo/navbar-nav-div-a.jpg)
 
-> Вы также можете использовать выпадающее меню в панели навигации.
-Выпадающие меню требуют оберточного элемента для позиционирования, поэтому обязательно используйте отдельные и вложенные элементы: **.nav-item** и **.nav-link**, как показано ниже:
+> Р’С‹ С‚Р°РєР¶Рµ РјРѕР¶РµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РІС‹РїР°РґР°СЋС‰РµРµ РјРµРЅСЋ РІ РїР°РЅРµР»Рё РЅР°РІРёРіР°С†РёРё.
+Р’С‹РїР°РґР°СЋС‰РёРµ РјРµРЅСЋ С‚СЂРµР±СѓСЋС‚ РѕР±РµСЂС‚РѕС‡РЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РґР»СЏ РїРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёСЏ, РїРѕСЌС‚РѕРјСѓ РѕР±СЏР·Р°С‚РµР»СЊРЅРѕ РёСЃРїРѕР»СЊР·СѓР№С‚Рµ РѕС‚РґРµР»СЊРЅС‹Рµ Рё РІР»РѕР¶РµРЅРЅС‹Рµ СЌР»РµРјРµРЅС‚С‹: **.nav-item** Рё **.nav-link**, РєР°Рє РїРѕРєР°Р·Р°РЅРѕ РЅРёР¶Рµ:
 
 ```cshtml
 <header>
@@ -225,7 +225,7 @@
     {
       Href = "#",
       Header = " Brand",
-      Title = "Описание бренда"
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°"
     }
   };
 
@@ -251,8 +251,8 @@
 ***result:***
 ![Demo](../demo/navbar-base-dropdowns-ul-li-a.jpg)
 
-## Forms[¶](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
->  Поместите различные элементы управления и компоненты формы в навигационную панель **.form-inline**.
+## Forms[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#forms)
+>  РџРѕРјРµСЃС‚РёС‚Рµ СЂР°Р·Р»РёС‡РЅС‹Рµ СЌР»РµРјРµРЅС‚С‹ СѓРїСЂР°РІР»РµРЅРёСЏ Рё РєРѕРјРїРѕРЅРµРЅС‚С‹ С„РѕСЂРјС‹ РІ РЅР°РІРёРіР°С†РёРѕРЅРЅСѓСЋ РїР°РЅРµР»СЊ **.form-inline**.
 
 ```cshtml
 <header>
@@ -302,7 +302,7 @@
     {
       Href = "#",
       Header = " Brand",
-      Title = "Описание бренда"
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°"
     }
   };
 
@@ -332,10 +332,10 @@
 ***result:***
 ![Demo](../demo/navbar-base-brand-form.jpg)
 
-## Text[¶](https://getbootstrap.com/docs/4.3/components/navbar/#text)
+## Text[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#text)
 
->  Навигационные панели могут содержать текстовые данные с помощью **.navbar-text**.
-Этот класс регулирует вертикальное выравнивание и горизонтальный интервал для строк текста.
+>  РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ РїР°РЅРµР»Рё РјРѕРіСѓС‚ СЃРѕРґРµСЂР¶Р°С‚СЊ С‚РµРєСЃС‚РѕРІС‹Рµ РґР°РЅРЅС‹Рµ СЃ РїРѕРјРѕС‰СЊСЋ **.navbar-text**.
+Р­С‚РѕС‚ РєР»Р°СЃСЃ СЂРµРіСѓР»РёСЂСѓРµС‚ РІРµСЂС‚РёРєР°Р»СЊРЅРѕРµ РІС‹СЂР°РІРЅРёРІР°РЅРёРµ Рё РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅС‹Р№ РёРЅС‚РµСЂРІР°Р» РґР»СЏ СЃС‚СЂРѕРє С‚РµРєСЃС‚Р°.
 
 ```cshtml
 <header>
@@ -355,7 +355,7 @@
 ***result:***
 ![Demo](../demo/navbar-base-text.jpg)
 
-> Совмещайте с другими компонентами и утилитами по мере необходимости.
+> РЎРѕРІРјРµС‰Р°Р№С‚Рµ СЃ РґСЂСѓРіРёРјРё РєРѕРјРїРѕРЅРµРЅС‚Р°РјРё Рё СѓС‚РёР»РёС‚Р°РјРё РїРѕ РјРµСЂРµ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё.
 
 ```cshtml
 <header>
@@ -394,10 +394,10 @@
 ***result:***
 ![Demo](../demo/navbar-base-nav-ul-li-a-and-text.jpg)
 
-## Color schemes[¶](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
->  Тематизация навигационной панели никогда не была проще благодаря сочетанию классов тематизации и утилит фонового цвета.
-Выбирайте между **.navbar-light** для использования со светлыми цветами фона, или **.navbar-dark** на темном фоне цвета.
-Затем настройте цвет заднего фона с помощью утилит **.bg-* **
+## Color schemes[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#color-schemes)
+>  РўРµРјР°С‚РёР·Р°С†РёСЏ РЅР°РІРёРіР°С†РёРѕРЅРЅРѕР№ РїР°РЅРµР»Рё РЅРёРєРѕРіРґР° РЅРµ Р±С‹Р»Р° РїСЂРѕС‰Рµ Р±Р»Р°РіРѕРґР°СЂСЏ СЃРѕС‡РµС‚Р°РЅРёСЋ РєР»Р°СЃСЃРѕРІ С‚РµРјР°С‚РёР·Р°С†РёРё Рё СѓС‚РёР»РёС‚ С„РѕРЅРѕРІРѕРіРѕ С†РІРµС‚Р°.
+Р’С‹Р±РёСЂР°Р№С‚Рµ РјРµР¶РґСѓ **.navbar-light** РґР»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ СЃРѕ СЃРІРµС‚Р»С‹РјРё С†РІРµС‚Р°РјРё С„РѕРЅР°, РёР»Рё **.navbar-dark** РЅР° С‚РµРјРЅРѕРј С„РѕРЅРµ С†РІРµС‚Р°.
+Р—Р°С‚РµРј РЅР°СЃС‚СЂРѕР№С‚Рµ С†РІРµС‚ Р·Р°РґРЅРµРіРѕ С„РѕРЅР° СЃ РїРѕРјРѕС‰СЊСЋ СѓС‚РёР»РёС‚ **.bg-* **
 
 ```cshtml
 <header>
@@ -411,7 +411,7 @@
     {
       Href = "#",
       Header = " Brand navbar",
-      Title = "Описание бренда"
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°"
     }
   };
 
@@ -469,12 +469,12 @@
 ***result:***
 ![Demo](../demo/navbar-base-color-schemes.jpg)
 
-## Placement[¶](https://getbootstrap.com/docs/4.3/components/navbar/#placement)
->  Используйте утилиты позиционирования для размещения навигационных панелей в нестатических положениях.
-Выберите одно из фиксированных положений `top`, `fixed to the bottom` или `stickied to the top` (прокручивает страницу до тех пор, пока она не достигнет вершины, а затем остается там).
-Фиксированные навигационные панели используют `position: fixed`, что означает, что они вытягиваются из нормального потока **DOM** и могут требовать пользовательского **CSS** (например, `padding-top` на `<body>`), чтобы предотвратить перекрытие с другими элементами.
+## Placement[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#placement)
+>  РСЃРїРѕР»СЊР·СѓР№С‚Рµ СѓС‚РёР»РёС‚С‹ РїРѕР·РёС†РёРѕРЅРёСЂРѕРІР°РЅРёСЏ РґР»СЏ СЂР°Р·РјРµС‰РµРЅРёСЏ РЅР°РІРёРіР°С†РёРѕРЅРЅС‹С… РїР°РЅРµР»РµР№ РІ РЅРµСЃС‚Р°С‚РёС‡РµСЃРєРёС… РїРѕР»РѕР¶РµРЅРёСЏС….
+Р’С‹Р±РµСЂРёС‚Рµ РѕРґРЅРѕ РёР· С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹С… РїРѕР»РѕР¶РµРЅРёР№ `top`, `fixed to the bottom` РёР»Рё `stickied to the top` (РїСЂРѕРєСЂСѓС‡РёРІР°РµС‚ СЃС‚СЂР°РЅРёС†Сѓ РґРѕ С‚РµС… РїРѕСЂ, РїРѕРєР° РѕРЅР° РЅРµ РґРѕСЃС‚РёРіРЅРµС‚ РІРµСЂС€РёРЅС‹, Р° Р·Р°С‚РµРј РѕСЃС‚Р°РµС‚СЃСЏ С‚Р°Рј).
+Р¤РёРєСЃРёСЂРѕРІР°РЅРЅС‹Рµ РЅР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ РїР°РЅРµР»Рё РёСЃРїРѕР»СЊР·СѓСЋС‚ `position: fixed`, С‡С‚Рѕ РѕР·РЅР°С‡Р°РµС‚, С‡С‚Рѕ РѕРЅРё РІС‹С‚СЏРіРёРІР°СЋС‚СЃСЏ РёР· РЅРѕСЂРјР°Р»СЊРЅРѕРіРѕ РїРѕС‚РѕРєР° **DOM** Рё РјРѕРіСѓС‚ С‚СЂРµР±РѕРІР°С‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРіРѕ **CSS** (РЅР°РїСЂРёРјРµСЂ, `padding-top` РЅР° `<body>`), С‡С‚РѕР±С‹ РїСЂРµРґРѕС‚РІСЂР°С‚РёС‚СЊ РїРµСЂРµРєСЂС‹С‚РёРµ СЃ РґСЂСѓРіРёРјРё СЌР»РµРјРµРЅС‚Р°РјРё.
 
-> Также обратите внимание, что `.sticky-top` использует позицию: `sticky`, которая в некоторых браузерах не имеет полной поддержки.
+> РўР°РєР¶Рµ РѕР±СЂР°С‚РёС‚Рµ РІРЅРёРјР°РЅРёРµ, С‡С‚Рѕ `.sticky-top` РёСЃРїРѕР»СЊР·СѓРµС‚ РїРѕР·РёС†РёСЋ: `sticky`, РєРѕС‚РѕСЂР°СЏ РІ РЅРµРєРѕС‚РѕСЂС‹С… Р±СЂР°СѓР·РµСЂР°С… РЅРµ РёРјРµРµС‚ РїРѕР»РЅРѕР№ РїРѕРґРґРµСЂР¶РєРё.
 
 ```cshtml
 <header>
@@ -489,7 +489,7 @@
     {
       Href = "#",
       Header = " Brand navbar",
-      Title = "Описание бренда"
+      Title = "РћРїРёСЃР°РЅРёРµ Р±СЂРµРЅРґР°"
     }
   };
   @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
@@ -508,7 +508,7 @@
 
 ## Nav x2
 
-При необходимости можно совмещать два Nav в одном Navbar
+РџСЂРё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РјРѕР¶РЅРѕ СЃРѕРІРјРµС‰Р°С‚СЊ РґРІР° Nav РІ РѕРґРЅРѕРј Navbar
 
 ```cshtml
 <header>
@@ -530,7 +530,7 @@
     {
       Href = "/",
       Header = " <span class=\"text-primary\">Shop</span><strong class=\"text-success\">ON</strong>",
-      Title = "Мерчант"
+      Title = "РњРµСЂС‡Р°РЅС‚"
     }
   };
 
@@ -546,27 +546,27 @@
   navbar_nav_manager.AddCSS("ml-auto");
   @if (Model.User is null)
   {
-    navbar_nav_manager.AddNavItem("navbar-login-link-nav-dom-id", "Войти", "/account/login").AddCSS("text-primary");
+    navbar_nav_manager.AddNavItem("navbar-login-link-nav-dom-id", "Р’РѕР№С‚Рё", "/account/login").AddCSS("text-primary");
   }
   else
   {
     NavItemModel navbar_nav_item;
     if (Model.User.AccessLevel >= AccessLevelUserModel.Manager)
     {
-      navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-admin-nav-dropdown-dom-id", "Управление", "#");
+      navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-admin-nav-dropdown-dom-id", "РЈРїСЂР°РІР»РµРЅРёРµ", "#");
       navbar_nav_item.AddCSS("bg-danger text-white");
-      navbar_nav_item.AddSubNav(header_nav: "Финансы", href_nav: "/finance/", id_nav: "navbar-finance-nav-dom-id");
-      navbar_nav_item.AddSubNav("Доставка", "/delivery/", "navbar-delivery-nav-dom-id");
-      navbar_nav_item.AddSubNav("Пользователи", "/users/", "navbar-users-nav-dom-id");
-      navbar_nav_item.AddSubNav("Справочники", "/assortment/", "navbar-assortment-nav-id");
-      navbar_nav_item.AddSubNav("Файлы", "/files/", "navbar-files-nav-id");
+      navbar_nav_item.AddSubNav(header_nav: "Р¤РёРЅР°РЅСЃС‹", href_nav: "/finance/", id_nav: "navbar-finance-nav-dom-id");
+      navbar_nav_item.AddSubNav("Р”РѕСЃС‚Р°РІРєР°", "/delivery/", "navbar-delivery-nav-dom-id");
+      navbar_nav_item.AddSubNav("РџРѕР»СЊР·РѕРІР°С‚РµР»Рё", "/users/", "navbar-users-nav-dom-id");
+      navbar_nav_item.AddSubNav("РЎРїСЂР°РІРѕС‡РЅРёРєРё", "/assortment/", "navbar-assortment-nav-id");
+      navbar_nav_item.AddSubNav("Р¤Р°Р№Р»С‹", "/files/", "navbar-files-nav-id");
     }
-    navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-unreaded-messages-nav-dom-id", "Уведомления", "/messages/");
+    navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-unreaded-messages-nav-dom-id", "РЈРІРµРґРѕРјР»РµРЅРёСЏ", "/messages/");
     navbar_nav_item.Header += " <span class='badge" + (CountUnreadedMessages > 0 ? " text-danger badge-light" : "") + "'>" + CountUnreadedMessages + "</span>";
-    navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-profile-nav-dropdown-dom-id", "Профиль", "#");
-    navbar_nav_item.AddSubNav(header_nav: "Акаунт", href_nav: "/account/", id_nav: "navbar-account-nav-dom-id");
+    navbar_nav_item = navbar_nav_manager.AddNavItem("navbar-profile-nav-dropdown-dom-id", "РџСЂРѕС„РёР»СЊ", "#");
+    navbar_nav_item.AddSubNav(header_nav: "РђРєР°СѓРЅС‚", href_nav: "/account/", id_nav: "navbar-account-nav-dom-id");
     navbar_nav_item.AddSubNav(null);
-    navbar_nav_item.AddSubNav(header_nav: "Выход", href_nav: "/account/logout", id_nav: "navbar-logout-nav-dom-id");
+    navbar_nav_item.AddSubNav(header_nav: "Р’С‹С…РѕРґ", href_nav: "/account/logout", id_nav: "navbar-logout-nav-dom-id");
   }
 
   navbar_manager.NavbarActions.AddSubNode(navbar_nav_manager);
@@ -576,17 +576,17 @@
 </header>
 ```
 
-***result:*** навигация для неавторизованого пользователя
+***result:*** РЅР°РІРёРіР°С†РёСЏ РґР»СЏ РЅРµР°РІС‚РѕСЂРёР·РѕРІР°РЅРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 ![Demo](../demo/navbar-dual-nav-guest.jpg)
 
-***result:*** навигация для администратора
+***result:*** РЅР°РІРёРіР°С†РёСЏ РґР»СЏ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°
 ![Demo](../demo/navbar-dual-nav-admin.jpg)
 
-## Responsive behaviors[¶](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
->  в процессе...
+## Responsive behaviors[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#responsive-behaviors)
+>  РІ РїСЂРѕС†РµСЃСЃРµ...
 
-## Toggler[¶](https://getbootstrap.com/docs/4.3/components/navbar/#toggler)
+## Toggler[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#toggler)
 >  ...
 
-## External content[¶](https://getbootstrap.com/docs/4.3/components/navbar/#external-content)
+## External content[В¶](https://getbootstrap.com/docs/4.3/components/navbar/#external-content)
 >  ...
