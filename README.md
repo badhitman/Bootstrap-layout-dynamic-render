@@ -41,7 +41,7 @@ about:
 > [readme](./readme/bootstrap/breadcrumbs/)
 
 ## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
-> [readme](./readme/bootstrap/modal/)
+> [progress...](./readme/bootstrap/modal/)
 
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
 > [progress...](./readme/bootstrap/form/)
