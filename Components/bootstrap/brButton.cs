@@ -8,7 +8,7 @@ namespace BootstrapAspDynamicRender.components
 {
     public class brButton : ViewComponent
     {
-        public IViewComponentResult Invoke(bsButton SetObjectManager)
+        public IViewComponentResult Invoke(hsButton SetObjectManager)
         {
             if (SetObjectManager is bsButtonLink)
                 return View("Link", SetObjectManager);

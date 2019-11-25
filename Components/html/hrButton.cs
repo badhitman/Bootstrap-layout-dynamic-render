@@ -8,7 +8,7 @@ namespace BootstrapAspDynamicRender.components
 {
     public class hrButton : ViewComponent
     {
-        public IViewComponentResult Invoke(bsButton SetObjectManager)
+        public IViewComponentResult Invoke(hsButton SetObjectManager)
         {
             return View(SetObjectManager);
         }
