@@ -1516,7 +1516,7 @@
   form.AddChild(SingleGroup);
 
   SingleGroup = new bsFormGroupSingle().AddCSS("ml-2 mt-2 mt-md-0") as bsFormGroupSingle;
-  SingleGroup.CustomInput.Input = new InputSubmitManager()
+  SingleGroup.CustomInput.Input = new hsInputSubmit()
   {
     Value = "Save",
     ID = "input-submit-dom-id"

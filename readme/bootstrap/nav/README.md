@@ -16,8 +16,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 ```
 ***result:***
 ![Bootstrap - Navs (base demo ul->li->a)](../demo/nav-base-ul-li-a.jpg)
