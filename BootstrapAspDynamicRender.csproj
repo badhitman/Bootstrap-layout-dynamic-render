@@ -20,23 +20,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="readme\bootstrap\nav\" />
-    <Folder Include="readme\bootstrap\navbar\" />
-    <Folder Include="readme\bootstrap\pagination\" />
-    <Folder Include="readme\bootstrap\breadcrumbs\" />
-    <Folder Include="readme\bootstrap\modal\" />
-    <Folder Include="readme\bootstrap\form\" />
-    <Folder Include="readme\bootstrap\input-group\" />
-    <Folder Include="readme\bootstrap\button\" />
-    <Folder Include="readme\bootstrap\button-group\" />
-    <Folder Include="readme\bootstrap\list-group\" />
-    <Folder Include="readme\bootstrap\carousel\" />
-    <Folder Include="readme\bootstrap\collapse\" />
-    <Folder Include="readme\bootstrap\dropdown\" />
-    <Folder Include="readme\bootstrap\card\" />
-    <Folder Include="readme\bootstrap\media-object\" />
-    <Folder Include="readme\bootstrap\progress\" />
-    <Folder Include="readme\bootstrap\scrollspy\" />
-    <Folder Include="readme\bootstrap\table\" />
+    <Folder Include="readme\nav\" />
+    <Folder Include="readme\navbar\" />
+    <Folder Include="readme\pagination\" />
+    <Folder Include="readme\breadcrumbs\" />
+    <Folder Include="readme\modal\" />
+    <Folder Include="readme\form\" />
+    <Folder Include="readme\input-group\" />
+    <Folder Include="readme\button\" />
+    <Folder Include="readme\button-group\" />
+    <Folder Include="readme\list-group\" />
+    <Folder Include="readme\carousel\" />
+    <Folder Include="readme\collapse\" />
+    <Folder Include="readme\dropdown\" />
+    <Folder Include="readme\card\" />
+    <Folder Include="readme\media-object\" />
+    <Folder Include="readme\progress\" />
+    <Folder Include="readme\scrollspy\" />
+    <Folder Include="readme\table\" />
   </ItemGroup>
 </Project>
