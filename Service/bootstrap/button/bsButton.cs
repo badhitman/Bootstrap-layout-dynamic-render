@@ -45,13 +45,13 @@ namespace BootstrapAspDynamicRender.service
                 switch ((this as bsButtonInput).InputType)
                 {
                     case bmButtonInputTypesEnum.reset:
-                        ButtonType = hmhmButtonTypesEnum.reset;
+                        ButtonType = hmButtonTypesEnum.reset;
                         break;
                     case bmButtonInputTypesEnum.submit:
-                        ButtonType = hmhmButtonTypesEnum.submit;
+                        ButtonType = hmButtonTypesEnum.submit;
                         break;
                     default:
-                        ButtonType = hmhmButtonTypesEnum.button;
+                        ButtonType = hmButtonTypesEnum.button;
                         break;
                 }
                 SetAttribute("type", ButtonType.ToString());

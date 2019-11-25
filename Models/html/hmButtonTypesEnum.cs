@@ -4,7 +4,7 @@
 
 namespace BootstrapAspDynamicRender.models
 {
-    public enum hmhmButtonTypesEnum
+    public enum hmButtonTypesEnum
     {
         NULL,
         button,

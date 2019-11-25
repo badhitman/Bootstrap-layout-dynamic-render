@@ -35,7 +35,7 @@
 
   form.AddChild(new bsButton("Submit")
   {
-    ButtonType = hmhmButtonTypesEnum.submit,
+    ButtonType = hmButtonTypesEnum.submit,
     BackgroundColorTheme = bmBackgroundColorThemesEnum.primary
   });
 

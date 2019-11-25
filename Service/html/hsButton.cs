@@ -8,7 +8,7 @@ namespace BootstrapAspDynamicRender.service
 {
     public class hsButton : ahsDisengageableDom
     {
-        public hmhmButtonTypesEnum ButtonType { get; set; } = hmhmButtonTypesEnum.button;
+        public hmButtonTypesEnum ButtonType { get; set; } = hmButtonTypesEnum.button;
 
         public string Header { get; set; }
 
@@ -21,7 +21,7 @@ namespace BootstrapAspDynamicRender.service
 
         public override string GetStringAttributes()
         {
-            if (ButtonType != hmhmButtonTypesEnum.NULL)
+            if (ButtonType != hmButtonTypesEnum.NULL)
                 SetAttribute("type", ButtonType.ToString());
 
             return base.GetStringAttributes();

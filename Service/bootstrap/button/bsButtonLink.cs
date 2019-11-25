@@ -12,7 +12,7 @@ namespace BootstrapAspDynamicRender.service
         public bsButtonLink(string SetHeader, string SetHref) : base(SetHeader)
         {
             Href = SetHref;
-            this.ButtonType = hmhmButtonTypesEnum.NULL;
+            this.ButtonType = hmButtonTypesEnum.NULL;
         }
 
         public override string GetStringAttributes()
