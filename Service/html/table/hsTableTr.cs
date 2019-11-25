@@ -9,14 +9,16 @@ namespace BootstrapAspDynamicRender.service
     {
         public override string ViewComponentName => nameof(hrTableTr);
 
-        public void AddCell(hsTableTh thManager)
+        public hsTableTr AddCell(hsTableTh thManager)
         {
             Childs.Add(thManager);
+            return this;
         }
 
-        public void AddCell(hsTableTd tdManager)
+        public hsTableTr AddCell(hsTableTd tdManager)
         {
             Childs.Add(tdManager);
+            return this;
         }
     }
 }

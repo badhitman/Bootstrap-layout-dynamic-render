@@ -9,9 +9,10 @@ namespace BootstrapAspDynamicRender.service
     {
         public bmBackgroundColorThemesEnum TableColorScheme { get; set; } = bmBackgroundColorThemesEnum.NULL;
 
-        public void AddCell(bsTableTd tdBootstrapManager)
+        public hsTableTr AddCell(bsTableTd tdBootstrapManager)
         {
             Childs.Add(tdBootstrapManager);
+            return this;
         }
 
         public override string GetStringCSS()
