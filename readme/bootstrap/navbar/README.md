@@ -46,7 +46,7 @@
   hsForm.AddChild(button_manager);
   hsForm.AddCSS("my-2 my-lg-0");
   navbar_manager.NavbarActions.AddSubNode(hsForm);
-  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager })
 }
 </header>
 ```
@@ -78,7 +78,7 @@
     ID = "navbar-brand-id",
     NavbarBrandDom = new bmBrandNavItem("navbar-brand-dom-id") { Href = "#", Header = " Brand", Title = "Описание бренда" }
   };
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
   
   <br />
   navbar_manager.NavbarBrand = new bsNavbarBrand()
@@ -111,7 +111,7 @@
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
-  @await Component.InvokeAsync(typeof(NavbarBase).Name, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
   <br />
   navbar_manager.ID = "top-menu-2-dom-id";
   navbar_manager.NavbarBrand = new bsNavbarBrand()
@@ -126,7 +126,7 @@
       ImageNavbarBrandSrc = "/img/bootstrap-solid.svg"
     }
   };
-  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager });
+  @await Component.InvokeAsync(navbar_manager.ViewComponentName, new { SetObjectManager = navbar_manager })
 }
 </header>
 ```
