@@ -15,7 +15,7 @@
 
 ***result:***
 
-![Button basic example group](../demo/btn-group-basic-example-demo.jpg)
+![Button basic example group](../../demo/btn-group-basic-example-demo.jpg)
 
 > Обеспечьте правильную роль и установите метку.
 Для того, чтобы вспомогательные технологии (такие как программы чтения с экрана) корректно определяли информацию о том, что ряд кнопок сгруппирован, необходимо предоставить соответствующий атрибут роли. Для групп кнопок это будет `role="group"`, в то время как панели инструментов должны иметь `role="toolbar"`.
@@ -34,7 +34,7 @@
 
 ***result:***
 
-![Button toolbar](../demo/btn-toolbar-demo.jpg)
+![Button toolbar](../../demo/btn-toolbar-demo.jpg)
 
 > Не стесняйтесь смешивать группы ввода с группами кнопок на панелях инструментов.
 Подобно приведенному выше примеру, вам, вероятно,понадобятся некоторые утилиты, чтобы правильно разместить элементы управления.
@@ -47,7 +47,7 @@
 
 ***result:***
 
-![Button mixed toolbar](../demo/btn-toolbar-mixed-demo.jpg)
+![Button mixed toolbar](../../demo/btn-toolbar-mixed-demo.jpg)
 
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/button-group/#sizing)
 
@@ -61,7 +61,7 @@
 
 ***result:***
 
-![Button group sizing](../demo/btn-group-sizing-demo.jpg)
+![Button group sizing](../../demo/btn-group-sizing-demo.jpg)
 
 ## Nesting[¶](https://getbootstrap.com/docs/4.3/components/button-group/#nesting)
 
@@ -75,7 +75,7 @@
 
 ***result:***
 
-![Button group nesting](../demo/btn-group-nesting-demo.jpg)
+![Button group nesting](../../demo/btn-group-nesting-demo.jpg)
 
 ## Vertical variation[¶](https://getbootstrap.com/docs/4.3/components/button-group/#vertical-variation)
 
@@ -89,4 +89,4 @@
 
 ***result:***
 
-![Button group vertical variation](../demo/btn-group-vertical-variation-demo.jpg)
+![Button group vertical variation](../../demo/btn-group-vertical-variation-demo.jpg)

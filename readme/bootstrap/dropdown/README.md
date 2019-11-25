@@ -44,7 +44,7 @@ Popper.js не используется для размещения выпада
 
 ***result:***
 
-![Dropdowns single button](../demo/dropdowns-single-button.jpg)
+![Dropdowns single button](../../demo/dropdowns-single-button.jpg)
 
 > и при помощи `<a>` элементов:
 
@@ -56,7 +56,7 @@ Popper.js не используется для размещения выпада
 
 ***result:***
 
-![Dropdowns single button <a> elements](../demo/dropdowns-single-button-with-a.jpg)
+![Dropdowns single button <a> elements](../../demo/dropdowns-single-button-with-a.jpg)
 
 > Самое приятное, что вы можете сделать тоже самое с любым вариантом кнопки
 
@@ -66,7 +66,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns single button variant](../demo/dropdowns-single-button-variant.jpg)
+![Dropdowns single button variant](../../demo/dropdowns-single-button-variant.jpg)
 
 ## Split button[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#split-button)
 
@@ -81,7 +81,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns split button](../demo/dropdowns-split-button.jpg)
+![Dropdowns split button](../../demo/dropdowns-split-button.jpg)
 
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#sizing)
 
@@ -93,7 +93,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns sizing](../demo/dropdowns-sizing.jpg)
+![Dropdowns sizing](../../demo/dropdowns-sizing.jpg)
 
 ## Directions[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#directions)
 
@@ -107,7 +107,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns dropup](../demo/dropdowns-dropup.jpg)
+![Dropdowns dropup](../../demo/dropdowns-dropup.jpg)
 
 ## Dropright[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#dropright)
 
@@ -119,7 +119,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns dropright](../demo/dropdowns-dropright.jpg)
+![Dropdowns dropright](../../demo/dropdowns-dropright.jpg)
 
 ## Dropleft[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#dropleft)
 
@@ -131,7 +131,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns dropleft](../demo/dropdowns-dropleft.jpg)
+![Dropdowns dropleft](../../demo/dropdowns-dropleft.jpg)
 
 ## Menu items[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#menu-items)
 
@@ -144,7 +144,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu items](../demo/dropdowns-menu-items.jpg)
+![Dropdowns menu items](../../demo/dropdowns-menu-items.jpg)
 
 > Вы также можете создавать неинтерактивные элементы **.dropdown-item-text** в выпадающиющем списке.
 Не стесняйтесь стилизовать дальше с помощью пользовательских CSS или текстовых утилит.
@@ -155,7 +155,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns non-interactive items](../demo/dropdowns-non-interactive-items.jpg)
+![Dropdowns non-interactive items](../../demo/dropdowns-non-interactive-items.jpg)
 
 ## Active[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#active)
 
@@ -167,7 +167,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns active items](../demo/dropdowns-active-items.jpg)
+![Dropdowns active items](../../demo/dropdowns-active-items.jpg)
 
 ## Disabled[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#disabled)
 
@@ -179,7 +179,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns active items](../demo/dropdowns-disabled-items.jpg)
+![Dropdowns active items](../../demo/dropdowns-disabled-items.jpg)
 
 ## Menu alignment[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#menu-alignment)
 
@@ -197,7 +197,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu alignment](../demo/dropdowns-menu-alignment.jpg)
+![Dropdowns menu alignment](../../demo/dropdowns-menu-alignment.jpg)
 
 ## Responsive alignment[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#responsive-alignment)
 
@@ -209,7 +209,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu responsive alignment](../demo/dropdowns-menu-responsive-alignment.jpg)
+![Dropdowns menu responsive alignment](../../demo/dropdowns-menu-responsive-alignment.jpg)
 
 > Чтобы выровнять выпадающее меню слева, используются **.dropdown-menu-right** и **.dropdown-menu{-sm|-md|-lg|-xl}-left**.
 
@@ -221,7 +221,7 @@ Popper.js не используется для размещения выпада
 
 > Обратите внимание, что вам не нужно добавлять атрибут `data-display="static"` к кнопкам выпадающего меню в `navbar`, так как **Popper.js** не используется в **navbars**.
 
-![Dropdowns menu right alignment](../demo/dropdowns-menu-right-alignment.jpg)
+![Dropdowns menu right alignment](../../demo/dropdowns-menu-right-alignment.jpg)
 
 ## Menu content[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#menu-content)
 
@@ -235,7 +235,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu headers](../demo/dropdowns-menu-headers.jpg)
+![Dropdowns menu headers](../../demo/dropdowns-menu-headers.jpg)
 
 ## Dividers[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#dividers)
 
@@ -247,7 +247,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu dividers](../demo/dropdowns-menu-dividers.jpg)
+![Dropdowns menu dividers](../../demo/dropdowns-menu-dividers.jpg)
 
 ## Text[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#text)
 
@@ -260,7 +260,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu text](../demo/dropdowns-menu-text.jpg)
+![Dropdowns menu text](../../demo/dropdowns-menu-text.jpg)
 
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#forms)
 
@@ -272,7 +272,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu forms](../demo/dropdowns-menu-forms.jpg)
+![Dropdowns menu forms](../../demo/dropdowns-menu-forms.jpg)
 
 > 
 
@@ -282,7 +282,7 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns menu min forms](../demo/dropdowns-menu-min-forms.jpg)
+![Dropdowns menu min forms](../../demo/dropdowns-menu-min-forms.jpg)
 
 ## Dropdown options[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/#dropdown-options)
 
@@ -294,4 +294,4 @@ Popper.js не используется для размещения выпада
 }
 ```
 
-![Dropdowns options](../demo/dropdowns-options.jpg)
+![Dropdowns options](../../demo/dropdowns-options.jpg)

@@ -22,7 +22,7 @@
 
 ***result:***
 
-![Buttons demo](../demo/btn-demo.jpg)
+![Buttons demo](../../demo/btn-demo.jpg)
 
 ```html
 <button type="button" class="btn btn-primary">Primary</button>
@@ -62,7 +62,7 @@
 
 ***result***
 
-![Buttons tags demo](../demo/btn-tags-demo.png)
+![Buttons tags demo](../../demo/btn-tags-demo.png)
 
 ```html
 <a href="#" role="button" class="btn btn-primary">Link</a>
@@ -96,7 +96,7 @@
 
 ***result***
 
-![Buttons demo](../demo/btn-outline-demo.png)
+![Buttons demo](../../demo/btn-outline-demo.png)
 
 ```html
 <button type="button" class="btn btn-outline-primary">Primary</button>
@@ -127,7 +127,7 @@
 
 ***result***
 
-![Button large demo](../demo/btn-large-demo.jpg)
+![Button large demo](../../demo/btn-large-demo.jpg)
 
 ```html
 <button type="button" class="btn btn-primary btn-lg">Large button</button>
@@ -148,7 +148,7 @@
 
 ***result***
 
-![Button large demo](../demo/btn-small-demo.jpg)
+![Button large demo](../../demo/btn-small-demo.jpg)
 
 ```html
 <button type="button" class="btn btn-primary btn-sm">Small button</button>
@@ -169,7 +169,7 @@
 
 ***result***
 
-![Button large demo](../demo/btn-block-demo.jpg)
+![Button large demo](../../demo/btn-block-demo.jpg)
 
 ```html
 <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
@@ -198,7 +198,7 @@
 
 ***result***
 
-![Demo active button](../demo/btn-active-demo.jpg)
+![Demo active button](../../demo/btn-active-demo.jpg)
 
 ```html
 <button aria-pressed="true" type="button" class="btn btn-primary active">Primary link</button>
@@ -222,7 +222,7 @@
 
 ***result***
 
-![Demo disable button](../demo/btn-disable-demo.jpg)
+![Demo disable button](../../demo/btn-disable-demo.jpg)
 
 ```html
 <button disabled="disabled" type="button" class="btn btn-primary">Primary button</button>
@@ -246,7 +246,7 @@
 
 ***result***
 
-![Demo disable link button](../demo/btn-link-disable-demo.jpg)
+![Demo disable link button](../../demo/btn-link-disable-demo.jpg)
 
 ```html
 <a aria-disabled="true" disabled="disabled" href="#" role="button" tabindex="-1" class="disabled btn btn-primary">Primary link</a>
@@ -269,4 +269,4 @@
 
 ***result*** на скрине ниже зафиксированы состояния (подряд) после каждого клика по кнопке
 
-![Demo Toggle states button](../demo/btn-toggle-states-demo.jpg)
+![Demo Toggle states button](../../demo/btn-toggle-states-demo.jpg)

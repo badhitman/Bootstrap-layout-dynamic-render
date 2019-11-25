@@ -10,4 +10,4 @@
 
 ***result:***
 
-![Tables demo](../demo/table-demo.jpg)
+![Tables demo](../../demo/table-demo.jpg)

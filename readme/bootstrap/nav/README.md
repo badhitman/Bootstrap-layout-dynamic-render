@@ -21,7 +21,7 @@
 }
 ```
 ***result:***
-![Bootstrap - Navs (base demo ul->li->a)](../demo/nav-base-ul-li-a.jpg)
+![Bootstrap - Navs (base demo ul->li->a)](../../demo/nav-base-ul-li-a.jpg)
 
 ```html
 <ul id="top-nav-menu-dom-id" class="nav">
@@ -62,7 +62,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Navs (base demo nav->a)](../demo/nav-base-nav-a.jpg)
+![Bootstrap - Navs (base demo nav->a)](../../demo/nav-base-nav-a.jpg)
 
 ## Horizontal alignment[¶](https://getbootstrap.com/docs/4.3/components/navs/#horizontal-alignment)
 > Измените горизонтальное выравнивание навигатора с помощью утилит flexbox. По умолчанию навигаторы выровнены по левому краю, но вы можете легко изменить их на выравнивание по центру или по правому краю.
@@ -86,7 +86,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Horizontal alignment (demo center-alignment)](../demo/nav-horizontal-center-alignment.jpg)
+![Bootstrap - Horizontal alignment (demo center-alignment)](../../demo/nav-horizontal-center-alignment.jpg)
 
 В следующем примере навигация распологается справа по горизонтали (применяется класс Bootstrap стилей: **.justify-content-end**):
 ```cshtml
@@ -105,7 +105,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Horizontal alignment (demo right-alignment)](../demo/nav-horizontal-right-alignment.jpg)
+![Bootstrap - Horizontal alignment (demo right-alignment)](../../demo/nav-horizontal-right-alignment.jpg)
 
 ## Vertical[¶](https://getbootstrap.com/docs/4.3/components/navs/#vertical)
 > Сделать навигацию в виде стэка можно изменив направление элемента flex с помощью утилиты **.flex-column**.
@@ -127,7 +127,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Vertical alignment (demo vertical-alignment ul->li->a)](../demo/nav-vertical-alignment-ul-li-a.jpg)
+![Bootstrap - Vertical alignment (demo vertical-alignment ul->li->a)](../../demo/nav-vertical-alignment-ul-li-a.jpg)
 
 > Нужно складывать их на некоторых видовых экранах, но не на других? Используйте адаптивные версии (например, `.flex-sm-column`).
 
@@ -153,7 +153,7 @@
 </header>
 ```
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
-![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)
+![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column ul->li->a)](../../demo/nav-vertical-alignment-flex-sm-column-nav-a.jpg)
 
 > Традиционно, вертикальная навигация возможна и без `<ul>`s.
 ```cshtml
@@ -178,7 +178,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Vertical alignment (base demo vertical nav->a)](../demo/nav-vertical-alignment-nav-a.jpg)
+![Bootstrap - Vertical alignment (base demo vertical nav->a)](../../demo/nav-vertical-alignment-nav-a.jpg)
 
 
 ## Tabs[¶](https://getbootstrap.com/docs/4.3/components/navs/#tabs)
@@ -205,7 +205,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Tabs style (base demo tabs ul->li->a)](../demo/nav-tabs-ul-li-a.jpg)
+![Bootstrap - Tabs style (base demo tabs ul->li->a)](../../demo/nav-tabs-ul-li-a.jpg)
 
 > Традиционно, навигация возможна и без `<ul>`s.
 
@@ -225,7 +225,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Tabs style (base demo tabs nav->a)](../demo/nav-tabs-nav-a.jpg)
+![Bootstrap - Tabs style (base demo tabs nav->a)](../../demo/nav-tabs-nav-a.jpg)
 
 ## Pills[¶](https://getbootstrap.com/docs/4.3/components/navs/#pills)
 > Возьмите базовую навигацию, но примените к нему `.nav-pills`
@@ -250,7 +250,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Pills style (base demo Pills ul->li->a)](../demo/nav-pills-ul-li-a.jpg)
+![Bootstrap - Pills style (base demo Pills ul->li->a)](../../demo/nav-pills-ul-li-a.jpg)
 
 ## Fill and justify[¶](https://getbootstrap.com/docs/4.3/components/navs/#fill-and-justify)
 > Для принудительного расширения `.nav`s по всей доступной ширине применяется один из двух классов-модификаторов.
@@ -271,7 +271,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Fill (base demo pills fill ul->li->a)](../demo/nav-pills-fill-ul-li-a.jpg)
+![Bootstrap - Fill (base demo pills fill ul->li->a)](../../demo/nav-pills-fill-ul-li-a.jpg)
 > Чтобы пропорционально заполнить все доступное пространство телом `.nav-items`, используется `.nav-fill`.
 Обратите внимание, что все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину.
 
@@ -294,7 +294,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Fill (base demo pills fill nav->a)](../demo/nav-pills-fill-nav-a.jpg)
+![Bootstrap - Fill (base demo pills fill nav->a)](../../demo/nav-pills-fill-nav-a.jpg)
 
 Для задания элементов равной ширины используйте соответсвующее позиционирование `NavOrientationsEnum.HorizontallyJustified` (которое задействует клас стилей: **.nav-justified**):
 ```cshtml
@@ -314,7 +314,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Fill (base demo pills justified ul->li->a)](../demo/nav-pills-justified-ul-li-a.jpg)
+![Bootstrap - Fill (base demo pills justified ul->li->a)](../../demo/nav-pills-justified-ul-li-a.jpg)
 > Все горизонтальное пространство будет занято навигационными ссылками, но в отличие от предыдущего примера (`.nav-fill`), каждый элемент навигации будет одинаковой ширины.
 
 ## Working with flex utilities[¶](https://getbootstrap.com/docs/4.3/components/navs/#working-with-flex-utilities)
@@ -351,7 +351,7 @@
 > В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
 
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
-![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column nav->a)](../demo/nav-flex-utilities-nav-a.jpg)
+![Bootstrap - Vertical alignment (demo vertical-alignment flex-sm-column nav->a)](../../demo/nav-flex-utilities-nav-a.jpg)
 
 ## Tabs with dropdowns[¶](https://getbootstrap.com/docs/4.3/components/navs/#tabs-with-dropdowns)
 ```cshtml
@@ -378,7 +378,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../demo/nav-dropdowns-tabs-ul-li-a.jpg)
+![Bootstrap - Tabs with dropdowns (base demo tabs dropdowns ul->li->a)](../../demo/nav-dropdowns-tabs-ul-li-a.jpg)
 
 ## Pills with dropdowns[¶](https://getbootstrap.com/docs/4.3/components/navs/#pills-with-dropdowns)
 ```cshtml
@@ -405,7 +405,7 @@
 </header>
 ```
 ***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
-![Bootstrap - Tabs-pills with dropdowns (base demo pills dropdowns ul->li->a)](../demo/nav-dropdowns-pills-ul-li-a.jpg)
+![Bootstrap - Tabs-pills with dropdowns (base demo pills dropdowns ul->li->a)](../../demo/nav-dropdowns-pills-ul-li-a.jpg)
 
 ## JavaScript behavior[¶](https://getbootstrap.com/docs/4.3/components/navs/#javascript-behavior)
 ```cshtml
@@ -430,7 +430,7 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior ul->li->a)](../demo/nav-tabs-js-behavior-ul-li-a.jpg)
+![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior ul->li->a)](../../demo/nav-tabs-js-behavior-ul-li-a.jpg)
 
 > Чтобы удовлетворить любые потребности, это работает с разметкой на основе `<ul>`, как показано выше, или с любой произвольной разметкой “roll your own”.
 Обратите внимание, что если вы используете `<nav>`, вы не должны добавлять `role="tablist"` непосредственно к нему, так как это переопределит собственную роль элемента в качестве ориентира навигации.
@@ -460,12 +460,12 @@
 </header>
 ```
 ***result:***
-![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior nav->div->a)](../demo/nav-tabs-js-behavior-nav-div-a.jpg)
+![Bootstrap - Tabs JavaScript behavior (base demo JavaScript behavior nav->div->a)](../../demo/nav-tabs-js-behavior-nav-div-a.jpg)
 
 > Плагин **JavaScript behavior** также работает с **pills**.
 
 ***result:***
-![Bootstrap - JavaScript behavior (as Pills) (base demo JavaScript behavior ul->li->a)](../demo/nav-pills-js-behavior-ul-li-a.jpg)
+![Bootstrap - JavaScript behavior (as Pills) (base demo JavaScript behavior ul->li->a)](../../demo/nav-pills-js-behavior-ul-li-a.jpg)
 
 > И с вертикальными Pills.
 
@@ -490,4 +490,4 @@
 ```
 
 ***result:***
-![Bootstrap - JavaScript behavior (as Vertical Pills) (base demo JavaScript behavior ul->li->a)](../demo/nav-vertical-pills-js-behavior-ul-li-a.jpg)
+![Bootstrap - JavaScript behavior (as Vertical Pills) (base demo JavaScript behavior ul->li->a)](../../demo/nav-vertical-pills-js-behavior-ul-li-a.jpg)

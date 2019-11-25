@@ -10,4 +10,4 @@
 
 ***result:***
 
-![Progress demo](../demo/progress-demo.jpg)
+![Progress demo](../../demo/progress-demo.jpg)

@@ -15,7 +15,7 @@
 
 ***result:***
 
-![List group basic example](../demo/list-group-basic-example-demo.jpg)
+![List group basic example](../../demo/list-group-basic-example-demo.jpg)
 
 ## Active items[¶](https://getbootstrap.com/docs/4.3/components/list-group/#active-items)
 
@@ -29,7 +29,7 @@
 
 ***result:***
 
-![List group active items](../demo/list-group-active-items-demo.jpg)
+![List group active items](../../demo/list-group-active-items-demo.jpg)
 
 ## Disabled items[¶](https://getbootstrap.com/docs/4.3/components/list-group/#disabled-items)
 
@@ -44,7 +44,7 @@
 
 ***result:***
 
-![List group disabled items](../demo/list-group-disabled-items-demo.jpg)
+![List group disabled items](../../demo/list-group-disabled-items-demo.jpg)
 
 ## Links and buttons[¶](https://getbootstrap.com/docs/4.3/components/list-group/#links-and-buttons)
 
@@ -60,7 +60,7 @@
 
 ***result:***
 
-![List group links](../demo/list-group-links-demo.jpg)
+![List group links](../../demo/list-group-links-demo.jpg)
 
 > При использовании `<button>`**s** вы также можете использовать атрибут **disabled** вместо класса **.disabled**. К сожалению, `<a>`**s** не поддерживает атрибут **disabled**.
 
@@ -72,7 +72,7 @@
 
 ***result:***
 
-![List group with disables buttons](../demo/list-group-disables-buttons-demo.jpg)
+![List group with disables buttons](../../demo/list-group-disables-buttons-demo.jpg)
 
 ## Flush[¶](https://getbootstrap.com/docs/4.3/components/list-group/#flush)
 
@@ -86,7 +86,7 @@
 
 ***result:***
 
-![List group flush](../demo/list-group-flush-demo.jpg)
+![List group flush](../../demo/list-group-flush-demo.jpg)
 
 ## Horizontal[¶](https://getbootstrap.com/docs/4.3/components/list-group/#horizontal)
 
@@ -103,7 +103,7 @@
 
 ***result:***
 
-![List group horizontal](../demo/list-group-horizontal-demo.jpg)
+![List group horizontal](../../demo/list-group-horizontal-demo.jpg)
 
 ```cshtml
 @{
@@ -113,7 +113,7 @@
 
 ***result:***
 
-![List group horizontal-sm](../demo/list-group-horizontal-sm-demo.jpg)
+![List group horizontal-sm](../../demo/list-group-horizontal-sm-demo.jpg)
 
 
 ```cshtml
@@ -124,7 +124,7 @@
 
 ***result:***
 
-![List group horizontal-md](../demo/list-group-horizontal-md-demo.jpg)
+![List group horizontal-md](../../demo/list-group-horizontal-md-demo.jpg)
 
 ```cshtml
 @{
@@ -134,7 +134,7 @@
 
 ***result:***
 
-![List group horizontal-lg](../demo/list-group-horizontal-lg-demo.jpg)
+![List group horizontal-lg](../../demo/list-group-horizontal-lg-demo.jpg)
 
 ```cshtml
 @{
@@ -144,7 +144,7 @@
 
 ***result:***
 
-![List group horizontal-xl](../demo/list-group-horizontal-xl-demo.jpg)
+![List group horizontal-xl](../../demo/list-group-horizontal-xl-demo.jpg)
 
 ## Contextual classes[¶](https://getbootstrap.com/docs/4.3/components/list-group/#contextual-classes)
 
@@ -158,7 +158,7 @@
 
 ***result:***
 
-![List group contextual classes](../demo/list-group-contextual-classes-demo.jpg)
+![List group contextual classes](../../demo/list-group-contextual-classes-demo.jpg)
 
 > Контекстные классы также работают с **.list-group-item-action**.
 Также поддерживается **.active** состояние; примените его, чтобы указать активный/выбранный элемент.
@@ -171,7 +171,7 @@
 
 ***result:***
 
-![List group contextual classes item action](../demo/list-group-contextual-classes-item-action-demo.jpg)
+![List group contextual classes item action](../../demo/list-group-contextual-classes-item-action-demo.jpg)
 
 > Передача "данных состояния" в вспомогательные технологии:
 Использование цвета для добавления "данных состояния" обеспечивает только визуальную индикацию, которая не будет передаваться пользователям вспомогательных технологий, таких как программы чтения с экрана.
@@ -189,7 +189,7 @@
 
 ***result:***
 
-![List group badges](../demo/list-group-badges-demo.jpg)
+![List group badges](../../demo/list-group-badges-demo.jpg)
 
 ## Custom content[¶](https://getbootstrap.com/docs/4.3/components/list-group/#custom-content)
 
@@ -203,4 +203,4 @@
 
 ***result:***
 
-![List group custom content](../demo/list-group-custom-content-demo.jpg)
+![List group custom content](../../demo/list-group-custom-content-demo.jpg)

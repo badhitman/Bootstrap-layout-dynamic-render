@@ -10,4 +10,4 @@
 
 ***result:***
 
-![Media object demo](../demo/media-object-demo.jpg)
+![Media object demo](../../demo/media-object-demo.jpg)

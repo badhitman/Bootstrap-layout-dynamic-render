@@ -36,7 +36,7 @@
 
 ***result:***
 
-![Carousel example demo](../demo/carousel-example-demo.jpg)
+![Carousel example demo](../../demo/carousel-example-demo.jpg)
 
 ## With controls[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-controls)
 
@@ -50,7 +50,7 @@
 
 ***result:***
 
-![Carousel with controls demo](../demo/carousel-with-controls-demo.jpg)
+![Carousel with controls demo](../../demo/carousel-with-controls-demo.jpg)
 
 ## With indicators[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-indicators)
 
@@ -64,7 +64,7 @@
 
 ***result:***
 
-![Carousel with indicators demo](../demo/carousel-with-indicators-demo.jpg)
+![Carousel with indicators demo](../../demo/carousel-with-indicators-demo.jpg)
 
 ## With captions[¶](https://getbootstrap.com/docs/4.3/components/carousel/#with-captions)
 
@@ -80,7 +80,7 @@
 
 ***result:***
 
-![Carousel with captions demo](../demo/carousel-with-captions-demo.jpg)
+![Carousel with captions demo](../../demo/carousel-with-captions-demo.jpg)
 
 ## Crossfade[¶](https://getbootstrap.com/docs/4.3/components/carousel/#crossfade)
 
@@ -94,7 +94,7 @@
 
 ***result:***
 
-![Carousel crossfade demo](../demo/carousel-crossfade-demo.jpg)
+![Carousel crossfade demo](../../demo/carousel-crossfade-demo.jpg)
 
 ## Individual .carousel-item interval[¶](https://getbootstrap.com/docs/4.3/components/carousel/#individual-carousel-item-interval)
 
@@ -108,4 +108,4 @@
 
 ***result:***
 
-![Carousel individual carousel item interval demo](../demo/carousel-ndividual-carousel-item-interval-demo.jpg)
+![Carousel individual carousel item interval demo](../../demo/carousel-ndividual-carousel-item-interval-demo.jpg)

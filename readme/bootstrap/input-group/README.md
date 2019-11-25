@@ -14,7 +14,7 @@
 
 ***result:***
 
-![Dropdowns single button](../demo/dropdowns-single-button.jpg)
+![Dropdowns single button](../../demo/dropdowns-single-button.jpg)
 
 ## Wrapping[¶](https://getbootstrap.com/docs/4.3/components/input-group/#wrapping)
 
@@ -28,7 +28,7 @@
 
 ***result:***
 
-![Input group wrapping](../demo/input-group-wrapping.jpg)
+![Input group wrapping](../../demo/input-group-wrapping.jpg)
 
 ## Sizing[¶](https://getbootstrap.com/docs/4.3/components/input-group/#sizing)
 
@@ -42,7 +42,7 @@
 
 ***result:***
 
-![Input group sizing](../demo/input-group-sizing.jpg)
+![Input group sizing](../../demo/input-group-sizing.jpg)
 
 ## Checkboxes and radios[¶](https://getbootstrap.com/docs/4.3/components/input-group/#checkboxes-and-radios)
 
@@ -56,7 +56,7 @@
 
 ***result:***
 
-![Input group checkboxes and radios](../demo/input-group-checkboxes-and-radios.jpg)
+![Input group checkboxes and radios](../../demo/input-group-checkboxes-and-radios.jpg)
 
 ## Multiple inputs[¶](https://getbootstrap.com/docs/4.3/components/input-group/#multiple-inputs)
 
@@ -70,7 +70,7 @@
 
 ***result:***
 
-![Input group multiple inputs](../demo/input-group-multiple-inputs.jpg)
+![Input group multiple inputs](../../demo/input-group-multiple-inputs.jpg)
 
 ## Multiple addons[¶](https://getbootstrap.com/docs/4.3/components/input-group/#multiple-addons)
 
@@ -84,7 +84,7 @@
 
 ***result:***
 
-![Input group multiple addons](../demo/input-group-multiple-addons.jpg)
+![Input group multiple addons](../../demo/input-group-multiple-addons.jpg)
 
 ## Button addons[¶](https://getbootstrap.com/docs/4.3/components/input-group/#button-addons)
 
@@ -98,7 +98,7 @@
 
 ***result:***
 
-![Input group button addons](../demo/input-group-button-addons.jpg)
+![Input group button addons](../../demo/input-group-button-addons.jpg)
 
 ## Buttons with dropdowns[¶](https://getbootstrap.com/docs/4.3/components/input-group/#buttons-with-dropdowns)
 
@@ -112,7 +112,7 @@
 
 ***result:***
 
-![Input group buttons with dropdowns](../demo/input-group-buttons-with-dropdowns.jpg)
+![Input group buttons with dropdowns](../../demo/input-group-buttons-with-dropdowns.jpg)
 
 ## Segmented buttons[¶](https://getbootstrap.com/docs/4.3/components/input-group/#segmented-buttons)
 
@@ -126,7 +126,7 @@
 
 ***result:***
 
-![Input group segmented buttons](../demo/input-group-segmented-buttons.jpg)
+![Input group segmented buttons](../../demo/input-group-segmented-buttons.jpg)
 
 ## Custom forms[¶](https://getbootstrap.com/docs/4.3/components/input-group/#custom-forms)
 
@@ -140,7 +140,7 @@
 
 ***result:***
 
-![Input group custom forms](../demo/input-group-custom-forms.jpg)
+![Input group custom forms](../../demo/input-group-custom-forms.jpg)
 
 ## Custom file input[¶](https://getbootstrap.com/docs/4.3/components/input-group/#custom-file-input)
 
@@ -154,4 +154,4 @@
 
 ***result:***
 
-![Input group custom file input](../demo/input-group-custom-file-input.jpg)
+![Input group custom file input](../../demo/input-group-custom-file-input.jpg)

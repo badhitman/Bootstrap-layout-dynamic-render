@@ -79,8 +79,8 @@ public IActionResult Index(int PageSize = 10, int PageNum = 1)
 
 ###### Результаты:
 
-![Bootstrap - pagination demo 1](../demo/pagination.png)
+![Bootstrap - pagination demo 1](../../demo/pagination.png)
 
-![Bootstrap - pagination demo 2](../demo/pagination2.png)
+![Bootstrap - pagination demo 2](../../demo/pagination2.png)
 
-![Bootstrap - pagination demo 3](../demo/pagination3.png)
+![Bootstrap - pagination demo 3](../../demo/pagination3.png)

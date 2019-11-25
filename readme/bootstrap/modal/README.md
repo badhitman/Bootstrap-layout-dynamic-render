@@ -34,7 +34,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ***result:***
 
-![Modal demo](../demo/modal-demo.jpg)
+![Modal demo](../../demo/modal-demo.jpg)
 
 ## Scrolling long content[¶](https://getbootstrap.com/docs/4.3/components/modal/#scrolling-long-content)
 
@@ -50,7 +50,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ***result:***
 
-![Modal scrolling long content body demo](../demo/modal-scrollable-modal-body-demo.jpg)
+![Modal scrolling long content body demo](../../demo/modal-scrollable-modal-body-demo.jpg)
 
 ## Vertically centered[¶](https://getbootstrap.com/docs/4.3/components/modal/#vertically-centered)
 
@@ -64,7 +64,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ***result:***
 
-![Modal vertically centered demo](../demo/modal-vertically-centered-demo.jpg)
+![Modal vertically centered demo](../../demo/modal-vertically-centered-demo.jpg)
 
 ## Tooltips and popovers[¶](https://getbootstrap.com/docs/4.3/components/modal/#tooltips-and-popovers)
 

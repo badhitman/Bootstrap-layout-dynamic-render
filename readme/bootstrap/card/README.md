@@ -10,4 +10,4 @@
 
 ***result:***
 
-![Cards example demo](../demo/cards-demo.jpg)
+![Cards example demo](../../demo/cards-demo.jpg)

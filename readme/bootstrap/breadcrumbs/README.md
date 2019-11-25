@@ -19,4 +19,4 @@
 
 ###### Результат:
 
-![Bootstrap - breadcrumb demo](../demo/breadcrumb.png)
+![Bootstrap - breadcrumb demo](../../demo/breadcrumb.png)

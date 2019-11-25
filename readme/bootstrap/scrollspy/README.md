@@ -10,4 +10,4 @@
 
 ***result:***
 
-![Scrollspy demo](../demo/scrollspy-demo.jpg)
+![Scrollspy demo](../../demo/scrollspy-demo.jpg)

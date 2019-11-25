@@ -29,7 +29,7 @@
 
 ***result:***
 
-![Collapse example demo](../demo/collapse-example-demo.jpg)
+![Collapse example demo](../../demo/collapse-example-demo.jpg)
 
 ## Multiple targets[¶](https://getbootstrap.com/docs/4.3/components/collapse/#multiple-targets)
 
@@ -44,7 +44,7 @@
 
 ***result:***
 
-![Collapse multiple targets demo](../demo/collapse-multiple-targets-demo.jpg)
+![Collapse multiple targets demo](../../demo/collapse-multiple-targets-demo.jpg)
 
 ## Accordion example[¶](https://getbootstrap.com/docs/4.3/components/collapse/#accordion-example)
 
@@ -59,4 +59,4 @@
 
 ***result:***
 
-![Collapse accordion example demo](../demo/collapse-accordion-example-demo.jpg)
+![Collapse accordion example demo](../../demo/collapse-accordion-example-demo.jpg)
