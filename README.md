@@ -29,55 +29,55 @@ about:
 - **r** (=**Rendering**) - компоненты `ViewComponent`
 
 ## Navs[¶](https://getbootstrap.com/docs/4.3/components/navs/)
-> [readme](./readme/bootstrap/nav/)
+> [readme](./readme/nav/)
 
 ## Navbar[¶](https://getbootstrap.com/docs/4.3/components/navbar/)
-> [readme](./readme/bootstrap/navbar/)
+> [readme](./readme/navbar/)
 
 ## Pagination[¶](https://getbootstrap.com/docs/4.3/components/pagination/)
-> [readme](./readme/bootstrap/pagination)
+> [readme](./readme/pagination)
 
 ## Breadcrumbs[¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
-> [readme](./readme/bootstrap/breadcrumbs/)
+> [readme](./readme/breadcrumbs/)
 
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
-> [progress...](./readme/bootstrap/form/)
+> [progress...](./readme/form/)
 
 ## Input group[¶](https://getbootstrap.com/docs/4.3/components/input-group/)
-> [progress...](./readme/bootstrap/input-group/)
+> [progress...](./readme/input-group/)
 
 ## Buttons[¶](https://getbootstrap.com/docs/4.3/components/buttons/)
-> [progress...](./readme/bootstrap/button/)
+> [progress...](./readme/button/)
 
 ## Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
-> [progress...](./readme/bootstrap/button-group)
+> [progress...](./readme/button-group)
 
 ## Tables[¶](https://getbootstrap.com/docs/4.3/content/tables/)
-> [progress...](./readme/bootstrap/table/)
+> [progress...](./readme/table/)
 
 ## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
-> [progress...](./readme/bootstrap/modal/)
+> [progress...](./readme/modal/)
 
 ## List group[¶](https://getbootstrap.com/docs/4.3/components/list-group/)
-> [progress...](./readme/bootstrap/list-group/)
+> [progress...](./readme/list-group/)
 
 ## Carousel[¶](https://getbootstrap.com/docs/4.3/components/carousel/)
-> [progress...](./readme/bootstrap/carousel/)
+> [progress...](./readme/carousel/)
 
 ## Collapse[¶](https://getbootstrap.com/docs/4.3/components/collapse/)
-> [progress...](./readme/bootstrap/collapse/)
+> [progress...](./readme/collapse/)
 
 ## Dropdowns[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/)
-> [progress...](./readme/bootstrap/dropdown/)
+> [progress...](./readme/dropdown/)
 
 ## Cards[¶](https://getbootstrap.com/docs/4.3/components/card/)
-> [progress...](./readme/bootstrap/card/)
+> [progress...](./readme/card/)
 
 ## Media object[¶](https://getbootstrap.com/docs/4.3/components/media-object/)
-> [progress...](./readme/bootstrap/media-object/)
+> [progress...](./readme/media-object/)
 
 ## Progress[¶](https://getbootstrap.com/docs/4.3/components/progress/)
-> [progress...](./readme/bootstrap/progress/)
+> [progress...](./readme/progress/)
 
 ## Scrollspy[¶](https://getbootstrap.com/docs/4.3/components/scrollspy/)
-> [progress...](./readme/bootstrap/scrollspy)
+> [progress...](./readme/scrollspy)
