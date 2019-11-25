@@ -23,7 +23,7 @@ namespace BootstrapAspDynamicRender.service
         /// <summary>
         /// Найти все элементы меню, которые соответствуют предикату
         /// 
-        /// bool FindPredicateUnit(NavItemModel navItem) { return navItem.ID.ToLower() == activate_nav_by_id; };
+        /// bool FindPredicateUnit(bsNavItem navItem) { return navItem.ID.ToLower() == activate_nav_by_id; };
         /// FindNavigationItems(FindPredicateUnit).ForEach(x => x);
         /// </summary>
         /// <param name="FindPredicateUnit"></param>
