@@ -1,10 +1,10 @@
-﻿@using BootstrapViewComponentsRazorLibrary.Models.bootstrap
-@using BootstrapViewComponentsRazorLibrary.Service.html
-@using BootstrapViewComponentsRazorLibrary.Components.bootstrap
-@using BootstrapViewComponentsRazorLibrary.Service.html.input
-@model StackedInputModel
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.models
+@using BootstrapAspDynamicRender.components
+@model bmStackedInput
 @{
-    LabelInputManager label = new LabelInputManager() { Header = Model.CustomInput.Label, For = Model.CustomInput.Input.ID };
+    hsLabelInput label = new hsLabelInput() { Header = Model.CustomInput.Label, For = Model.CustomInput.Input.ID };
 
     if (Model.CustomInput.LabelSrOnly)
     {
@@ -27,7 +27,7 @@
     }
 }
 @{
-    bool IsCheckedInput = Model.CustomInput.Input.GetType().IsSubclassOf(typeof(AbstractCheckedInputManager));
+    bool IsCheckedInput = Model.CustomInput.Input.GetType().IsSubclassOf(typeof(ahsCheckedInputs));
     string classes = "";
     if (IsCheckedInput)
     {
@@ -56,18 +56,18 @@
                 label.AddCSS("form-check-label");
             }
 
-            @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
+        @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
 
             if (!string.IsNullOrWhiteSpace(label.Header))
             {
-                @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
+        @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
             }
 
-            @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
+        @await Component.InvokeAsync(nameof(brValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
 
             if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
             {
-                <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+        <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
             }
         }
         else
@@ -75,11 +75,11 @@
             Model.CustomInput.Input.RemoveCSS("form-check-input");
 
             string input_class = "form-control";
-            if (Model.CustomInput.Input is InputFileManager)
+            if (Model.CustomInput.Input is hsInputFile)
             {
                 input_class += "-file";
             }
-            else if (Model.CustomInput.Input is InputRangeManager)
+            else if (Model.CustomInput.Input is hsInputRange)
             {
                 input_class += "-range";
             }
@@ -87,7 +87,7 @@
             Model.CustomInput.Input.RemoveCSS(delegate (string x) { return x.StartsWith("form-control") && x != input_class; });
             Model.CustomInput.Input.AddCSS(input_class);
 
-            if (Model.CustomInput.SizeInput != TwinSizingEnum.NULL)
+            if (Model.CustomInput.SizeInput != bmTwinSizingsEnum.NULL)
             {
                 Model.CustomInput.Input.AddCSS("form-control-" + Model.CustomInput.SizeInput.ToString().ToLower());
             }
@@ -98,17 +98,17 @@
 
             if (!string.IsNullOrWhiteSpace(label.Header))
             {
-                if (Model.CustomInput.SizeInput != TwinSizingEnum.NULL)
+                if (Model.CustomInput.SizeInput != bmTwinSizingsEnum.NULL)
                 {
                     label.AddCSS("col-form-label-" + Model.CustomInput.SizeInput.ToString().ToLower());
                 }
-                @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
+        @await Component.InvokeAsync(label.ViewComponentName, new { SetObjectManager = label })
             }
-            @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
-            @await Component.InvokeAsync(nameof(BootstrapRenderValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
+        @await Component.InvokeAsync(Model.CustomInput.Input.ViewComponentName, new { SetObjectManager = Model.CustomInput.Input })
+        @await Component.InvokeAsync(nameof(brValidationFeedback), new { SetMessageValidFeedback = Model.CustomInput.ValidFeedback, SetMessageInvalidFeedback = Model.CustomInput.InvalidFeedback });
             if (!string.IsNullOrWhiteSpace(Model.CustomInput.HelpCaption))
             {
-                <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
+        <small id="@HelpCaptionId" class="form-text text-muted">@Model.CustomInput.HelpCaption</small>
             }
         }
     </div>

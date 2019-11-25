@@ -5,7 +5,7 @@
 
 ```cshtml
 @{
-  LinkBasicManager link = new LinkBasicManager()
+  hsLinkBasic link = new hsLinkBasic()
   {
     Header = "My html web link",
     ID = "link-dom-id",

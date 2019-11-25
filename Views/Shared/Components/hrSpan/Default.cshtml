@@ -1,0 +1,11 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model hsSpan
+<span @Html.Raw(Model.GetStringAttributes())>
+    @Model.Header
+    @if (Model.ChildsCount > 0)
+    {
+        @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model })
+    }
+</span>

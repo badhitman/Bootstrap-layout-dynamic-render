@@ -1,8 +1,0 @@
-﻿@*MIT License (https://github.com/badhitman)*@
-@using BootstrapViewComponentsRazorLibrary.Service
-@using BootstrapViewComponentsRazorLibrary.Components.html
-@using BootstrapViewComponentsRazorLibrary.Service.html
-@model DivBaseManager
-<div @Html.Raw(Model.GetStringAttributes())>
-    @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model })
-</div>

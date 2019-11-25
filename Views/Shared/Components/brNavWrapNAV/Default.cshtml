@@ -1,0 +1,7 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model absNav
+<nav @Html.Raw(Model.GetStringAttributes())>
+    @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model })
+</nav>

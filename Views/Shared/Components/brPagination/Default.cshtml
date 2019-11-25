@@ -1,0 +1,89 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.models
+@using BootstrapAspDynamicRender.models
+@using BootstrapAspDynamicRender.components
+@model bsPagination
+<nav aria-label="Page navigation">
+    @{
+        string ul_css = "";
+
+        if (Model.SiziePagination == bmSizingsEnum.Lg)
+        {
+            ul_css = "pagination-lg";
+        }
+        else if (Model.SiziePagination == bmSizingsEnum.Sm)
+        {
+            ul_css = "pagination-sm";
+        }
+
+
+        if (Model.AlignmentPagination == hmAlignmentEnum.center)
+        {
+            ul_css += " justify-content-center";
+        }
+        else if (Model.AlignmentPagination == hmAlignmentEnum.right)
+        {
+            ul_css += " justify-content-end";
+        }
+    }
+    <ul class="pagination @ul_css">
+        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Back, Title = "Назад", Href = (Model.PageNum <= 1 ? string.Empty : Model.UrlTmpl + (Model.PageNum - 1)) } })
+        @for (int i = 1; Model.CountPages >= i; i++)
+        {
+            if (Model.CountPages > 7)
+            {
+                if (Model.PageNum < 5)
+                {
+                    if (i == Model.CountPages - 1)
+                    {
+                        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Separator, Title = "⁞" } });
+                    }
+                    else if (i <= 5 || i == Model.CountPages)
+                    {
+                        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else if (Model.PageNum > (Model.CountPages - 4))
+                {
+                    if (i == 2)
+                    {
+                        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Separator, Title = "⁞" } });
+                    }
+                    else if (i == 1 || i >= (Model.CountPages - 4))
+                    {
+                        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    if (i == 2 || i == Model.CountPages - 1)
+                    {
+                        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Separator, Title = "⁞" } });
+                    }
+                    else if ((i == 1 || i == Model.CountPages) || (i == Model.PageNum - 1 || i == Model.PageNum || i == Model.PageNum + 1))
+                    {
+                        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+            }
+            else
+            {
+                @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Numb, Title = i.ToString(), Href = Model.UrlTmpl + i.ToString(), IsActive = (Model.PageNum == i) } });
+            }
+        }
+        @await Component.InvokeAsync(nameof(brPaginationButton), new { buttonSet = new bmPaginationButton() { TypeButton = bmPaginationButton.PaginationTypesButton.Next, Title = "Вперёд", Href = (Model.PageNum >= Model.CountPages ? string.Empty : Model.UrlTmpl + (Model.PageNum + 1).ToString()) } })
+    </ul>
+</nav>

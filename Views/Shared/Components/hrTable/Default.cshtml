@@ -1,0 +1,10 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model hsTable
+<table @Html.Raw(Model.GetStringAttributes())>
+    @await Component.InvokeAsync(typeof(hrTableHeader).Name, new { SetObjectManager = Model.TableHeader })
+    <tbody>
+        @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model })
+    </tbody>
+</table>

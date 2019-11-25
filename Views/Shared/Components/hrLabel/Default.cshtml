@@ -1,0 +1,6 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model hsLabelInput
+<label  @Html.Raw(Model.GetStringAttributes())>
+    @Model.Header
+</label>

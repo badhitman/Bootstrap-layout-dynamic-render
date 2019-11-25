@@ -1,0 +1,12 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model absNav
+<nav>
+    <div @Html.Raw(Model.GetStringAttributes())>
+        @foreach (bsNavItem navItem in Model.GetChilds())
+        {
+            @await Component.InvokeAsync(typeof(brNavItemA).Name, new { SetObjectManager = navItem });
+        }
+    </div>
+</nav>

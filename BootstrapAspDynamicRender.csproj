@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>https://github.com/badhitman</Authors>
+	<MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service\html\abstract\AbstractFormFieldsManager.cs" />
+    <Compile Remove="Service\html\abstract\input\valuable\AbstractInputValuableManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="libman.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="readme\bootstrap\nav\" />
+    <Folder Include="readme\bootstrap\navbar\" />
+    <Folder Include="readme\bootstrap\pagination\" />
+    <Folder Include="readme\bootstrap\breadcrumbs\" />
+    <Folder Include="readme\bootstrap\modal\" />
+    <Folder Include="readme\bootstrap\form\" />
+    <Folder Include="readme\bootstrap\input-group\" />
+    <Folder Include="readme\bootstrap\button\" />
+    <Folder Include="readme\bootstrap\button-group\" />
+    <Folder Include="readme\bootstrap\list-group\" />
+    <Folder Include="readme\bootstrap\carousel\" />
+    <Folder Include="readme\bootstrap\collapse\" />
+    <Folder Include="readme\bootstrap\dropdown\" />
+    <Folder Include="readme\bootstrap\card\" />
+    <Folder Include="readme\bootstrap\media-object\" />
+    <Folder Include="readme\bootstrap\progress\" />
+    <Folder Include="readme\bootstrap\scrollspy\" />
+    <Folder Include="readme\bootstrap\table\" />
+  </ItemGroup>
+</Project>

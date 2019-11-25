@@ -1,0 +1,8 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.models
+@model bmPaginationButton
+<li class="page-item disabled">
+    <span class="page-link">
+        @(string.IsNullOrEmpty(Model.Title) ? "⁞" : Model.Title)
+    </span>
+</li>

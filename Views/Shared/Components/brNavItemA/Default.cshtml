@@ -1,0 +1,56 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.models
+
+@model bsNavItem
+@{
+    hsLinkBasic link = new hsLinkBasic() { Header = Model.Header, ID = Model.ID, Href = Model.Href, Target = hmFormTargetsEnum.NULL };
+    link.AddCSS("nav-link");
+    link.AddCSS(Model.ReadCSS());
+    link.SetAttribute(Model.ReadAttributes());
+    if (Model.IsActive)
+    {
+        link.AddCSS("active");
+        string sr_html_injection = "<span class=\"sr-only\">(current)</span>";
+        if (!link.Header.EndsWith(sr_html_injection))
+        {
+            link.Header += " " + sr_html_injection;
+        }
+    }
+
+    if (Model.ChildsCount > 0)
+    {
+        link.AddCSS("dropdown-toggle");
+        link.SetAttribute("data-toggle", "dropdown");
+        link.SetAttribute("role", "button");
+        link.SetAttribute("aria-haspopup", "true");
+        link.SetAttribute("aria-expanded", "false");
+    }
+
+    if (Model.IsDisabled)
+    {
+        link.AddCSS(" disabled");
+        link.Tabindex = -1;
+        link.SetAttribute("aria-disabled", "true");
+    }
+
+    @await Component.InvokeAsync(link.ViewComponentName, new { SetObjectManager = link })
+}
+@if (Model.ChildsCount > 0)
+{
+    <div class="dropdown-menu">
+        @foreach (bsNavItem navItem in Model.GetChilds())
+        {
+            if (navItem is null)
+            {
+                <div class="dropdown-divider"></div> }
+            else
+            {
+                link = new hsLinkBasic() { Header = navItem.Header, ID = navItem.ID, Href = navItem.Href, Target = (navItem.Href == "#" ? hmFormTargetsEnum.NULL : hmFormTargetsEnum._blank) };
+                link.AddCSS("dropdown-item");
+                @await Component.InvokeAsync(link.ViewComponentName, new { SetObjectManager = link })
+            }
+        }
+    </div>
+}

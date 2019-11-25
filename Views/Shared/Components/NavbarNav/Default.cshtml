@@ -1,8 +1,0 @@
-﻿@*MIT License (https://github.com/badhitman)*@
-@using BootstrapViewComponentsRazorLibrary.Service.bootstrap.navbar
-@using BootstrapViewComponentsRazorLibrary.Models
-
-@model NavbarNavManager
-@{
-    @await Component.InvokeAsync(Model.ViewComponentName, new { SetObjectManager = Model });
-}

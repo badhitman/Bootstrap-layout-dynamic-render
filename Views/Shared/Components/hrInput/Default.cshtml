@@ -1,0 +1,12 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model ahsInputs
+@if (Model is hsTextarea)
+{
+    hsTextarea textarea = Model as hsTextarea;
+    <textarea @Html.Raw(textarea.GetStringAttributes())>@textarea.Value</textarea>
+}
+else
+{
+    <input @Html.Raw(Model.GetStringAttributes()) />
+}

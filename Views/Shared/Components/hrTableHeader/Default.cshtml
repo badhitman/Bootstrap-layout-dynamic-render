@@ -1,0 +1,7 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.components
+<thead @Html.Raw(Model.GetStringAttributes())>
+    <tr>
+        @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model })
+    </tr>
+</thead>

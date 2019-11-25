@@ -1,269 +1,83 @@
 # Bootstrap layout dynamic render (by C# ASP.NET Standard)
 Динамическая вёрстка Bootstrap 4.3
 
+about:
+- в проекте присутусвуют классические **asp** компоненты и модели, а так же "управляющие сервисы"
+- компоненты выполняют генерацию **html** разметки в момент вызова, а сервисы позволяют предварительно настроить этот процесс
+- за каждым сервисом закрплён один из компонентов. Имя компонента (для рендеринга коненчого **html**) хранится в поле сервиса `public string ViewComponentName { get; }`
+- готовый сервис можно отрисовать в **Razor .cshtml**: `@await Component.InvokeAsync(MyService.ViewComponentName, new { SetObjectManager = MyService })` (где **MyService** это готовый "управляющий сервис")
+- компонент принимает сервис в виде парамтера и формирует нужный **html**
+
+Пространсва имён (их всего 3) в вашем **Razor.cshtml**:
+```cshtml
+@using BootstrapAspDynamicRender.service // управляющие сервисы
+@using BootstrapAspDynamicRender.models // вспомогательные модели
+@using BootstrapAspDynamicRender.components // рендеринг-компоненты
+```
+
+Именование:
+- все типы в проекте отвечают правилам именования, а точнее правилам префикса по первым двум (или трём) буквам имени типа. Например: `hrOptionSelect`, `bmCustomInput` или `hsButton`
+- каждый тип (будь то компонент, модель или сервис) в своём имени имеет вначале 2 (иногда 3) буквы по которым этот можно определить область применения
+- в случае с абстарктным сервисом префикс состоит из трёх симовлов и начинается с символа `a`. Например: `ahsDisengageableDom`
+
+Обозначение символов префикса:    
+- **a** (=**abstract**) - означает, что класс абстрактный. _примечание: абстрактные типы могут встретиться в "управляющих классах"_
+- **b** (=**Bootstrap**) - генерация **Bootstrap HTML** разметки
+- **h** (=**HTML**) - генерация **native HTML** разметки
+- **s** (=**Service**) - "управляющие сервисы"
+- **m** (=**Model**) - вспомогательные модели. _примечание: для компонент в роли модели (`@model`) обычно выступают "управляющие сервисы"_
+- **r** (=**Rendering**) - компоненты `ViewComponent`
+
 ## Navs[¶](https://getbootstrap.com/docs/4.3/components/navs/)
-> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navs)
+> [readme](./readme/bootstrap/nav/)
 
 ## Navbar[¶](https://getbootstrap.com/docs/4.3/components/navbar/)
-> [readme...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Components/bootstrap/navbar)
+> [readme](./readme/bootstrap/navbar/)
 
 ## Pagination[¶](https://getbootstrap.com/docs/4.3/components/pagination/)
-
-> шаг 1 - обращаем внимание на ![PaginationManager.cs](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/blob/master/Service/PaginationManager.cs) спсиок предустановленных допустимых размерностей страниц пагинатора.
-В данном контексте этот список необходим для определения максимального и минимального размера страницы
-
-```c#
-public List<PageSizeItem> ListSizes
-{
-  get
-  {
-    return new List<PageSizeItem>()
-    {
-      new PageSizeItem(){ Value = 5, Title = "5", Tooltip = "По 5 элементов на странице" },
-      new PageSizeItem(){ Value = 10, Title = "10", Tooltip = "По 10 элементов на странице" },
-      new PageSizeItem(){ Value = 30, Title = "30", Tooltip = "По 30 элементов на странице" },
-      new PageSizeItem(){ Value = 50, Title = "50", Tooltip = "По 50 элементов на странице" },
-      new PageSizeItem(){ Value = 100, Title = "100", Tooltip = "По 100 элементов на странице" }
-    };
-  }
-}
-```
-
-> шаг 2 - в методе контроллера потребуются зарезервировать два параметра для определения состояния пагинатора: `int PageSize = 10, int PageNum = 1`
-
-
-Пример установки состояние пагинатора в методе контроллера:
-```c#
-public IActionResult Index(int PageSize = 10, int PageNum = 1)
-{
-  int count_rows = db.Products.Count();
-  PaginationManager pagination = new PaginationManager().Init(count_rows, this.HttpContext.Request.Path.Value + "?", PageNum, PageSize);
-  IQueryable<ProductModel> products = db.Products;
-  if (PageNum > 1)
-    products = products.Skip(pagination.Skip);
-	
-  ViewBag.Pagination = pagination;
-  return View(products.Take(PageSize).ToList());
-}
-```
-
-Существует так же и другой (перегруженый) метод:
-```c#
-public PaginationManager Init<T>(ref List<T> data_list, string url_tmpl, int _PageNum, int _PageSize)
-```
-Этот метод следует использовать в том случае если заранее у вас есть полный список элементов/строк. Т.е. небыло возможности предварительно применить к выборке оптимизаторы типа: Take или Skip.
-
-***Данная перегрузка самостоятельно модифицирует передаваемый `List<T>`. Он будет усечён до "актуального состояния" в зависимости от сосотояния пагинатора!*** 
-
-Пример использования:
-```c#
-public IActionResult Index(int PageSize = 10, int PageNum = 1)
-{
-  DirectoryInfo d = new DirectoryInfo("Uploads");
-  List<FileInfo> Files = d.GetFiles().OrderBy(c => c.Name).ToList();
-	
-  PaginationManager pagination = new PaginationManager().Init(ref Files, this.HttpContext.Request.Path.Value + "?", PageNum, PageSize);
-  ViewBag.Pagination = pagination;
-  return View(Files);
-}
-```
-
-> шаг 3 - Теперь в .cshtml 
-
-```cshtml
-@{
-  ViewData["Title"] = "Заказы клиента";
-  PaginationManager pagination = ViewBag.Pagination;
-}
-
-@if (!(pagination is null) && pagination is PaginationManager)
-{
-  <p>
-    @await Component.InvokeAsync(typeof(Pagination).Name, new { pagination = pagination })
-  </p>
-}
-```
-
-###### Результаты:
-
-![Bootstrap - pagination demo 1](./demo/pagination.png)
-
-![Bootstrap - pagination demo 2](./demo/pagination2.png)
-
-![Bootstrap - pagination demo 3](./demo/pagination3.png)
-
+> [readme](./readme/bootstrap/pagination)
 
 ## Breadcrumbs[¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
-Пример использования в .cshtml
-```cshtml
-@using BootstrapViewComponents
-
-<p>
-  @{
-    List<Breadcrumbs.BreadcrumbItem> BreadcrumbItems = new List<Breadcrumbs.BreadcrumbItem>(){
-      new Breadcrumbs.BreadcrumbItem(){ text = "Пользователи", href = "/Users"},
-      new Breadcrumbs.BreadcrumbItem(){ text = "Иван Петров", href = "/Users/Details/1"},
-      new Breadcrumbs.BreadcrumbItem(){ text = "Журнал операций"}
-    };
-  }
-  @await Component.InvokeAsync(typeof(BootstrapViewComponents.Breadcrumbs), new { BreadcrumbItems = BreadcrumbItems })
-</p>
-```
-
-###### Результат:
-
-![Bootstrap - breadcrumb demo](./demo/breadcrumb.png)
+> [readme](./readme/bootstrap/breadcrumbs/)
 
 ## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
-
-> Используйте Bootstrap JavaScript **modal** плагин для добавления диалоговых окон на ваш сайт для лайтбоксов, уведомлений пользователей или полностью пользовательского контента.
-
-#### How it works[¶](https://getbootstrap.com/docs/4.3/components/modal/#how-it-works)
-
-> Прежде чем начать работу с компонентом **modal** Bootstrap, обязательно прочитайте следующее:
-
-- Модальные объекты строятся с использованием **HTML**, **CSS** и **JavaScript**. Они расположены поверх всего остального в документе и отключают прокрутку `<body>`, чтобы вместо этого прокручивалось модальное содержимое.
-- Кликните мышкой за границами модального объекта и модальный объект автоматически закроется.
-- Bootstrap поддерживает только одно модальное окно за раз. Вложенные модальные объекты не поддерживаются.
-- Модальные объекты используют `position: fixed;`, в связи с чем рендеринг иногда может иметь некоторые особенности. По возможности разместите свой модальный HTML-код на верхнем уровне, чтобы избежать возможных помех со стороны других элементов. Вы, вероятно, столкнетесь с проблемами при вложении **.modal** внутри другого `position: fixed;` элемента.
-- Из-за `position: fixed;`, есть некоторые нюансы с использованием модальных объектов на мобильных устройствах. Дополнительную информацию см. [В документации по поддержке браузера](https://getbootstrap.com/docs/4.3/getting-started/browsers-devices/#modals-and-dropdowns-on-mobile).
-- Из-за определённой семантики HTML5, [HTML атрибут **autofocus**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-autofocus) не имеет никакого эффекта в модальных объектах Bootstrap. Чтобы достичь того же эффекта, используйте некоторые пользовательские JavaScript:
-
-```javascript
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-```
-
-> Анимационный эффект этого компонента зависит от **prefers-reduced-motion media query**.
-См. [раздел в документации](https://getbootstrap.com/docs/4.3/getting-started/accessibility/#reduced-motion).
-
-## Modal components[¶](https://getbootstrap.com/docs/4.3/components/modal/#modal-components)
-
-> Ниже приведен статический пример модального объекта (это означает, что его позиция и отображение были переопределены).
-Включены заголовок, тело (требуется для заполнения контентом) и нижний колонтитул (необязательно).
-В заголовке модального окна есть кнопка деактивации.
-
-```cshtml
-@{
-
-}
-```
-
-***result:***
-
-![Modal demo](../../../../demo/modal-demo.jpg)
-
-## Scrolling long content[¶](https://getbootstrap.com/docs/4.3/components/modal/#scrolling-long-content)
-
-> Когда модальное окно становятся слишком длинными для экрана устройства пользователя, оно прокручиваются целиком и независимо от самой страницы.
-
-> Вы можете создать прокручиваемое модальное окно, которое позволяет прокручивать непосредственно модальное тело, добавив **.modal-dialog-scrollable** в **.modal-dialog**.
-
-```cshtml
-@{
-
-}
-```
-
-***result:***
-
-![Modal demo](../../../../demo/modal-scrollable-modal-body-demo.jpg)
-
-## Vertically centered[¶](https://getbootstrap.com/docs/4.3/components/modal/#vertically-centered)
-
-> Добавьте **.modal-dialog-centtered** в **.modal-dialog**, чтобы вертикально центрировать модальное окно.
-
-```cshtml
-@{
-
-}
-```
-
-***result:***
-
-![Modal demo](../../../../demo/modal-vertically-centered-demo.jpg)
-
-## Tooltips and popovers[¶](https://getbootstrap.com/docs/4.3/components/modal/#tooltips-and-popovers)
-
-> При необходимости в модальных окнах могут быть размещены всплывающие подсказки и всплывающие окна.
-Когда модальные окна закрыты, любые всплывающие подсказки и всплывающие окна также автоматически удаляются.
-
-## Using the grid[¶](https://getbootstrap.com/docs/4.3/components/modal/#using-the-grid)
-
-> Используйте сеточную систему Bootstrap в теле модального окна, вложив **.container-liquid** в **.modal-body**.
-Затем используйте обычные классы системы сетки, как обычно.
-
-```cshtml
-@{
-
-}
-```
-
-## Varying modal content[¶](https://getbootstrap.com/docs/4.3/components/modal/#varying-modal-content)
-
-> У вас есть несколько кнопок, которые должны запускать одно и тот же модальное окно со слегка отличающимся содержимым?
-Используйте атрибуты **event.relatedTarget** и HTML `data- *` (возможно, через jQuery), чтобы варьировать содержимое модального окна в зависимости от того, какая кнопка была нажата.
-
-```cshtml
-@{
-
-}
-```
-
-## Optional sizes[¶](https://getbootstrap.com/docs/4.3/components/modal/#optional-sizes)
-
-> Модальные окна опционально имеют три размера, доступные через классы модификаторов для размещения в диалоге **.modal**.
-Эти размеры входят в определенные точки останова, чтобы избежать горизонтальных полос прокрутки на более узких окнах просмотра.
-
-- _Small_ **.modal-sm** - 300px
-- _Default_ None - 500px
-- _Large_ **.modal-lg** - 800px
-- _Extra large_ **.modal-xl** - 1140px
-
-> Модальное окно по умолчанию (без класса модификаторов) составляет «средний» размер.
-
-```cshtml
-@{
-
-}
-```
+> [readme](./readme/bootstrap/modal/)
 
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/forms)
+> [progress...](./readme/bootstrap/form/)
 
 ## Input group[¶](https://getbootstrap.com/docs/4.3/components/input-group/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/input/group)
+> [progress...](./readme/bootstrap/input-group/)
 
 ## Buttons[¶](https://getbootstrap.com/docs/4.3/components/buttons/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button)
+> [progress...](./readme/bootstrap/button/)
 
 ## Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/button/group)
+> [progress...](./readme/bootstrap/button-group)
 
 ## List group[¶](https://getbootstrap.com/docs/4.3/components/list-group/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/list)
+> [progress...](./readme/bootstrap/list-group/)
 
 ## Carousel[¶](https://getbootstrap.com/docs/4.3/components/carousel/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/carousel)
+> [progress...](./readme/bootstrap/carousel/)
 
 ## Collapse[¶](https://getbootstrap.com/docs/4.3/components/collapse/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/collapse)
+> [progress...](./readme/bootstrap/collapse/)
 
 ## Dropdowns[¶](https://getbootstrap.com/docs/4.3/components/dropdowns/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/dropdowns)
+> [progress...](./readme/bootstrap/dropdown/)
 
 ## Cards[¶](https://getbootstrap.com/docs/4.3/components/card/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/cards)
+> [progress...](./readme/bootstrap/card/)
 
 ## Media object[¶](https://getbootstrap.com/docs/4.3/components/media-object/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/media)
+> [progress...](./readme/bootstrap/media-object/)
 
 ## Progress[¶](https://getbootstrap.com/docs/4.3/components/progress/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/progress)
+> [progress...](./readme/bootstrap/progress/)
 
 ## Scrollspy[¶](https://getbootstrap.com/docs/4.3/components/scrollspy/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/scrollspy)
+> [progress...](./readme/bootstrap/scrollspy)
 
 ## Tables[¶](https://getbootstrap.com/docs/4.3/content/tables/)
-> [progress...](https://github.com/badhitman/BootstrapViewComponentsRazorLibrary/tree/master/Service/bootstrap/table)
+> [progress...](./readme/bootstrap/table/)

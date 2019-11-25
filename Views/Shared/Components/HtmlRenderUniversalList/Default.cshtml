@@ -1,8 +1,0 @@
-﻿@*MIT License (https://github.com/badhitman)*@
-@using BootstrapViewComponentsRazorLibrary.Service.html
-@using BootstrapViewComponentsRazorLibrary.Service
-@model AbstractDomManager[]
-@foreach (AbstractDomManager render in Model)
-{
-    @await Component.InvokeAsync(render.ViewComponentName, new { SetObjectManager = render })
-}

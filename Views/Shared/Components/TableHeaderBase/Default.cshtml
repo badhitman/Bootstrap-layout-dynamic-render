@@ -1,8 +1,0 @@
-﻿@*MIT License (https://github.com/badhitman)*@
-@using BootstrapViewComponentsRazorLibrary.Service.html.table
-@using BootstrapViewComponentsRazorLibrary.Components.html
-<thead @Html.Raw(Model.GetStringAttributes())>
-    <tr>
-        @await Component.InvokeAsync(typeof(HtmlRenderUniversalList).Name, new { SetObjectManager = Model })
-    </tr>
-</thead>

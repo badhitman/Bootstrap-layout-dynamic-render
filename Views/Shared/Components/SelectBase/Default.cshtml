@@ -1,9 +1,0 @@
-﻿@*MIT License (https://github.com/badhitman)*@
-@using BootstrapViewComponentsRazorLibrary.Service.html.input
-@model InputSelectManager
-<select @Html.Raw(Model.GetStringAttributes())>
-    @foreach (InputOptionSelectManager opt in Model.Options)
-    {
-        @await Component.InvokeAsync(opt.ViewComponentName, new { SetObjectManager = opt })
-    }
-</select>

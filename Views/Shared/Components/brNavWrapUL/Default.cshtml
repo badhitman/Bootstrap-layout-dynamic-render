@@ -1,0 +1,25 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model absCoreNav
+<ul @Html.Raw(Model.GetStringAttributes())>
+    @foreach (bsNavItem navItem in Model.GetChilds())
+    {
+        if (Model is bsNavJavaScriptBehavior)
+        {
+            navItem.SetAttribute("data-toggle", "tab");
+            navItem.SetAttribute("role", "tab");
+            navItem.SetAttribute("aria-controls", navItem.ID);
+
+            if (navItem.IsActive)
+            {
+                navItem.SetAttribute("aria-selected", "true");
+            }
+        }
+
+        string li_class_style = "nav-item" + (navItem.ChildsCount > 0 ? " dropdown" : string.Empty);
+        <li class="@li_class_style">
+            @await Component.InvokeAsync(typeof(brNavItemA).Name, new { SetObjectManager = navItem })
+        </li>
+    }
+</ul>

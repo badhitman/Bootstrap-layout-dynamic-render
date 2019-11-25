@@ -1,0 +1,37 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.components
+@using BootstrapAspDynamicRender.models
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model bsNavbar
+<nav @Html.Raw(Model.GetStringAttributes())>
+    @if (Model.NavbarBrand != null && Model.NavbarBrand.NavbarBrandPosition == bmNavbarBrandPositionsEnum.Left)
+    {
+        @await Component.InvokeAsync(typeof(brNavbarBrand).Name, new { SetObjectManager = Model.NavbarBrand })
+    }
+    @if (Model.NavbarActions != null && Model.NavbarActions.ChildsCount > 0 && Model.NavbarActions.IsHidesCollapse)
+    {
+        @await Component.InvokeAsync(typeof(brNavbarToggler).Name, new { SetObjectManager = new bsNavbarToggler() { TargetName = Model.CollapseTarget } })
+    }
+    @if (Model.NavbarBrand != null && Model.NavbarBrand.NavbarBrandPosition == bmNavbarBrandPositionsEnum.Right)
+    {
+        @await Component.InvokeAsync(typeof(brNavbarBrand).Name, new { SetObjectManager = Model.NavbarBrand })
+    }
+    @if (Model.NavbarActions != null && Model.NavbarActions.ChildsCount > 0)
+    {
+        @if (Model.NavbarActions.IsHidesCollapse)
+        {
+            <div class="collapse navbar-collapse" id="@Model.CollapseTarget">
+                @if (Model.NavbarBrand != null && Model.NavbarBrand.NavbarBrandPosition == bmNavbarBrandPositionsEnum.Hides)
+                {
+                    @await Component.InvokeAsync(typeof(brNavbarBrand).Name, new { SetObjectManager = Model.NavbarBrand })
+                }
+                @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model.NavbarActions })
+            </div>
+        }
+        else
+        {
+            @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model.NavbarActions })
+        }
+    }
+</nav>

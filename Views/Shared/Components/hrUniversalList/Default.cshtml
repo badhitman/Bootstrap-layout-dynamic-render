@@ -1,0 +1,7 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model ahsDom[]
+@foreach (ahsDom render in Model)
+{
+    @await Component.InvokeAsync(render.ViewComponentName, new { SetObjectManager = render })
+}

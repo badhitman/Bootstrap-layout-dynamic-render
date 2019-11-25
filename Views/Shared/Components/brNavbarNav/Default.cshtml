@@ -1,0 +1,7 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+
+@model bsNavbarNav
+@{
+    @await Component.InvokeAsync(Model.ViewComponentName, new { SetObjectManager = Model });
+}

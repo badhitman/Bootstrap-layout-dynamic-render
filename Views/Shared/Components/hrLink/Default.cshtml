@@ -1,0 +1,6 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model hsLinkBasic
+<a @Html.Raw(Model.GetStringAttributes())>
+    @Html.Raw(Model.Header)
+</a>

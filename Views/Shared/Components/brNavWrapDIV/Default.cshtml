@@ -1,0 +1,10 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
+@model absCoreNav
+<div @Html.Raw(Model.GetStringAttributes())>
+    @if (Model.ChildsCount > 0)
+    {
+        @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model })
+    }
+</div>

@@ -1,0 +1,9 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model hsInputSelect
+<select @Html.Raw(Model.GetStringAttributes())>
+    @foreach (hsInputOptionSelect opt in Model.Options)
+    {
+        @await Component.InvokeAsync(opt.ViewComponentName, new { SetObjectManager = opt })
+    }
+</select>

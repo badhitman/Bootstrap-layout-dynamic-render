@@ -1,0 +1,6 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model bsNavbarText
+<span @Html.Raw(Model.GetStringAttributes())>
+    @Html.Raw(Model.Header)
+</span>

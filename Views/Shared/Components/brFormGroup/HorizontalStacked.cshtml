@@ -1,0 +1,15 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.models
+@model bsFormGroupHorizontalStacked
+<fieldset class="form-group">
+    <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">@Model.HeaderInputsGroup</legend>
+        <div class="col-sm-10">
+            @foreach (bmCustomInput v in Model.CustomInputs)
+            {
+                await Html.RenderPartialAsync("StackedInput", new bmStackedInput() { CustomInput = v, IsInline = Model.IsInline });
+            }
+        </div>
+    </div>
+</fieldset>
