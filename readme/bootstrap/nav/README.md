@@ -56,8 +56,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.nav;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -79,8 +80,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -97,8 +99,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -118,8 +121,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -138,13 +142,14 @@
   // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
   // таким образом добавив класс "flex-md-column" мы сообщаем, что класс "flex-column" (добавдляемый по умолчанию для вертикального позиционирования блока навигации), не будет добавлен
 
-    nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
-    nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
-    nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
-    nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
-    nav.NavWrapperType = bmNavWrappersEnum.ul;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
+  nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:*** сравнение отображения на разных устройствах (Монитор ПК и дисплей iPhone 6/7/8)
@@ -162,13 +167,14 @@
   // дело в том что стандартный класс стилей для вертиклаьного позиционирования flex-column добавляется только в случае если спсиок назначеных стилей отвечает условию: !<CSS Styles List>.Any(x => x.StartsWith("flex-") && x.EndsWith("-column"))
   // таким образом добавив класс "flex-md-column" мы сообщаем, что класс "flex-column" (добавдляемый по умолчанию для вертикального позиционирования блока навигации), не будет добавлен
 
-    nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
-    nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
-    nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
-    nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
-    nav.NavWrapperType = bmNavWrappersEnum.nav;
+  nav.AddNav(SetNavHeader: "Active", SetNavHref: "#", SetNavId: "nav-home-dom-id").IsActive = true;
+  nav.AddNav("Link", "#", "nav-item-link-first-dom-id");
+  nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
+  nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
+  nav.NavWrapperType = bmNavWrappersEnum.nav;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -193,8 +199,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -212,8 +219,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.nav;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -236,8 +244,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.nav;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -256,8 +265,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -278,8 +288,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.nav;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -297,8 +308,9 @@
   nav.AddNav("Link", "#", "nav-item-link-second-dom-id");
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:***
@@ -331,8 +343,9 @@
   nav.ChildsAddCSS("flex-sm-fill text-sm-center");
 
   nav.NavWrapperType = bmNavWrappersEnum.nav;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 > В приведенном ниже примере наш навигатор будет уложен на самую низкую **breakpoint**, а затем адаптируется к горизонтальной компоновке, которая заполняет доступную ширину, начиная с наименьшей **breakpoint**.
@@ -359,8 +372,9 @@
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
 
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -385,8 +399,9 @@
   nav.AddNav("Disabled", "#", "nav-item-disabled-dom-id").IsDisabled = true;
 
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
 </header>
 ```
 ***result:*** _под-меню свёрнуто (слева) и развёрнуто (справа)_
@@ -409,8 +424,9 @@
 
   nav.IsFadeStyle = true;
   nav.NavWrapperType = bmNavWrappersEnum.ul;
+
+  @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 }
-@await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
 </header>
 ```
 ***result:***
@@ -424,22 +440,23 @@
 
 ```cshtml
 <header>
-  @{
-    // test content for tabs
-    string contetnt_home = "Home! Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.";
-    string contetnt_profile = "Profile! Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.";
-    string contetnt_contact = "Contact! Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.";
+@{
+  // test content for tabs
+  string contetnt_home = "Home! Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.";
+  string contetnt_profile = "Profile! Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.";
+  string contetnt_contact = "Contact! Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.";
 
-    NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu");
-    nav.IsTabsStyle =  true;
-    nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
-    nav.AddNav("Profile", "nav-profile", contetnt_profile);
-    nav.AddNav("Contact", "nav-contact", contetnt_contact);
+  NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu");
+  nav.IsTabsStyle =  true;
+  nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
+  nav.AddNav("Profile", "nav-profile", contetnt_profile);
+  nav.AddNav("Contact", "nav-contact", contetnt_contact);
 
-    nav.IsFadeStyle = true;
-    nav.NavWrapperType = bmNavWrappersEnum.nav;
-  }
+  nav.IsFadeStyle = true;
+  nav.NavWrapperType = bmNavWrappersEnum.nav;
+  
   @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = false })
+}
 </header>
 ```
 ***result:***
@@ -454,20 +471,21 @@
 
 ```cshtml
 <header>
-  @{
-    string contetnt_home = "Home! Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.";
-    string contetnt_profile = "Profile! Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.";
-    string contetnt_contact = "Contact! Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.";
+@{
+  string contetnt_home = "Home! Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.";
+  string contetnt_profile = "Profile! Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.";
+  string contetnt_contact = "Contact! Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.";
 
-    NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu");
-    nav.NavigationOrientation = bmNavOrientationsEnum.Vertically;
-    nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
-    nav.AddNav("Profile", "nav-profile", contetnt_profile);
-    nav.AddNav("Contact", "nav-contact", contetnt_contact);
-    nav.IsFadeStyle = true;
-    nav.NavWrapperType = bmNavWrappersEnum.ul;
-  }
+  NavJavaScriptBehaviorManager nav = new NavJavaScriptBehaviorManager("top-menu");
+  nav.NavigationOrientation = bmNavOrientationsEnum.Vertically;
+  nav.AddNav("Home", "nav-home", contetnt_home).IsActive = true;
+  nav.AddNav("Profile", "nav-profile", contetnt_profile);
+  nav.AddNav("Contact", "nav-contact", contetnt_contact);
+  nav.IsFadeStyle = true;
+  nav.NavWrapperType = bmNavWrappersEnum.ul;
+  
   @await Component.InvokeAsync(nav.ViewComponentName, new { SetObjectManager = nav, SetPillsTheme = true })
+}
 </header>
 ```
 
