@@ -124,9 +124,85 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ```cshtml
 @{
+  hsDiv simple_fluid_div = new hsDiv().AddCSS("container-fluid") as hsDiv;
+  ////////////////////////////////////////
+  //
+  hsDiv simple_row_div = new hsDiv().AddCSS("row") as hsDiv;
+  hsDiv simple_col_div = new hsDiv().AddCSS("col-md-4") as hsDiv;
+  simple_col_div.AddChild(new hsRaw(".col-md-4"));
+  simple_row_div.AddChild(simple_col_div);
+  //
+  simple_col_div = new hsDiv().AddCSS("col-md-4 ml-auto") as hsDiv;
+  simple_col_div.AddChild(new hsRaw(".col-md-4 .ml-auto"));
+  simple_row_div.AddChild(simple_col_div);
+  //
+  simple_fluid_div.AddChild(simple_row_div);
+  //
+  ////////////////////////////////////////
 
+  ////////////////////////////////////////
+  //
+  simple_row_div = new hsDiv().AddCSS("row") as hsDiv;
+  simple_col_div = new hsDiv().AddCSS("col-md-3 ml-auto") as hsDiv;
+  simple_col_div.AddChild(new hsRaw(".col-md-3 .ml-auto"));
+  simple_row_div.AddChild(simple_col_div);
+  //
+  simple_col_div = new hsDiv().AddCSS("col-md-2 ml-auto") as hsDiv;
+  simple_col_div.AddChild(new hsRaw(".col-md-2 .ml-auto"));
+  simple_row_div.AddChild(simple_col_div);
+  //
+  simple_fluid_div.AddChild(simple_row_div);
+  //
+  ////////////////////////////////////////
+
+  ////////////////////////////////////////
+  //
+  simple_row_div = new hsDiv().AddCSS("row") as hsDiv;
+  simple_col_div = new hsDiv().AddCSS("col-md-6 ml-auto") as hsDiv;
+  simple_col_div.AddChild(new hsRaw(".col-md-6 .ml-auto"));
+  simple_row_div.AddChild(simple_col_div);
+  //
+  simple_fluid_div.AddChild(simple_row_div);
+  //
+  ////////////////////////////////////////
+
+  ////////////////////////////////////////
+  //
+  simple_row_div = new hsDiv().AddCSS("row") as hsDiv;
+  simple_col_div = new hsDiv().AddCSS("col-sm-9") as hsDiv;
+  simple_col_div.AddChild(new hsRaw("Level 1: .col-sm-9"));
+
+  hsDiv simple_sub_row_div = new hsDiv().AddCSS("row") as hsDiv;
+  hsDiv simple_sub_col_div = new hsDiv().AddCSS("col-8 col-sm-6") as hsDiv;
+  simple_sub_col_div.AddChild(new hsRaw("Level 2: .col-8 .col-sm-6"));
+  simple_sub_row_div.AddChild(simple_sub_col_div);
+  //
+  simple_sub_col_div = new hsDiv().AddCSS("col-8 col-sm-6") as hsDiv;
+  simple_sub_col_div.AddChild(new hsRaw("Level 2: .col-4 .col-sm-6"));
+  simple_sub_row_div.AddChild(simple_sub_col_div);
+  simple_col_div.AddChild(simple_sub_row_div);
+
+  simple_row_div.AddChild(simple_col_div);
+  //
+  simple_fluid_div.AddChild(simple_row_div);
+  //
+  ////////////////////////////////////////
+
+  bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "Modal title", IsVerticallyСentered = true };
+  modal.FooterExtButtons.Add(bsModal.GetDefaultButtonDismissFooter());
+  modal.FooterExtButtons.Add(new bsButton("Save changes") { BackgroundColorTheme = bmBackgroundColorThemesEnum.primary });
+  // <!-- Button trigger modal -->
+  bsButton button = bsModal.GetDefaultButtonTriggerModal(modal.ID);
+  @await Component.InvokeAsync(button.ViewComponentName, new { SetObjectManager = button })
+
+  modal.AddChild(simple_fluid_div);
+  @await Component.InvokeAsync(modal.ViewComponentName, new { SetObjectManager = modal })
 }
 ```
+
+***result:***
+
+![Modal vertically centered demo](../demo/modal-grid-demo.jpg)
 
 ## Varying modal content[¶](https://getbootstrap.com/docs/4.3/components/modal/#varying-modal-content)
 
