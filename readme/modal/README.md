@@ -104,7 +104,7 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ```cshtml
 @{
-
+  bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "Modal title", IsVerticallyСentered = true };
 }
 ```
 

@@ -23,6 +23,10 @@ namespace BootstrapAspDynamicRender.service
 
         public bool IsModalDialogScrollable { get; set; } = true;
 
+        public bool IsVerticallyСentered { get; set; } = false;
+
+        //Vertically centered
+
         /// <summary>
         /// Кнопка закрытия модлального окна
         /// </summary>
