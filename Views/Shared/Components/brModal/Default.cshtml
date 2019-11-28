@@ -8,7 +8,7 @@
 
 }
 <div @Html.Raw(Model.GetStringAttributes()) role="dialog" aria-labelledby="@HeaderDomId" aria-hidden="true">
-    <div class="modal-dialog@(Model.MaxModalSize == bmModalSizesEnum.Default?"":" modal-"+Model.MaxModalSize.ToString())" role="document">
+    <div class="modal-dialog@(Model.MaxModalSize == bmModalSizesEnum.Default?"":" modal-"+Model.MaxModalSize.ToString())@(Model.IsModalDialogScrollable ? " modal-dialog-scrollable" : "")" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="@HeaderDomId">@Html.Raw(Model.Header)</h5>

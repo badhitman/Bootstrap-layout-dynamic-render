@@ -21,6 +21,8 @@ namespace BootstrapAspDynamicRender.service
 
         public bool IsFadeAnimation { get; set; } = true;
 
+        public bool IsModalDialogScrollable { get; set; } = true;
+
         /// <summary>
         /// Кнопка закрытия модлального окна
         /// </summary>

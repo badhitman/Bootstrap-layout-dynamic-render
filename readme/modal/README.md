@@ -29,13 +29,14 @@ $('#myModal').on('shown.bs.modal', function () {
 ```cshtml
 @{
   bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "Modal title" };
-  modal.FooterExtButtons.Add(bsModal.GetDefaultButtonDismissFooter());
-  modal.FooterExtButtons.Add(new bsButton("Save changes") { BackgroundColorTheme = bmBackgroundColorThemesEnum.primary });
 
+  // <!-- Button trigger modal -->
   bsButton button = bsModal.GetDefaultButtonTriggerModal(modal.ID);
   @await Component.InvokeAsync(button.ViewComponentName, new { SetObjectManager = button })
 
-  hsP paragraf = new hsP() { Text = "Modal body text goes here." };
+  modal.FooterExtButtons.Add(bsModal.GetDefaultButtonDismissFooter());
+  modal.FooterExtButtons.Add(new bsButton("Save changes") { BackgroundColorTheme = bmBackgroundColorThemesEnum.primary });
+  hsP paragraf = new hsP("Modal body text goes here.");
   modal.AddChild(paragraf);
   @await Component.InvokeAsync(modal.ViewComponentName, new { SetObjectManager = modal })
 }
@@ -71,11 +72,23 @@ $('#myModal').on('shown.bs.modal', function () {
 
 > Когда модальное окно становятся слишком длинными для экрана устройства пользователя, оно прокручиваются целиком и независимо от самой страницы.
 
+```cshtml
+@{
+  bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "Modal title", IsModalDialogScrollable = false };
+}
+```
+
+***result:***
+
+![Modal scrolling long content body demo](../demo/modal-scrollable-win-demo.jpg)
+
+![Modal scrolling long content body demo](../demo/modal-scrollable-win-demo-2.jpg)
+
 > Вы можете создать прокручиваемое модальное окно, которое позволяет прокручивать непосредственно модальное тело, добавив **.modal-dialog-scrollable** в **.modal-dialog**.
 
 ```cshtml
 @{
-
+  bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "Modal title", IsModalDialogScrollable = true };
 }
 ```
 

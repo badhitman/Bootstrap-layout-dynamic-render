@@ -10,5 +10,10 @@ namespace BootstrapAspDynamicRender.service
         public override string ViewComponentName => nameof(hrP);
 
         public string Text { get; set; }
+
+        public hsP(string SetText)
+        {
+            Text = SetText;
+        }
     }
 }
