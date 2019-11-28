@@ -19,7 +19,7 @@ namespace BootstrapAspDynamicRender.service
 
         public bmModalSizesEnum MaxModalSize { get; set; } = bmModalSizesEnum.Default;
 
-        public bool IsFadeAnimation { get; set; } = false;
+        public bool IsFadeAnimation { get; set; } = true;
 
         /// <summary>
         /// Кнопка закрытия модлального окна
@@ -50,6 +50,9 @@ namespace BootstrapAspDynamicRender.service
         /// <returns></returns>
         public static bsButton GetDefaultButtonTriggerModal(string ModalId, string ButtonHeader = "Open", bmBackgroundColorThemesEnum BackgroundColorTheme = bmBackgroundColorThemesEnum.secondary, bool SetOutlineStyle = false)
         {
+            if (ModalId.StartsWith("#"))
+                ModalId = ModalId.Substring(1);
+
             bsButton BootstrapButton = new bsButton(ButtonHeader)
             {
                 BackgroundColorTheme = BackgroundColorTheme,

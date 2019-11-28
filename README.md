@@ -52,11 +52,11 @@ about:
 ## Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
 > [progress...](./readme/button-group)
 
-## Tables[¶](https://getbootstrap.com/docs/4.3/content/tables/)
-> [progress...](./readme/table/)
-
 ## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
 > [progress...](./readme/modal/)
+
+## Tables[¶](https://getbootstrap.com/docs/4.3/content/tables/)
+> [progress...](./readme/table/)
 
 ## List group[¶](https://getbootstrap.com/docs/4.3/components/list-group/)
 > [progress...](./readme/list-group/)

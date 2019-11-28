@@ -28,13 +28,44 @@ $('#myModal').on('shown.bs.modal', function () {
 
 ```cshtml
 @{
+  bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "Modal title" };
+  modal.FooterExtButtons.Add(bsModal.GetDefaultButtonDismissFooter());
+  modal.FooterExtButtons.Add(new bsButton("Save changes") { BackgroundColorTheme = bmBackgroundColorThemesEnum.primary });
 
+  bsButton button = bsModal.GetDefaultButtonTriggerModal(modal.ID);
+  @await Component.InvokeAsync(button.ViewComponentName, new { SetObjectManager = button })
+
+  hsP paragraf = new hsP() { Text = "Modal body text goes here." };
+  modal.AddChild(paragraf);
+  @await Component.InvokeAsync(modal.ViewComponentName, new { SetObjectManager = modal })
 }
 ```
 
 ***result:***
 
 ![Modal demo](../demo/modal-demo.jpg)
+
+```html
+<div id="modal-dom-id" role="dialog" class="modal fade show" aria-labelledby="modal-dom-id-ModalLabel" style="display: block;" aria-modal="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-dom-id-ModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button data-dismiss="modal" type="button" class="btn btn-secondary">Cancel</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
 ## Scrolling long content[¶](https://getbootstrap.com/docs/4.3/components/modal/#scrolling-long-content)
 

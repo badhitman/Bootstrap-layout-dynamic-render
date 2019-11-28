@@ -1,12 +1,14 @@
 ﻿////////////////////////////////////////////////
 // https://github.com/badhitman
 ////////////////////////////////////////////////
-using System;
+using BootstrapAspDynamicRender.components;
 
 namespace BootstrapAspDynamicRender.service
 {
     public class hsP : ahsNestedTools
     {
-        public override string ViewComponentName => throw new NotImplementedException();
+        public override string ViewComponentName => nameof(hrP);
+
+        public string Text { get; set; }
     }
 }
