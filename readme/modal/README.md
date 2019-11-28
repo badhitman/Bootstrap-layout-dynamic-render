@@ -207,13 +207,55 @@ $('#myModal').on('shown.bs.modal', function () {
 ## Varying modal content[¶](https://getbootstrap.com/docs/4.3/components/modal/#varying-modal-content)
 
 > У вас есть несколько кнопок, которые должны запускать одно и тот же модальное окно со слегка отличающимся содержимым?
-Используйте атрибуты **event.relatedTarget** и HTML `data- *` (возможно, через jQuery), чтобы варьировать содержимое модального окна в зависимости от того, какая кнопка была нажата.
+Используйте атрибуты **event.relatedTarget** и HTML `data-*` (возможно, через jQuery), чтобы варьировать содержимое модального окна в зависимости от того, какая кнопка была нажата.
 
 ```cshtml
 @{
+  bsModal modal = new bsModal() { ID = "modal-dom-id", Header = "New message", IsVerticallyСentered = true };
+  modal.FooterExtButtons.Add(bsModal.GetDefaultButtonDismissFooter());
+  modal.FooterExtButtons.Add(new bsButton("Save changes") { BackgroundColorTheme = bmBackgroundColorThemesEnum.primary });
 
+  bsButton button = bsModal.GetDefaultButtonTriggerModal(modal.ID, "Open modal for @mdo", bmBackgroundColorThemesEnum.primary).SetAttribute("data-whatever", "@mdo") as bsButton;
+  @await Component.InvokeAsync(button.ViewComponentName, new { SetObjectManager = button })
+  //
+  button = bsModal.GetDefaultButtonTriggerModal(modal.ID, "Open modal for @fat", bmBackgroundColorThemesEnum.primary).SetAttribute("data-whatever", "@fat") as bsButton;
+  @await Component.InvokeAsync(button.ViewComponentName, new { SetObjectManager = button })
+  //
+  button = bsModal.GetDefaultButtonTriggerModal(modal.ID, "Open modal for @getbootstrap", bmBackgroundColorThemesEnum.primary).SetAttribute("data-whatever", "@getbootstrap") as bsButton;
+  @await Component.InvokeAsync(button.ViewComponentName, new { SetObjectManager = button })
+
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
+
+  bsFormGroupSingle SingleGroup = new bsFormGroupSingle();
+  SingleGroup.CustomInput.Label = "Recipient:";
+  SingleGroup.CustomInput.Input = new hsInputText() { ID = "recipient-name" };
+  form.AddChild(SingleGroup);
+
+  SingleGroup = new bsFormGroupSingle();
+  SingleGroup.CustomInput.Label = "Message:";
+  SingleGroup.CustomInput.Input = new hsTextarea() { ID = "message-text", Placeholder = "Enter text message:", SizeArea = 3 };
+  form.AddChild(SingleGroup);
+
+  modal.AddChild(form);
+  @await Component.InvokeAsync(modal.ViewComponentName, new { SetObjectManager = modal })
 }
 ```
+
+```js
+$('#modal-dom-id').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+```
+
+***result:***
+
+![Modal varying content demo](../demo/modal-varying-content-demo.jpg)
 
 ## Optional sizes[¶](https://getbootstrap.com/docs/4.3/components/modal/#optional-sizes)
 
