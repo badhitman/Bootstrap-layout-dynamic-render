@@ -1,0 +1,26 @@
+﻿@*MIT License (https://github.com/badhitman)*@
+@using BootstrapAspDynamicRender.service
+@model hsH
+@{
+    switch (Model.HeaderIndex)
+    {
+        case 6:
+            <h6 @Html.Raw(Model.GetStringAttributes())>@Html.Raw(Model.Text)</h6>
+            break;
+        case 5:
+            <h5 @Html.Raw(Model.GetStringAttributes())>@Html.Raw(Model.Text)</h5>
+            break;
+        case 4:
+            <h4 @Html.Raw(Model.GetStringAttributes())>@Html.Raw(Model.Text)</h4>
+            break;
+        case 3:
+            <h3 @Html.Raw(Model.GetStringAttributes())>@Html.Raw(Model.Text)</h3>
+            break;
+        case 2:
+            <h2 @Html.Raw(Model.GetStringAttributes())>@Html.Raw(Model.Text)</h2>
+            break;
+        default:
+            <h1 @Html.Raw(Model.GetStringAttributes())>@Html.Raw(Model.Text)</h1>
+            break;
+    }
+}
