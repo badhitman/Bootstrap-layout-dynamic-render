@@ -271,6 +271,10 @@ $('#modal-dom-id').on('show.bs.modal', function (event) {
 
 ```cshtml
 @{
-
+  bsModal modal = new bsModal() { MaxModalSize = bmModalSizesEnum.xl, ID = "modal-dom-id", Header = "Modal title", IsVerticallyСentered = true };
 }
 ```
+
+***result:***
+
+![Modal optional sizes demo](../demo/modal-optional-sizes-demo.jpg)
