@@ -78,9 +78,11 @@ $('#myModal').on('shown.bs.modal', function () {
 }
 ```
 
-***result:***
+***result:*** верхнее положение прокрутки
 
 ![Modal scrolling long content body demo](../demo/modal-scrollable-win-demo.jpg)
+
+***result:*** нижнее положение прокрутки
 
 ![Modal scrolling long content body demo](../demo/modal-scrollable-win-demo-2.jpg)
 
