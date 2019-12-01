@@ -1131,7 +1131,7 @@
   /////////////////////////////////////////////////////////////////
   //
 
-  FormGroupHorizontalStackedManager formGroupHorizontal = new FormGroupHorizontalStackedManager() { HeaderInputsGroup = "Radios" };
+  bsFormGroupHorizontalStacked formGroupHorizontal = new bsFormGroupHorizontalStacked() { HeaderInputsGroup = "Radios" };
   formGroupHorizontal.CustomInputs.Add(new bmCustomInput()
   {
     Label = "First radio",
@@ -1173,7 +1173,7 @@
   /////////////////////////////////////////////////////////////////
   //
 
-  formGroupHorizontal = new FormGroupHorizontalStackedManager() { HeaderInputsGroup = "Checkbox" };
+  formGroupHorizontal = new bsFormGroupHorizontalStacked() { HeaderInputsGroup = "Checkbox" };
   formGroupHorizontal.CustomInputs.Add(new bmCustomInput()
   {
     Label = "Example checkbox",
