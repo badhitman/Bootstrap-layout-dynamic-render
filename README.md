@@ -40,6 +40,9 @@ about:
 ## Breadcrumbs[¶](https://getbootstrap.com/docs/4.3/components/breadcrumb/)
 > [readme](./readme/breadcrumbs/)
 
+## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
+> [readme](./readme/modal/)
+
 ## Forms[¶](https://getbootstrap.com/docs/4.3/components/forms/)
 > [progress...](./readme/form/)
 
@@ -51,9 +54,6 @@ about:
 
 ## Button group[¶](https://getbootstrap.com/docs/4.3/components/button-group/#basic-example)
 > [progress...](./readme/button-group)
-
-## Modal[¶](https://getbootstrap.com/docs/4.3/components/modal/)
-> [progress...](./readme/modal/)
 
 ## Tables[¶](https://getbootstrap.com/docs/4.3/content/tables/)
 > [progress...](./readme/table/)
