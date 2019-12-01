@@ -9,11 +9,10 @@ about:
 - компонент принимает сервис в виде парамтера и формирует нужный **html**
 
 Пространсва имён (их всего 3) в вашем **Razor.cshtml**:
-```cshtml
-@using BootstrapAspDynamicRender.service // управляющие сервисы
-@using BootstrapAspDynamicRender.models // вспомогательные модели
-@using BootstrapAspDynamicRender.components // рендеринг-компоненты
-```
+
+- `@using BootstrapAspDynamicRender.service` -> управляющие сервисы
+- `@using BootstrapAspDynamicRender.models` -> вспомогательные модели
+- `@using BootstrapAspDynamicRender.components` -> рендеринг-компоненты
 
 Именование:
 - все типы в проекте отвечают правилам именования, а точнее правилам префикса по первым двум (или трём) строчным буквам имени типа. Например: `hrOptionSelect`, `bmCustomInput` или `hsButton`
