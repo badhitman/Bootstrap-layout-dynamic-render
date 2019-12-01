@@ -8,6 +8,6 @@ namespace BootstrapAspDynamicRender.models
     {
         public bool IsInline { get; set; } = false;
 
-        public bmCustomInput CustomInput { get; set; }
+        public bmInput CustomInput { get; set; }
     }
 }

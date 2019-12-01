@@ -7,7 +7,7 @@ namespace BootstrapAspDynamicRender.service
 {
     public class bsFormGroupSingle : absFormGroup
     {
-        public bmCustomInput CustomInput { get; protected set; } = new bmCustomInput();
+        public bmInput CustomInput { get; protected set; } = new bmInput();
 
         public bool IsHorisontal { get; set; } = false;
 

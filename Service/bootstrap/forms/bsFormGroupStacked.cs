@@ -8,7 +8,7 @@ namespace BootstrapAspDynamicRender.service
 {
     public class bsFormGroupStacked : absFormGroup
     {
-        public List<bmCustomInput> CustomInputs { get; protected set; } = new List<bmCustomInput>();
+        public List<bmInput> CustomInputs { get; protected set; } = new List<bmInput>();
 
         public bool IsInline { get; set; } = false;
 

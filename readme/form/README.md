@@ -191,7 +191,7 @@
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputText()
     {
@@ -199,14 +199,14 @@
     },
     SizeInput = bmTwinSizingsEnum.Lg
   });
-    GroupStacked.CustomInputs.Add(new bmCustomInput()
+    GroupStacked.CustomInputs.Add(new bmInput()
     {
       Input = new hsInputText()
       {
         Placeholder = "Default input"
       }
   });
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputText()
     {
@@ -245,7 +245,7 @@
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
   hsInputSelect SelectInput = new hsInputSelect();
   SelectInput.AddItem("Large select", null);
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = SelectInput,
     SizeInput = bmTwinSizingsEnum.Lg
@@ -253,14 +253,14 @@
 
   SelectInput = new hsInputSelect();
   SelectInput.AddItem("Default select", null);
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = SelectInput
   });
 
   SelectInput = new hsInputSelect();
   SelectInput.AddItem("Small select", null);
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = SelectInput,
     SizeInput = bmTwinSizingsEnum.Sm
@@ -437,7 +437,7 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
@@ -446,7 +446,7 @@
     Label = "Default checkbox"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
@@ -472,7 +472,7 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputRadio()
     {
@@ -484,7 +484,7 @@
     Label = "Default checkbox"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputRadio()
     {
@@ -495,7 +495,7 @@
     Label = "Second default radio"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputRadio()
     {
@@ -527,7 +527,7 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
@@ -536,7 +536,7 @@
     Label = "1"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
@@ -545,7 +545,7 @@
     Label = "2"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
@@ -590,7 +590,7 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
         Input = new hsInputRadio()
         {
@@ -601,7 +601,7 @@
         Label = "1"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputRadio()
     {
@@ -612,7 +612,7 @@
     Label = "2"
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputRadio()
     {
@@ -664,7 +664,7 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
@@ -672,7 +672,7 @@
     }.SetAttribute("aria-label","Checkbox without labels demo") as hsInputCheckbox
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputRadio()
     {
@@ -874,7 +874,7 @@
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputText()
     {
@@ -882,7 +882,7 @@
     },
     HelpCaption = "Имя пользователя"
   });
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputText()
     {
@@ -890,7 +890,7 @@
     },
     HelpCaption = "Фамилия пользователя"
   });
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputText()
     {
@@ -942,13 +942,13 @@
   //
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Label = "Email",
     Input = new hsInputEmail() { Placeholder = "Email", ID = "email-input-dom-id" }
   });
 
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Label = "Password",
     Input = new hsInputPassword()
@@ -996,7 +996,7 @@
   //
 
   GroupStacked = new bsFormGroupStacked() { IsInline = true };
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Label = "City",
     Input = new hsInputText() { ID = "city-input-dom-id" },
@@ -1008,13 +1008,13 @@
     ID = "state-select-input-dom-id"
   };
   InputSelect.AddItem("Choose...", null).IsSelect = true;
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Label = "State",
     Input = InputSelect,
     AddedClassesCSS = "col-md-4"
   });
-  GroupStacked.CustomInputs.Add(new bmCustomInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
   {
     Label = "Zip",
     Input = new hsInputText() { ID = "zip-input-dom-id" },
@@ -1132,7 +1132,7 @@
   //
 
   bsFormGroupHorizontalStacked formGroupHorizontal = new bsFormGroupHorizontalStacked() { HeaderInputsGroup = "Radios" };
-  formGroupHorizontal.CustomInputs.Add(new bmCustomInput()
+  formGroupHorizontal.CustomInputs.Add(new bmInput()
   {
     Label = "First radio",
     Input = new hsInputRadio()
@@ -1143,7 +1143,7 @@
       IsChecked = true
     }
   });
-  formGroupHorizontal.CustomInputs.Add(new bmCustomInput()
+  formGroupHorizontal.CustomInputs.Add(new bmInput()
   {
     Label = "Second radio",
     Input = new hsInputRadio()
@@ -1153,7 +1153,7 @@
       Value = "option2"
     }
   });
-  formGroupHorizontal.CustomInputs.Add(new bmCustomInput()
+  formGroupHorizontal.CustomInputs.Add(new bmInput()
   {
     Label = "Third disabled radio",
     Input = new hsInputRadio()
@@ -1174,7 +1174,7 @@
   //
 
   formGroupHorizontal = new bsFormGroupHorizontalStacked() { HeaderInputsGroup = "Checkbox" };
-  formGroupHorizontal.CustomInputs.Add(new bmCustomInput()
+  formGroupHorizontal.CustomInputs.Add(new bmInput()
   {
     Label = "Example checkbox",
     Input = new hsInputCheckbox()
@@ -1346,9 +1346,9 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
   
-  GroupStacked.CustomInputs.Add(new bmCustomInput() { Input = new hsInputText() { Placeholder = "City" }, AddedClassesCSS = "col-7" });
-  GroupStacked.CustomInputs.Add(new bmCustomInput() { Input = new hsInputText() { Placeholder = "State" } });
-  GroupStacked.CustomInputs.Add(new bmCustomInput() { Input = new hsInputText() { Placeholder = "Zip" } });
+  GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "City" }, AddedClassesCSS = "col-7" });
+  GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "State" } });
+  GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "Zip" } });
   
   form.AddChild(GroupStacked);
 

@@ -2,29 +2,48 @@
 // https://github.com/badhitman
 ////////////////////////////////////////////////
 using BootstrapAspDynamicRender.service;
+using System;
 
 namespace BootstrapAspDynamicRender.models
 {
-    public class bmCustomInput
+    public class bmCustomInput : bmInput
     {
-        /// <summary>
-        /// Строка, добавляемая к form-group родителю
-        /// </summary>
-        public string AddedClassesCSS { get; set; }
 
-        public string Label { get; set; }
-        public bool LabelSrOnly { get; set; } = false;
+        private ahsInputs _Input;
 
+        public override ahsInputs Input
+        {
+            get => _Input;
+            set
+            {
+                if (value is hsInputCheckbox)
+                {
 
-        public ahsInputs Input { get; set; }
-        public string CustomStyleInput { get; set; }
+                }
+                else if (value is hsInputFile)
+                {
 
-        public string HelpCaption { get; set; }
+                }
+                else if (value is hsInputRadio)
+                {
 
-        public bmTwinSizingsEnum SizeInput { get; set; } = bmTwinSizingsEnum.NULL;
+                }
+                else if (value is hsInputRange)
+                {
 
-        public string ValidFeedback { get; set; }
+                }
+                else if (value is hsInputSelect)
+                {
 
-        public string InvalidFeedback { get; set; }
+                }
+                else
+                {
+                    throw new ArgumentException("Недопустимый тип для пользовательского тега Input. Доступный перечень: hsInputCheckbox, hsInputRadio, hsInputRange, hsInputFile, hsInputSelect", nameof(Input));
+                }
+
+                _Input = value;
+            }
+        }
+
     }
 }
