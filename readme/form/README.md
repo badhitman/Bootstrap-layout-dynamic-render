@@ -1951,18 +1951,6 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ![Custom forms radios inline](../demo/custom-forms-radios-inline.jpg)
 
-## Disabled[¶](https://getbootstrap.com/docs/4.3/components/forms/#disabled)
-
-> 
-
-
-
-***result:***
-
-![Custom forms disabled](../demo/custom-forms-disabled.jpg)
-
-
-
 ## Switches[¶](https://getbootstrap.com/docs/4.3/components/forms/#switches)
 
 > **Switch** имеет разметку пользовательского флажка, но использует класс **.custom-switch** для рендеринга тумблера.
