@@ -33,7 +33,7 @@ namespace BootstrapAspDynamicRender.components
                 SetObjectManager.NavWrapperType == bmNavWrappersEnum.nav)
             {
                 logger.LogInformation("When using a <nav>-based navigation, be sure to include .nav-item on the anchors.");
-                SetObjectManager.Childs.ForEach(x => x.AddCSS("nav-item"));
+                SetObjectManager.ChildsNodes.ForEach(x => x.AddCSS("nav-item"));
             }
 
             if (SetObjectManager.IsTabsStyle && SetPillsTheme)

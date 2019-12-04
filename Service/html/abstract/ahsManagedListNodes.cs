@@ -6,8 +6,11 @@ namespace BootstrapAspDynamicRender.service
 {
     public abstract class ahsManagedListNodes : ahsNestedTools
     {
-        public void AddChild(ahsDom child_node)=> Childs.Add(child_node);
+        public void AddChild(ahsDom AddedChildNode)
+        {
+            ChildsNodes.Add(AddedChildNode);
+        }
 
-        public void AddRangeChilds(ahsDom[] child_nodes) => Childs.AddRange(child_nodes);
+        public void AddRangeChilds(ahsDom[] AddedChildNodes) => ChildsNodes.AddRange(AddedChildNodes);
     }
 }

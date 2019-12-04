@@ -13,7 +13,7 @@ namespace BootstrapAspDynamicRender.service
 
         public void AddRow(hsTableTr tableTr)
         {
-            Childs.Add(tableTr);
+            ChildsNodes.Add(tableTr);
         }
     }
 }

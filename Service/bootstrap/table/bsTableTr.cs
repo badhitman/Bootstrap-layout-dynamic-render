@@ -11,7 +11,7 @@ namespace BootstrapAspDynamicRender.service
 
         public hsTableTr AddCell(bsTableTd tdBootstrapManager)
         {
-            Childs.Add(tdBootstrapManager);
+            ChildsNodes.Add(tdBootstrapManager);
             return this;
         }
 

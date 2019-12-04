@@ -11,18 +11,18 @@ namespace BootstrapAspDynamicRender.service
         public void AddSubNode(hsForm navbarform)
         {
             navbarform.AddCSS("form-inline");
-            Childs.Add(navbarform);
+            ChildsNodes.Add(navbarform);
         }
 
         public void AddSubNode(bsNavbarText navbarText)
         {
-            Childs.Add(navbarText);
+            ChildsNodes.Add(navbarText);
         }
 
         public void AddSubNode(bsNavbarNav navbarNav)
         {
             navbarNav.AddCSS("navbar-nav");
-            Childs.Add(navbarNav);
+            ChildsNodes.Add(navbarNav);
         }
     }
 }

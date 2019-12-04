@@ -10,7 +10,7 @@ namespace BootstrapAspDynamicRender.service
         {
             hsSpan span = new hsSpan() { Header = header_text };
             span.AddCSS("input-group-text");
-            Childs.Add(span);
+            ChildsNodes.Add(span);
         }
     }
 }

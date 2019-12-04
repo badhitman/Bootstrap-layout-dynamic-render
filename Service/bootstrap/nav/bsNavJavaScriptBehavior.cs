@@ -35,9 +35,9 @@ namespace BootstrapAspDynamicRender.service
             bsNavItem navItem = new bsNavItem(SetNavId) { Header = SetNavHeader, Href = "#" + SetNavId, ID = SetNavId + "-tab" };
             navItem.SetAttribute(new Dictionary<string, string>() { { "data-toggle", this.IsTabsStyle ? "tab" : "pill" }, { "role", "tab" }, { "aria-controls", SetNavId } });
 
-            Childs.Add(navItem);
+            ChildsNodes.Add(navItem);
             CacheContents.Add(SetNavId, SetNavCachedContent);
-            return (bsNavItem)Childs[Childs.Count - 1];
+            return (bsNavItem)ChildsNodes[ChildsNodes.Count - 1];
         }
     }
 }

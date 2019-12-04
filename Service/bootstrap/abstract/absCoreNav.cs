@@ -11,7 +11,7 @@ namespace BootstrapAspDynamicRender.service
     {
         private void FindAllNavigationItems(ref List<bsNavItem> navItems, Predicate<bsNavItem> FindPredicateUnit = null)
         {
-            foreach (bsNavItem nav_item in Childs.Where(x => !(x is null)))
+            foreach (bsNavItem nav_item in ChildsNodes.Where(x => !(x is null)))
             {
                 if (FindPredicateUnit is null || FindPredicateUnit(nav_item))
                     navItems.Add(nav_item);

@@ -4,7 +4,7 @@
 
 namespace BootstrapAspDynamicRender.service
 {
-    public abstract class ahsCheckedInputs : ahsInputs
+    public abstract class ahsCheckableInputs : ahsInputs
     {
         public bool IsChecked { get; set; }
 

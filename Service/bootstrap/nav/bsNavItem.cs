@@ -33,11 +33,11 @@ namespace BootstrapAspDynamicRender.service
         {
             if (string.IsNullOrEmpty(header_nav))
             {
-                Childs.Add(null);
+                ChildsNodes.Add(null);
                 return;
             }
 
-            Childs.Add(new bsNavItem(id_nav) { Header = header_nav, Href = href_nav });
+            ChildsNodes.Add(new bsNavItem(id_nav) { Header = header_nav, Href = href_nav });
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace BootstrapAspDynamicRender.service
 {
-    public abstract class ahsDom
+    public abstract class ahsDom : asCloneableObject
     {
         #region Поля
         ///////////////////////////////////////////////
@@ -72,7 +72,7 @@ namespace BootstrapAspDynamicRender.service
         /// Пользовательские атрибуты текущего HTML элемента
         /// </summary>
         protected SortedDictionary<string, string> CustomAttributes { get; private set; } = new SortedDictionary<string, string>();
-
+        //
         public List<KeyValuePair<string, string>> ReadAttributes() => CustomAttributes.ToList();
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace BootstrapAspDynamicRender.service
             return this;
         }
 
-        public ahsDom SetAttribute(List<KeyValuePair<string, string>> attributes)
+        public ahsDom SetAttributes(List<KeyValuePair<string, string>> attributes)
         {
             attributes.ForEach(x => SetAttribute(x.Key, x.Value));
             return this;
@@ -300,6 +300,8 @@ namespace BootstrapAspDynamicRender.service
         /// </summary>
         protected SortedDictionary<string, string> CustomStyles { get; private set; } = new SortedDictionary<string, string>();
 
+        public List<KeyValuePair<string, string>> ReadStyles() => CustomStyles.ToList();
+
         /// <summary>
         /// Установить значение стиля (добавить если стиль отсутсвует).
         /// </summary>
@@ -307,17 +309,29 @@ namespace BootstrapAspDynamicRender.service
         /// <param name="style_value">Знаение стиля</param>
         public ahsDom SetStyle(string style_name, string style_value)
         {
+            if (string.IsNullOrWhiteSpace(style_name) || string.IsNullOrWhiteSpace(style_value))
+                return this;
+
             CacheStyles = string.Empty;
             style_name = style_name.Trim().ToLower().Trim();
             style_value = style_value.Trim().ToLower().Trim();
-
-            if (string.IsNullOrWhiteSpace(style_name) || string.IsNullOrWhiteSpace(style_value))
-                return this;
 
             if (!CustomStyles.ContainsKey(style_name))
                 CustomStyles.Add(style_name, style_value);
             else
                 CustomStyles[style_name] = style_value;
+
+            return this;
+        }
+
+        /// <summary>
+        /// Пакетная установка стилей
+        /// </summary>
+        public ahsDom SetStyles(List<KeyValuePair<string, string>> in_custom_styles)
+        {
+            CacheStyles = string.Empty;
+            foreach (KeyValuePair<string, string> kvp in in_custom_styles)
+                SetStyle(kvp.Key, kvp.Value);
 
             return this;
         }
@@ -489,10 +503,20 @@ namespace BootstrapAspDynamicRender.service
             }
             return CacheCSS.Trim();
         }
+
         protected string CacheCSS { get; private set; }
 
         //
         ///////////////////////////////////////////////
-        #endregion    
+        #endregion
+
+        public override object Clone()
+        {
+            ahsDom dom = base.Clone() as ahsDom;
+            dom.SetAttributes(ReadAttributes());
+            dom.SetStyles(ReadStyles());
+            dom.AddCSS(ReadCSS());
+            return dom;
+        }
     }
 }

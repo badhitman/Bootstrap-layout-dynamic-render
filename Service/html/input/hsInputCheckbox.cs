@@ -5,7 +5,7 @@ using BootstrapAspDynamicRender.models;
 
 namespace BootstrapAspDynamicRender.service
 {
-    public class hsInputCheckbox : ahsCheckedInputs
+    public class hsInputCheckbox : ahsCheckableInputs
     {
         public override string GetStringAttributes()
         {

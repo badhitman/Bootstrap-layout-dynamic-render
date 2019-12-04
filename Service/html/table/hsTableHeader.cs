@@ -11,7 +11,7 @@ namespace BootstrapAspDynamicRender.service
 
         public void AddColumnHeader(string name_header)
         {
-            Childs.Add(new hsTableTh() { Header = name_header });
+            ChildsNodes.Add(new hsTableTh() { Header = name_header });
         }
     }
 }

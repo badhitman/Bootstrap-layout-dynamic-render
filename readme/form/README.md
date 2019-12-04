@@ -187,24 +187,25 @@
 > Установите высоту, используя такие классы, как **.form-control-lg** и **.form-control-sm**.
 
 ```cshtml
-@{
+ @{
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
+
   GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputText()
     {
       Placeholder = ".form-control-lg"
-    },
+    }.AddCSS("mb-2") as hsInputText,
     SizeInput = bmTwinSizingsEnum.Lg
   });
-    GroupStacked.CustomInputs.Add(new bmInput()
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputText()
     {
-      Input = new hsInputText()
-      {
-        Placeholder = "Default input"
-      }
+      Placeholder = "Default input"
+    }.AddCSS("mb-2") as hsInputText
   });
   GroupStacked.CustomInputs.Add(new bmInput()
   {
@@ -223,17 +224,11 @@
 ***result:***
 ![Forms controls sizing](../demo/forms-controls-sizing.jpg)
 ```html
-<form accept-charset="utf-8" id="demo-form-dom-id"> 
+<form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
-    <div class="mb-2">
-      <input placeholder=".form-control-lg" type="text" class="form-control form-control-lg">
-    </div>
-    <div class="mb-2">
-      <input placeholder="Default input" type="text" class="form-control">
-    </div>
-    <div class="mb-2">
-      <input placeholder=".form-control-sm" type="text" class="form-control form-control-sm">
-    </div>
+    <input placeholder=".form-control-lg" type="text" class="mb-2 form-control-lg form-control">
+    <input placeholder="Default input" type="text" class="mb-2 form-control">
+    <input placeholder=".form-control-sm" type="text" class="form-control-sm form-control">
   </div>
 </form>
 ```
@@ -243,7 +238,7 @@
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
-  hsInputSelect SelectInput = new hsInputSelect();
+  hsInputSelect SelectInput = new hsInputSelect().AddCSS("mb-2") as hsInputSelect;
   SelectInput.AddItem("Large select", null);
   GroupStacked.CustomInputs.Add(new bmInput()
   {
@@ -251,7 +246,7 @@
     SizeInput = bmTwinSizingsEnum.Lg
   });
 
-  SelectInput = new hsInputSelect();
+  SelectInput = new hsInputSelect().AddCSS("mb-2") as hsInputSelect;
   SelectInput.AddItem("Default select", null);
   GroupStacked.CustomInputs.Add(new bmInput()
   {
@@ -333,13 +328,13 @@
 
   bsFormGroupSingle SingleGroup = new bsFormGroupSingle() { IsHorisontal = true };
   SingleGroup.CustomInput.Label = "Email";
-  SingleGroup.CustomInput.Input = new hsInputText()
+  SingleGroup.CustomInput.Input = new bsPlainTextInput()
   {
     ID = "input-email-dom-id",
     Value = "email@example.com",
     Readonly = true
   };
-  SingleGroup.CustomInput.Input.AddCSS("form-control-plaintext");
+  
   form.AddChild(SingleGroup);
 
   SingleGroup = new bsFormGroupSingle() { IsHorisontal = true };
@@ -366,13 +361,13 @@
   bsFormGroupSingle FormGroup = new bsFormGroupSingle().AddCSS("mb-2") as bsFormGroupSingle;
   FormGroup.CustomInput.Label = "Email";
   FormGroup.CustomInput.LabelSrOnly = true;
-  FormGroup.CustomInput.Input = new hsInputText()
+  FormGroup.CustomInput.Input = new bsPlainTextInput()
   {
     ID = "staticEmail2",
     Value = "email@example.com",
     Readonly = true
   };
-  FormGroup.CustomInput.Input.AddCSS("form-control-plaintext");
+  
   form.AddChild(FormGroup);
 
   FormGroup = new bsFormGroupSingle().AddCSS("mx-sm-3 mb-2") as bsFormGroupSingle;
@@ -1000,7 +995,7 @@
   {
     Label = "City",
     Input = new hsInputText() { ID = "city-input-dom-id" },
-    AddedClassesCSS = "col-md-6"
+    AddedWrapCSS = "col-md-6"
   });
   //
   hsInputSelect InputSelect = new hsInputSelect()
@@ -1012,13 +1007,13 @@
   {
     Label = "State",
     Input = InputSelect,
-    AddedClassesCSS = "col-md-4"
+    AddedWrapCSS = "col-md-4"
   });
   GroupStacked.CustomInputs.Add(new bmInput()
   {
     Label = "Zip",
     Input = new hsInputText() { ID = "zip-input-dom-id" },
-    AddedClassesCSS = "col-md-2"
+    AddedWrapCSS = "col-md-2"
   });
   form.AddChild(GroupStacked);
 
@@ -1346,7 +1341,7 @@
 
   bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
   
-  GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "City" }, AddedClassesCSS = "col-7" });
+  GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "City" }, AddedWrapCSS = "col-7" });
   GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "State" } });
   GroupStacked.CustomInputs.Add(new bmInput() { Input = new hsInputText() { Placeholder = "Zip" } });
   
@@ -1773,6 +1768,12 @@
 > Для еще большей настройки и согласованности между браузерами используйте полностью настраиваемые элементы формы для замены настроек браузера по умолчанию.
 Они построены поверх семантической и доступной разметки, поэтому они являются надежными заменами для любого элемента управления формой по умолчанию.
 
+Для того что бы в **form-group** вместо нативных **Input** выводились **Bootstrap Custom input** (для поддерживаемых типов) следует установить признак
+
+```c#
+bsFormGroupSingle.UseCustomisation = true;
+```
+
 ## Checkboxes and radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#checkboxes-and-radios-1)
 
 > Каждый **checkbox** и **radio** `<input>` и сопряжённый с ним `<label>` должны быть завернуты в `<div>` для создания пользовательского элемента управления.
@@ -1782,7 +1783,14 @@
 
 ```cshtml
 @{
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
+  GroupSingle.CustomInput.Input = new hsInputCheckbox() { ID = "customCheck1"};
+  GroupSingle.CustomInput.Label = "Check this custom checkbox";
+  form.AddChild(GroupSingle);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 

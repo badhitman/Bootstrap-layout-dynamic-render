@@ -5,7 +5,7 @@ using BootstrapAspDynamicRender.models;
 
 namespace BootstrapAspDynamicRender.service
 {
-    public class hsInputRadio : ahsCheckedInputs
+    public class hsInputRadio : ahsCheckableInputs
     {
         public string Value { get; set; }
         

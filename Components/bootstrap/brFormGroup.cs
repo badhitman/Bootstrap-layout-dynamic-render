@@ -13,7 +13,7 @@ namespace BootstrapAspDynamicRender.components
             string view_name = SetObjectManager.GetType().Name;
 
             if (view_name.Contains("FormGroup"))
-                view_name = view_name.Substring(view_name.IndexOf("FormGroup") + 9);
+                view_name = view_name.Substring(view_name.IndexOf("FormGroup", System.StringComparison.CurrentCulture) + 9);
 
             return View(view_name, SetObjectManager);
         }

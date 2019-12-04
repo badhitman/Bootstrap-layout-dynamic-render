@@ -1,10 +1,8 @@
 ﻿@*MIT License (https://github.com/badhitman)*@
 @using BootstrapAspDynamicRender.models
 @using BootstrapAspDynamicRender.service
+@using BootstrapAspDynamicRender.components
 @model bsFormGroupStacked
 <div @Html.Raw(Model.GetStringAttributes())>
-    @foreach (bmInput v in Model.CustomInputs)
-    {
-        await Html.RenderPartialAsync("StackedInput", new bmStackedInput() { CustomInput = v, IsInline = Model.IsInline });
-    }
+    @await Component.InvokeAsync(typeof(hrUniversalList).Name, new { SetObjectManager = Model })
 </div>

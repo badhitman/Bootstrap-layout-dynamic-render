@@ -14,7 +14,7 @@ namespace BootstrapAspDynamicRender.service
         public bsNavItem AddNavItem(string id_dom, string header, string href)
         {
             bsNavItem navItem = new bsNavItem(id_dom) { Header = header, Href = href };
-            Childs.Add(navItem);
+            ChildsNodes.Add(navItem);
             return navItem;
         }
     }

@@ -7,7 +7,7 @@
     hsLinkBasic link = new hsLinkBasic() { Header = Model.Header, ID = Model.ID, Href = Model.Href, Target = hmFormTargetsEnum.NULL };
     link.AddCSS("nav-link");
     link.AddCSS(Model.ReadCSS());
-    link.SetAttribute(Model.ReadAttributes());
+    link.SetAttributes(Model.ReadAttributes());
     if (Model.IsActive)
     {
         link.AddCSS("active");

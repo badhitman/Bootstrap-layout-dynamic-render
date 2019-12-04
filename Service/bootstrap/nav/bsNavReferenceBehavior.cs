@@ -19,8 +19,8 @@ namespace BootstrapAspDynamicRender.service
             if (string.IsNullOrWhiteSpace(SetNavHref))
                 throw new ArgumentNullException(nameof(SetNavHref));
 
-            Childs.Add(new bsNavItem(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
-            return (bsNavItem)Childs[Childs.Count - 1];
+            ChildsNodes.Add(new bsNavItem(SetNavId) { Header = SetNavHeader, Href = SetNavHref });
+            return (bsNavItem)ChildsNodes[ChildsNodes.Count - 1];
         }
     }
 }

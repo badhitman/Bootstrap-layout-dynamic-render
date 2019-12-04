@@ -8,42 +8,23 @@ namespace BootstrapAspDynamicRender.models
 {
     public class bmCustomInput : bmInput
     {
-
-        private ahsInputs _Input;
-
-        public override ahsInputs Input
+        public bmCustomInput()
         {
-            get => _Input;
-            set
-            {
-                if (value is hsInputCheckbox)
-                {
 
-                }
-                else if (value is hsInputFile)
-                {
-
-                }
-                else if (value is hsInputRadio)
-                {
-
-                }
-                else if (value is hsInputRange)
-                {
-
-                }
-                else if (value is hsInputSelect)
-                {
-
-                }
-                else
-                {
-                    throw new ArgumentException("Недопустимый тип для пользовательского тега Input. Доступный перечень: hsInputCheckbox, hsInputRadio, hsInputRange, hsInputFile, hsInputSelect", nameof(Input));
-                }
-
-                _Input = value;
-            }
         }
 
+        public bmCustomInput(bmInput input)
+        {
+            if (input is null)
+                throw new ArgumentNullException(nameof(input));
+
+            HelpCaption = input.HelpCaption;
+            Input = input.Input.Clone() as ahsInputs;
+            InvalidFeedback = input.InvalidFeedback;
+            ValidFeedback = input.ValidFeedback;
+            Label = input.Label;
+            LabelSrOnly = input.LabelSrOnly;
+            SizeInput = input.SizeInput;
+        }
     }
 }

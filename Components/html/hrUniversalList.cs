@@ -4,6 +4,7 @@
 using BootstrapAspDynamicRender.service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace BootstrapAspDynamicRender.components
 {
@@ -17,6 +18,9 @@ namespace BootstrapAspDynamicRender.components
 
         public IViewComponentResult Invoke(ahsNestedTools SetObjectManager)
         {
+            if (SetObjectManager is null)
+                throw new ArgumentNullException(nameof(SetObjectManager));
+
             return View(SetObjectManager.GetChilds());
         }
     }

@@ -11,13 +11,13 @@ namespace BootstrapAspDynamicRender.service
 
         public hsTableTr AddCell(hsTableTh thManager)
         {
-            Childs.Add(thManager);
+            ChildsNodes.Add(thManager);
             return this;
         }
 
         public hsTableTr AddCell(hsTableTd tdManager)
         {
-            Childs.Add(tdManager);
+            ChildsNodes.Add(tdManager);
             return this;
         }
     }

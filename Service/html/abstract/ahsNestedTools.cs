@@ -11,47 +11,81 @@ namespace BootstrapAspDynamicRender.service
     /// </summary>
     public abstract class ahsNestedTools : ahsDom
     {
-        public int ChildsCount => Childs.Count;
+        public int ChildsCount => ChildsNodes.Count;
 
         /// <summary>
         /// Дочерние/вложеные элементы
         /// </summary>
-        protected internal List<ahsDom> Childs = new List<ahsDom>();
+        protected internal List<ahsDom> ChildsNodes { get; } = new List<ahsDom>();
 
-        public virtual ahsDom[] GetChilds() => Childs.ToArray();
+        public virtual ahsDom[] GetChilds() => ChildsNodes.ToArray();
 
-        public void ChildsAddCSS(string css_class)
+        /// <summary>
+        /// Добавление класса во все дочерние элементы
+        /// </summary>
+        /// <param name="AddedClassesCSS">Добавляемый класс стилей</param>
+        public void ChildsAddCSS(string AddedClassesCSS)
         {
-            foreach (ahsDom child in Childs)
+            if (string.IsNullOrWhiteSpace(AddedClassesCSS))
+                return;
+
+            foreach (ahsDom child in ChildsNodes)
             {
-                child.AddCSS(css_class);
+                child.AddCSS(AddedClassesCSS);
                 if (child is ahsNestedTools || child.GetType().IsSubclassOf(typeof(ahsNestedTools)))
-                    ((ahsNestedTools)child).ChildsAddCSS(css_class);
+                    ((ahsNestedTools)child).ChildsAddCSS(AddedClassesCSS);
             }
         }
 
         /// <summary>
-        /// Установить класс объекту по его ID
+        /// Добавить CSS класс элементу по его HTML>DOM>ID. Поиск во всех вложеных элементах
         /// </summary>
-        public ahsNestedTools AddByIdCSS(string id_dom, string css_class)
+        /// <param name="SoughtDomId">Искомый DOM.ID</param>
+        /// <param name="AddedClassesCSS">Добавляемый класс стилей</param>
+        public ahsNestedTools AddCssById(string SoughtDomId, string AddedClassesCSS)
         {
-            if (ID.ToLower().Equals(id_dom.ToLower()))
-                AddCSS(css_class);
-
-            foreach (ahsDom adm in Childs.Where(x => !(x is null) && x is ahsNestedTools))
-                ((ahsNestedTools)adm).AddByIdCSS(id_dom, css_class);
-
+            if (ID.ToLower().Equals(SoughtDomId.ToLower()))
+            {
+                AddCSS(AddedClassesCSS);
+                return this;
+            }
+            foreach (ahsDom adm in ChildsNodes.Where(x => !(x is null)))
+            {
+                if (adm is ahsNestedTools)
+                    ((ahsNestedTools)adm).AddCssById(SoughtDomId, AddedClassesCSS);
+                else if (adm.ID.ToLower().Equals(SoughtDomId.ToLower()))
+                {
+                    adm.AddCSS(AddedClassesCSS);
+                    return this;
+                }
+            }
             return this;
         }
 
-        public ahsNestedTools SetAttributeById(string id_dom, string attr_name, string attr_value)
+        /// <summary>
+        /// Установить атрибут элементу по его HTML>DOM>ID. Поиск во всех вложеных элементах
+        /// </summary>
+        /// <param name="SoughtDomId">Искомый DOM.ID</param>
+        /// <param name="SetAttrName">Имя атрибута</param>
+        /// <param name="SetAttrValue">Значение атрибута</param>
+        public ahsNestedTools SetAttributeById(string SoughtDomId, string SetAttrName, string SetAttrValue)
         {
-            if (ID.ToLower().Equals(id_dom.ToLower()))
-                SetAttribute(attr_name, attr_value);
+            if (ID.ToLower().Equals(SoughtDomId.ToLower()))
+            {
+                SetAttribute(SetAttrName, SetAttrValue);
+                return this;
+            }
 
-            foreach (ahsDom adm in Childs.Where(x => !(x is null) && x is ahsNestedTools))
-                ((ahsNestedTools)adm).SetAttributeById(id_dom, attr_name, attr_value);
-
+            foreach (ahsDom adm in ChildsNodes.Where(x => !(x is null) && x is ahsNestedTools))
+            {
+                if (adm is ahsNestedTools)
+                    ((ahsNestedTools)adm).SetAttributeById(SoughtDomId, SetAttrName, SetAttrValue);
+                else if (adm.ID.ToLower().Equals(SoughtDomId.ToLower()))
+                {
+                    adm.SetAttribute(SetAttrName, SetAttrValue);
+                    return this;
+                }
+            }
             return this;
         }
     }
