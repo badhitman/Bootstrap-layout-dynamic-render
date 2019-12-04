@@ -1899,7 +1899,49 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ```cshtml
 @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputRadio()
+    {
+      Value = "option1",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios1",
+      IsChecked = true
+    },
+    Label = "Default checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputRadio()
+    {
+      Value = "option2",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios2"
+    },
+    Label = "Second default radio"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputRadio()
+    {
+      Value = "option3",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios3",
+      IsDisabled = true
+    },
+    Label = "Disabled checkbox"
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
