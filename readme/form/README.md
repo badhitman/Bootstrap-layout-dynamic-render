@@ -1825,14 +1825,75 @@ bsFormGroupSingle.UseCustomisation = true;
 ## Radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#radios)
 
 ```cshtml
-@{
-bsFormGroupStacked.UseCustomisation = true;
+ @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
+
+  bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputRadio()
+    {
+      Value = "option1",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios1",
+      IsChecked = true
+    },
+    Label = "Default checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputRadio()
+    {
+      Value = "option2",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios2"
+    },
+    Label = "Second default radio"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputRadio()
+    {
+      Value = "option3",
+      NameDom = "exampleRadios",
+      ID = "exampleRadios3",
+      IsDisabled = true
+    },
+    Label = "Disabled checkbox"
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Custom forms radios](../demo/custom-forms-radios.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <div class="custom-control custom-radio">
+      <input checked="checked" id="exampleRadios1" name="exampleRadios" type="radio" value="option1" class="custom-control-input">
+      <label for="exampleRadios1" class="custom-control-label">Default checkbox</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="exampleRadios2" name="exampleRadios" type="radio" value="option2" class="custom-control-input">
+      <label for="exampleRadios2" class="custom-control-label">Second default radio</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input disabled="disabled" id="exampleRadios3" name="exampleRadios" type="radio" value="option3" class="custom-control-input">
+      <label for="exampleRadios3" class="custom-control-label">Disabled checkbox</label>
+    </div>
+  </div>
+</form>
+```
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline-1)
 
