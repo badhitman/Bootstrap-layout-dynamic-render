@@ -1826,7 +1826,7 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ```cshtml
 @{
-
+bsFormGroupStacked.UseCustomisation = true;
 }
 ```
 
