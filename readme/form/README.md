@@ -1784,7 +1784,7 @@ bsFormGroupSingle.UseCustomisation = true;
 ```cshtml
 @{
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
-
+  bsFormGroupStacked.UseCustomisation = true;
   bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
   GroupSingle.CustomInput.Input = new hsInputCheckbox() { ID = "customCheck1"};
   GroupSingle.CustomInput.Label = "Check this custom checkbox";
@@ -1797,6 +1797,17 @@ bsFormGroupSingle.UseCustomisation = true;
 ***result:***
 
 ![Custom forms checkboxes](../demo/custom-forms-checkboxes.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <div class="custom-control custom-checkbox">
+      <input id="customCheck1" name="customCheck1" type="checkbox" class="custom-control-input">
+      <label for="customCheck1" class="custom-control-label">Check this custom checkbox</label>
+    </div>
+  </div>
+</form>
+```
 
 > Пользовательские `checkbox`**es** также могут использовать псевдокласс: **indeterminate** при ручной установке с помощью JavaScript (для этого в HTML нет доступного атрибута).
 
