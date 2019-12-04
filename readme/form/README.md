@@ -1811,23 +1811,16 @@ bsFormGroupSingle.UseCustomisation = true;
 
 > Пользовательские `checkbox`**es** также могут использовать псевдокласс: **indeterminate** при ручной установке с помощью JavaScript (для этого в HTML нет доступного атрибута).
 
-```cshtml
-@{
 
-}
+> Если вы используете jQuery,то должно быть достаточно что-то вроде этого:
+
+```js
+  $('.your-checkbox').prop('indeterminate', true);
 ```
 
 ***result:***
 
 ![Custom forms checkboxes indeterminate](../demo/custom-forms-checkboxes-indeterminate.jpg)
-
-> Если вы используете jQuery,то должно быть достаточно что-то вроде этого:
-
-```js
-@{
-  $('.your-checkbox').prop('indeterminate', true);
-}
-```
 
 ## Radios[¶](https://getbootstrap.com/docs/4.3/components/forms/#radios)
 
