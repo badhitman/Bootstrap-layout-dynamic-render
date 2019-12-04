@@ -1897,6 +1897,8 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline-1)
 
+От предыдущего отличается только это: `bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };`
+
 ```cshtml
 @{
   bsFormGroupStacked.UseCustomisation = true;
@@ -1913,7 +1915,7 @@ bsFormGroupSingle.UseCustomisation = true;
       ID = "exampleRadios1",
       IsChecked = true
     },
-    Label = "Default checkbox"
+    Label = "Toggle this custom radio"
   });
 
   GroupStacked.CustomInputs.Add(new bmInput()
@@ -1924,7 +1926,7 @@ bsFormGroupSingle.UseCustomisation = true;
       NameDom = "exampleRadios",
       ID = "exampleRadios2"
     },
-    Label = "Second default radio"
+    Label = "Or toggle this other custom radio"
   });
 
   GroupStacked.CustomInputs.Add(new bmInput()
@@ -1936,7 +1938,7 @@ bsFormGroupSingle.UseCustomisation = true;
       ID = "exampleRadios3",
       IsDisabled = true
     },
-    Label = "Disabled checkbox"
+    Label = "Disabled radio"
   });
 
   form.AddChild(GroupStacked);
