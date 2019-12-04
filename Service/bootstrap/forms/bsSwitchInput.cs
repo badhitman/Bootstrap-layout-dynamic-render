@@ -4,8 +4,8 @@ using System.Text;
 
 namespace BootstrapAspDynamicRender.service
 {
-    public class bsSwitchInput: hsInputCheckbox
+    public class bsSwitchInput : hsInputCheckbox
     {
-        
+
     }
 }

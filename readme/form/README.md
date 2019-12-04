@@ -587,13 +587,13 @@
 
   GroupStacked.CustomInputs.Add(new bmInput()
   {
-        Input = new hsInputRadio()
-        {
-            ID = "inlineRadio1",
-            NameDom = "inlineRadioOptions",
-            Value = "option1"
-        },
-        Label = "1"
+    Input = new hsInputRadio()
+    {
+      ID = "inlineRadio1",
+      NameDom = "inlineRadioOptions",
+      Value = "option1"
+    },
+    Label = "1"
   });
 
   GroupStacked.CustomInputs.Add(new bmInput()
@@ -1955,23 +1955,57 @@ bsFormGroupSingle.UseCustomisation = true;
 
 > 
 
-```cshtml
-@{
 
-}
-```
 
 ***result:***
 
 ![Custom forms disabled](../demo/custom-forms-disabled.jpg)
 
+
+
 ## Switches[¶](https://getbootstrap.com/docs/4.3/components/forms/#switches)
 
-> 
+> **Switch** имеет разметку пользовательского флажка, но использует класс **.custom-switch** для рендеринга тумблера.
+**Switches** также поддерживают отключенный атрибут.
 
 ```cshtml
 @{
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new bsSwitchInput()
+    {
+      ID = "exampleSwitch1",
+      IsChecked = true
+    },
+    Label = "Toggle this switch element"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new bsSwitchInput()
+    {
+      ID = "exampleSwitch2"
+    },
+    Label = "Or toggle this other switch element"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new bsSwitchInput()
+    {
+      ID = "exampleSwitch3",
+      IsDisabled = true
+    },
+    Label = "Disabled switch element"
+  });
+
+  form.AddChild(GroupStacked);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
@@ -1981,8 +2015,7 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ## Select menu[¶](https://getbootstrap.com/docs/4.3/components/forms/#select-menu)
 
-> **Switch** имеет разметку пользовательского флажка, но использует класс **.custom-switch** для рендеринга тумблера.
-**Switches** также поддерживают отключенный атрибут.
+> 
 
 ```cshtml
 @{
