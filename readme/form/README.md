@@ -1815,7 +1815,7 @@ bsFormGroupSingle.UseCustomisation = true;
 > Если вы используете jQuery,то должно быть достаточно что-то вроде этого:
 
 ```js
-  $('.your-checkbox').prop('indeterminate', true);
+  $('#customCheck1').prop('indeterminate', true);
 ```
 
 ***result:***
