@@ -2159,48 +2159,48 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 
 ***result:***
 
-![Custom forms range](../demo/custom-forms-range.jpg)
+![Custom forms range](../demo/custom-forms-range-2.jpg)
 
 ```html
 <form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <label for="customRange1">Example range</label>
-    <input id="customRange1" max="100" min="0" name="customRange1" step="1" type="range" value="0" class="custom-range">
+    <input id="customRange1" name="customRange1" type="range" class="custom-range">
   </div>
 </form>
 ```
 
-> 
+> стандартные функционал для `<input type="range" />`
 
 ```cshtml
 @{
-
+  GroupSingle.CustomInput.Input = new hsInputRange() { ID = "customRange1", Min = 0, Max = 100, Step = 1, Value = "0" };
 }
 ```
 
 ***result:***
 
-![Custom forms range max](../demo/custom-forms-range-max.jpg)
-
-> 
-
-```cshtml
-@{
-
-}
-```
-
-***result:***
-
-![Custom forms range step](../demo/custom-forms-range-step.jpg)
+![Custom forms range](../demo/custom-forms-range.jpg)
 
 ## File browser[¶](https://getbootstrap.com/docs/4.3/components/forms/#file-browser)
 
-> 
+> Мы скрываем `file <input>` по умолчанию через прозрачность и вместо этого используем стиль <label>.
+Кнопка генерируется и позиционируется с помощью **::after**.
+Напоследок, мы объявляем ширину и высоту на `<input>` для правильного расстояния от окружающего контента.
 
 ```cshtml
 @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
+
+  GroupSingle.CustomInput.Input = new hsInputFile() { ID = "customFile" };
+  GroupSingle.CustomInput.Label = "Choose file";
+
+  form.AddChild(GroupSingle);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 

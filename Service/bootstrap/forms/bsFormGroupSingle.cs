@@ -29,7 +29,7 @@ namespace BootstrapAspDynamicRender.service
         public override ahsDom[] GetChilds()
         {
             ChildsNodes.Clear();
-            
+
             //
             Label = new hsLabelInput() { Header = CustomInput.Label, For = CustomInput.Input.ID };
             if (CustomInput.LabelSrOnly)
@@ -244,11 +244,26 @@ namespace BootstrapAspDynamicRender.service
                     {
                         Label.AddCSS("custom-file-label");
                         wInput.AddCSS("custom-file-input");
+                        hsDiv div = new hsDiv().AddCSS("custom-file") as hsDiv;
+                        div.ChildsNodes.Add(wInput);
+                        if (!string.IsNullOrEmpty(CustomInput.Label))
+                        {
+                            div.ChildsNodes.Add(Label);
+                        }
+                        if (!string.IsNullOrWhiteSpace(CustomInput.HelpCaption))
+                        {
+                            div.ChildsNodes.Add(new hsSmall(CustomInput.HelpCaption) { ID = HelpCaptionId }.AddCSS("form-text text-muted"));
+                        }
+                        ChildsNodes.Add(div);
+                        return;
                     }
                     else
                     {
                         wInput.AddCSS("form-control");
                     }
+
+
+
                     if (!string.IsNullOrEmpty(CustomInput.Label))
                     {
                         ChildsNodes.Add(Label);
@@ -325,7 +340,7 @@ namespace BootstrapAspDynamicRender.service
             hsDiv LabelDiv = new hsDiv().AddCSS("col-sm-2") as hsDiv;
             hsDiv InputDiv = new hsDiv().AddCSS("col-sm-10") as hsDiv;
             hsDiv div = new hsDiv().AddCSS("form-check") as hsDiv;
-            if(CustomInput.IsHorisontalStyle)
+            if (CustomInput.IsHorisontalStyle)
             {
                 div.AddCSS("form-check-inline");
             }
