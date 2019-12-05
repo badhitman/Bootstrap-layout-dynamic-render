@@ -2131,7 +2131,8 @@ bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
 ```
 
 А так плоский вариант:
-```
+
+```c#
 bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 ```
 
@@ -2170,10 +2171,8 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 
 > Как и атрибут размера:
 
-```cshtml
-@{
+```c#
   hsInputSelect select = new hsInputSelect() { ID = "exampleSelectInput", IsMultiple = true, SizeArea = 3 };
-}
 ```
 
 ***result:***
@@ -2217,10 +2216,8 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 
 > стандартные функционал для `<input type="range" />`
 
-```cshtml
-@{
+```c#
   GroupSingle.CustomInput.Input = new hsInputRange() { ID = "customRange1", Min = 0, Max = 100, Step = 1, Value = "0" };
-}
 ```
 
 ***result:***
