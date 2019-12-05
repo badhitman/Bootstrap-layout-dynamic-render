@@ -1840,7 +1840,7 @@ bsFormGroupSingle.UseCustomisation = true;
       ID = "exampleRadios1",
       IsChecked = true
     },
-    Label = "Default checkbox"
+    Label = "Toggle this custom radio"
   });
 
   GroupStacked.CustomInputs.Add(new bmInput()
@@ -1851,7 +1851,7 @@ bsFormGroupSingle.UseCustomisation = true;
       NameDom = "exampleRadios",
       ID = "exampleRadios2"
     },
-    Label = "Second default radio"
+    Label = "Or toggle this other custom radio"
   });
 
   GroupStacked.CustomInputs.Add(new bmInput()
@@ -1863,7 +1863,7 @@ bsFormGroupSingle.UseCustomisation = true;
       ID = "exampleRadios3",
       IsDisabled = true
     },
-    Label = "Disabled checkbox"
+    Label = "Disabled radio"
   });
 
   form.AddChild(GroupStacked);
@@ -1881,15 +1881,15 @@ bsFormGroupSingle.UseCustomisation = true;
   <div class="form-group">
     <div class="custom-control custom-radio">
       <input checked="checked" id="exampleRadios1" name="exampleRadios" type="radio" value="option1" class="custom-control-input">
-      <label for="exampleRadios1" class="custom-control-label">Default checkbox</label>
+      <label for="exampleRadios1" class="custom-control-label">Toggle this custom radio</label>
     </div>
     <div class="custom-control custom-radio">
       <input id="exampleRadios2" name="exampleRadios" type="radio" value="option2" class="custom-control-input">
-      <label for="exampleRadios2" class="custom-control-label">Second default radio</label>
+      <label for="exampleRadios2" class="custom-control-label">Or toggle this other custom radio</label>
     </div>
     <div class="custom-control custom-radio">
       <input disabled="disabled" id="exampleRadios3" name="exampleRadios" type="radio" value="option3" class="custom-control-input">
-      <label for="exampleRadios3" class="custom-control-label">Disabled checkbox</label>
+      <label for="exampleRadios3" class="custom-control-label">Disabled radio</label>
     </div>
   </div>
 </form>
