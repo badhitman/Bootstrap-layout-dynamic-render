@@ -1897,54 +1897,10 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline-1)
 
-От предыдущего отличается только это: `bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };`
+От предыдущего отличается только это:
 
-```cshtml
-@{
-  bsFormGroupStacked.UseCustomisation = true;
-  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
-
-  bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
-
-  GroupStacked.CustomInputs.Add(new bmInput()
-  {
-    Input = new hsInputRadio()
-    {
-      Value = "option1",
-      NameDom = "exampleRadios",
-      ID = "exampleRadios1",
-      IsChecked = true
-    },
-    Label = "Toggle this custom radio"
-  });
-
-  GroupStacked.CustomInputs.Add(new bmInput()
-  {
-    Input = new hsInputRadio()
-    {
-      Value = "option2",
-      NameDom = "exampleRadios",
-      ID = "exampleRadios2"
-    },
-    Label = "Or toggle this other custom radio"
-  });
-
-  GroupStacked.CustomInputs.Add(new bmInput()
-  {
-    Input = new hsInputRadio()
-    {
-      Value = "option3",
-      NameDom = "exampleRadios",
-      ID = "exampleRadios3",
-      IsDisabled = true
-    },
-    Label = "Disabled radio"
-  });
-
-  form.AddChild(GroupStacked);
-
-  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
-}
+```c#
+bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
 ```
 
 ***result:***
