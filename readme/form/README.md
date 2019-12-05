@@ -461,6 +461,21 @@
 
 ![Forms checkboxes](../demo/forms-checkboxes.jpg)
 
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <div class="form-check">
+      <input id="defaultCheck1" name="defaultCheck1" type="checkbox" class="form-check-input">
+      <label for="defaultCheck1" class="form-check-label">Default checkbox</label>
+    </div>
+    <div class="form-check">
+      <input disabled="disabled" id="defaultCheck2" name="defaultCheck2" type="checkbox" class="form-check-input">
+      <label for="defaultCheck2" class="form-check-label">Disabled checkbox</label>
+    </div>
+  </div>
+</form>
+```
+
 ```cshtml
 @{
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
