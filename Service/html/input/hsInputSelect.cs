@@ -14,6 +14,8 @@ namespace BootstrapAspDynamicRender.service
 
         public bool IsMultiple { get; set; } = false;
 
+        public int SizeArea { get; set; } = 0;
+
         public hsInputOptionSelect AddItem(string header_option, string value_option)
         {
             hsInputOptionSelect InputOptionSelect = new hsInputOptionSelect() { Header = header_option, Value = value_option };
@@ -27,6 +29,9 @@ namespace BootstrapAspDynamicRender.service
                 SetAttribute("multiple", null);
             else
                 RemoveAttribute("multiple");
+
+            if (SizeArea != 0)
+                SetAttribute("size", SizeArea.ToString());
 
             return base.GetStringAttributes();
         }

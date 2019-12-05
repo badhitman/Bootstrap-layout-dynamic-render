@@ -2127,7 +2127,7 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 
 ```cshtml
 @{
-
+  hsInputSelect select = new hsInputSelect() { ID = "exampleSelectInput", IsMultiple = true, SizeArea = 3 };
 }
 ```
 

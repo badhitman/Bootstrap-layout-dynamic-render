@@ -30,7 +30,8 @@ namespace BootstrapAspDynamicRender.service
                 if (!string.IsNullOrWhiteSpace(PatternInput))
                     SetAttribute("pattern", PatternInput);
 
-                
+                if(SizeArea != 0)
+                    SetAttribute("size", SizeArea.ToString());
             }
 
             return base.GetStringAttributes();
