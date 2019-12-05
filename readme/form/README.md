@@ -1846,8 +1846,16 @@ bsFormGroupSingle.UseCustomisation = true;
 </form>
 ```
 
-> Пользовательские `checkbox`**es** также могут использовать псевдокласс: **indeterminate** при ручной установке с помощью JavaScript (для этого в HTML нет доступного атрибута).
+Inline mode:
+```cshtml
+bsFormGroupStacked GroupStacked = new bsFormGroupStacked(){IsInline = true};
+```
 
+***result:***
+
+![Custom forms Inline checkboxes](../demo/custom-forms-inline-checkboxes.jpg)
+
+> Пользовательские `checkbox`**es** также могут использовать псевдокласс: **indeterminate** при ручной установке с помощью JavaScript (для этого в HTML нет доступного атрибута).
 
 > Если вы используете jQuery,то должно быть достаточно что-то вроде этого:
 
