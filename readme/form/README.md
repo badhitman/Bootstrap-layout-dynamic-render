@@ -436,16 +436,26 @@
   {
     Input = new hsInputCheckbox()
     {
-      ID = "defaultCheck1"
+      ID = "defaultCheck1",
+      IsChecked = true
     },
-    Label = "Default checkbox"
+    Label = "Default checked checkbox"
   });
 
   GroupStacked.CustomInputs.Add(new bmInput()
   {
     Input = new hsInputCheckbox()
     {
-      ID = "defaultCheck2",
+      ID = "defaultCheck2"
+    },
+    Label = "Other checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputCheckbox()
+    {
+      ID = "defaultCheck3",
       IsDisabled = true
     },
     Label = "Disabled checkbox"
@@ -465,12 +475,16 @@
 <form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <div class="form-check">
-      <input id="defaultCheck1" name="defaultCheck1" type="checkbox" class="form-check-input">
-      <label for="defaultCheck1" class="form-check-label">Default checkbox</label>
+      <input checked="checked" id="defaultCheck1" name="defaultCheck1" type="checkbox" class="form-check-input">
+      <label for="defaultCheck1" class="form-check-label">Default checked checkbox</label>
     </div>
     <div class="form-check">
-      <input disabled="disabled" id="defaultCheck2" name="defaultCheck2" type="checkbox" class="form-check-input">
-      <label for="defaultCheck2" class="form-check-label">Disabled checkbox</label>
+      <input id="defaultCheck2" name="defaultCheck2" type="checkbox" class="form-check-input">
+      <label for="defaultCheck2" class="form-check-label">Other checkbox</label>
+    </div>
+    <div class="form-check">
+      <input disabled="disabled" id="defaultCheck3" name="defaultCheck3" type="checkbox" class="form-check-input">
+      <label for="defaultCheck3" class="form-check-label">Disabled checkbox</label>
     </div>
   </div>
 </form>
