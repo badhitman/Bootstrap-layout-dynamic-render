@@ -1847,7 +1847,7 @@ bsFormGroupSingle.UseCustomisation = true;
 ```
 
 Inline mode:
-```cshtml
+```c#
 bsFormGroupStacked GroupStacked = new bsFormGroupStacked(){IsInline = true};
 ```
 
