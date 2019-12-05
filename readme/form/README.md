@@ -2137,17 +2137,38 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 
 ## Range[¶](https://getbootstrap.com/docs/4.3/components/forms/#range)
 
-> 
+> Создайте **Bootstrap custom** `<input type = "range">` элементы управления с помощью **.custom-range**.
+Дорожка (фон) и указатель (значение) имеют одинаковый стиль для всех браузеров.
+Так как только IE и Firefox поддерживают «заполнение» своего трека слева или справа от указателя в качестве средства визуального отображения прогресса, в настоящее время не поддерживается.
 
 ```cshtml
 @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
+
+  GroupSingle.CustomInput.Input = new hsInputRange() { ID = "customRange1" };
+  GroupSingle.CustomInput.Label = "Example range";
+
+  form.AddChild(GroupSingle);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Custom forms range](../demo/custom-forms-range.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <label for="customRange1">Example range</label>
+    <input id="customRange1" max="100" min="0" name="customRange1" step="1" type="range" value="0" class="custom-range">
+  </div>
+</form>
+```
 
 > 
 
