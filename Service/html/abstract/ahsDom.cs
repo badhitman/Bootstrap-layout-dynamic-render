@@ -392,7 +392,7 @@ namespace BootstrapAspDynamicRender.service
         /// <summary>
         /// CSS стили для элемента
         /// </summary>
-        private readonly List<string> css = new List<string>();
+        protected List<string> css = new List<string>();
 
         public bool ContainsClassCSS(Predicate<string> predicate) => css.Any(x => predicate(x));
 
@@ -513,9 +513,16 @@ namespace BootstrapAspDynamicRender.service
         public override object Clone()
         {
             ahsDom dom = base.Clone() as ahsDom;
+            //
+            dom.CustomAttributes = new SortedDictionary<string, string>();
             dom.SetAttributes(ReadAttributes());
+            //
+            dom.CustomStyles = new SortedDictionary<string, string>();
             dom.SetStyles(ReadStyles());
+            //
+            dom.css = new List<string>();
             dom.AddCSS(ReadCSS());
+            //
             return dom;
         }
     }

@@ -1951,6 +1951,23 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ![Custom forms radios inline](../demo/custom-forms-radios-inline.jpg)
 
+```html
+<div class="form-row">
+  <div class="custom-control custom-control-inline custom-radio">
+    <input checked="checked" id="exampleRadios1" name="exampleRadios" type="radio" value="option1" class="custom-control-input">
+    <label for="exampleRadios1" class="custom-control-label">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-control-inline custom-radio">
+    <input id="exampleRadios2" name="exampleRadios" type="radio" value="option2" class="custom-control-input">
+    <label for="exampleRadios2" class="custom-control-label">Or toggle this other custom radio</label>
+  </div>
+  <div class="custom-control custom-control-inline custom-radio">
+    <input disabled="disabled" id="exampleRadios3" name="exampleRadios" type="radio" value="option3" class="custom-control-input">
+    <label for="exampleRadios3" class="custom-control-label">Disabled radio</label>
+  </div>
+</div>
+```
+
 ## Switches[¶](https://getbootstrap.com/docs/4.3/components/forms/#switches)
 
 > **Switch** имеет разметку пользовательского флажка, но использует класс **.custom-switch** для рендеринга тумблера.
@@ -2003,11 +2020,29 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ## Select menu[¶](https://getbootstrap.com/docs/4.3/components/forms/#select-menu)
 
-> 
+> Для пользовательских меню `<select>` нужен только класс стилей **.custom-select** для запуска пользовательских стилей.
+Пользовательские стили ограничены первоначальным внешним видом `<select>` и не могут изменять `<option>` из-за ограничений браузера.
 
 ```cshtml
 @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
+
+  hsInputSelect select = new hsInputSelect() { ID = "exampleSelectInput" };
+
+  select.AddItem("Open this select menu", null).IsSelect = true;
+  select.AddItem("1", null);
+  select.AddItem("2", null);
+  select.AddItem("3", null);
+
+  GroupSingle.CustomInput.Input = select;
+  GroupSingle.CustomInput.Label = "Custom select input";
+
+  form.AddChild(GroupSingle);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
@@ -2015,17 +2050,93 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ![Custom forms select menu](../demo/custom-forms-select-menu.jpg)
 
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <label for="exampleSelectInput">Custom select input</label>
+    <select id="exampleSelectInput" name="exampleSelectInput" class="custom-select">
+      <option select="">Open this select menu</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </div>
+</form>
+```
+
 > Вы также можете установить размер пользовательских `<selects>`**s**, чтобы соответствовать текстовым `<inputs>` аналогичного размера.
 
 ```cshtml
 @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
+  GroupSingle.CustomInput.SizeInput = bmTwinSizingsEnum.Sm;
+  hsInputSelect select = new hsInputSelect() { ID = "exampleSelectInput" };
+
+  select.AddItem("Open this select menu", null).IsSelect = true;
+  select.AddItem("1", null);
+  select.AddItem("2", null);
+  select.AddItem("3", null);
+
+  GroupSingle.CustomInput.Input = select;
+  GroupSingle.CustomInput.Label = "Custom select";
+
+  form.AddChild(GroupSingle.Clone() as bsFormGroupSingle);
+  GroupSingle.CustomInput.SizeInput = bmTwinSizingsEnum.NULL;
+  form.AddChild(GroupSingle.Clone() as bsFormGroupSingle);
+  GroupSingle.CustomInput.SizeInput = bmTwinSizingsEnum.Lg;
+  form.AddChild(GroupSingle);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
 ***result:***
 
 ![Custom forms select menu size](../demo/custom-forms-select-menu-size.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <label for="exampleSelectInput">Custom select</label>
+    <select id="exampleSelectInput" name="exampleSelectInput" class="custom-select-sm custom-select">
+      <option select="">Open this select menu</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelectInput">Custom select</label>
+    <select id="exampleSelectInput" name="exampleSelectInput" class="custom-select">
+      <option select="">Open this select menu</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleSelectInput">Custom select</label>
+    <select id="exampleSelectInput" name="exampleSelectInput" class="custom-select-lg custom-select">
+      <option select="">Open this select menu</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </div>
+</form>
+```
+
+А так же в горизонтальном виде:
+```
+bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
+```
+
+***result:***
+
+![Custom forms select menu size](../demo/custom-forms-select-menu-size-horisontal.jpg)
 
 > Множественный выбор также поддерживается:
 

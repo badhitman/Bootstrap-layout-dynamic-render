@@ -29,6 +29,7 @@ namespace BootstrapAspDynamicRender.service
         public override ahsDom[] GetChilds()
         {
             ChildsNodes.Clear();
+            
             //
             Label = new hsLabelInput() { Header = CustomInput.Label, For = CustomInput.Input.ID };
             if (CustomInput.LabelSrOnly)
