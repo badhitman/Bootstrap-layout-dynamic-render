@@ -490,6 +490,8 @@
 </form>
 ```
 
+Radios:
+
 ```cshtml
 @{
   bsForm form = new bsForm() { ID = "demo-form-dom-id" };
@@ -540,6 +542,25 @@
 ***result:***
 
 ![Forms radios](../demo/forms-radios.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <div class="form-check">
+      <input checked="checked" id="exampleRadios1" name="exampleRadios" type="radio" value="option1" class="form-check-input">
+      <label for="exampleRadios1" class="form-check-label">Default checkbox</label>
+    </div>
+    <div class="form-check">
+      <input id="exampleRadios2" name="exampleRadios" type="radio" value="option2" class="form-check-input">
+      <label for="exampleRadios2" class="form-check-label">Second default radio</label>
+    </div>
+    <div class="form-check">
+      <input disabled="disabled" id="exampleRadios3" name="exampleRadios" type="radio" value="option3" class="form-check-input">
+      <label for="exampleRadios3" class="form-check-label">Disabled checkbox</label>
+    </div>
+  </div>
+</form>
+```
 
 ## Inline[¶](https://getbootstrap.com/docs/4.3/components/forms/#inline)
 
