@@ -2085,7 +2085,7 @@ bsFormGroupStacked GroupStacked = new bsFormGroupStacked() { IsInline = true };
 </form>
 ```
 
-А так же в горизонтальном виде:
+А так плоский вариант:
 ```
 bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 ```
@@ -2094,11 +2094,28 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 
 ![Custom forms select menu size](../demo/custom-forms-select-menu-size-horisontal.jpg)
 
-> Множественный выбор также поддерживается:
+> Множественный выбор также поддерживается через установку соответствующего атрибута `hsInputSelect select = new hsInputSelect() { ID = "exampleSelectInput", IsMultiple = true };`:
 
 ```cshtml
 @{
+  bsFormGroupStacked.UseCustomisation = true;
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
 
+  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
+  
+  hsInputSelect select = new hsInputSelect() { ID = "exampleSelectInput", IsMultiple = true };
+
+  select.AddItem("Open this select menu", null).IsSelect = true;
+  select.AddItem("One", "1");
+  select.AddItem("Two", "2");
+  select.AddItem("Three", "3");
+
+  GroupSingle.CustomInput.Input = select;
+  GroupSingle.CustomInput.Label = "Custom select";
+
+  form.AddChild(GroupSingle);
+
+  @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
 ```
 
