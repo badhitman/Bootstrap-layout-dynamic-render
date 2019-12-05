@@ -1783,12 +1783,41 @@ bsFormGroupSingle.UseCustomisation = true;
 
 ```cshtml
 @{
-  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
   bsFormGroupStacked.UseCustomisation = true;
-  bsFormGroupSingle GroupSingle = new bsFormGroupSingle();
-  GroupSingle.CustomInput.Input = new hsInputCheckbox() { ID = "customCheck1"};
-  GroupSingle.CustomInput.Label = "Check this custom checkbox";
-  form.AddChild(GroupSingle);
+  bsForm form = new bsForm() { ID = "demo-form-dom-id" };
+
+  bsFormGroupStacked GroupStacked = new bsFormGroupStacked();
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputCheckbox()
+    {
+      ID = "exampleCheckbox1",
+      IsChecked = true
+    },
+    Label = "Check this custom checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputCheckbox()
+    {
+      ID = "exampleCheckbox2"
+    },
+    Label = "Or/and check this other custom checkbox"
+  });
+
+  GroupStacked.CustomInputs.Add(new bmInput()
+  {
+    Input = new hsInputCheckbox()
+    {
+          ID = "exampleCheckbox3",
+          IsDisabled = true
+    },
+    Label = "Disabled checkbox"
+  });
+
+  form.AddChild(GroupStacked);
 
   @await Component.InvokeAsync(form.ViewComponentName, new { SetObjectManager = form })
 }
@@ -1802,8 +1831,16 @@ bsFormGroupSingle.UseCustomisation = true;
 <form accept-charset="utf-8" id="demo-form-dom-id">
   <div class="form-group">
     <div class="custom-control custom-checkbox">
-      <input id="customCheck1" name="customCheck1" type="checkbox" class="custom-control-input">
-      <label for="customCheck1" class="custom-control-label">Check this custom checkbox</label>
+      <input checked="checked" id="exampleCheckbox1" name="exampleCheckbox1" type="checkbox" class="custom-control-input">
+      <label for="exampleCheckbox1" class="custom-control-label">Check this custom checkbox</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input id="exampleCheckbox2" name="exampleCheckbox2" type="checkbox" class="custom-control-input">
+      <label for="exampleCheckbox2" class="custom-control-label">Or/and check this other custom checkbox</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input disabled="disabled" id="exampleCheckbox3" name="exampleCheckbox3" type="checkbox" class="custom-control-input">
+      <label for="exampleCheckbox3" class="custom-control-label">Disabled checkbox</label>
     </div>
   </div>
 </form>
@@ -2207,3 +2244,14 @@ bsFormGroupSingle GroupSingle = new bsFormGroupSingle() {IsHorisontal = true};
 ***result:***
 
 ![Custom forms file browser](../demo/custom-forms-file-browser.jpg)
+
+```html
+<form accept-charset="utf-8" id="demo-form-dom-id">
+  <div class="form-group">
+    <div class="custom-file">
+      <input id="customFile" name="customFile" type="file" class="custom-file-input">
+      <label for="customFile" class="custom-file-label">Choose file</label>
+    </div>
+  </div>
+</form>
+```
