@@ -16,12 +16,12 @@ about:
 
 Пространсва имён:
 
-> `@using BootstrapAspDynamicRender.service` -> управляющие сервисы. Хранят в себе имя ответсвенного компонента, который принимает этот тип как модель.
+**`@using BootstrapAspDynamicRender.service`** -> управляющие сервисы. Хранят в себе имя ответсвенного компонента, который принимает этот тип как модель.
 Т.е. настроеный сервис можно вставить в любом месте **razor.html** одной строкой `@await Component.InvokeAsync(ModelService.ViewComponentName, new { SetObjectManager = ModelService })`
 
-> `@using BootstrapAspDynamicRender.components` -> рендеринг-компоненты, для отрисовки "своего" сервиса
+**`@using BootstrapAspDynamicRender.components`** -> рендеринг-компоненты, для отрисовки "своего" сервиса
 
-> `@using BootstrapAspDynamicRender.models` -> вспомогательные модели
+**`@using BootstrapAspDynamicRender.models`** -> вспомогательные модели
 
 Именование:
 - все типы в проекте отвечают правилам именования, а точнее правилам префикса по первым двум (или трём) строчным буквам имени типа. Например: `hrOptionSelect`, `bmInput` или `hsButton`
