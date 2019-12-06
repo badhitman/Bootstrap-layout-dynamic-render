@@ -14,9 +14,10 @@ about:
 - готовый сервис можно отрисовать в **Razor .cshtml**: `@await Component.InvokeAsync(MyService.ViewComponentName, new { SetObjectManager = MyService })` (где **MyService** это готовый "управляющий сервис")
 - компонент принимает сервис в виде парамтера и формирует нужный **html**
 
-Пространсва имён (их всего 3) в вашем **Razor.cshtml**:
+Пространсва имён:
 
-- `@using BootstrapAspDynamicRender.service` -> управляющие сервисы
+- `@using BootstrapAspDynamicRender.service` -> управляющие сервисы. Хранят в себе имя ответсвенного компонента, который принимает этот тип как модель.
+Т.е. настроеный сервис можно вставить в любом месте **razor.html** одной строкой `@await Component.InvokeAsync(ModelService.ViewComponentName, new { SetObjectManager = ModelService })`
 - `@using BootstrapAspDynamicRender.models` -> вспомогательные модели
 - `@using BootstrapAspDynamicRender.components` -> рендеринг-компоненты
 
